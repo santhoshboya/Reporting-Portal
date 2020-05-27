@@ -1,0 +1,12 @@
+.user-observation-description{
+    width: 60%;
+    height: 200px;
+    border-radius: 2px;
+    border: solid 1px #d7dfe9;
+    background-color: #ffffff;
+  }
+  .submit-btn{
+    width:10%;
+    align-self:center;
+
+  }

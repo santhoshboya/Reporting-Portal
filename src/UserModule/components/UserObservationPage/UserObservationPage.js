@@ -3,10 +3,12 @@ import './index.css'
 import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutMainPage'
 import { PageHeader } from '../../../common/components/PageHeader'
 import strings from '../../../common/i18n/strings.json'
-import { ObservationForm,BackToObservationsLink,FieldContainer,FieldName} from './styledComponent'
+import { ObservationForm,BackToObservationsLink,FieldContainer,FieldName,DragAndDrop} from './styledComponent'
 import { Image } from '../../../common/components/Image'
 import { InputField } from '../../../common/components/InputField'
 import { DropDown } from '../../../common/components/DropDown'
+import { TextArea } from '../../../common/components/TextArea'
+import { PrimaryButton } from '../../../common/components/PrimaryButton'
 
 
 
@@ -15,7 +17,7 @@ class UserObservationPage extends Component {
         const {profilePic,username,handleClick}=this.props
         const {titleOfTheObservation,culturalDeviations,
             backToObservations,cateogary,severity,description,
-            attachments,subCateogary}=strings.usersScreen
+            attachments,subCateogary,submit}=strings.usersScreen
         return (
             <DesktopLayoutMainPage>
                 <PageHeader 
@@ -59,16 +61,16 @@ class UserObservationPage extends Component {
                         <FieldName>
                             {description}
                         </FieldName>
-                       
+                        <TextArea className={'user-observation-description'} value={""} onHandleChange={()=>{}} placeHolder={"Description"}/>
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {attachments}
                         </FieldName>
-                       
+                       <DragAndDrop onDrag={()=>{}} onDragOver={()=>{}}/>
                     </FieldContainer>
-
+                    <PrimaryButton value={submit} handleClick={()=>{}} className={'submit-btn'}/>
                 </ObservationForm>
 
             </DesktopLayoutMainPage>

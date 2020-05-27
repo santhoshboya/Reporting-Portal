@@ -22,7 +22,8 @@
         "severity":"SEVERITY",
         "description":"DESCRIPTION",
         "attachments":"ATTACHMENTS",
-        "culturalDeviations":"Cultural Deviations"
+        "culturalDeviations":"Cultural Deviations",
+        "submit":"Submit"
 
     },
     "signUp":{

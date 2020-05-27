@@ -11,12 +11,19 @@ const FieldName=styled(Typo12DarkBlueGreyRubikMedium)`
    `
    ;
 const ObservationForm = styled.div`                                                                                                                                                                
-   ${tw``}
+   ${tw`flex flex-col`}
    width:80%;
    background-color:white;
    padding:42px 80px;
-   margin-top:32px;
+   margin:32px 0px;
    
+`
+const DragAndDrop = styled.div`${tw``}
+   width:25%;
+   height:80px;
+   border-radius: 2px;
+  border: solid 1px #d7dfe9;
+  background-color: #ffffff;
 `
 const FieldContainer = styled.div`                                                                                                                                                                
    ${tw`flex items-center `}
@@ -28,5 +35,6 @@ export {
    BackToObservationsLink,
    ObservationForm,
    FieldContainer,
-   FieldName
+   FieldName,
+   DragAndDrop
    }
