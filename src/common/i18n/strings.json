@@ -5,6 +5,7 @@
         "title":"TITLE",
         "reportedOn":"REPORTED ON",
         "assignedTo":"ASSIGNED TO",
+        "reportedBy":"REPORTED BY",
         "severty":"SEVERTY",
         "status":"STATUS",
         "dueDate":"DUE DATE",

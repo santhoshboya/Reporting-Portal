@@ -1,2 +1,1 @@
-export { PrimaryLeftIconDefault } from "./PrimaryLeftIconDefault";
-
+export { PrimaryLeftIconDefault } from './PrimaryLeftIconDefault'

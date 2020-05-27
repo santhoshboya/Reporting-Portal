@@ -1,2 +1,1 @@
-export { InputFieldWithLable } from "./InputFieldWithLable";
-
+export { InputFieldWithLable } from './InputFieldWithLable'

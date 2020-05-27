@@ -1,2 +1,1 @@
-export { DesktopLayoutAuth } from "./DesktopLayoutAuth";
-
+export { DesktopLayoutAuth } from './DesktopLayoutAuth'

@@ -1,2 +1,1 @@
-export { ObservationListHeader } from "./ObservationListHeader";
-
+export { ObservationListHeader } from './ObservationListHeader'

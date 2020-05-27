@@ -1,1 +1,1 @@
-export {add} from './SampleUtil'
+export { add } from './SampleUtil'

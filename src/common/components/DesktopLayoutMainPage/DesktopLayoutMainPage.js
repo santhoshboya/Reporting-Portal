@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import {DesktopLayoutMainPageDiv} from './styledComponent'
+import { DesktopLayoutMainPageDiv } from './styledComponent'
 class DesktopLayoutMainPage extends Component {
-    render() {
-        return (
-            <DesktopLayoutMainPageDiv></DesktopLayoutMainPageDiv>
-        )
-    }
+   render() {
+      return <DesktopLayoutMainPageDiv></DesktopLayoutMainPageDiv>
+   }
 }
-export {DesktopLayoutMainPage}
+export { DesktopLayoutMainPage }
