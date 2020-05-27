@@ -74,7 +74,7 @@ const Typo14DarkBlueGreyHKGroteskSemiBold = styled.p`
    color: ${colors['dark-blue']};
 `
 
-const Typos24DarkBlueGreyHKGroteskMedium = styled.p`
+const Typo24DarkBlueGreyHKGroteskMedium = styled.p`
    font-family: HKGrotesk;
    font-size: 24px;
    font-weight: 500;
@@ -84,7 +84,7 @@ const Typos24DarkBlueGreyHKGroteskMedium = styled.p`
    letter-spacing: normal;
    color: #171f46;
 `
-const Typo18171f46HKGroteskMedium = styled.p`
+const Typo18DarkBlueHKGroteskMedium = styled.p`
    font-family: HKGrotesk;
    font-size: 18px;
    font-weight: 500;
@@ -104,7 +104,7 @@ const Typo32BrightBlueHKGroteskMedium = styled.p`
    letter-spacing: normal;
    color: ${colors['bright-blue']};
 `
-const Typo12DarkBlueGreyHKGroteskSemiBold = styled.p`
+const Typo12DarkBlueGreyHKGroteskSemiBold = styled.th`
    font-family: HKGrotesk;
    font-size: 12px;
    font-weight: 600;
@@ -137,6 +137,56 @@ const Typo12WhiteHKGroteskBold = styled.p`
    color: ${colors.white};
 `
 
+const Typo18DarkBlueGreyHKGroteskMedium = styled.p`
+font-family: HKGrotesk;
+font-size: 18px;
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: normal;
+color: ${colors["dark-blue-grey"]};;
+`
+const Typo18BrightBlueHKGroteskBold=styled.p`
+   font-family: HKGrotesk;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: ${colors["bright-blue"]};`
+
+const Typo18steelHKGroteskRegular=styled.p`
+font-family: HKGrotesk;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: ${colors.steel};`
+
+const Typo14SteelHKGroteskRegular=styled.p`
+font-family: HKGrotesk;
+font-size: 14px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.71;
+letter-spacing: normal;
+color: ${colors.steel};`
+
+const Typo12DarkBlueGreyRubikMedium=styled.p`
+   font-family: Rubik;
+   font-size: 12px;
+   font-weight: 500;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 2;
+   letter-spacing: 0.12px;
+   color: ${colors["dark-blue-grey"]};`
+
 export {
    Typo32DarkBlueGreyRubikRegular,
    Typo12SteelHKGrotesk,
@@ -145,10 +195,15 @@ export {
    Typo12SteelHKGroteskSemiBold,
    Typo12NeonRedHKGrotesk,
    Typo14DarkBlueGreyHKGroteskSemiBold,
-   Typos24DarkBlueGreyHKGroteskMedium,
-   Typo18171f46HKGroteskMedium,
+   Typo24DarkBlueGreyHKGroteskMedium,
+   Typo18DarkBlueHKGroteskMedium,
    Typo32BrightBlueHKGroteskMedium,
    Typo12DarkBlueGreyHKGroteskSemiBold,
    Typo8DarkBlueGreyHKGroteskSemiBold,
-   Typo12WhiteHKGroteskBold
+   Typo12WhiteHKGroteskBold,
+   Typo18DarkBlueGreyHKGroteskMedium,
+   Typo18BrightBlueHKGroteskBold,
+   Typo18steelHKGroteskRegular,
+   Typo14SteelHKGroteskRegular,
+   Typo12DarkBlueGreyRubikMedium
 }

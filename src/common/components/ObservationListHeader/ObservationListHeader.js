@@ -11,31 +11,32 @@ import { Image } from '../Image'
 class ObservationListHeader extends Component {
    render() {
       const {
-         personType,src
+         personType
       } = this.props
+      const {title,reportedOn,severty,status,dueDate,messages}=strings.userFeatures
       return (
          <TableRow>
-            <TableHeading>{strings.userFeatures.title}</TableHeading>
+            <TableHeading>{title}</TableHeading>
             <TableHeading>
                <PersonTypeDiv>
-                  {strings.userFeatures.reportedOn}
+                  {reportedOn}
                   <Image 
                      className={'Chevron-Down-2'}
                      src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4b787319-5164-4ca3-8687-cf9f1603e3d3.svg"/>
                </PersonTypeDiv>
             </TableHeading>
             <TableHeading>{personType}</TableHeading>
-            <TableHeading>{strings.userFeatures.severty}</TableHeading>
-            <TableHeading>{strings.userFeatures.status}</TableHeading>
+            <TableHeading>{severty}</TableHeading>
+            <TableHeading>{status}</TableHeading>
             <TableHeading>
                   <PersonTypeDiv>
-                     {strings.userFeatures.dueDate}
+                     {dueDate}
                      <Image 
                         className={'Chevron-Down-2'}
                         src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4b787319-5164-4ca3-8687-cf9f1603e3d3.svg"/>
                   </PersonTypeDiv>
             </TableHeading>
-            <TableHeading>{strings.userFeatures.messages}</TableHeading>
+            <TableHeading>{messages}</TableHeading>
          </TableRow>
       )
    }

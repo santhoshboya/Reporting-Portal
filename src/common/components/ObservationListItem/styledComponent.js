@@ -10,7 +10,7 @@ const TableRow = styled.tr`${tw`flex justify-around items-center`}
 width: 1240px;
 height: 66px;
 border: solid 1px  #d7dfe9;
-background-color: rgba(215, 223, 233, 0.24);
+
 }`
 const RectangleSeverity = styled.div`
    ${tw` flex justify-center items-center`}
@@ -28,14 +28,15 @@ const RectangleActionStatus = styled.div`
    background-color: white;
 `
 const PersonDetails = styled.div`
-   ${tw` flex flex-row`}
-   flex
+   ${tw`flex justify-around`}
+   width:100%;
 `
 const PersonData = styled.div`
    ${tw`flex flex-col`}
-   flex flex-col
 `
-const TableData = styled(Typo12SteelHKGroteskSemiBold)``
+const TableData = styled(Typo12SteelHKGroteskSemiBold)`${tw`flex justify-center`}
+width:14%;
+`
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
 const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)``
 export {

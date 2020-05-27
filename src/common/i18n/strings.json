@@ -21,7 +21,8 @@
         "subCateogary":"SUB CATEOGARY",
         "severity":"SEVERITY",
         "description":"DESCRIPTION",
-        "Attachments":"Attachments"
+        "attachments":"ATTACHMENTS",
+        "culturalDeviations":"Cultural Deviations"
 
     },
     "signUp":{

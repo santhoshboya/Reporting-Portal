@@ -45,14 +45,13 @@ Modules:
         1.Routes
             => UserObservatonListRoute
             => UserObservationRoute
-            *
+            => ProfileViewRoute
         2.Store
             =>UserStore
         3.Components
             =>UserObservatonListPage
-            =>Header
-            =>ObsevationsListHeader
-            =>ObsevationsList
+            =>UserObservationPage
+
         4.fixtures
             =>getUserObservationsListResponse
             =>getObservationResponse
@@ -101,6 +100,8 @@ Modules:
             =>Pagination 
             =>ObservationListItem
             =>DesktopLayout -
+            =>Header
+            =>ObsevationsListHeader
         2.Store
         3.Components
         4.fixtures
@@ -127,5 +128,4 @@ Modules:
 
 
 
-
-
+return new Promise(resolve=> resolve(data))

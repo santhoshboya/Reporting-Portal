@@ -8,6 +8,7 @@ import Page1 from './components/Page1'
 import './App.css'
 import { Check } from './common/components'
 import { authRoutes } from './Authuntication/routes'
+import { userRoutes } from './UserModule/routes'
 import authStore from './Authuntication/stores'
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
                      <Check />
                   </Route>
                   {authRoutes}
+                  {userRoutes}
                   <Route path='/'>
                      <HomePage />
                   </Route>
