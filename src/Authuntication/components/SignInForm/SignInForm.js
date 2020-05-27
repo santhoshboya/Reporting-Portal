@@ -1,4 +1,11 @@
 import React, { Component } from 'react'
+
+import { DesktopLayoutAuth } from '../../../common/components/DesktopLayoutAuth'
+import { Image } from '../../../common/components/Image'
+import strings from '../../../common/i18n/strings.json'
+import { PrimaryButton } from '../../../common/components/PrimaryButton'
+import { InputFieldWithLable } from '../../../common/components/InputFieldWithLable'
+
 import './index.css'
 import {
    SignInFornDiv,
@@ -6,11 +13,7 @@ import {
    SignUpLink,
    SignUpSpan
 } from './styledComponent'
-import { DesktopLayoutAuth } from '../../../common/components/DesktopLayoutAuth'
-import { Image } from '../../../common/components/Image'
-import strings from '../../../common/i18n/strings.json'
-import { PrimaryButton } from '../../../common/components/PrimaryButton'
-import { InputFieldWithLable } from '../../../common/components/InputFieldWithLable'
+
 class SignInForm extends Component {
    render() {
       const {
@@ -64,4 +67,5 @@ class SignInForm extends Component {
       )
    }
 }
+
 export { SignInForm }

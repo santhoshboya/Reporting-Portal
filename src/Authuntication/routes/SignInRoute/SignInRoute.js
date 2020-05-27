@@ -1,6 +1,7 @@
 import React from 'react'
-import { observable, action, autorun, trace } from 'mobx'
+import { observable, action} from 'mobx'
 import { observer, inject } from 'mobx-react'
+
 import { SignInForm } from '../../components/SignInForm'
 
 @inject('authStore')
@@ -17,10 +18,6 @@ class SignInRoute extends React.Component {
 
    @action.bound onChangePassword(event) {
       this.password = event.target.value
-   }
-
-   onSuccess = () => {
-      this.props.history.push('/check')
    }
 
    @action.bound onFailure() {
@@ -44,7 +41,6 @@ class SignInRoute extends React.Component {
    }
 
    handleOnclick = async () => {
-      console.log('Submited...')
       await this.props.authStore.userSignIn(
          { username: this.username, password: this.password },
          this.onSuccess,
@@ -52,8 +48,11 @@ class SignInRoute extends React.Component {
       )
    }
 
+   onSuccess = () => {
+      this.props.history.push('/userobservationslist')
+   }
+
    render() {
-      console.log(this.props.authStore)
       const { getUserAuthAPIStatus } = this.props.authStore
       return (
          <SignInForm

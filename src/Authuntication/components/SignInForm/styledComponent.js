@@ -12,15 +12,14 @@ const SignInFornDiv = styled.div`
    background-color: ${colors.white};
    height: 75%;
 `
-const GreetingMessage = styled(
-   Typo32DarkBlueGreyRubikRegular
-)`${tw`flex justify-center text-center mb-8`}
-width:214px;
-height:80px;
-x`
-const SignUpLink = styled(Typo14DarkBlueGreyHKGroteskRegular)``
 const SignUpSpan = styled.span`
    color: ${colors['bright-blue']};
 `
+const GreetingMessage = styled(Typo32DarkBlueGreyRubikRegular)`
+   ${tw`flex justify-center text-center mb-8`}
+   width:214px;
+   height:80px;
+`
+const SignUpLink = styled(Typo14DarkBlueGreyHKGroteskRegular)``
 
 export { SignInFornDiv, GreetingMessage, SignUpLink, SignUpSpan }

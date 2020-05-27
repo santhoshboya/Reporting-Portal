@@ -1,6 +1,7 @@
 import { observable, action, computed, toJS } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
+
 import { setAccessToken, clearUserSession } from '../../utils/StorageUtils'
 
 class AuthStore {
@@ -13,6 +14,7 @@ class AuthStore {
       this.authAPIService = authAPIService
       this.init()
    }
+
    @action.bound
    init() {
       this.getUserAuthAPIStatus = API_INITIAL
@@ -33,6 +35,7 @@ class AuthStore {
       this.Access_token = SignInAPIResponse[0].access_token
       setAccessToken(this.Access_token)
    }
+   
    @action.bound
    userSignIn(request, onSuccess, onFailure) {
       const signInPromise = this.authAPIService.signInAPI()
@@ -47,7 +50,6 @@ class AuthStore {
          })
    }
 
-   @action.bound
    userSignOut() {
       clearUserSession()
    }
