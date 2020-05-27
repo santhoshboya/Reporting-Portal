@@ -3,7 +3,7 @@ import "./index.css"
 import {TableRow,TableData,RectangleSeverity,RectangleActionStatus,SevertyStatus,ObservationStatus,PersonData,PersonDetails} from './styledComponent'
 import strings from '../../i18n/strings.json'
 import { Image } from '../Image'
-class ObservationListItem extends Component {
+class ObservationListHeader extends Component {
     render() {
         const {title,reportedOn,assignedTo,severty,status,dueDate,messages,src}=this.props
         return (
@@ -42,4 +42,4 @@ class ObservationListItem extends Component {
         )
     }
 }
-export {ObservationListItem}
+export {ObservationListHeader}

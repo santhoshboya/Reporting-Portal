@@ -49,7 +49,7 @@ font-family: HKGrotesk;
   line-height: 1.33;
   letter-spacing: normal;
   color: ${colors["neon-red"]}`
-const Typo12SteelHKGroteskSemiBold=styled.p`
+const Typo12SteelHKGroteskSemiBold=styled.td`
 font-family: HKGrotesk;
 font-size: 12px;
 font-weight: 600;
@@ -104,6 +104,32 @@ font-family: HKGrotesk;
   line-height: 1.33;
   letter-spacing: 0.12px;
   color: ${colors["dark-blue-grey"]};`
+
+  const Typo8DarkBlueGreyHKGroteskSemiBold=styled.p`
+  font-family: HKGrotesk;
+  font-size: 8px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: 0.32px;
+  color: ${colors["dark-blue-grey"]};`
+
+  const Typo12WhiteHKGroteskBold=styled.p`
+  font-family: HKGrotesk;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 0.12px;
+  color: ${colors.white};`
+  
+  
+
+
+  
 export {Typo32DarkBlueGreyRubikRegular,Typo12SteelHKGrotesk,Typo14DarkBlueGreyHKGroteskRegular
 ,Typo14WhiteRubikMedium,Typo12SteelHKGroteskSemiBold,Typo12NeonRedHKGrotesk,Typo14DarkBlueGreyHKGroteskSemiBold,Typos24DarkBlueGreyHKGroteskMedium
-,Typo18171f46HKGroteskMedium,Typo32BrightBlueHKGroteskMedium,Typo12DarkBlueGreyHKGroteskSemiBold}
+,Typo18171f46HKGroteskMedium,Typo32BrightBlueHKGroteskMedium,Typo12DarkBlueGreyHKGroteskSemiBold,Typo8DarkBlueGreyHKGroteskSemiBold,
+Typo12WhiteHKGroteskBold}

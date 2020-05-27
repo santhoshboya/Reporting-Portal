@@ -11,16 +11,24 @@ import Icon from './Icon.svg'
 import { DesktopLayoutAuth } from './DesktopLayoutAuth'
 import { DesktopLayoutMainPage } from './DesktopLayoutMainPage'
 import strings from '../../common/i18n/strings.json'
+
 import {Typo32DarkBlueGreyRubikRegular,Typo12SteelHKGrotesk,Typo14DarkBlueGreyHKGroteskRegular
     ,Typo14WhiteRubikMedium,Typo12SteelHKGroteskSemiBold,Typo14DarkBlueGreyHKGroteskSemiBold,Typos24DarkBlueGreyHKGroteskMedium
     ,Typo18171f46HKGroteskMedium,Typo32BrightBlueHKGroteskMedium,Typo12DarkBlueGreyHKGroteskSemiBold} from '../../common/styleGuide/Typos/index'
+import { ObservationListItem } from './ObservationListItem'
  class Check extends Component {
     render() {
         return (
             //<DesktopLayoutMainPage></DesktopLayoutMainPage>
             <DesktopLayoutAuth>
-            
-            <Typo32DarkBlueGreyRubikRegular>Sign In</Typo32DarkBlueGreyRubikRegular>
+            <ObservationListItem 
+                title={"santhu"}
+                reportedOn={'11/11/11'}
+                severty={"HIGH"}
+                status={"action in progress"}
+                dueDate={"12/2/31"}
+                src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'}/>
+            {/* <Typo32DarkBlueGreyRubikRegular>Sign In</Typo32DarkBlueGreyRubikRegular>
         <Typo12SteelHKGrotesk>{strings.usersScreen.titleOfTheObservation}</Typo12SteelHKGrotesk>
             <Typo14DarkBlueGreyHKGroteskRegular>Sign Out</Typo14DarkBlueGreyHKGroteskRegular>
             <Typo12SteelHKGroteskSemiBold>Reset</Typo12SteelHKGroteskSemiBold>
@@ -31,7 +39,7 @@ import {Typo32DarkBlueGreyRubikRegular,Typo12SteelHKGrotesk,Typo14DarkBlueGreyHK
             <RadioButton/><br/>
             <PrimaryButton width={200} value={"primary"}/><br/>
             <SecondaryButton value={"primary"}/><br/>
-            <PrimaryLeftIconDefault src={Icon} value={"primary"}/><br/>
+            <PrimaryLeftIconDefault src={Icon} value={"primary"}/><br/> */}
             
             </DesktopLayoutAuth>
         )

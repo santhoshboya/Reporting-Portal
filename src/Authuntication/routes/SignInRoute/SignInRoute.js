@@ -1,5 +1,4 @@
 import React from 'react'
-import {withRouter} from "react-router-dom"
 import { observable, action,autorun, trace } from "mobx";
 import { observer, inject } from "mobx-react";
 import { SignInForm } from '../../components/SignInForm';
@@ -50,7 +49,8 @@ class SignInRoute extends React.Component{
 
     handleOnclick = async ()=>{ 
         console.log("Submited...")
-        await this.props.authStore.userSignIn({'username':this.username,'password':this.password},this.onSuccess,this.onFailure);
+        await this.props.authStore.userSignIn({'username':this.username,'password':this.password},
+        this.onSuccess,this.onFailure);
     }
 
 
@@ -66,7 +66,7 @@ class SignInRoute extends React.Component{
                 onChangePassword={this.onChangePassword}
                 onClickSignIn={this.onClickSignIn}
                 onChangeUsername={this.onChangeUsername}
-               getUserAuthAPIStatus={getUserAuthAPIStatus}
+                getUserAuthAPIStatus={getUserAuthAPIStatus}
             />
         );
     }

@@ -1,7 +1,17 @@
 {
     "userFeatures":{
         "reportingPortal":"Reporting Portal",
-        "listofObservations":"List of Observations"
+        "listofObservations":"List of Observations",
+        "title":"TITLE",
+        "reportedOn":"REPORTED ON",
+        "assignedTo":"ASSIGNED TO",
+        "severty":"SEVERTY",
+        "status":"STATUS",
+        "dueDate":"DUE DATE",
+        "messages":"MESSAGES",
+        "addNew":"ADD NEW"
+
+
     },
     "usersScreen":{
         "titleOfTheObservation":"TITLE OF THE OBSERVATION",
