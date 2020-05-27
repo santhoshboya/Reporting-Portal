@@ -1,0 +1,2 @@
+export { DesktopLayoutMainPage } from "./DesktopLayoutMainPage";
+

@@ -1,0 +1,32 @@
+{
+    "userFeatures":{
+        "reportingPortal":"Reporting Portal",
+        "listofObservations":"List of Observations"
+    },
+    "usersScreen":{
+        "titleOfTheObservation":"TITLE OF THE OBSERVATION",
+        "backToObservations":"Back to observations",
+        "cateogary":"CATEOGARY",
+        "subCateogary":"SUB CATEOGARY",
+        "severity":"SEVERITY",
+        "description":"DESCRIPTION",
+        "Attachments":"Attachments"
+
+    },
+    "signUp":{
+        "hiTherePleaseSignUp":"Hi there, please sign up",
+        "userName":"USER NAME"
+    },
+    "logIn":{
+        "hiTherePleaseSignIn":"Hi there, please sign in",
+        "userName":"USER NAME",
+        "password":"PASSWORD",
+        "login":"LOGIN",
+        "doNotHaveAnAccount":"Don’t have an account?  ",
+        "signUp":"Signup",
+        "usernameAlreadyExits":"username already exits",
+        "incorrectPassword":"Incorrect password",
+        "logIn":"LOGIN"
+    }
+
+}

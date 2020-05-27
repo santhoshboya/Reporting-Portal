@@ -1,0 +1,132 @@
+Elp
+
+Modules:
+    1.Authuntication Module
+        1.Routes
+            => SignUpRoute
+            => SignInRoute
+
+        2.Store
+            => AuthunticationStore
+                Properties
+                    getUserAuthAPIStatus
+                    getUserAuthAPIError
+                    authAPIService
+                Methods
+                    userSignIn
+                    userSignUp
+                    setUserAuthAPIResponse
+                    setGetUserAuthAPIError
+                    setGetUserAPIStatus
+                    userSignOut
+
+        3.Components
+            =>SignUpForm
+            =>SignInForm
+
+        4.fixtures
+            getAuthanticationResponse
+
+        5.Services
+            => AuthService
+                => AuthApi.js
+                        api
+                    methods
+                        =>signInAPI
+                        =>signUpAPI
+                    
+        6.constants
+            =>APIConstants
+            =>RouteConstants
+        
+
+
+    2.User Module
+        1.Routes
+            => UserObservatonListRoute
+            => UserObservationRoute
+            *
+        2.Store
+            =>UserStore
+        3.Components
+            =>UserObservatonListPage
+            =>Header
+            =>ObsevationsListHeader
+            =>ObsevationsList
+        4.fixtures
+            =>getUserObservationsListResponse
+            =>getObservationResponse
+        5.Services
+            =>ObservationListApi
+            =>ObservationApi
+            =>PostNewObservationApi
+        6.constants
+            =>APIConstants
+            =>RouteConstants
+
+
+    3.Rp Module
+         1.Routes
+            => RpObservationListRoute
+            => RpObservationRoute
+        2.Store
+            =>RpStore
+        3.Components
+            =>RpObservatonListPage
+            =>Header
+            =>AssignedObsevationsListHeader
+            =>AssignedObsevationsList
+        4.fixtures
+            =>getUserObservationsListResponse
+            =>getObservationResponse
+        5.Services
+        6.constants
+
+
+    4.common Module
+        1.Routes
+            =>ProfileViewRoute
+        2.components
+            =>InputField -
+            =>PrimaryButton - 
+            =>SecondaryButton -
+            =>PrimaryButtonLeftIcon -
+            =>RadioButton -
+            =>DropDown -
+            =>DatePicker -
+            =>Image -
+            =>LoadingWrapperWithFailure -
+            =>LoadingView -
+            =>FailureView -
+            =>Pagination 
+            =>ObservationListItem
+            =>DesktopLayout -
+        2.Store
+        3.Components
+        4.fixtures
+        5.Services
+        6.constants
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UserApi
+    1.SignInPage
