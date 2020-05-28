@@ -10,12 +10,12 @@ import { Check } from './common/components'
 import { authRoutes } from './Authuntication/routes'
 import { userRoutes } from './UserModule/routes'
 import authStore from './Authuntication/stores'
+import userStore from './UserModule/stores'
 
 class App extends Component {
    render() {
-      console.log(authStore)
       return (
-         <Provider {...authStore}>
+         <Provider {...authStore} {...userStore}>
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   <Route exact path='/page-1'>

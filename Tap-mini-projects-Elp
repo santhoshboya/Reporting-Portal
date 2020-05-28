@@ -59,6 +59,7 @@ Modules:
             =>ObservationListApi
             =>ObservationApi
             =>PostNewObservationApi
+            =>ProfileViewApi
         6.constants
             =>APIConstants
             =>RouteConstants
@@ -121,6 +122,10 @@ Modules:
 
 
 
+
+Header in desktop DesktopLayout 
+fixturesApi
+functional components in render
 
 
 

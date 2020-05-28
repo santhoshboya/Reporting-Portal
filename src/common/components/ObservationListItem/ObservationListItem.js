@@ -36,8 +36,8 @@ class ObservationListItem extends Component {
                <PersonDetails>
                   <Image src={src} className={'persons-xs'}></Image>
                   <PersonData>
-                     <TableData>{'santhosh'}</TableData>
-                     <TableData>{9441406486}</TableData>
+                     <TableData>{assignedTo.name}</TableData>
+                     <TableData>ph:{assignedTo.phone_no}</TableData>
                   </PersonData>
                </PersonDetails>
             </TableData>
