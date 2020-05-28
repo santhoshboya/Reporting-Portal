@@ -2,21 +2,22 @@ import {networkCallWithApisauce} from '../../utils/APIUtils'
 import { create } from "apisauce";
 import {apiMethods,apiUrls} from '../../constants/APIConstants';
 import {endPoints} from '../EndPoints'
-class ObservationApi{
+class PostNewObservationApi{
     api;
     constructor(){
         this.api=create({
             baseURL:apiUrls.obseravation
         })
     }
-    getObservationApi(accessToken){
+    postObservationApi(obseravation){
+        console.log("post api observation submitted...",obseravation);
         return networkCallWithApisauce(
             this.api,
-            endPoints.observation,
-            {accessToken},
+            endPoints.postObservation,
+            {obseravation},
             apiMethods.get
         )
     }
 }
 
-export {ObservationApi};
+export {PostNewObservationApi};

@@ -1,22 +1,26 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { Typo14SteelHKGroteskRegular,Typo12DarkBlueGreyRubikMedium } 
-from '../../../common/styleGuide/Typos'
+import { Typo14SteelHKGroteskRegular, Typo12SteelHKGroteskSemiBold, Typo12DarkBlueGreyRubikMedium, Typo24DarkBlueGreyHKGroteskMedium }
+   from '../../../common/styleGuide/Typos'
 
-const BackToObservationsLink=styled(Typo14SteelHKGroteskRegular)`${tw`flex`}
+const BackToObservationsLink = styled(Typo14SteelHKGroteskRegular)`${tw`flex`}
    margin-bottom:34px;`;
-const FieldName=styled(Typo12DarkBlueGreyRubikMedium)`
+const FieldName = styled(Typo12DarkBlueGreyRubikMedium)`
    width:25%;
    margin-left:30px;
    `
    ;
+
+const ChatHeading = styled(Typo12SteelHKGroteskSemiBold)`
+`
+const Title = styled(Typo24DarkBlueGreyHKGroteskMedium)`
+padding-left:20px`
 const ObservationForm = styled.div`                                                                                                                                                                
    ${tw`flex flex-col`}
    width:80%;
    background-color:white;
    padding:42px 80px;
    margin:32px 0px;
-   
 `
 const DragAndDrop = styled.div`${tw``}
    width:25%;
@@ -30,14 +34,33 @@ const FieldContainer = styled.div`
    margin-bottom:48px;
    width:100%;
 `
-const Required=styled.span`
+const Required = styled.span`
 color:#ff0b37;
 font-size: 12px;`
-export { 
+const ButtonsDiv = styled.div`${tw`flex justify-center items-center`}`
+const RadioButtonsDiv = styled.div`${tw`flex`}
+margin-left:260px;
+margin-bottom:48px
+`
+const HeaderDiv = styled.div`${tw`flex `}
+margin-top:20px;
+width:1050px;
+border-bottom: 1px solid lightgrey;
+
+`
+const RadioLable = styled.label`
+margin-right:20px;`
+export {
    BackToObservationsLink,
    ObservationForm,
    FieldContainer,
    FieldName,
    DragAndDrop,
-   Required
-   }
+   Required,
+   Title,
+   ButtonsDiv,
+   RadioButtonsDiv,
+   RadioLable,
+   HeaderDiv,
+   ChatHeading
+}

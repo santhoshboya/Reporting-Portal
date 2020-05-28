@@ -4,5 +4,6 @@ export const apiMethods = {
 }
 export const apiUrls = {
   obseravationList:"https://9ba0cd3ggi.execute-api.ap-south-1.amazonaws.com/",
-  obseravation:"https://9ba0cd3ggi.execute-api.ap-south-1.amazonaws.com/"
+  obseravation:"https://9ba0cd3ggi.execute-api.ap-south-1.amazonaws.com/",
+  
 }

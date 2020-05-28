@@ -1,45 +1,52 @@
 {
-    "userFeatures":{
-        "reportingPortal":"Reporting Portal",
-        "listofObservations":"List of Observations",
-        "title":"TITLE",
-        "reportedOn":"REPORTED ON",
-        "assignedTo":"ASSIGNED TO",
-        "reportedBy":"REPORTED BY",
-        "severty":"SEVERTY",
-        "status":"STATUS",
-        "dueDate":"DUE DATE",
-        "messages":"MESSAGES",
-        "addNew":"ADD NEW"
-
-
+    "userFeatures": {
+        "reportingPortal": "Reporting Portal",
+        "listofObservations": "List of Observations",
+        "title": "TITLE",
+        "reportedOn": "REPORTED ON",
+        "assignedTo": "ASSIGNED TO",
+        "reportedBy": "REPORTED BY",
+        "severty": "SEVERTY",
+        "status": "STATUS",
+        "dueDate": "DUE DATE",
+        "messages": "MESSAGES",
+        "addNew": "ADD NEW"
     },
-    "usersScreen":{
-        "titleOfTheObservation":"TITLE OF THE OBSERVATION",
-        "backToObservations":"Back to observations",
-        "cateogary":"CATEOGARY",
-        "subCateogary":"SUB CATEOGARY",
-        "severity":"SEVERITY",
-        "description":"DESCRIPTION",
-        "attachments":"ATTACHMENTS",
-        "culturalDeviations":"Cultural Deviations",
-        "submit":"Submit"
-
+    "usersScreen": {
+        "titleOfTheObservation": "TITLE OF THE OBSERVATION",
+        "backToObservations": "Back to observations",
+        "cateogary": "CATEOGARY",
+        "subCateogary": "SUB CATEOGARY",
+        "severity": "SEVERITY",
+        "description": "DESCRIPTION",
+        "attachments": "ATTACHMENTS",
+        "culturalDeviations": "Cultural Deviations",
+        "submit": "Submit",
+        "status": "STATUS",
+        "update": "UPDATE",
+        "reset": "RESET",
+        "type": "type",
+        "publicBtn": "Public",
+        "privateBtn": "Private",
+        "reportedOn": "REPORTED ON",
+        "assignedTo": "ASSIGNED TO",
+        "dueDate": "DUE DATE",
+        "observation": "OBSERVATION",
+        "chat": "CHAT"
     },
-    "signUp":{
-        "hiTherePleaseSignUp":"Hi there, please sign up",
-        "userName":"USER NAME"
+    "signUp": {
+        "hiTherePleaseSignUp": "Hi there, please sign up",
+        "userName": "USER NAME"
     },
-    "logIn":{
-        "hiTherePleaseSignIn":"Hi there, please sign in",
-        "userName":"USER NAME",
-        "password":"PASSWORD",
-        "login":"LOGIN",
-        "doNotHaveAnAccount":"Don’t have an account?  ",
-        "signUp":"Signup",
-        "usernameAlreadyExits":"username already exits",
-        "incorrectPassword":"Incorrect password",
-        "logIn":"LOGIN"
+    "logIn": {
+        "hiTherePleaseSignIn": "Hi there, please sign in",
+        "userName": "USER NAME",
+        "password": "PASSWORD",
+        "login": "LOGIN",
+        "doNotHaveAnAccount": "Don’t have an account?  ",
+        "signUp": "Signup",
+        "usernameAlreadyExits": "username already exits",
+        "incorrectPassword": "Incorrect password",
+        "logIn": "LOGIN"
     }
-
 }

@@ -5,11 +5,11 @@ function Options(props) {
 }
 class DropDown extends Component {
    render() {
-      const { onSlectOption, options } = this.props
+      const { onSlectOption, options,value } = this.props
       return (
          <div>
-            <SelectElement onChange={onSlectOption}>
-               <SlectOptions value='select'> selectform</SlectOptions>
+            <SelectElement value={value} onChange={onSlectOption}>
+               <SlectOptions > selectform</SlectOptions>
                {options.map(option => (
                   <Options option={option} />
                ))}

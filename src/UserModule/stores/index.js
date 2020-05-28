@@ -1,5 +1,6 @@
 import { UserStore } from "./UserStore";
-import { ObservationListApi } from "../services/ObservationListApi/ObservationListApi";
-const observationListApi = new ObservationListApi();
-const userStore=new UserStore(observationListApi);
+
+import {ObservationApiService} from '../services/ObservationApiService/ObservationApiService'
+const observationApiService = new ObservationApiService();
+const userStore=new UserStore(observationApiService);
 export default {userStore};

@@ -1,4 +1,5 @@
 export const endPoints = {
     observationList: 'observationlist/',
-    observation: 'observation/'
+    observation: 'observation/',
+    postObservation: 'postobservation/'
  }
