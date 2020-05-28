@@ -22,10 +22,11 @@ class ObservationListItem extends Component {
          status,
          dueDate,
          messages,
-         src
+         src,
+         onClickObservation
       } = this.props
       return (
-         <TableRow>
+         <TableRow onClick={onClickObservation}>
             <TableData>
                <TableData>{title}</TableData>
             </TableData>

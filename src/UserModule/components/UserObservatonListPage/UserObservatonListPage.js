@@ -11,7 +11,7 @@ import { observer } from 'mobx-react'
 @observer
 class UserObservatonListPage extends Component {
     render() {
-        const { profilePic, username, handleClick, observationList } = this.props
+        const { profilePic, username, handleClick, observationList, onClickObservation } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew, listofObservations } = strings.userFeatures
         return (
             <DesktopLayoutMainPage>
@@ -28,7 +28,7 @@ class UserObservatonListPage extends Component {
 
                     {observationList.length > 0 &&
                         observationList.map(observation => {
-                            return <ObservationListItem
+                            return <ObservationListItem onClickObservation={onClickObservation}
                                 title={observation.title}
                                 reportedOn={observation.reportedOn}
                                 severty={observation.severty}
