@@ -38,7 +38,8 @@ const TableData = styled(Typo12SteelHKGroteskSemiBold)`${tw`flex justify-center`
 width:14%;
 `
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
-const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)``
+const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`
+paddind:3px;`
 export {
    TableRow,
    TableData,

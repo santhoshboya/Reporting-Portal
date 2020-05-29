@@ -47,6 +47,7 @@ class UserStore {
     }
     @action.bound
     getObservationList() {
+
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
         let accessToken = "";
         const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, accessToken);
@@ -68,8 +69,12 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
-        this.observationList = ObservationListResponse.observation_list.map(observation => new Observation(observation))
-        this.totalPages = Math.ceil(ObservationListResponse.total_No_Of_Observation / LIMIT);
+
+        this.totalPages = Math.ceil(ObservationListResponse[LIMIT] / LIMIT);
+        console.log(this.totalPages, ObservationListResponse[LIMIT])
+        ObservationListResponse.pop();
+        let offset = Math.ceil(LIMIT * (this.currentPage - 1))
+        this.observationList = ObservationListResponse.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;
     }
 

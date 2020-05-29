@@ -11,7 +11,11 @@ class ObservationFixtureService {
         return new Promise(resolve => resolve())
     }
     getObservationListApi(Limit, offeset, accessToken) {
-        return new Promise(resolve => resolve(getObservationsList))
+        let dataCopy = getObservationsList.observation_list.slice();
+        let data = dataCopy.splice(offeset, Limit);
+        data.push(getObservationsList.total_No_Of_Observation)
+        console.log("nk", data[Limit])
+        return new Promise(resolve => resolve(data))
     }
 }
 
