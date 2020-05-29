@@ -45,6 +45,7 @@ class SignInForm extends Component {
                   value={username}
                   onHandleChange={onChangeUsername}
                   errorMsg={useNameErrorMessage}
+                  placeHolder={"Username"}
                />
                <InputFieldWithLable
                   className={'sign-input-field'}
@@ -53,6 +54,7 @@ class SignInForm extends Component {
                   value={password}
                   onHandleChange={onChangePassword}
                   errorMsg={passwordErrorMessage}
+                  placeHolder={"Password"}
                />
                <PrimaryButton
                   className={'primary-button-large'}

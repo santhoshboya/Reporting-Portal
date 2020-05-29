@@ -10,23 +10,21 @@ import strings from '../../i18n/strings.json'
 import { Image } from '../Image'
 
 
-function TableHeadingDiv(props){
-   const {reportedOn,dueDate}=strings.userFeatures
-   if(props.heading===reportedOn || props.heading===dueDate)
-   {
-      return(
+function TableHeadingDiv(props) {
+   const { reportedOn, dueDate } = strings.userFeatures
+   if (props.heading === reportedOn || props.heading === dueDate) {
+      return (
          <TableHeading>
             <PersonTypeDiv>
                {props.heading}
-               <Image 
+               <Image
                   className={'Chevron-Down-2'}
-                  src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4b787319-5164-4ca3-8687-cf9f1603e3d3.svg"/>
+                  src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4b787319-5164-4ca3-8687-cf9f1603e3d3.svg" />
             </PersonTypeDiv>
          </TableHeading>
       );
    }
-   else
-   {
+   else {
       return <TableHeading>{props.heading}</TableHeading>
    }
 
@@ -38,7 +36,7 @@ class ObservationListHeader extends Component {
       } = this.props
       return (
          <TableRow>
-            {headings.map(heading=><TableHeadingDiv heading={heading} />)}
+            {headings.map(heading => <TableHeadingDiv key={Math.random()} heading={heading} />)}
          </TableRow>
       )
    }

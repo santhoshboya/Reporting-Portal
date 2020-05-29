@@ -63,6 +63,16 @@ const Typo12SteelHKGroteskSemiBold = styled.td`
    letter-spacing: 0.12px;
    color: ${colors.steel};
 `
+const Typo12SteelHKGroteskSemiBoldLable = styled.label`
+   font-family: HKGrotesk;
+   font-size: 12px;
+   font-weight: 600;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 1.33;
+   letter-spacing: 0.12px;
+   color: ${colors.steel};
+`
 const Typo14DarkBlueGreyHKGroteskSemiBold = styled.p`
    font-family: HKGrotesk;
    font-size: 14px;
@@ -147,7 +157,7 @@ line-height: 1.33;
 letter-spacing: normal;
 color: ${colors["dark-blue-grey"]};;
 `
-const Typo18BrightBlueHKGroteskBold=styled.p`
+const Typo18BrightBlueHKGroteskBold = styled.p`
    font-family: HKGrotesk;
   font-size: 18px;
   font-weight: bold;
@@ -157,7 +167,7 @@ const Typo18BrightBlueHKGroteskBold=styled.p`
   letter-spacing: normal;
   color: ${colors["bright-blue"]};`
 
-const Typo18steelHKGroteskRegular=styled.p`
+const Typo18steelHKGroteskRegular = styled.p`
 font-family: HKGrotesk;
   font-size: 18px;
   font-weight: normal;
@@ -167,7 +177,7 @@ font-family: HKGrotesk;
   letter-spacing: normal;
   color: ${colors.steel};`
 
-const Typo14SteelHKGroteskRegular=styled.p`
+const Typo14SteelHKGroteskRegular = styled.p`
 font-family: HKGrotesk;
 font-size: 14px;
 font-weight: normal;
@@ -177,7 +187,7 @@ line-height: 1.71;
 letter-spacing: normal;
 color: ${colors.steel};`
 
-const Typo12DarkBlueGreyRubikMedium=styled.p`
+const Typo12DarkBlueGreyRubikMedium = styled.p`
    font-family: Rubik;
    font-size: 12px;
    font-weight: 500;
@@ -205,5 +215,6 @@ export {
    Typo18BrightBlueHKGroteskBold,
    Typo18steelHKGroteskRegular,
    Typo14SteelHKGroteskRegular,
-   Typo12DarkBlueGreyRubikMedium
+   Typo12DarkBlueGreyRubikMedium,
+   Typo12SteelHKGroteskSemiBoldLable
 }

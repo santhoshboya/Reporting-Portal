@@ -11,7 +11,8 @@ class InputFieldWithLable extends Component {
          value,
          onHandleChange,
          errorMsg,
-         className
+         className,
+         placeHolder
       } = this.props
       return (
          <InputWithLableDiv className={className}>
@@ -20,6 +21,7 @@ class InputFieldWithLable extends Component {
                type={type}
                value={value}
                onHandleChange={onHandleChange}
+               placeHolder={placeHolder}
             ></InputField>
             <ErrorMsgField>{errorMsg}</ErrorMsgField>
          </InputWithLableDiv>
