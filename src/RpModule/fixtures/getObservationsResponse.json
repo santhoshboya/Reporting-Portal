@@ -3,7 +3,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -15,7 +15,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -27,7 +27,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -39,7 +39,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -51,7 +51,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -63,7 +63,7 @@
         {
             "title": "Santhosh",
             "reportedOn": "11/10/20",
-            "assignedTo": {
+            "reportedBy": {
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
@@ -73,6 +73,6 @@
             "messages": 4
         }
     ],
-    "total_No_Of_Observation": 20,
-    "user_type": "user"
+    "total_No_Of_Observation": 4,
+    "user_type": "rp"
 }

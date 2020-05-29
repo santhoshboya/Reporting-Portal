@@ -1,0 +1,17 @@
+{
+    "title": "Santhosh",
+    "cateogary": "Tech",
+    "subCateogary": "Management",
+    "severity": "HIGH",
+    "description": "description",
+    "reportedOn": "2018-07-22",
+    "attachments": [
+        1,
+        2
+    ],
+    "assignedTO": "Janardhan",
+    "status": "action in progress",
+    "dueDate": "2018-07-31",
+    "privacy": "privacy",
+    "user_type": "user"
+}

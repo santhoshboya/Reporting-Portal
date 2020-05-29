@@ -140,22 +140,12 @@ class UserStore {
     @action.bound
     goToPreviousPage() {
         this.currentPage--;
-        console.log(this.currentPage)
         this.getObservationList()
     }
 
     @action.bound
     goToNextPage() {
         this.currentPage++;
-        console.log(this.currentPage)
-        this.getObservationList();
-    }
-
-    @action.bound
-    goToRandomPage(event) {
-
-        this.currentPage = parseInt(event.target.value, 10);
-        console.log(this.currentPage)
         this.getObservationList();
     }
 }

@@ -32,10 +32,10 @@ class AuthStore {
 
    @action.bound
    setUserAuthAPIResponse(SignInAPIResponse) {
-      this.Access_token = SignInAPIResponse[0].access_token
+      this.Access_token = SignInAPIResponse.access_token
       setAccessToken(this.Access_token)
    }
-   
+
    @action.bound
    userSignIn(request, onSuccess, onFailure) {
       const signInPromise = this.authAPIService.signInAPI()

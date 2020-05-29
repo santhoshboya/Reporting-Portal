@@ -8,7 +8,6 @@ import {
     RadioLable, HeaderDiv, ChatHeading
 } from './styledComponent'
 import { Image } from '../Image'
-import { InputField } from '../InputField'
 import { DropDown } from '../DropDown'
 import { TextArea } from '../TextArea'
 import { PrimaryButton } from '../PrimaryButton'
@@ -19,22 +18,21 @@ import { SecondaryButton } from '../SecondaryButton'
 import { RadioButton } from '../RadioButton'
 
 
+
 @observer
 class ObservationScreen extends Component {
     render() {
-        const { onClickSubmit, title, cateogaryOfObservation,
-            subCateogaryOfObservation, severityOfObservation,
-            descriptionOfObservation, attachmentsOfObservation,
-            onChangeCateogary, onChangeSubCateogary,
-            onChangeSeverity, onChangeDescription, goBack,
-            severityErrorMsg, onReset, dueDateObsrvation,
-            reportedOnObservation } = this.props
+
+        const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
+            attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
+            onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription, reportedOnOfObservation,
+            goBack, onReset, userType } = this.props
 
 
         const {
             cateogary, severity, attachments, subCateogary,
             submit, status, reportedOn, assignedTo, dueDate,
-            reset, type, publicBtn, privateBtn, observation, chat
+            reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
         return (
             <DesktopLayoutMainPage>
@@ -48,7 +46,7 @@ class ObservationScreen extends Component {
                 </HeaderDiv>
                 <ObservationForm>
                     <BackToObservationsLink >
-                        <Image onClick={goBack} src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
+                        <Image onHandleClick={goBack} src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
                         <Title>{title}Title</Title>
                     </BackToObservationsLink>
 
@@ -60,26 +58,25 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown userType={userType} onSlectOption={() => { }} value={cateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown userType={userType} onSlectOption={() => { }} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {status}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                        <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation} options={["action in progress", 'pending', 'completed']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {severity}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
-                        {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
+                        <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -93,33 +90,35 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {assignedTo}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation} options={['PavanKumar', 'Janardhan', 'Sunny']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {reportedOn}
                         </FieldName>
-                        <DatePicker value={reportedOnObservation} />
+                        <DatePicker userType={userType} value={reportedOnOfObservation} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {dueDate}
                         </FieldName>
-                        <DatePicker value={dueDateObsrvation} />
+                        <DatePicker userType={userType} value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
                     </FieldContainer>
 
-                    <RadioButtonsDiv>
-                        <RadioButton className={'radio-btn'} name={type} />
-                        <RadioLable>{publicBtn}</RadioLable>
-                        <RadioButton className={'radio-btn'} name={type} />
-                        <RadioLable>{privateBtn}</RadioLable>
-                    </RadioButtonsDiv>
+                    {userType !== "user" &&
+                        <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
+                            <RadioButton className={'radio-btn'} name={type} value={publicBtn} />
+                            <RadioLable>{publicBtn}</RadioLable>
+                            <RadioButton className={'radio-btn'} name={type} value={privateBtn} />
+                            <RadioLable>{privateBtn}</RadioLable>
+                        </RadioButtonsDiv>}
+
 
                     <ButtonsDiv>
                         <SecondaryButton value={reset} handleClick={onReset} className={'reset-btn'} />
-                        <PrimaryButton value={submit} handleClick={onClickSubmit} className={'submit-btn'} />
+                        <PrimaryButton value={update} handleClick={onUpdate} className={'submit-btn'} />
 
                     </ButtonsDiv>
                 </ObservationForm>
