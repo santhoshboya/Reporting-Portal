@@ -40,7 +40,6 @@ class SignInForm extends Component {
                </GreetingMessage>
                <InputFieldWithLable
                   className={'sign-input-field'}
-                  lable={strings.logIn.userName}
                   type={'text'}
                   value={username}
                   onHandleChange={onChangeUsername}
@@ -49,7 +48,6 @@ class SignInForm extends Component {
                />
                <InputFieldWithLable
                   className={'sign-input-field'}
-                  lable={strings.logIn.password}
                   type={'password'}
                   value={password}
                   onHandleChange={onChangePassword}

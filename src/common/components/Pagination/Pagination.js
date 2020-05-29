@@ -8,25 +8,25 @@ class Pagination extends Component {
     getPageButtons = (currentPage, totalPages, goToRandomPage) => {
         if (totalPages < 5) {
             let arrayOfPages = Array.from({ length: totalPages }, (v, i) => i + 1)
-            return arrayOfPages.map(page => <CurrentPage onClick={goToRandomPage} value={page}>{page}</CurrentPage>)
+            return arrayOfPages.map(page => <CurrentPage key={Math.random()} onClick={goToRandomPage} value={page}>{page}</CurrentPage>)
         }
 
         else if (currentPage < totalPages - 4) {
             let arrayOfPages = [];
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={currentPage}>{currentPage}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={currentPage + 1}>{currentPage + 1}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={(totalPages - currentPage) / 2}>...</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={currentPage}>{currentPage}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={currentPage + 1}>{currentPage + 1}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={(totalPages - currentPage) / 2}>...</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
             return arrayOfPages;
         }
         else {
             let arrayOfPages = [];
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages - 4}>{totalPages - 4}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages - 3}>{totalPages - 3}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages - 2}>{totalPages - 2}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage onClick={goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages - 4}>{totalPages - 4}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages - 3}>{totalPages - 3}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages - 2}>{totalPages - 2}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage key={Math.random()} onClick={goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
             return arrayOfPages;
         }
 

@@ -4,22 +4,11 @@ import { Router, Route, withRouter } from "react-router-dom";
 import { Provider } from "mobx-react";
 import { createMemoryHistory } from "history";
 
-import {
-  API_SUCCESS,
-  API_FAILED,
-  API_FETCHING,
-  API_INITIAL
-} from "@ib/api-constants";
-
 import { AuthAPI } from '../../services/AuthService/AuthAPI'
 import { AuthStore } from '../../stores/AuthStore'
-
-
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
 
 import { SignInRoute } from '.'
-import { UserObservatonListRoute } from "../../../UserModule/routes/UserObservatonListRoue";
-
 
 const LocationDisplay = withRouter(({ location }) => (
   <div data-testid="location-display">{location.pathname}</div>
@@ -27,9 +16,6 @@ const LocationDisplay = withRouter(({ location }) => (
 
 const SIGN_IN_PATH = '/signin'
 const USER_OBSERVATION_LIST_PATH = '/userobservationslist'
-
-// const E_COMMERCE_PRODUCTS_PATH = "/ecommerce-store/products";
-// const E_COMMERCE_SIGN_IN_PATH = "/ecommerce-store/sign-in";
 
 describe("SigninRoute tests", () => {
   let authAPI;
@@ -107,9 +93,7 @@ describe("SigninRoute tests", () => {
       getByPlaceholderText,
       getByRole,
       queryByRole,
-      queryByLabelText,
-      getByTestId,
-      debug
+      getByTestId
     } = render(
       <Provider authStore={authStore}>
         <Router history={history}>

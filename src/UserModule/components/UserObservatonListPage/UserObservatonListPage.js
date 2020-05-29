@@ -4,7 +4,9 @@ import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutM
 import { PageHeader } from '../../../common/components/PageHeader'
 import { PrimaryLeftIconDefault } from '../../../common/components/PrimaryLeftIconDefault'
 import strings from '../../../common/i18n/strings.json'
-import { ObseravationsHeader, PageHeading, ObseravationsListTable } from './styledComponent'
+import {
+    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody
+} from './styledComponent'
 import { ObservationListHeader } from '../../../common/components/ObservationListHeader'
 import { ObservationListItem } from '../../../common/components/ObservationListItem'
 import { observer } from 'mobx-react'
@@ -25,21 +27,24 @@ class UserObservatonListPage extends Component {
                         src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
-                    <ObservationListHeader headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
-
-                    {observationList.length > 0 &&
-                        observationList.map(observation => {
-                            return <ObservationListItem onClickObservation={onClickObservation}
-                                title={observation.title}
-                                reportedOn={observation.reportedOn}
-                                severty={observation.severty}
-                                status={observation.status}
-                                dueDate={observation.dueDate}
-                                assignedTo={observation.assignedTo}
-                                src={
-                                    'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
-                                } />
-                        })}
+                    <TableHeader>
+                        <ObservationListHeader headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
+                    </TableHeader>
+                    <TableBody>
+                        {observationList.length > 0 &&
+                            observationList.map(observation => {
+                                return <ObservationListItem key={Math.random()} onClickObservation={onClickObservation}
+                                    title={observation.title}
+                                    reportedOn={observation.reportedOn}
+                                    severty={observation.severty}
+                                    status={observation.status}
+                                    dueDate={observation.dueDate}
+                                    assignedTo={observation.assignedTo}
+                                    src={
+                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
+                                    } />
+                            })}
+                    </TableBody>
 
 
                 </ObseravationsListTable>

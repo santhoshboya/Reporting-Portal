@@ -26,11 +26,12 @@ class UserObservatonListRoute extends Component {
     onClickAddNew = () => {
         const { history } = this.props
         history.push(USER_OBSERVATION_PATH)
+        console.log("hi")
     }
-    onSuccess() {
+    onSuccess = () => {
         alert("data recieved")
     }
-    onFailure() {
+    onFailure = () => {
         alert("data recieved")
     }
     onClickObservation = () => {

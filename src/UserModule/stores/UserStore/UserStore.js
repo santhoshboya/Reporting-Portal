@@ -54,6 +54,7 @@ class UserStore {
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setGetObservationListApiAPIStatus, this.setGetObservationListApiResponse)
             .catch(this.setGetObservationListApiAPIError);
+
     }
 
 
@@ -64,6 +65,7 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiAPIError(error) {
+        console.log(error)
         this.getObservationListAPIError = error;
     }
 
@@ -71,7 +73,7 @@ class UserStore {
     setGetObservationListApiResponse(ObservationListResponse) {
 
         this.totalPages = Math.ceil(ObservationListResponse[LIMIT] / LIMIT);
-        console.log(this.totalPages, ObservationListResponse[LIMIT])
+        console.log(ObservationListResponse)
         ObservationListResponse.pop();
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
         this.observationList = ObservationListResponse.map(observation => new Observation(observation))
@@ -88,8 +90,9 @@ class UserStore {
                 onSuccess()
             })
             .catch(error => {
+                console.log("userstore 93", onFailure)
                 this.setGetObservationApiAPIError(error)
-                onFailure();
+                //onFailure();
             })
     }
 
@@ -109,6 +112,10 @@ class UserStore {
         this.userType = ObservationResponse.user_type;
 
     }
+
+
+
+
 
 
     @action.bound
@@ -160,7 +167,6 @@ class UserStore {
     goToRandomPage(event) {
 
         this.currentPage = parseInt(event.target.value, 10);
-        console.log(this.currentPage)
         this.getObservationList();
     }
 }

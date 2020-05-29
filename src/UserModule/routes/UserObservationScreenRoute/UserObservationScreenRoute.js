@@ -52,10 +52,6 @@ class UserObservationScreenRoute extends Component {
         this.description = event.target.value
     }
 
-    @action.bound onUpdate() {
-
-    }
-
     @action.bound onReset() {
         this.init();
     }

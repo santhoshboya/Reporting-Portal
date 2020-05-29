@@ -27,7 +27,7 @@ class ObservationListItem extends Component {
       } = this.props
       let bgColor = (severty === "HIGH" ? "#ff0b37" : (severty === "LOW" ? "#2dca73" : "#ffb800"))
       return (
-         <TableRow onClick={onClickObservation}>
+         <TableRow data-testid="observation-list-item" onClick={onClickObservation}>
             <TableData>{title}</TableData>
             <TableData>{reportedOn}</TableData>
             <TableData>
