@@ -7,7 +7,7 @@
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
-            "severty": "High",
+            "severty": "LOW",
             "status": "action in progress",
             "dueDate": "16/10/20",
             "messages": 4
@@ -19,7 +19,7 @@
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
-            "severty": "High",
+            "severty": "HIGH",
             "status": "action in progress",
             "dueDate": "16/10/20",
             "messages": 4
@@ -31,7 +31,7 @@
                 "name": "Sai Ram",
                 "phone_no": "998988"
             },
-            "severty": "High",
+            "severty": "WARNING",
             "status": "action in progress",
             "dueDate": "16/10/20",
             "messages": 4

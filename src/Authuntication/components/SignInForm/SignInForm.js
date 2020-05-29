@@ -23,7 +23,8 @@ class SignInForm extends Component {
          passwordErrorMessage,
          onChangePassword,
          onClickSignIn,
-         onChangeUsername
+         onChangeUsername,
+         getUserAuthAPIStatus
       } = this.props
       return (
          <DesktopLayoutAuth>
@@ -57,6 +58,7 @@ class SignInForm extends Component {
                   className={'primary-button-large'}
                   value={strings.logIn.logIn}
                   handleClick={onClickSignIn}
+                  apiStatus={getUserAuthAPIStatus}
                />
                <SignUpLink>
                   {strings.logIn.doNotHaveAnAccount}

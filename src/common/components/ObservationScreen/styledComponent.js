@@ -34,6 +34,7 @@ const FieldContainer = styled.div`
    margin-bottom:48px;
    width:100%;
 `
+const Buttons = styled.div``
 const Required = styled.span`
 color:#ff0b37;
 font-size: 12px;`
@@ -62,5 +63,6 @@ export {
    RadioButtonsDiv,
    RadioLable,
    HeaderDiv,
-   ChatHeading
+   ChatHeading,
+   Buttons
 }

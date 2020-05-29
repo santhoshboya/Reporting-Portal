@@ -78,7 +78,9 @@ class UserObservationPage extends Component {
                         <FieldName>
                             {attachments}
                         </FieldName>
-                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} />
+                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} >
+                            <InputField type={"file"} />
+                        </DragAndDrop>
                     </FieldContainer>
                     <PrimaryButton value={submit} handleClick={onClickSubmit} className={'submit-btn'} />
                 </ObservationForm>

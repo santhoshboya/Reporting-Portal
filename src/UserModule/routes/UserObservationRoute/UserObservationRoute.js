@@ -76,6 +76,7 @@ class UserObservationRoute extends Component {
             description: this.description,
             attachments: this.attachments
         }
+        console.log(observation)
         this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
         this.init();
     }

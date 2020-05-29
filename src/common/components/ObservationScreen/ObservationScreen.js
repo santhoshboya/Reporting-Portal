@@ -5,7 +5,7 @@ import strings from '../../i18n/strings.json'
 import {
     ObservationForm, BackToObservationsLink, FieldContainer, ButtonsDiv,
     FieldName, DragAndDrop, Required, Title, RadioButtonsDiv,
-    RadioLable, HeaderDiv, ChatHeading
+    RadioLable, HeaderDiv, ChatHeading, Buttons
 } from './styledComponent'
 import { Image } from '../Image'
 import { DropDown } from '../DropDown'
@@ -31,6 +31,7 @@ class ObservationScreen extends Component {
 
         const {
             cateogary, severity, attachments, subCateogary,
+
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
@@ -108,19 +109,21 @@ class ObservationScreen extends Component {
                     </FieldContainer>
 
                     {userType !== "user" &&
-                        <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
-                            <RadioButton className={'radio-btn'} name={type} value={publicBtn} />
-                            <RadioLable>{publicBtn}</RadioLable>
-                            <RadioButton className={'radio-btn'} name={type} value={privateBtn} />
-                            <RadioLable>{privateBtn}</RadioLable>
-                        </RadioButtonsDiv>}
+                        <Buttons>
+                            <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
+                                <RadioButton className={'radio-btn'} name={type} value={publicBtn} />
+                                <RadioLable>{publicBtn}</RadioLable>
+                                <RadioButton className={'radio-btn'} name={type} value={privateBtn} />
+                                <RadioLable>{privateBtn}</RadioLable>
+                            </RadioButtonsDiv>}
 
 
-                    <ButtonsDiv>
-                        <SecondaryButton value={reset} handleClick={onReset} className={'reset-btn'} />
-                        <PrimaryButton value={update} handleClick={onUpdate} className={'submit-btn'} />
+                             <ButtonsDiv>
+                                <SecondaryButton value={reset} handleClick={onReset} className={'reset-btn'} />
+                                <PrimaryButton value={update} handleClick={onUpdate} className={'submit-btn'} />
 
-                    </ButtonsDiv>
+                            </ButtonsDiv>
+                        </Buttons>}
                 </ObservationForm>
 
             </DesktopLayoutMainPage>

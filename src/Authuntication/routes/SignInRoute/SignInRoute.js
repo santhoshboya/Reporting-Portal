@@ -1,5 +1,5 @@
 import React from 'react'
-import { observable, action} from 'mobx'
+import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
 
 import { SignInForm } from '../../components/SignInForm'
@@ -35,7 +35,6 @@ class SignInRoute extends React.Component {
       else if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
       else {
-         this.passwordErrorMessage = 'loading'
          this.handleOnclick()
       }
    }

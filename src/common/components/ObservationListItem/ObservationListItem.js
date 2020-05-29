@@ -23,27 +23,24 @@ class ObservationListItem extends Component {
          dueDate,
          messages,
          src,
-         onClickObservation
+         onClickObservation,
       } = this.props
+      let bgColor = (severty === "HIGH" ? "#ff0b37" : (severty === "LOW" ? "#2dca73" : "#ffb800"))
       return (
          <TableRow onClick={onClickObservation}>
-            <TableData>
-               <TableData>{title}</TableData>
-            </TableData>
-            <TableData>
-               <TableData>{reportedOn}</TableData>
-            </TableData>
+            <TableData>{title}</TableData>
+            <TableData>{reportedOn}</TableData>
             <TableData>
                <PersonDetails>
                   <Image src={src} className={'persons-xs'}></Image>
                   <PersonData>
-                     <TableData>{assignedTo.name}</TableData>
-                     <TableData>ph:{assignedTo.phone_no}</TableData>
+                     {assignedTo.name}<br />
+                     ph:{assignedTo.phone_no}
                   </PersonData>
                </PersonDetails>
             </TableData>
             <TableData>
-               <RectangleSeverity bgColor={'#ff0b37'}>
+               <RectangleSeverity bgColor={bgColor}>
                   <SevertyStatus>{severty}</SevertyStatus>
                </RectangleSeverity>
             </TableData>
@@ -52,9 +49,7 @@ class ObservationListItem extends Component {
                   <ObservationStatus>{status}</ObservationStatus>
                </RectangleActionStatus>
             </TableData>
-            <TableData>
-               <TableData>{dueDate}</TableData>
-            </TableData>
+            <TableData>{dueDate}</TableData>
             <TableData>
                <Image
                   className={'message-icon'}
