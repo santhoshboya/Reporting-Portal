@@ -1,3 +1,3 @@
-export const USER_OBSERVATION_LIST_PATH = '/userobservationslist/'
-export const USER_OBSERVATION_PATH = '/userobservation/'
-export const USER_OBSERVATION_SCREEN_PATH = '/userobservationscreen/'
+export const RP_OBSERVATION_LIST_PATH = '/rpobservationslist/'
+export const RP_OBSERVATION_PATH = '/rpobservation/'
+export const RP_OBSERVATION_SCREEN_PATH = '/rpobservationscreen/'

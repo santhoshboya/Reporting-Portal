@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { USER_OBSERVATION_LIST_PATH, USER_OBSERVATION_PATH, USER_OBSERVATION_SCREEN_PATH } from '../constants/RouteConstants'
-import { UserObservatonListRoute } from './UserObservatonListRoue'
-import { UserObservationRoute } from './UserObservationRoute'
-import { UserObservationScreenRoute } from './UserObservationScreenRoute'
+import { RP_OBSERVATION_LIST_PATH, RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH } from '../constants/RouteConstants'
+import { RpObservatonListRoute } from './RpObservatonListRoute'
+import { RpObservationRoute } from './RpObservationRoute'
+import { RpObservationScreenRoute } from './RpObservationScreenRoute'
 
 
-const userRoutes = [<Route path={USER_OBSERVATION_LIST_PATH} component={UserObservatonListRoute} />,
-<Route path={USER_OBSERVATION_PATH} component={UserObservationRoute} />,
-<Route path={USER_OBSERVATION_SCREEN_PATH} component={UserObservationScreenRoute} />]
+const rpRoutes = [<Route path={RP_OBSERVATION_LIST_PATH} component={RpObservatonListRoute} />,
+<Route path={RP_OBSERVATION_SCREEN_PATH} component={RpObservationScreenRoute} />,
+<Route path={RP_OBSERVATION_PATH} component={RpObservationRoute} />]
 
-export { userRoutes }
+export { rpRoutes }

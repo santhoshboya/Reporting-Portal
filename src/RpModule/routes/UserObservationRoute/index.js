@@ -1,1 +1,0 @@
-export { UserObservationRoute } from "./UserObservationRoute";

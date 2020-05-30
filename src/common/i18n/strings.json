@@ -48,5 +48,22 @@
         "usernameAlreadyExits": "username already exits",
         "incorrectPassword": "Incorrect password",
         "logIn": "LOGIN"
+    },
+    "rpFeatures": {
+        "reportingPortal": "Reporting Portal",
+        "ObservationsAssignedTOMe": "Observations Assigned To Me",
+        "title": "TITLE",
+        "reportedOn": "REPORTED ON",
+        "assignedTo": "ASSIGNED TO",
+        "reportedBy": "REPORTED BY",
+        "severty": "SEVERTY",
+        "status": "STATUS",
+        "dueDate": "DUE DATE",
+        "messages": "MESSAGES",
+        "addNew": "ADD NEW",
+        "all": "ALL",
+        "acknowledgedbyRp": "Acknowledged by Rp",
+        "resolved": "Resolved",
+        "closed": "Closed"
     }
 }

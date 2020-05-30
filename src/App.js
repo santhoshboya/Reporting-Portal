@@ -9,6 +9,7 @@ import './App.css'
 import { Check } from './common/components'
 import { authRoutes } from './Authuntication/routes'
 import { userRoutes } from './UserModule/routes'
+import { rpRoutes } from './RpModule/routes'
 import authStore from './Authuntication/stores'
 import userStore from './UserModule/stores'
 
@@ -26,6 +27,7 @@ class App extends Component {
                   </Route>
                   {authRoutes}
                   {userRoutes}
+                  {rpRoutes}
                   <Route path='/'>
                      <HomePage />
                   </Route>

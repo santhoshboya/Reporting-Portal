@@ -5,18 +5,20 @@ import { withRouter } from 'react-router-dom';
 import { ObservationScreen } from '../../../common/components/ObservationScreen';
 @inject("userStore")
 @observer
-class UserObservationScreenRoute extends Component {
-    @observable titleOfTheObservation = null;
-    @observable description = null;
-    @observable cateogary = null;
-    @observable subCateogary = null;
-    @observable status = null;
-    @observable severity = null;
-    @observable attachments = null;
-    @observable assignedTO = null;
-    @observable reportedOn = null;
+class RpObservationScreenRoute extends Component {
+
     @observable dueDate = null;
     @observable privacy = null;
+    @observable status = null;
+    @observable severity = null;
+    @observable description = null;
+    @observable assignedTO = null;
+    cateogary = null;
+    subCateogary = null;
+    titleOfTheObservation = null;
+    attachments = null;
+    reportedOn = null;
+
     constructor(props) {
         super(props);
         this.init();
@@ -56,10 +58,10 @@ class UserObservationScreenRoute extends Component {
         this.init();
     }
     goBack = () => {
-        this.props.history.push('/userobservationslist')
+        this.props.history.goBack()
     }
-    onSuccess() {
-        alert("observation submitted successfully...")
+    onUpdate() {
+        alert("observation updated successfully...")
     }
     onFailure() {
         alert("something went wrong pls try again...")
@@ -97,5 +99,5 @@ class UserObservationScreenRoute extends Component {
         )
     }
 }
-withRouter(UserObservationScreenRoute)
-export { UserObservationScreenRoute }
+withRouter(RpObservationScreenRoute)
+export { RpObservationScreenRoute }

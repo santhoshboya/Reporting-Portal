@@ -1,0 +1,1 @@
+export { RpObservationRoute } from "./RpObservationRoute";

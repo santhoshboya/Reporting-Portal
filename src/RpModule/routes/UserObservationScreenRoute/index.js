@@ -1,1 +1,0 @@
-export { UserObservationScreenRoute } from './UserObservationScreenRoute'

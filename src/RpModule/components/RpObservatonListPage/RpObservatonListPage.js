@@ -1,36 +1,36 @@
 import React, { Component } from 'react'
-import './index.css'
+import { observer } from 'mobx-react'
+
 import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutMainPage'
-import { PageHeader } from '../../../common/components/PageHeader'
 import { PrimaryLeftIconDefault } from '../../../common/components/PrimaryLeftIconDefault'
 import strings from '../../../common/i18n/strings.json'
+import { ObservationListHeader } from '../../../common/components/ObservationListHeader'
+import { ObservationListItem } from '../../../common/components/ObservationListItem'
+import { Pagination } from '../../../common/components/Pagination'
+
+import './index.css'
 import {
     ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody
 } from './styledComponent'
-import { ObservationListHeader } from '../../../common/components/ObservationListHeader'
-import { ObservationListItem } from '../../../common/components/ObservationListItem'
-import { observer } from 'mobx-react'
-import { Pagination } from '../../../common/components/Pagination'
+import { DropDown } from '../../../common/components/DropDown'
+
 @observer
-class UserObservatonListPage extends Component {
+class RpObservatonListPage extends Component {
     render() {
-        const { handleClick, observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage, goToRandomPage } = this.props
-        const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew, listofObservations } = strings.userFeatures
+        const { observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage, goToRandomPage, userType } = this.props
+        const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe, closed, all, acknowledgedbyRp, resolved } = strings.rpFeatures
         console.log(observationList);
 
         return (
-            <DesktopLayoutMainPage>
+            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={["Assigned to me", 'My observations']} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
                 <ObseravationsHeader>
-                    <PageHeading>{listofObservations}</PageHeading>
-                    <PrimaryLeftIconDefault
-                        className={'Primary-Left-IconDefault'}
-                        value={addNew}
-                        handleClick={handleClick}
-                        src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
+                    <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
+
+                    <DropDown onSlectOption={() => { }} className={'flter-Drop-Down'} options={[all, acknowledgedbyRp, resolved, closed]} value={all} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
-                        <ObservationListHeader headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
+                        <ObservationListHeader headings={[title, reportedOn, reportedBy, severty, status, dueDate, messages]} />
                     </TableHeader>
                     <TableBody>
                         {observationList.length > 0 &&
@@ -61,4 +61,4 @@ class UserObservatonListPage extends Component {
         )
     }
 }
-export { UserObservatonListPage }
+export { RpObservatonListPage }

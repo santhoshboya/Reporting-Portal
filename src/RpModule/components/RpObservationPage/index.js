@@ -1,0 +1,1 @@
+export { RpObservationPage } from "./RpObservationPage";

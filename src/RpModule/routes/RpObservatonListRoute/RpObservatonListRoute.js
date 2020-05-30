@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import { UserObservatonListPage } from '../../components/RpObservatonListPage'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
-import { USER_OBSERVATION_PATH, USER_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
-
+import { RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
+import { RpObservatonListPage } from '../../components/RpObservatonListPage'
 
 @inject("authStore", "userStore")
 @observer
-class UserObservatonListRoute extends Component {
+class RpObservatonListRoute extends Component {
     constructor(props) {
         super(props);
     }
@@ -25,7 +24,7 @@ class UserObservatonListRoute extends Component {
     }
     onClickAddNew = () => {
         const { history } = this.props
-        history.push(USER_OBSERVATION_PATH)
+        history.push(RP_OBSERVATION_PATH)
     }
     onSuccess = () => {
         alert("data recieved")
@@ -36,29 +35,25 @@ class UserObservatonListRoute extends Component {
     onClickObservation = (observationId) => {
         this.getUserStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
-        history.push(`${USER_OBSERVATION_SCREEN_PATH}${observationId}`);
+        history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
     render() {
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage } = this.getUserStore();
-        const username = "Santhosh";
-        const profilePic = ""
-
+        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getUserStore();
         return (
-            <UserObservatonListPage
+            <RpObservatonListPage
                 handleClick={this.onClickAddNew}
                 observationList={observationList}
-                username={username}
-                profilePic={profilePic}
                 onClickObservation={this.onClickObservation}
                 goToPreviousPage={goToPreviousPage}
                 goToNextPage={goToNextPage}
                 currentPage={currentPage}
                 totalPages={totalPages}
                 goToRandomPage={goToRandomPage}
+                userType={userType}
 
             />
         )
     }
 }
-withRouter(UserObservatonListRoute)
-export { UserObservatonListRoute }
+withRouter(RpObservatonListRoute)
+export { RpObservatonListRoute }

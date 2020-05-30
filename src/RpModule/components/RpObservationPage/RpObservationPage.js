@@ -18,7 +18,7 @@ import './index.css'
 
 
 @observer
-class UserObservationPage extends Component {
+class RpObservationPage extends Component {
     render() {
         const { onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
             descriptionOfObservation, attachmentsOfObservation,
@@ -99,4 +99,4 @@ class UserObservationPage extends Component {
         )
     }
 }
-export { UserObservationPage }
+export { RpObservationPage }

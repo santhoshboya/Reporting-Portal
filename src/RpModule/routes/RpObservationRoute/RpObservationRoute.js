@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { UserObservationPage } from '../../components/UserObservationPage'
+import { RpObservationPage } from '../../components/RpObservationPage'
 import { observable, action } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 @inject("userStore")
 @observer
-class UserObservationRoute extends Component {
+class RpObservationRoute extends Component {
 
     @observable titleOfTheObservation = null;
     @observable cateogary = null;
@@ -65,7 +65,7 @@ class UserObservationRoute extends Component {
             this.descriptionErrorMsg = ''
     }
 
-    @action.bound onHandliErrorMsg() {
+    @action.bound onHandleErrorMsg() {
 
         this.titleErrorMsg = ''
         this.severityErrorMsg = ''
@@ -82,7 +82,7 @@ class UserObservationRoute extends Component {
 
 
     @action.bound onClickSubmit() {
-        if (this.onHandliErrorMsg()) {
+        if (this.onHandleErrorMsg()) {
             this.props.userStore.getPostObservationAPIStatus = 100;
             setTimeout(() => {
                 const observation = {
@@ -115,7 +115,7 @@ class UserObservationRoute extends Component {
     render() {
         const { getPostObservationAPIStatus } = this.props.userStore
         return (
-            <UserObservationPage
+            <RpObservationPage
                 title={this.titleOfTheObservation}
                 cateogaryOfObservation={this.cateogary}
                 subCateogaryOfObservation={this.subCateogary}
@@ -137,5 +137,5 @@ class UserObservationRoute extends Component {
         )
     }
 }
-withRouter(UserObservationPage)
-export { UserObservationRoute }
+withRouter(RpObservationRoute)
+export { RpObservationRoute }

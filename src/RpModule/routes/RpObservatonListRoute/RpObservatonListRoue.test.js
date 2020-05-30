@@ -6,7 +6,7 @@ import { createMemoryHistory } from "history";
 
 
 import { ObservationFixtureService } from "../../services/ObservationFixtureService/ObservationFixtureService";
-import { UserObservatonListRoute } from "./UserObservatonListRoute";
+import { RpObservatonListRoute } from "./RpObservatonListRoute";
 import { UserStore } from "../../stores/UserStore";
 import getObservationResponse from '../../fixtures/getObservationResponse.json'
 
