@@ -4,10 +4,10 @@ import { PageHeader } from '../PageHeader'
 
 class DesktopLayoutMainPage extends Component {
    render() {
-      return <DesktopLayoutMainPageDiv>
+      return (<DesktopLayoutMainPageDiv>
          <PageHeader />
          {this.props.children}
-      </DesktopLayoutMainPageDiv>
+      </DesktopLayoutMainPageDiv>);
    }
 }
 export { DesktopLayoutMainPage }

@@ -14,8 +14,6 @@ class ObservationFixtureService {
         let dataCopy = getObservationsList.observation_list.slice();
         let data = dataCopy.splice(offeset, Limit);
         data.push(getObservationsList.total_No_Of_Observation)
-        console.log("object", data)
-        //console.log("mjio", new Promise(resolve => resolve(data)));
         return new Promise(resolve => resolve(data))
     }
 }

@@ -99,11 +99,3 @@ class UserObservationScreenRoute extends Component {
 }
 withRouter(UserObservationScreenRoute)
 export { UserObservationScreenRoute }
-
-
-
-//description
-//status
-//assignedto
-//duedate
-//public/private

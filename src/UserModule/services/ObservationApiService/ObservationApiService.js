@@ -18,7 +18,6 @@ class ObservationApiService {
             { requestObject },
             apiMethods.get
         )
-        //return new Promise(resolve => resolve(getObservation))
     }
     postObservationApi(obseravation) {
         console.log("post api observation submitted...", obseravation);
@@ -37,7 +36,6 @@ class ObservationApiService {
             { accessToken },
             apiMethods.get
         )
-        //return new Promise(resolve => resolve(getObservationsList))
     }
 }
 

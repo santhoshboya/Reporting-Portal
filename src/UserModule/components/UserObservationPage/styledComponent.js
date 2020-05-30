@@ -5,11 +5,13 @@ import { Typo14SteelHKGroteskRegular, Typo12DarkBlueGreyRubikMedium }
 
 const BackToObservationsLink = styled(Typo14SteelHKGroteskRegular)`${tw`flex`}
    margin-bottom:34px;`;
+
 const FieldName = styled(Typo12DarkBlueGreyRubikMedium)`
    width:25%;
    margin-left:30px;
-   `
-   ;
+   `;
+
+
 const ObservationForm = styled.div`                                                                                                                                                                
    ${tw`flex flex-col`}
    width:80%;
@@ -34,6 +36,7 @@ const FieldContainer = styled.div`
 const Required = styled.span`
 color:#ff0b37;
 font-size: 12px;`
+
 export {
    BackToObservationsLink,
    ObservationForm,

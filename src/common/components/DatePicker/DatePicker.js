@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { DatePickerElement } from './styledComponent'
+
 class DatePicker extends Component {
    render() {
       const { value, onChangeDate, userType } = this.props

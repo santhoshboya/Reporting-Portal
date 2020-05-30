@@ -1,0 +1,29 @@
+1.Minor mistakes in UI
+    Padding,Width,Overflow,Positions
+
+2.Edge cases in Functionality
+    Pagination logic 
+3.Hard codes 
+    like using Strings in some areas
+4.Completing Task in time and setting goals.
+    Measuring time to complete the Task.
+5.Planning Task To complete in day.
+6.Making Better Elp Before entering into code.
+7.Deviding Common components in Entire Projects.
+8.Mainting fixture Data and Api Data Same.
+9.We need to decide data structure with backend.
+    Data structure,keys in object,Api calls
+10.Observing common mistakes in UI.
+    properties of html fields.
+11. don't do operation on fixture data.
+    push,pop
+12.Using third party libraries for UI.
+    dropdown,toast
+13.I need to concentrate on Testcases.
+14.Mainting Exat UI in Zeplin Screens.
+15.Using Story book for component Testing.
+16. functional components in render
+
+
+
+

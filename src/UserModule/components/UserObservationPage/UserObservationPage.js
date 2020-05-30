@@ -15,7 +15,7 @@ import { observer } from 'mobx-react'
 @observer
 class UserObservationPage extends Component {
     render() {
-        const { profilePic, username, onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
+        const { onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
             descriptionOfObservation, attachmentsOfObservation,
             onChangeTitleOfTheObservation, onChangeCateogary, onChangeSubCateogary,
             onChangeSeverity, onChangeDescription, goBack,
@@ -52,7 +52,6 @@ class UserObservationPage extends Component {
                             {subCateogary}
                         </FieldName>
                         <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
-
                     </FieldContainer>
 
                     <FieldContainer>
@@ -82,6 +81,7 @@ class UserObservationPage extends Component {
                             <InputField type={"file"} />
                         </DragAndDrop>
                     </FieldContainer>
+
                     <PrimaryButton value={submit} handleClick={onClickSubmit} className={'submit-btn'} />
                 </ObservationForm>
 
