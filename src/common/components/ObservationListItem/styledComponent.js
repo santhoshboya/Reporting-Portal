@@ -29,15 +29,19 @@ const RectangleActionStatus = styled.div`
    background-color: white;
 `
 const PersonDetails = styled.div`
-   ${tw`flex justify-around`}
+   ${tw`flex justify-center`}
    width:100%;
 `
 const PersonData = styled.div`
    ${tw`flex flex-col `}
+   margin-left:10px;
   ;
 `
-const TableData = styled(Typo12SteelHKGroteskSemiBold)`${tw`flex justify-center`}
+const TableData = styled(Typo12SteelHKGroteskSemiBold)`${tw`flex justify-center items-center`}
 width:14%;
+height:64px;
+overflow:auto;
+;
 `
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
 const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`;`

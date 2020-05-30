@@ -41,18 +41,24 @@ class SignInForm extends Component {
                <InputFieldWithLable
                   className={'sign-input-field'}
                   type={'text'}
+                  lable={strings.logIn.userName}
                   value={username}
                   onHandleChange={onChangeUsername}
                   errorMsg={useNameErrorMessage}
                   placeHolder={"Username"}
+                  errorIconClassName={'error-icon'}
+                  inputClassName={useNameErrorMessage !== "" ? "error-input-element" : "input-element"}
                />
                <InputFieldWithLable
                   className={'sign-input-field'}
                   type={'password'}
                   value={password}
+                  lable={strings.logIn.password}
                   onHandleChange={onChangePassword}
                   errorMsg={passwordErrorMessage}
                   placeHolder={"Password"}
+                  errorIconClassName={'error-icon'}
+                  inputClassName={passwordErrorMessage !== "" ? "error-input-element" : "input-element"}
                />
                <PrimaryButton
                   className={'primary-button-large'}
@@ -60,9 +66,9 @@ class SignInForm extends Component {
                   handleClick={onClickSignIn}
                   apiStatus={getUserAuthAPIStatus}
                />
-               <SignUpLink>
+               <SignUpLink >
                   {strings.logIn.doNotHaveAnAccount}
-                  <SignUpSpan>{strings.logIn.signUp}</SignUpSpan>
+                  <SignUpSpan href={'/signin'}>{strings.logIn.signUp}</SignUpSpan>
                </SignUpLink>
             </SignInFornDiv>
          </DesktopLayoutAuth>

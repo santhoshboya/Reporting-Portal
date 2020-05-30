@@ -1,13 +1,13 @@
 [
     {
-        "title": "Santhoshkmikjmikjmikpnjmolubnhuiovghyigb/ipnjpijmkpo;kmpo[k,mop;lnjmi",
+        "title": "Santhos",
         "reportedOn": "11/10/2020/12:15pm",
         "assignedTo": {
             "name": "Sai Ram",
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "11/10/2020/12:15pm",
         "messages": 4
     },
@@ -19,7 +19,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -31,7 +31,7 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -43,7 +43,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -55,7 +55,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -67,7 +67,7 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -79,7 +79,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -91,7 +91,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -103,7 +103,7 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -115,7 +115,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -127,7 +127,7 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -139,7 +139,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -151,7 +151,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -163,7 +163,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -175,7 +175,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -187,7 +187,7 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -199,7 +199,7 @@
             "phone_no": "998988"
         },
         "severty": "LOW",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -211,7 +211,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -223,7 +223,7 @@
             "phone_no": "998988"
         },
         "severty": "HIGH",
-        "status": "completed",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -235,7 +235,19 @@
             "phone_no": "998988"
         },
         "severty": "WARNING",
-        "status": "action in progress",
+        "status": "ACTION IN PROGRESS",
+        "dueDate": "16/10/2020/12:15pm",
+        "messages": 4
+    },
+    {
+        "title": "Santhoshjijmiomnjiuk",
+        "reportedOn": "11/10/2020/12:15pm",
+        "assignedTo": {
+            "name": "Sai Ram",
+            "phone_no": "998988"
+        },
+        "severty": "LOW",
+        "status": "COMPLETED",
         "dueDate": "16/10/2020/12:15pm",
         "messages": 4
     },
@@ -246,22 +258,10 @@
             "name": "Sai Ram",
             "phone_no": "998988"
         },
-        "severty": "HIGH",
-        "status": "completed",
-        "dueDate": "16/10/2020/12:15pm",
-        "messages": 4
-    },
-    {
-        "title": "Santhosh",
-        "reportedOn": "11/10/2020/12:15pm",
-        "assignedTo": {
-            "name": "Sai Ram",
-            "phone_no": "998988"
-        },
-        "severty": "HIGH",
-        "status": "action in progress",
+        "severty": "LOW",
+        "status": "ACTION IN PROGRESS",
         "dueDate": "16/10/20",
         "messages": 4
     },
-    20
+    22
 ]

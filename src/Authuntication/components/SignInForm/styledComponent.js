@@ -10,9 +10,9 @@ const SignInFornDiv = styled.div`
    width: 536px;
    height: 687px;
    background-color: ${colors.white};
-   height: 75%;
+   height: 80%;
 `
-const SignUpSpan = styled.span`
+const SignUpSpan = styled.a`
    color: ${colors['bright-blue']};
 `
 const GreetingMessage = styled(Typo32DarkBlueGreyRubikRegular)`

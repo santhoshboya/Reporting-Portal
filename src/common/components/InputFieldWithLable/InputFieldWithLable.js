@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { LableTag, InputWithLableDiv, ErrorMsgField } from './styledComponents'
 import strings from '../../i18n/strings.json'
 import { InputField } from '../InputField/InputField'
-InputField
+import { ErrorIcon } from '../ErrorIcon'
+
 class InputFieldWithLable extends Component {
    render() {
       const {
@@ -12,7 +13,9 @@ class InputFieldWithLable extends Component {
          onHandleChange,
          errorMsg,
          className,
-         placeHolder
+         placeHolder,
+         errorIconClassName,
+         inputClassName
       } = this.props
       return (
          <InputWithLableDiv className={className}>
@@ -22,7 +25,12 @@ class InputFieldWithLable extends Component {
                value={value}
                onHandleChange={onHandleChange}
                placeHolder={placeHolder}
-            ></InputField>
+               className={inputClassName}
+            >
+
+            </InputField>
+            {errorMsg !== '' &&
+               <ErrorIcon className={errorIconClassName} />}
             <ErrorMsgField>{errorMsg}</ErrorMsgField>
          </InputWithLableDiv>
       )

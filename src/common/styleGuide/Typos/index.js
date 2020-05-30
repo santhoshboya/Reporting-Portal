@@ -62,6 +62,7 @@ const Typo12SteelHKGroteskSemiBold = styled.td`
    line-height: 1.33;
    letter-spacing: 0.12px;
    color: ${colors.steel};
+   
 `
 const Typo12SteelHKGroteskSemiBoldLable = styled.label`
    font-family: HKGrotesk;

@@ -2,7 +2,7 @@ import { observable, action, computed, toJS } from "mobx"
 import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
-const LIMIT = 4;
+const LIMIT = 2;
 
 class UserStore {
     @observable userType;
@@ -72,15 +72,12 @@ class UserStore {
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
 
-        this.totalPages = Math.ceil(ObservationListResponse[LIMIT] / LIMIT);
-        console.log(ObservationListResponse)
+        this.totalPages = Math.ceil(ObservationListResponse[ObservationListResponse.length - 1] / LIMIT);
         ObservationListResponse.pop();
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
         this.observationList = ObservationListResponse.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;
     }
-
-
     @action.bound
     getObservation(requestObject, onSuccess, onFailure) {
         const observationPromise = this.userObservationAPIService.getObservationApi(requestObject)
@@ -90,9 +87,8 @@ class UserStore {
                 onSuccess()
             })
             .catch(error => {
-                console.log("userstore 93", onFailure)
                 this.setGetObservationApiAPIError(error)
-                //onFailure();
+                onFailure();
             })
     }
 
@@ -165,7 +161,6 @@ class UserStore {
 
     @action.bound
     goToRandomPage(event) {
-
         this.currentPage = parseInt(event.target.value, 10);
         this.getObservationList();
     }

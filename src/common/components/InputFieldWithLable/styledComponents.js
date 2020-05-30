@@ -6,6 +6,7 @@ import {
    Typo12NeonRedHKGrotesk
 } from '../../styleGuide/Typos'
 const LableTag = styled(Typo12SteelHKGroteskSemiBoldLable)``
-const ErrorMsgField = styled(Typo12NeonRedHKGrotesk)``
-const InputWithLableDiv = styled.div``
+const ErrorMsgField = styled(Typo12NeonRedHKGrotesk)`
+height: 16px;`
+const InputWithLableDiv = styled.div`flex flex-col`
 export { LableTag, InputWithLableDiv, ErrorMsgField }

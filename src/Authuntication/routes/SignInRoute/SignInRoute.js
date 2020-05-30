@@ -32,9 +32,9 @@ class SignInRoute extends React.Component {
       this.passwordErrorMessage = ''
       if (this.username === '')
          this.useNameErrorMessage = 'Please enter username'
-      else if (this.password === '')
+      if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
-      else {
+      if (this.username !== '' && this.password !== '') {
          this.handleOnclick()
       }
    }
