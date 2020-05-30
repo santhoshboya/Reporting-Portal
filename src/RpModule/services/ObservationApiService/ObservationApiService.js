@@ -12,13 +12,12 @@ class ObservationApiService {
         })
     }
     getObservationApi(requestObject) {
-        // return networkCallWithApisauce(
-        //     this.api,
-        //     endPoints.observation,
-        //     { requestObject },
-        //     apiMethods.get
-        // )
-        return new Promise(resolve => resolve(getObservation))
+        return networkCallWithApisauce(
+            this.api,
+            endPoints.observation,
+            { requestObject },
+            apiMethods.get
+        )
     }
     postObservationApi(obseravation) {
         console.log("post api observation submitted...", obseravation);
@@ -31,13 +30,12 @@ class ObservationApiService {
     }
     getObservationListApi(Limit, offeset, accessToken) {
         let endPoint = `${endPoints.obseravationList}?limit=${Limit}&offset=${offeset}`
-        // return networkCallWithApisauce(
-        //     this.api,
-        //     endPoint,
-        //     {accessToken},
-        //     apiMethods.get
-        // )
-        return new Promise(resolve => resolve(getObservationsList))
+        return networkCallWithApisauce(
+            this.api,
+            endPoint,
+            { accessToken },
+            apiMethods.get
+        )
     }
 }
 

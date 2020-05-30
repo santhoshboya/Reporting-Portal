@@ -1,1 +1,0 @@
-export { UserObservatonListRoute } from "./RpObservatonListRoute";

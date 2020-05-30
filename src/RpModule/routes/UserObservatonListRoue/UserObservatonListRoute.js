@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { UserObservatonListPage } from '../../components/UserObservatonListPage'
+import { UserObservatonListPage } from '../../components/RpObservatonListPage'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import { USER_OBSERVATION_PATH, USER_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'

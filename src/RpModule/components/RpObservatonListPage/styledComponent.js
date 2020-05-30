@@ -4,7 +4,7 @@ import {
    Typo32BrightBlueHKGroteskMedium
 
 } from '../../../common/styleGuide/Typos'
-const PageHeading=styled(Typo32BrightBlueHKGroteskMedium)``;
+const PageHeading = styled(Typo32BrightBlueHKGroteskMedium)``;
 
 const ObseravationsHeader = styled.div`                                                                                                                                                                
    ${tw`flex items-center justify-between`}
@@ -13,10 +13,13 @@ const ObseravationsHeader = styled.div`
 `
 const ObseravationsListTable = styled.table`                                                                                                                                                                
    ${tw``}
-   
 `
-export { 
+const TableHeader = styled.thead``
+const TableBody = styled.tbody``
+export {
    PageHeading,
    ObseravationsHeader,
-   ObseravationsListTable
-   }
+   ObseravationsListTable,
+   TableHeader,
+   TableBody
+}

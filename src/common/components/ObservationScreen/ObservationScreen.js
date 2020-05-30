@@ -5,7 +5,7 @@ import strings from '../../i18n/strings.json'
 import {
     ObservationForm, BackToObservationsLink, FieldContainer, ButtonsDiv,
     FieldName, DragAndDrop, Required, Title, RadioButtonsDiv,
-    RadioLable, HeaderDiv, ChatHeading, Buttons
+    RadioLable, HeaderDiv, ChatHeading, Buttons, ObsertationDiv
 } from './styledComponent'
 import { Image } from '../Image'
 import { DropDown } from '../DropDown'
@@ -31,24 +31,23 @@ class ObservationScreen extends Component {
 
         const {
             cateogary, severity, attachments, subCateogary,
-
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
         return (
             <DesktopLayoutMainPage>
                 <HeaderDiv >
-                    <FieldName>
+                    <ObsertationDiv>
                         {observation}
-                    </FieldName>
+                    </ObsertationDiv>
                     <ChatHeading>
                         {chat}
                     </ChatHeading>
                 </HeaderDiv>
                 <ObservationForm>
                     <BackToObservationsLink >
-                        <Image onHandleClick={goBack} src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
-                        <Title>{title}Title</Title>
+                        <Image className={'goback'} onHandleClick={goBack} src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
+                        <Title>{title}</Title>
                     </BackToObservationsLink>
 
                     <FieldContainer>
@@ -115,10 +114,10 @@ class ObservationScreen extends Component {
                                 <RadioLable>{publicBtn}</RadioLable>
                                 <RadioButton className={'radio-btn'} name={type} value={privateBtn} />
                                 <RadioLable>{privateBtn}</RadioLable>
-                            </RadioButtonsDiv>}
+                            </RadioButtonsDiv>
 
 
-                             <ButtonsDiv>
+                            <ButtonsDiv>
                                 <SecondaryButton value={reset} handleClick={onReset} className={'reset-btn'} />
                                 <PrimaryButton value={update} handleClick={onUpdate} className={'submit-btn'} />
 

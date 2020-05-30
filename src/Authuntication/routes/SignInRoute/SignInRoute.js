@@ -14,10 +14,18 @@ class SignInRoute extends React.Component {
 
    @action.bound onChangeUsername(event) {
       this.username = event.target.value
+      if (this.username === '')
+         this.useNameErrorMessage = 'Please enter username'
+      else
+         this.useNameErrorMessage = ''
    }
 
    @action.bound onChangePassword(event) {
       this.password = event.target.value
+      if (this.password === '')
+         this.passwordErrorMessage = 'Please enter password'
+      else
+         this.passwordErrorMessage = ''
    }
 
    @action.bound onFailure() {
@@ -27,7 +35,7 @@ class SignInRoute extends React.Component {
       }
    }
 
-   @action.bound onClickSignIn() {
+   @action.bound handleOnclick() {
       this.useNameErrorMessage = ''
       this.passwordErrorMessage = ''
       if (this.username === '')
@@ -35,16 +43,18 @@ class SignInRoute extends React.Component {
       if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
       if (this.username !== '' && this.password !== '') {
-         this.handleOnclick()
+         return true;
       }
    }
 
-   handleOnclick = async () => {
-      await this.props.authStore.userSignIn(
-         { username: this.username, password: this.password },
-         this.onSuccess,
-         this.onFailure
-      )
+   onClickSignIn = async () => {
+      if (this.handleOnclick())
+         await this.props.authStore.userSignIn(
+            { username: this.username, password: this.password },
+            this.onSuccess,
+            this.onFailure
+         )
+
    }
 
    onSuccess = () => {

@@ -2,7 +2,7 @@ import { observable, action, computed, toJS } from "mobx"
 import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
-const LIMIT = 2;
+const LIMIT = 7;
 
 class UserStore {
     @observable userType;

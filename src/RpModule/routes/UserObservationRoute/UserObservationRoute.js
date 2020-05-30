@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { RpObservatonPage } from '../../components/RpObservatonListPage'
+import { UserObservationPage } from '../../components/UserObservationPage'
 import { observable, action } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
@@ -15,7 +15,8 @@ class UserObservationRoute extends Component {
     @observable attachments = null;
     @observable titleErrorMsg = '';
     @observable severityErrorMsg = '';
-    @observable descriptionErrorMsg = ';'
+    @observable descriptionErrorMsg = ''
+
     constructor(props) {
         super(props);
         this.init();
@@ -33,11 +34,15 @@ class UserObservationRoute extends Component {
     @action.bound onChangeTitleOfTheObservation(event) {
 
         this.titleOfTheObservation = event.target.value
-        console.log(this.titleOfTheObservation);
+        if (this.titleOfTheObservation === '')
+            this.titleErrorMsg = 'Please enter title'
+        else
+            this.titleErrorMsg = ''
     }
 
     @action.bound onChangeCateogary(event) {
-        this.cateogary = event.target.value
+        this.cateogary = event.target.value;
+
     }
 
     @action.bound onChangeSubCateogary(event) {
@@ -45,42 +50,59 @@ class UserObservationRoute extends Component {
     }
 
     @action.bound onChangeSeverity(event) {
-        this.severity = event.target.value
+        this.severity = event.target.value;
+        if (this.severity === '')
+            this.severityErrorMsg = 'Please select severty'
+        else
+            this.severityErrorMsg = ''
     }
 
     @action.bound onChangeDescription(event) {
-        this.description = event.target.value
+        this.description = event.target.value;
+        if (this.description === '')
+            this.descriptionErrorMsg = 'Please enter description'
+        else
+            this.descriptionErrorMsg = ''
     }
 
-    @action.bound onClickSubmit() {
+    @action.bound onHandliErrorMsg() {
 
         this.titleErrorMsg = ''
         this.severityErrorMsg = ''
         this.descriptionErrorMsg = '';
         if (this.titleOfTheObservation === '')
             this.titleErrorMsg = 'Please enter title'
-        else if (this.severity === '')
+        if (this.severity === '')
             this.severityErrorMsg = 'Please select severty'
-        else if (this.description === '')
+        if (this.description === '')
             this.descriptionErrorMsg = 'Please enter description'
-        else
-            this.onSubmit();
+        if (this.titleOfTheObservation !== '' && this.severity !== '' && this.description !== '')
+            return true;
     }
 
-    @action.bound onSubmit() {
-        const observation = {
-            titleOfTheObservation: this.titleOfTheObservation,
-            cateogary: this.cateogary,
-            subCateogary: this.subCateogary,
-            severity: this.severity,
-            description: this.description,
-            attachments: this.attachments
+
+    @action.bound onClickSubmit() {
+        if (this.onHandliErrorMsg()) {
+            this.props.userStore.getPostObservationAPIStatus = 100;
+            setTimeout(() => {
+                const observation = {
+                    titleOfTheObservation: this.titleOfTheObservation,
+                    cateogary: this.cateogary,
+                    subCateogary: this.subCateogary,
+                    severity: this.severity,
+                    description: this.description,
+                    attachments: this.attachments
+                }
+                console.log(observation)
+                this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
+                this.init();
+                this.props.userStore.getPostObservationAPIStatus = 200;
+                this.props.history.goBack();
+            }, 2000)
         }
-        this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
-        this.init();
     }
     goBack = () => {
-        this.props.history.push('/userobservationslist')
+        this.props.history.goBack();
     }
     onSuccess() {
         alert("observation submitted successfully...")
@@ -91,6 +113,7 @@ class UserObservationRoute extends Component {
 
 
     render() {
+        const { getPostObservationAPIStatus } = this.props.userStore
         return (
             <UserObservationPage
                 title={this.titleOfTheObservation}
@@ -109,6 +132,7 @@ class UserObservationRoute extends Component {
                 titleErrorMsg={this.titleErrorMsg}
                 severityErrorMsg={this.severityErrorMsg}
                 descriptionErrorMsg={this.descriptionErrorMsg}
+                apiStatus={getPostObservationAPIStatus}
             />
         )
     }

@@ -52,10 +52,6 @@ class UserObservationScreenRoute extends Component {
         this.description = event.target.value
     }
 
-    @action.bound onUpdate() {
-
-    }
-
     @action.bound onReset() {
         this.init();
     }
@@ -103,11 +99,3 @@ class UserObservationScreenRoute extends Component {
 }
 withRouter(UserObservationScreenRoute)
 export { UserObservationScreenRoute }
-
-
-
-//description
-//status
-//assignedto
-//duedate
-//public/private

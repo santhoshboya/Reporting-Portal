@@ -8,10 +8,14 @@ import {
    SevertyStatus,
    ObservationStatus,
    PersonData,
-   PersonDetails
+   PersonDetails,
+   MsgCount
 } from './styledComponent'
 import strings from '../../i18n/strings.json'
 import { Image } from '../Image'
+
+const PUBLIC = 'Public'
+const PRIVATE = 'Private'
 class ObservationListItem extends Component {
    render() {
       const {
@@ -24,20 +28,31 @@ class ObservationListItem extends Component {
          messages,
          src,
          onClickObservation,
+         dueDateType,
+         observationId
       } = this.props
+
       let bgColor = (severty === "HIGH" ? "#ff0b37" : (severty === "LOW" ? "#2dca73" : "#ffb800"))
       return (
-         <TableRow data-testid="observation-list-item" onClick={onClickObservation}>
+         <TableRow id={observationId} data-testid="observation-list-item" onClick={() => onClickObservation(observationId)}>
             <TableData>{title}</TableData>
             <TableData>{reportedOn}</TableData>
             <TableData>
-               <PersonDetails>
-                  <Image src={src} className={'persons-xs'}></Image>
-                  <PersonData>
-                     {assignedTo.name}<br />
+               {Object.keys(assignedTo).length !== 0 ?
+                  <PersonDetails>
+                     <Image src={src} className={'persons-xs'}></Image>
+                     <PersonData>
+                        {assignedTo.name}<br />
                      ph:{assignedTo.phone_no}
-                  </PersonData>
-               </PersonDetails>
+                     </PersonData>
+                  </PersonDetails>
+                  :
+                  <PersonDetails>
+                     <PersonData>
+                        Rp not Assigned to
+                     </PersonData>
+                  </PersonDetails>
+               }
             </TableData>
             <TableData>
                <RectangleSeverity bgColor={bgColor}>
@@ -49,14 +64,15 @@ class ObservationListItem extends Component {
                   <ObservationStatus>{status}</ObservationStatus>
                </RectangleActionStatus>
             </TableData>
-            <TableData>{dueDate}</TableData>
+            <TableData>{dueDateType === PUBLIC ? dueDate : PRIVATE}</TableData>
             <TableData>
                <Image
                   className={'message-icon'}
                   src={
-                     'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/25193dcb-b81b-48a0-8ce4-ef53a4775749.svg'
+                     "https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4983aced-8454-4506-9eee-0ff83acf662f.svg"
                   }
                />
+               <MsgCount>{messages}</MsgCount>
             </TableData>
          </TableRow>
       )

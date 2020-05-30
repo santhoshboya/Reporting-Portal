@@ -8,10 +8,15 @@ const BackToObservationsLink = styled(Typo14SteelHKGroteskRegular)`${tw`flex`}
 const FieldName = styled(Typo12DarkBlueGreyRubikMedium)`
    width:25%;
    margin-left:30px;
-   `
-   ;
+   `;
+const ObsertationDiv = styled(Typo12DarkBlueGreyRubikMedium)`${tw`flex justify-center`}
+border-bottom:2px solid blue;
+width:100px;
+`
 
 const ChatHeading = styled(Typo12SteelHKGroteskSemiBold)`
+margin-left:20px;
+padding-top:4px;
 `
 const Title = styled(Typo24DarkBlueGreyHKGroteskMedium)`
 padding-left:20px`
@@ -64,5 +69,6 @@ export {
    RadioLable,
    HeaderDiv,
    ChatHeading,
-   Buttons
+   Buttons,
+   ObsertationDiv
 }

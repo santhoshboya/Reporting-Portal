@@ -19,7 +19,7 @@ class UserObservatonListPage extends Component {
         console.log(observationList);
 
         return (
-            <DesktopLayoutMainPage userName={"Santhu"} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'}>
+            <DesktopLayoutMainPage>
                 <ObseravationsHeader>
                     <PageHeading>{listofObservations}</PageHeading>
                     <PrimaryLeftIconDefault

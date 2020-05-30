@@ -4,8 +4,9 @@ import { PageHeader } from '../PageHeader'
 
 class DesktopLayoutMainPage extends Component {
    render() {
+      const { userName, profilePic } = this.props
       return (<DesktopLayoutMainPageDiv>
-         <PageHeader />
+         <PageHeader userName={userName} src={profilePic} />
          {this.props.children}
       </DesktopLayoutMainPageDiv>);
    }

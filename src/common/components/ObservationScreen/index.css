@@ -29,3 +29,6 @@
 .dropdown {
  width:25%;
 }
+.goback{
+  cursor: pointer;
+}

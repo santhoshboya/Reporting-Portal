@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
-import './index.css'
+import { observer } from 'mobx-react'
+
 import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutMainPage'
-import { PageHeader } from '../../../common/components/PageHeader'
 import strings from '../../../common/i18n/strings.json'
-import { ObservationForm, BackToObservationsLink, FieldContainer, FieldName, DragAndDrop, Required } from './styledComponent'
 import { Image } from '../../../common/components/Image'
 import { InputField } from '../../../common/components/InputField'
 import { DropDown } from '../../../common/components/DropDown'
 import { TextArea } from '../../../common/components/TextArea'
 import { PrimaryButton } from '../../../common/components/PrimaryButton'
-import { observer } from 'mobx-react'
+
+import {
+    ObservationForm, BackToObservationsLink, FieldContainer, FieldName, DragAndDrop,
+    Required, InputAndErrorField
+} from './styledComponent'
+import './index.css'
+
 
 
 @observer
 class UserObservationPage extends Component {
     render() {
-        const { profilePic, username, onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
+        const { onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
             descriptionOfObservation, attachmentsOfObservation,
             onChangeTitleOfTheObservation, onChangeCateogary, onChangeSubCateogary,
             onChangeSeverity, onChangeDescription, goBack,
-            titleErrorMsg, severityErrorMsg, descriptionErrorMsg } = this.props
+            titleErrorMsg, severityErrorMsg, descriptionErrorMsg, apiStatus } = this.props
 
 
         const { titleOfTheObservation, culturalDeviations,
@@ -39,8 +44,10 @@ class UserObservationPage extends Component {
                             {titleOfTheObservation}
                             <Required>*</Required>
                         </FieldName>
-                        <InputField type={'text'} value={title} onHandleChange={onChangeTitleOfTheObservation} placeHolder={culturalDeviations} />
-                        {titleErrorMsg !== "" && <Required>{titleErrorMsg}</Required>}
+                        <InputAndErrorField>
+                            <InputField className={'title'} type={'text'} value={title} onHandleChange={onChangeTitleOfTheObservation} placeHolder={culturalDeviations} />
+                            {titleErrorMsg !== "" && <Required>{titleErrorMsg}</Required>}
+                        </InputAndErrorField>
                     </FieldContainer>
 
                     <FieldContainer>
@@ -52,7 +59,6 @@ class UserObservationPage extends Component {
                             {subCateogary}
                         </FieldName>
                         <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
-
                     </FieldContainer>
 
                     <FieldContainer>
@@ -60,8 +66,9 @@ class UserObservationPage extends Component {
                             {severity}
                             <Required>*</Required>
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
-                        {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
+                        <InputAndErrorField>                       <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                            {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
+                        </InputAndErrorField>
 
                     </FieldContainer>
 
@@ -70,17 +77,22 @@ class UserObservationPage extends Component {
                             {description}
                             <Required>*</Required>
                         </FieldName>
-                        <TextArea className={'user-observation-description'} value={descriptionOfObservation} onHandleChange={onChangeDescription} placeHolder={"Description"} />
-                        {descriptionErrorMsg !== "" && <Required>{descriptionErrorMsg}</Required>}
+                        <InputAndErrorField>
+                            <TextArea className={'user-observation-description'} value={descriptionOfObservation} onHandleChange={onChangeDescription} placeHolder={"Description"} />
+                            {descriptionErrorMsg !== "" && <Required>{descriptionErrorMsg}</Required>}
+                        </InputAndErrorField>
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {attachments}
                         </FieldName>
-                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} />
+                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} >
+                            <InputField type={"file"} />
+                        </DragAndDrop>
                     </FieldContainer>
-                    <PrimaryButton value={submit} handleClick={onClickSubmit} className={'submit-btn'} />
+
+                    <PrimaryButton apiStatus={apiStatus} value={submit} handleClick={onClickSubmit} className={'submit-btn'} />
                 </ObservationForm>
 
             </DesktopLayoutMainPage>

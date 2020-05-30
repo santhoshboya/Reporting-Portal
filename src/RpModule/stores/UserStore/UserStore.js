@@ -2,7 +2,7 @@ import { observable, action, computed, toJS } from "mobx"
 import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
-const LIMIT = 3;
+const LIMIT = 7;
 
 class UserStore {
     @observable userType;
@@ -47,12 +47,14 @@ class UserStore {
     }
     @action.bound
     getObservationList() {
+
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
         let accessToken = "";
         const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, accessToken);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setGetObservationListApiAPIStatus, this.setGetObservationListApiResponse)
             .catch(this.setGetObservationListApiAPIError);
+
     }
 
 
@@ -63,17 +65,19 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiAPIError(error) {
+        console.log(error)
         this.getObservationListAPIError = error;
     }
 
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
-        this.observationList = ObservationListResponse.observation_list.map(observation => new Observation(observation))
-        this.totalPages = Math.ceil(ObservationListResponse.total_No_Of_Observation / LIMIT);
+
+        this.totalPages = Math.ceil(ObservationListResponse[ObservationListResponse.length - 1] / LIMIT);
+        ObservationListResponse.pop();
+        let offset = Math.ceil(LIMIT * (this.currentPage - 1))
+        this.observationList = ObservationListResponse.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;
     }
-
-
     @action.bound
     getObservation(requestObject, onSuccess, onFailure) {
         const observationPromise = this.userObservationAPIService.getObservationApi(requestObject)
@@ -104,6 +108,10 @@ class UserStore {
         this.userType = ObservationResponse.user_type;
 
     }
+
+
+
+
 
 
     @action.bound
@@ -140,12 +148,20 @@ class UserStore {
     @action.bound
     goToPreviousPage() {
         this.currentPage--;
+        console.log(this.currentPage)
         this.getObservationList()
     }
 
     @action.bound
     goToNextPage() {
         this.currentPage++;
+        console.log(this.currentPage)
+        this.getObservationList();
+    }
+
+    @action.bound
+    goToRandomPage(event) {
+        this.currentPage = parseInt(event.target.value, 10);
         this.getObservationList();
     }
 }

@@ -43,6 +43,18 @@ height:64px;
 overflow:auto;
 ;
 `
+
+const MsgCount = styled.span`${tw`flex justify-center items-center`}
+background-color:#ff0b37;
+width: 11px;
+height: 11px;
+color:white;
+border-radius:50%;
+position:relative;
+top:-10px;
+left:-5px;
+
+`
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
 const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`;`
 export {
@@ -53,5 +65,6 @@ export {
    SevertyStatus,
    ObservationStatus,
    PersonDetails,
-   PersonData
+   PersonData,
+   MsgCount
 }

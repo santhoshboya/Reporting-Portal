@@ -4,7 +4,10 @@ import { Typo14SteelHKGroteskRegular, Typo12DarkBlueGreyRubikMedium }
    from '../../../common/styleGuide/Typos'
 
 const BackToObservationsLink = styled(Typo14SteelHKGroteskRegular)`${tw`flex`}
-   margin-bottom:34px;`;
+   margin-bottom:34px;
+   width:150px;
+   cursor: pointer;`
+   ;
 
 const FieldName = styled(Typo12DarkBlueGreyRubikMedium)`
    width:25%;
@@ -37,11 +40,13 @@ const Required = styled.span`
 color:#ff0b37;
 font-size: 12px;`
 
+const InputAndErrorField = styled.div`${tw`flex flex-col`}`
 export {
    BackToObservationsLink,
    ObservationForm,
    FieldContainer,
    FieldName,
    DragAndDrop,
-   Required
+   Required,
+   InputAndErrorField
 }
