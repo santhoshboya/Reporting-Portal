@@ -16,6 +16,10 @@ class ObservationFixtureService {
         data.push(getObservationsList.total_No_Of_Observation)
         return new Promise(resolve => resolve(data))
     }
+    updateObservationApi(id, Details) {
+        console.log("observation updated...", Details);
+        return new Promise(resolve => resolve())
+    }
 }
 
 export { ObservationFixtureService };

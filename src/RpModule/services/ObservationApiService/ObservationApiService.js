@@ -37,6 +37,14 @@ class ObservationApiService {
             apiMethods.get
         )
     }
+    updateObservationApi(id, Details) {
+        return networkCallWithApisauce(
+            this.api,
+            endPoint,
+            { id, Details },
+            apiMethods.get
+        )
+    }
 }
 
 export { ObservationApiService };
