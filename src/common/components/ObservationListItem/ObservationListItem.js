@@ -21,7 +21,7 @@ class ObservationListItem extends Component {
       const {
          title,
          reportedOn,
-         assignedTo,
+         pairedPerson,
          severty,
          status,
          dueDate,
@@ -38,12 +38,12 @@ class ObservationListItem extends Component {
             <TableData>{title}</TableData>
             <TableData>{reportedOn}</TableData>
             <TableData>
-               {Object.keys(assignedTo).length !== 0 ?
+               {Object.keys(pairedPerson).length !== 0 ?
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>
                      <PersonData>
-                        {assignedTo.name}<br />
-                     ph:{assignedTo.phone_no}
+                        {pairedPerson.name}<br />
+                     ph:{pairedPerson.phone_no}
                      </PersonData>
                   </PersonDetails>
                   :

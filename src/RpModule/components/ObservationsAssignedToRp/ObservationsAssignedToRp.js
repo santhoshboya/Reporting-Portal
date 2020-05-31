@@ -19,8 +19,8 @@ class ObservationsAssignedToRp extends Component {
     render() {
         const { observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage, goToRandomPage, navigateTOPage, userType } = this.props
         const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe, closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved } = strings.rpFeatures
-        console.log(observationList);
 
+        console.log(1234, observationList)
         return (
             <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage} currentPage={assignedToMe} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
                 <ObseravationsHeader>
@@ -43,7 +43,7 @@ class ObservationsAssignedToRp extends Component {
                                     status={observation.status}
                                     dueDate={observation.dueDate}
                                     dueDateType={observation.dueDateType}
-                                    assignedTo={observation.assignedTo}
+                                    pairedPerson={observation.reportedBy}
                                     messages={observation.messages}
                                     observationId={observation.observationId}
                                     src={

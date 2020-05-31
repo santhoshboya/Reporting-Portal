@@ -15,13 +15,13 @@ class RpObservatonListRoute extends Component {
         this.doNetworkCalls();
     }
 
-    getUserStore = () => {
-        return this.props.userStore;
+    getRpStore = () => {
+        return this.props.rpStore;
     }
 
     doNetworkCalls = () => {
-        this.getUserStore().getObservationList();
-        this.props.rpStore.getObservationList();
+        //console.log(123467, this.props.userStore.getObservationList())
+        this.getRpStore().userStore.getObservationList();
     }
     onClickAddNew = () => {
         const { history } = this.props
@@ -38,15 +38,15 @@ class RpObservatonListRoute extends Component {
         history.push(OBSERVATIONS_ASSIGNED_TO_RP)
     }
     onClickObservation = (observationId) => {
-        this.getUserStore().getObservation({}, this.onSuccess, this.onFailure);
+        this.getRpStore().userStore.getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
 
     render() {
-        console.log("x", this.props.rpStore.getObservationList(), this.props.rpStore.observationList, this.props.userStore.observationList);
+        console.log(this.props.rpStore.observationList, this.props.userStore.observationList);
 
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getUserStore();
+        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getRpStore().userStore;
         return (
             <RpObservatonListPage
                 handleClick={this.onClickAddNew}

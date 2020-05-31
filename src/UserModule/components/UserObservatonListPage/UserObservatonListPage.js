@@ -43,7 +43,7 @@ class UserObservatonListPage extends Component {
                                     status={observation.status}
                                     dueDate={observation.dueDate}
                                     dueDateType={observation.dueDateType}
-                                    assignedTo={observation.assignedTo}
+                                    pairedPerson={observation.assignedTo}
                                     messages={observation.messages}
                                     observationId={observation.observationId}
                                     src={

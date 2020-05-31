@@ -70,7 +70,6 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
-        console.log(",lok", ObservationListResponse)
         this.totalPages = Math.ceil(ObservationListResponse[ObservationListResponse.length - 1] / LIMIT);
         ObservationListResponse.pop();
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))

@@ -5,7 +5,7 @@ import { RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PA
 import { ObservationsAssignedToRp } from '../../components/ObservationsAssignedToRp';
 
 
-@inject("authStore", "userStore")
+@inject("authStore", "userStore", "rpStore")
 @observer
 class ObservationsAssignedToRpRoute extends Component {
     constructor(props) {
@@ -16,12 +16,13 @@ class ObservationsAssignedToRpRoute extends Component {
         this.doNetworkCalls();
     }
 
-    getUserStore = () => {
-        return this.props.userStore;
+    getRpStore = () => {
+        //return this.props.userStore;
+        return this.props.rpStore;
     }
 
     doNetworkCalls = () => {
-        this.getUserStore().getObservationList();
+        this.getRpStore().getAssignedObservationList();
     }
     onClickAddNew = () => {
         const { history } = this.props
@@ -38,21 +39,22 @@ class ObservationsAssignedToRpRoute extends Component {
         history.push(RP_OBSERVATION_LIST_PATH)
     }
     onClickObservation = (observationId) => {
-        this.getUserStore().getObservation({}, this.onSuccess, this.onFailure);
+        this.getRpStore().userStore.getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
     render() {
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getUserStore();
+        console.log("nmkk", this.getRpStore())
+        const { assignedObservationListForRp, goToPreviousPage, goToNextPage, assignedObservationsCurrentPage, assignedObservationsTotalPages, goToRandomPage, userType } = this.getRpStore();
         return (
             <ObservationsAssignedToRp
                 handleClick={this.onClickAddNew}
-                observationList={observationList}
+                observationList={assignedObservationListForRp}
                 onClickObservation={this.onClickObservation}
                 goToPreviousPage={goToPreviousPage}
                 goToNextPage={goToNextPage}
-                currentPage={currentPage}
-                totalPages={totalPages}
+                currentPage={assignedObservationsCurrentPage}
+                totalPages={assignedObservationsTotalPages}
                 goToRandomPage={goToRandomPage}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
