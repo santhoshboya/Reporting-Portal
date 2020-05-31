@@ -8,3 +8,7 @@
     height: 48px;
     object-fit: contain;
   }
+  .active-head{
+    color: #0b69ff;
+    font-weight: bold;
+  }

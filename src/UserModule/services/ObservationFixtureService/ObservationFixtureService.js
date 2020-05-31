@@ -13,8 +13,12 @@ class ObservationFixtureService {
     getObservationListApi(Limit, offeset, accessToken) {
         let dataCopy = getObservationsList.observation_list.slice();
         let data = dataCopy.splice(offeset, Limit);
-        data.push(getObservationsList.total_No_Of_Observation)
-        return new Promise(resolve => resolve(data))
+        let dummyData = {
+            "observation_list": data,
+            "total_No_Of_Observation": getObservationsList.total_No_Of_Observation,
+            "user_type": getObservationsList.user_type
+        }
+        return new Promise(resolve => resolve(dummyData))
     }
 }
 

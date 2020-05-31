@@ -5,7 +5,7 @@ import {
     API_INITIAL
 } from "@ib/api-constants";
 
-import getObservationsResponse from '../../fixtures/getObservationsRespons.json'
+import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
 import { ObservationFixtureService } from "../../services/ObservationFixtureService/ObservationFixtureService";
 import { UserStore } from "./UserStore";
 import { ObservationApiService } from "../../services/ObservationApiService/ObservationApiService";

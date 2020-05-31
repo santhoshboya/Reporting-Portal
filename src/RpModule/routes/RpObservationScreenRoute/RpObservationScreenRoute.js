@@ -69,7 +69,6 @@ class RpObservationScreenRoute extends Component {
 
 
     render() {
-        console.log(this.props.userStore);
         const { title, cateogary, subCateogary, severity, description, reportedOn,
             attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
         const { userType } = this.props.userStore

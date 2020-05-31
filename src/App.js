@@ -12,11 +12,12 @@ import { userRoutes } from './UserModule/routes'
 import { rpRoutes } from './RpModule/routes'
 import authStore from './Authuntication/stores'
 import userStore from './UserModule/stores'
+import rpStore from './RpModule/stores'
 
 class App extends Component {
    render() {
       return (
-         <Provider {...authStore} {...userStore}>
+         <Provider {...authStore} {...userStore} {...rpStore}>
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   <Route exact path='/page-1'>

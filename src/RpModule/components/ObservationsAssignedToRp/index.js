@@ -1,0 +1,1 @@
+export { ObservationsAssignedToRp } from "./ObservationsAssignedToRp";

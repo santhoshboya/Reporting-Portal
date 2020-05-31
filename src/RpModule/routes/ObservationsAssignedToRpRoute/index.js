@@ -1,0 +1,1 @@
+export { ObservationsAssignedToRpRoute } from "./ObservationsAssignedToRpRoute";

@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import { RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH, OBSERVATIONS_ASSIGNED_TO_RP } from '../../constants/RouteConstants'
-import { RpObservatonListPage } from '../../components/RpObservatonListPage'
+import { ObservationsAssignedToRp } from '../../components/ObservationsAssignedToRp';
 
-@inject("authStore", "userStore", "rpStore")
+
+@inject("authStore", "userStore")
 @observer
-class RpObservatonListRoute extends Component {
+class ObservationsAssignedToRpRoute extends Component {
     constructor(props) {
         super(props);
     }
@@ -21,7 +22,6 @@ class RpObservatonListRoute extends Component {
 
     doNetworkCalls = () => {
         this.getUserStore().getObservationList();
-        this.props.rpStore.getObservationList();
     }
     onClickAddNew = () => {
         const { history } = this.props
@@ -35,20 +35,17 @@ class RpObservatonListRoute extends Component {
     }
     navigateTOPage = (page) => {
         const { history } = this.props
-        history.push(OBSERVATIONS_ASSIGNED_TO_RP)
+        history.push(RP_OBSERVATION_LIST_PATH)
     }
     onClickObservation = (observationId) => {
         this.getUserStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
-
     render() {
-        console.log("x", this.props.rpStore.getObservationList(), this.props.rpStore.observationList, this.props.userStore.observationList);
-
         const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getUserStore();
         return (
-            <RpObservatonListPage
+            <ObservationsAssignedToRp
                 handleClick={this.onClickAddNew}
                 observationList={observationList}
                 onClickObservation={this.onClickObservation}
@@ -64,5 +61,5 @@ class RpObservatonListRoute extends Component {
         )
     }
 }
-withRouter(RpObservatonListRoute)
-export { RpObservatonListRoute }
+withRouter(ObservationsAssignedToRpRoute)
+export { ObservationsAssignedToRpRoute }

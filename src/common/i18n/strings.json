@@ -62,8 +62,11 @@
         "messages": "MESSAGES",
         "addNew": "ADD NEW",
         "all": "ALL",
+        "listofObservations": "List of Observations",
         "acknowledgedbyRp": "Acknowledged by Rp",
         "resolved": "Resolved",
-        "closed": "Closed"
+        "closed": "Closed",
+        "assignedToMe": "Assigned to me",
+        "myObservations": "My observations"
     }
 }

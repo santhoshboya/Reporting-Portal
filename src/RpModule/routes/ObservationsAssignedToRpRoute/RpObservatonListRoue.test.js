@@ -6,9 +6,9 @@ import { createMemoryHistory } from "history";
 
 
 import { ObservationFixtureService } from "../../services/ObservationFixtureService/ObservationFixtureService";
-import { UserObservatonListRoute } from "./UserObservatonListRoute";
+import { RpObservatonListRoute } from "./ObservationsAssignedToRpRoute";
 import { UserStore } from "../../stores/UserStore";
-import getObservationsResponseForTesting from '../../fixtures/getObservationsResponseForTesting.json'
+import getObservationResponse from '../../fixtures/getObservationResponse.json'
 
 import { AuthAPI } from '../../../Authuntication/services/AuthService/AuthAPI'
 import { AuthStore } from '../../../Authuntication/stores/AuthStore'

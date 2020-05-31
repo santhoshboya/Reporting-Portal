@@ -47,7 +47,7 @@ class UserStore {
     }
     @action.bound
     getObservationList() {
-
+        console.log("hello")
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
         let accessToken = "";
         const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, accessToken);
@@ -80,6 +80,7 @@ class UserStore {
     }
     @action.bound
     getObservation(requestObject, onSuccess, onFailure) {
+
         const observationPromise = this.userObservationAPIService.getObservationApi(requestObject)
         return bindPromiseWithOnSuccess(observationPromise)
             .to(this.setGetObservationApiAPIStatus, response => {
