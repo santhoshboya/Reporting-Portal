@@ -16,17 +16,18 @@ import { observer } from 'mobx-react'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SecondaryButton } from '../SecondaryButton'
 import { RadioButton } from '../RadioButton'
+import { constants } from "../../constants/NameConstants"
 
 
 
 @observer
 class ObservationScreen extends Component {
     render() {
-
+        console.log(123, constants.rp)
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
-            onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription, reportedOnOfObservation,
-            goBack, onReset, userType, apiStatus } = this.props
+            onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription,
+            reportedOnOfObservation, goBack, onReset, userType, apiStatus } = this.props
 
 
         const {
@@ -46,37 +47,43 @@ class ObservationScreen extends Component {
                 </HeaderDiv>
                 <ObservationForm>
                     <BackToObservationsLink >
-                        <Image className={'goback'} onHandleClick={goBack} src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
+                        <Image className={'goback'} onHandleClick={goBack}
+                            src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
                         <Title>{title}</Title>
                     </BackToObservationsLink>
 
                     <FieldContainer>
-                        <TextArea className={'observation-description'} value={descriptionOfObservation} onHandleChange={onChangeDescription} />
+                        <TextArea className={'observation-description'} value={descriptionOfObservation}
+                            onHandleChange={onChangeDescription} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={() => { }} value={cateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown userType={userType} onSlectOption={() => { }} value={cateogaryOfObservation}
+                            options={['Asset Management', 'Tech', 'Management']} />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={() => { }} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown userType={userType} onSlectOption={() => { }} value={subCateogaryOfObservation}
+                            options={['Asset Management', 'Tech', 'Management']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {status}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation} options={["action in progress", 'pending', 'completed']} />
+                        <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation}
+                            options={["action in progress", 'pending', 'completed']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {severity}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                        <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation}
+                            options={['HIGH', 'LOW', 'WARNING']} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -90,21 +97,22 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {assignedTo}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation} options={['PavanKumar', 'Janardhan', 'Sunny']} />
+                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation}
+                            options={['PavanKumar', 'Janardhan', 'Sunny']} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {reportedOn}
                         </FieldName>
-                        <DatePicker userType={userType} value={reportedOnOfObservation} />
+                        <DatePicker isDisabled={isDisabled} userType={userType} value={reportedOnOfObservation} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {dueDate}
                         </FieldName>
-                        <DatePicker userType={userType} value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
+                        <DatePicker isDisabled={userType === ""} value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
                     </FieldContainer>
 
                     {userType !== "user" &&

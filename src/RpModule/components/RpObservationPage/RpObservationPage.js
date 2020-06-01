@@ -44,7 +44,8 @@ class RpObservationPage extends Component {
                             <Required>*</Required>
                         </FieldName>
                         <InputAndErrorField>
-                            <InputField className={'title'} type={'text'} value={title} onHandleChange={onChangeTitleOfTheObservation} placeHolder={culturalDeviations} />
+                            <InputField className={'title'} type={'text'} value={title} onHandleChange={onChangeTitleOfTheObservation}
+                                placeHolder={culturalDeviations} />
                             {titleErrorMsg !== "" && <Required>{titleErrorMsg}</Required>}
                         </InputAndErrorField>
                     </FieldContainer>
@@ -53,11 +54,13 @@ class RpObservationPage extends Component {
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation}
+                            options={['Asset Management', 'Tech', 'Management']} />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation}
+                            options={['Asset Management', 'Tech', 'Management']} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -65,7 +68,9 @@ class RpObservationPage extends Component {
                             {severity}
                             <Required>*</Required>
                         </FieldName>
-                        <InputAndErrorField>                       <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                        <InputAndErrorField>
+                            <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation}
+                                options={['HIGH', 'LOW', 'WARNING']} />
                             {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
                         </InputAndErrorField>
 
@@ -77,7 +82,8 @@ class RpObservationPage extends Component {
                             <Required>*</Required>
                         </FieldName>
                         <InputAndErrorField>
-                            <TextArea className={'user-observation-description'} value={descriptionOfObservation} onHandleChange={onChangeDescription} placeHolder={"Description"} />
+                            <TextArea className={'user-observation-description'} value={descriptionOfObservation}
+                                onHandleChange={onChangeDescription} placeHolder={"Description"} />
                             {descriptionErrorMsg !== "" && <Required>{descriptionErrorMsg}</Required>}
                         </InputAndErrorField>
                     </FieldContainer>
