@@ -12,9 +12,15 @@ import { Image } from '../Image'
 
 function TableHeadingDiv(props) {
    const { reportedOn, dueDate } = strings.userFeatures
+   let onClick;
+   if (props.heading === reportedOn)
+      onClick = props.reportedOnSort
+   else if (props.heading === dueDate)
+      onClick = props.dueDateOnSort
+
    if (props.heading === reportedOn || props.heading === dueDate) {
       return (
-         <TableHeading>
+         <TableHeading onClick={onClick}>
             <PersonTypeDiv>
                {props.heading}
                <Image
@@ -29,14 +35,19 @@ function TableHeadingDiv(props) {
    }
 
 }
+
+
+
+
 class ObservationListHeader extends Component {
    render() {
       const {
-         headings
+         headings, dueDateOnSort, reportedOnSort
       } = this.props
       return (
          <TableRow>
-            {headings.map(heading => <TableHeadingDiv key={Math.random()} heading={heading} />)}
+            {headings.map(heading => <TableHeadingDiv key={Math.random()} reportedOnSort={reportedOnSort}
+               dueDateOnSort={dueDateOnSort} heading={heading} />)}
          </TableRow>
       )
    }

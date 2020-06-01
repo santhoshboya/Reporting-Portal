@@ -33,7 +33,6 @@ class RpObservationPage extends Component {
         return (
             <DesktopLayoutMainPage>
                 <ObservationForm>
-
                     <BackToObservationsLink onClick={goBack}>
                         <Image src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/24ef7d49-46b3-47e6-b835-579ee7a857d0.svg'} />
                         {backToObservations}

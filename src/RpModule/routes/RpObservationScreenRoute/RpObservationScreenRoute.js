@@ -3,7 +3,7 @@ import { observable, action } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { ObservationScreen } from '../../../common/components/ObservationScreen';
-@inject("userStore")
+@inject("rpStore")
 @observer
 class RpObservationScreenRoute extends Component {
 
@@ -60,18 +60,42 @@ class RpObservationScreenRoute extends Component {
     goBack = () => {
         this.props.history.goBack()
     }
-    onUpdate() {
-        alert("observation updated successfully...")
+    @action.bound onUpdate() {
+        let { updateObservationAPIStatus } = this.props.rpStore;
+        updateObservationAPIStatus = 100;
+        setTimeout(() => {
+            const observation = {
+                description: this.description,
+                status: this.status,
+                subCateogary: this.subCateogary,
+                dueDate: this.dueDate,
+                assignedTO: this.assignedTO,
+                privacy: this.privacy
+            }
+            this.props.rpStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
+            this.init();
+            updateObservationAPIStatus = 200;
+            alert("observation updated successfully...")
+            this.props.history.goBack();
+        }, 1200)
+
+
     }
     onFailure() {
         alert("something went wrong pls try again...")
     }
+    onSuccess() {
+        alert("observation updated successfully...")
+    }
 
 
     render() {
-        const { title, cateogary, subCateogary, severity, description, reportedOn,
-            attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
-        const { userType } = this.props.userStore
+        const { title, cateogary, subCateogary, severity, description,
+            reportedOn, attachments, assignedTO, status, dueDate, privacy
+        } = this.props.rpStore.userStore.observationDetails
+
+        const { userType } = this.props.rpStore.userStore;
+        const { updateObservationAPIStatus } = this.props.rpStore
 
         return (
             <ObservationScreen
@@ -95,6 +119,7 @@ class RpObservationScreenRoute extends Component {
                 statusOfObservation={status}
                 dueDateOfObservation={dueDate}
                 privacyOfObservation={privacy}
+                apiStatus={updateObservationAPIStatus}
             />
         )
     }

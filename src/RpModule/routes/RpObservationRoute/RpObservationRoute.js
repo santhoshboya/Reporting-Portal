@@ -3,7 +3,7 @@ import { RpObservationPage } from '../../components/RpObservationPage'
 import { observable, action } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
-@inject("userStore")
+@inject("rpStore")
 @observer
 class RpObservationRoute extends Component {
 
@@ -83,7 +83,8 @@ class RpObservationRoute extends Component {
 
     @action.bound onClickSubmit() {
         if (this.onHandleErrorMsg()) {
-            this.props.userStore.getPostObservationAPIStatus = 100;
+            let { getPostObservationAPIStatus } = this.props.rpStore.userStore;
+            getPostObservationAPIStatus = 100;
             setTimeout(() => {
                 const observation = {
                     titleOfTheObservation: this.titleOfTheObservation,
@@ -93,12 +94,11 @@ class RpObservationRoute extends Component {
                     description: this.description,
                     attachments: this.attachments
                 }
-                console.log(observation)
-                this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
+                this.props.rpStore.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
                 this.init();
-                this.props.userStore.getPostObservationAPIStatus = 200;
+                getPostObservationAPIStatus = 200;
                 this.props.history.goBack();
-            }, 2000)
+            }, 1200)
         }
     }
     goBack = () => {
@@ -113,7 +113,7 @@ class RpObservationRoute extends Component {
 
 
     render() {
-        const { getPostObservationAPIStatus } = this.props.userStore
+        const { getPostObservationAPIStatus } = this.props.rpStore.userStore
         return (
             <RpObservationPage
                 title={this.titleOfTheObservation}

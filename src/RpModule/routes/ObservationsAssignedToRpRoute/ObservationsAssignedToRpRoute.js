@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
-import { RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH, OBSERVATIONS_ASSIGNED_TO_RP } from '../../constants/RouteConstants'
+import {
+    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH
+} from '../../constants/RouteConstants'
 import { ObservationsAssignedToRp } from '../../components/ObservationsAssignedToRp';
 
 
-@inject("authStore", "userStore", "rpStore")
+@inject("rpStore")
 @observer
 class ObservationsAssignedToRpRoute extends Component {
     constructor(props) {
@@ -17,7 +19,6 @@ class ObservationsAssignedToRpRoute extends Component {
     }
 
     getRpStore = () => {
-        //return this.props.userStore;
         return this.props.rpStore;
     }
 
@@ -43,11 +44,15 @@ class ObservationsAssignedToRpRoute extends Component {
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
+
+
     render() {
-        console.log("nmkk", this.getRpStore())
-        const { assignedObservationListForRp, goToPreviousPage, goToNextPage, assignedObservationsCurrentPage, assignedObservationsTotalPages, goToRandomPage, userType } = this.getRpStore();
+
+        const { assignedObservationListForRp, goToPreviousPage, goToNextPage, assignedObservationsCurrentPage,
+            assignedObservationsTotalPages, goToRandomPage, filterAssignedObservationList, reportedOnSort, dueDateOnSort, userType } = this.getRpStore();
         return (
             <ObservationsAssignedToRp
+                filterAssignedObservationList={filterAssignedObservationList}
                 handleClick={this.onClickAddNew}
                 observationList={assignedObservationListForRp}
                 onClickObservation={this.onClickObservation}
@@ -58,6 +63,9 @@ class ObservationsAssignedToRpRoute extends Component {
                 goToRandomPage={goToRandomPage}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
+                reportedOnSort={reportedOnSort}
+                dueDateOnSort={dueDateOnSort}
+
 
             />
         )

@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
-import { RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH, OBSERVATIONS_ASSIGNED_TO_RP } from '../../constants/RouteConstants'
+import {
+    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, OBSERVATIONS_ASSIGNED_TO_RP
+} from '../../constants/RouteConstants'
 import { RpObservatonListPage } from '../../components/RpObservatonListPage'
 
-@inject("authStore", "userStore", "rpStore")
+@inject("rpStore")
 @observer
 class RpObservatonListRoute extends Component {
     constructor(props) {
@@ -20,7 +22,6 @@ class RpObservatonListRoute extends Component {
     }
 
     doNetworkCalls = () => {
-        //console.log(123467, this.props.userStore.getObservationList())
         this.getRpStore().userStore.getObservationList();
     }
     onClickAddNew = () => {
@@ -44,9 +45,8 @@ class RpObservatonListRoute extends Component {
     }
 
     render() {
-        console.log(this.props.rpStore.observationList, this.props.userStore.observationList);
-
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage, userType } = this.getRpStore().userStore;
+        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,
+            goToRandomPage, userType } = this.getRpStore().userStore;
         return (
             <RpObservatonListPage
                 handleClick={this.onClickAddNew}

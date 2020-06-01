@@ -26,7 +26,7 @@ class ObservationScreen extends Component {
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
             onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription, reportedOnOfObservation,
-            goBack, onReset, userType } = this.props
+            goBack, onReset, userType, apiStatus } = this.props
 
 
         const {
@@ -119,7 +119,7 @@ class ObservationScreen extends Component {
 
                             <ButtonsDiv>
                                 <SecondaryButton value={reset} handleClick={onReset} className={'reset-btn'} />
-                                <PrimaryButton value={update} handleClick={onUpdate} className={'submit-btn'} />
+                                <PrimaryButton apiStatus={apiStatus} value={update} handleClick={onUpdate} className={'submit-btn'} />
 
                             </ButtonsDiv>
                         </Buttons>}

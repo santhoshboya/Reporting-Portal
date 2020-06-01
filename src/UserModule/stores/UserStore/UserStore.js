@@ -3,7 +3,7 @@ import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
 const LIMIT = 7;
-
+const SORT_TYPE = ["NEW", "OLD"];
 class UserStore {
     @observable userType;
     @observable observationList;
@@ -22,6 +22,8 @@ class UserStore {
 
     @observable currentPage;
     @observable totalPages;
+    @observable filterType;
+    @observable sortType;
 
     constructor(userObservationAPIService) {
         this.init();
@@ -44,6 +46,8 @@ class UserStore {
         this.currentPage = 1;
         this.totalPages = null;
         this.userType = "";
+        this.filterType = "ALL";
+        this.sortType = SORT_TYPE[0];
     }
     @action.bound
     getObservationList() {
@@ -89,6 +93,7 @@ class UserStore {
                 onFailure();
             })
     }
+
 
     @action.bound
     setGetObservationApiAPIStatus(apiStatus) {
@@ -141,6 +146,11 @@ class UserStore {
         this.observation = postObservationResponse;
     }
 
+    @action.bound
+    filterObservationList(event) {
+        this.filterType = event.target.value;
+
+    }
 
 
     @action.bound
