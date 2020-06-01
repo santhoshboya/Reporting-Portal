@@ -39,9 +39,12 @@ class UserObservatonListRoute extends Component {
         history.push(`${USER_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
     render() {
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages, goToRandomPage } = this.getUserStore();
+        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,
+            goToRandomPage, reportedOnSort, dueDateOnSort, filterObservationList, filterType, userType } = this.getUserStore();
         const username = "Santhosh";
         const profilePic = ""
+        console.log(1234, observationList);
+
 
         return (
             <UserObservatonListPage
@@ -55,6 +58,11 @@ class UserObservatonListRoute extends Component {
                 currentPage={currentPage}
                 totalPages={totalPages}
                 goToRandomPage={goToRandomPage}
+                dueDateOnSort={dueDateOnSort}
+                reportedOnSort={reportedOnSort}
+                filterType={filterType}
+                filterObservationList={filterObservationList}
+                userType={userType}
 
             />
         )

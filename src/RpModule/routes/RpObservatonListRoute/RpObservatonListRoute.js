@@ -22,7 +22,8 @@ class RpObservatonListRoute extends Component {
     }
 
     doNetworkCalls = () => {
-        this.getRpStore().userStore.getObservationList();
+        //this.getRpStore().userStore.getObservationList();
+        this.getRpStore().getObservationList();
     }
     onClickAddNew = () => {
         const { history } = this.props
@@ -39,26 +40,30 @@ class RpObservatonListRoute extends Component {
         history.push(OBSERVATIONS_ASSIGNED_TO_RP)
     }
     onClickObservation = (observationId) => {
-        this.getRpStore().userStore.getObservation({}, this.onSuccess, this.onFailure);
+        this.getRpStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
 
     render() {
-        const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,
-            goToRandomPage, userType } = this.getRpStore().userStore;
+        const { observationList, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage, filterObservationList,
+            assignedObservationsGoToRandomPage, totalPages,
+            userType, filterType } = this.getRpStore();
+        console.log(234, this.getRpStore().observationList)
         return (
             <RpObservatonListPage
                 handleClick={this.onClickAddNew}
                 observationList={observationList}
                 onClickObservation={this.onClickObservation}
-                goToPreviousPage={goToPreviousPage}
-                goToNextPage={goToNextPage}
-                currentPage={currentPage}
+                assignedObservationsGoToPreviousPage={assignedObservationsGoToPreviousPage}
+                assignedObservationsGoToNextPage={assignedObservationsGoToNextPage}
+                assignedObservationsGoToRandomPage={assignedObservationsGoToRandomPage}
                 totalPages={totalPages}
-                goToRandomPage={goToRandomPage}
+                assignedObservationsGoToRandomPage={assignedObservationsGoToRandomPage}
+                filterObservationList={filterObservationList}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
+                filterType={filterType}
 
             />
         )

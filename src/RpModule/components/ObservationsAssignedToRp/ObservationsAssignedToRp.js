@@ -17,8 +17,11 @@ import { DropDown } from '../../../common/components/DropDown'
 @observer
 class ObservationsAssignedToRp extends Component {
     render() {
-        const { observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage,
-            goToRandomPage, navigateTOPage, userType, filterAssignedObservationList, dueDateOnSort, reportedOnSort } = this.props
+        const { observationList, onClickObservation, totalPages, currentPage, assignedObservationsGoToNextPage,
+            assignedObservationsGoToPreviousPage, assignedObservationsGoToRandomPage, navigateTOPage, userType,
+            filterAssignedObservationList, filterTypeOfAssignedObservation, assignedObservationsDueDateOnSort,
+            assignedObservationsReportedOnSort } = this.props
+
         const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved } = strings.rpFeatures
 
@@ -30,11 +33,12 @@ class ObservationsAssignedToRp extends Component {
                     <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
 
                     <DropDown onSlectOption={filterAssignedObservationList} className={'flter-Drop-Down'} options={[all,
-                        acknowledgedbyRp, resolved, closed]} value={all} userType={userType} />
+                        acknowledgedbyRp, resolved, closed]} value={filterTypeOfAssignedObservation} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
-                        <ObservationListHeader reportedOnSort={reportedOnSort} dueDateOnSort={dueDateOnSort}
+                        <ObservationListHeader reportedOnSort={assignedObservationsReportedOnSort}
+                            dueDateOnSort={assignedObservationsDueDateOnSort}
                             headings={[title, reportedOn, reportedBy, severty, status, dueDate, messages]} />
                     </TableHeader>
                     <TableBody>
@@ -61,7 +65,8 @@ class ObservationsAssignedToRp extends Component {
 
                 </ObseravationsListTable>
 
-                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage} goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
+                    goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
 
             </DesktopLayoutMainPage>
         )

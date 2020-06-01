@@ -2,3 +2,7 @@
     padding:8px 20px;
 }
 tr:nth-child(even) {background-color:#d7dfe9}
+.filter-user-observation-list{
+    align-self: flex-end;
+    margin-top:10px;
+}

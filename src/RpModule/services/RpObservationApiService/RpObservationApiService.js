@@ -4,7 +4,7 @@ import { apiMethods, apiUrls } from '../../constants/APIConstants';
 import { endPoints } from '../EndPoints'
 import getObservationsList from '../../fixtures/getObservationsResponse.json'
 import getObservation from '../../fixtures/getObservationResponse.json'
-class ObservationApiService {
+class RpObservationApiService {
     api;
     constructor() {
         this.api = create({
@@ -56,4 +56,4 @@ class ObservationApiService {
     }
 }
 
-export { ObservationApiService };
+export { RpObservationApiService };

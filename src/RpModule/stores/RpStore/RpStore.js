@@ -11,29 +11,32 @@ const SORT_KEYS = ['dueDate', 'reportedOn']
 const SORT_KEY = "reportedOn";
 const FILTER_TYPE = "ALL";
 const LIMIT = 3;
-class RpStore {
+class RpStore extends UserStore {
     @observable userType
     @observable assignedObservationsSortType;
     @observable assignedObservationsSortOption;
-    @observable reportedOnSortType;
-    @observable dueDateSortType;
+    @observable assignedObservationReportedOnSortType;
+    @observable assignedObservationDueDateSortType;
     @observable updateObservationAPIStatus;
     @observable updateObservationAPIError;
     @observable assignedObservationAPIStatus;
     @observable assignedObservationAPIError;
     @observable rpObservationAPIService;
     @observable assignedObservationListForRp;
-    @observable userStore;
+    //@observable userStore;
     @observable assignedObservationsCurrentPage;
     @observable assignedObservationsTotalPages
     @observable filterTypeOfAssignedObservation;
-    constructor(observationFixtureService) {
-        this.init();
-        this.rpObservationAPIService = observationFixtureService;
+
+    constructor(rpObservationFixtureService, observationFixtureService) {
+        super(observationFixtureService);
+        this.rpStoreInit();
+        this.rpObservationAPIService = rpObservationFixtureService;
+
     }
 
-    init = () => {
-        this.userStore = new UserStore(new ObservationFixtureService)
+    rpStoreInit = () => {
+        //this.userStore = new UserStore(new ObservationFixtureService)
         this.updateObservationAPIStatus = API_INITIAL;
         this.updateObservationAPIError = null;
         this.assignedObservationAPIStatus = API_INITIAL;
@@ -43,8 +46,8 @@ class RpStore {
         this.assignedObservationsCurrentPage = 1;
         this.filterTypeOfAssignedObservation = FILTER_TYPE;
         this.assignedObservationsSortOption = SORT_OPTIONS[0];
-        this.reportedOnSortType = SORT_OPTIONS[0];
-        this.dueDateSortType = SORT_OPTIONS[0];
+        this.assignedObservationReportedOnSortType = SORT_OPTIONS[0];
+        this.assignedObservationDueDateSortType = SORT_OPTIONS[0];
 
     }
 
@@ -99,23 +102,23 @@ class RpStore {
         this.updateObservationAPIError = error;
     }
     @action.bound
-    reportedOnSort() {
-        if (this.reportedOnSortType === SORT_OPTIONS[0])
-            this.reportedOnSortType = SORT_OPTIONS[1];
+    assignedObservationsReportedOnSort() {
+        if (this.assignedObservationReportedOnSortType === SORT_OPTIONS[0])
+            this.assignedObservationReportedOnSortType = SORT_OPTIONS[1];
         else
-            this.reportedOnSortType = SORT_OPTIONS[0];
+            this.assignedObservationReportedOnSortType = SORT_OPTIONS[0];
         this.assignedObservationsSortType = SORT_KEYS[1]
-        this.assignedObservationsSortOption = this.reportedOnSortType;
+        this.assignedObservationsSortOption = this.assignedObservationReportedOnSortType;
         this.getAssignedObservationList();
     }
     @action.bound
-    dueDateOnSort() {
-        if (this.dueDateSortType === SORT_OPTIONS[0])
-            this.dueDateSortType = SORT_OPTIONS[1];
+    assignedObservationsDueDateOnSort() {
+        if (this.assignedObservationDueDateSortType === SORT_OPTIONS[0])
+            this.assignedObservationDueDateSortType = SORT_OPTIONS[1];
         else
-            this.dueDateSortType = SORT_OPTIONS[0];
+            this.assignedObservationDueDateSortType = SORT_OPTIONS[0];
         this.assignedObservationsSortType = SORT_KEYS[0]
-        this.assignedObservationsSortOption = this.dueDateSortType;
+        this.assignedObservationsSortOption = this.assignedObservationDueDateSortType;
         this.getAssignedObservationList();
 
 
@@ -123,21 +126,23 @@ class RpStore {
     @action.bound
     filterAssignedObservationList(event) {
         this.filterTypeOfAssignedObservation = event.target.value;
+        console.log(this.filterTypeOfAssignedObservation);
+
     }
 
     @action.bound
-    goToPreviousPage() {
+    assignedObservationsGoToPreviousPage() {
 
         this.assignedObservationsCurrentPage--;
         this.getAssignedObservationList()
     }
     @action.bound
-    goToNextPage() {
+    assignedObservationsGoToNextPage() {
         this.assignedObservationsCurrentPage++;
         this.getAssignedObservationList();
     }
     @action.bound
-    goToRandomPage(event) {
+    assignedObservationsGoToRandomPage(event) {
         this.assignedObservationsCurrentPage = parseInt(event.target.value, 10);
         this.getAssignedObservationList();
     }

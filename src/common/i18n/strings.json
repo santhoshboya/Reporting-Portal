@@ -10,7 +10,12 @@
         "status": "STATUS",
         "dueDate": "DUE DATE",
         "messages": "MESSAGES",
-        "addNew": "ADD NEW"
+        "addNew": "ADD NEW",
+        "all": "ALL",
+        "acknowledgedbyRp": "Acknowledged by Rp",
+        "resolved": "Resolved",
+        "closed": "Closed",
+        "reported": "Reported"
     },
     "usersScreen": {
         "titleOfTheObservation": "TITLE OF THE OBSERVATION",
@@ -67,6 +72,7 @@
         "resolved": "Resolved",
         "closed": "Closed",
         "assignedToMe": "Assigned to me",
-        "myObservations": "My observations"
+        "myObservations": "My observations",
+        "reported": "Reported"
     }
 }

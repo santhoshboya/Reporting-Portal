@@ -83,7 +83,7 @@ class RpObservationRoute extends Component {
 
     @action.bound onClickSubmit() {
         if (this.onHandleErrorMsg()) {
-            let { getPostObservationAPIStatus } = this.props.rpStore.userStore;
+            let { getPostObservationAPIStatus } = this.props.rpStore;
             getPostObservationAPIStatus = 100;
             setTimeout(() => {
                 const observation = {
@@ -94,7 +94,7 @@ class RpObservationRoute extends Component {
                     description: this.description,
                     attachments: this.attachments
                 }
-                this.props.rpStore.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
+                this.props.rpStore.addNewObservation(observation, this.onSuccess, this.onFailure);
                 this.init();
                 getPostObservationAPIStatus = 200;
                 this.props.history.goBack();
@@ -113,7 +113,7 @@ class RpObservationRoute extends Component {
 
 
     render() {
-        const { getPostObservationAPIStatus } = this.props.rpStore.userStore
+        const { getPostObservationAPIStatus } = this.props.rpStore
         return (
             <RpObservationPage
                 title={this.titleOfTheObservation}

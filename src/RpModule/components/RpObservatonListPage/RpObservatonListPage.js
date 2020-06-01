@@ -10,26 +10,33 @@ import { Pagination } from '../../../common/components/Pagination'
 
 import './index.css'
 import {
-    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody
+    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody, PageHeadingAndAddButonDiv
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 
 @observer
 class RpObservatonListPage extends Component {
     render() {
-        const { observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage, handleClick, goToRandomPage, navigateTOPage, userType } = this.props
-        const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew, closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved } = strings.rpFeatures
+        const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
+            assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage, filterObservationList,
+            assignedObservationsGoToRandomPage, filterType } = this.props
+        const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
+            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported } = strings.rpFeatures
 
         return (
             <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage} currentPage={myObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
                 <ObseravationsHeader>
-                    <PageHeading>{listofObservations}</PageHeading>
+                    <PageHeadingAndAddButonDiv>
+                        <PageHeading>{listofObservations}</PageHeading>
 
-                    <PrimaryLeftIconDefault
-                        className={'Primary-Left-IconDefault'}
-                        value={addNew}
-                        handleClick={handleClick}
-                        src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
+                        <PrimaryLeftIconDefault
+                            className={'Primary-Left-IconDefault'}
+                            value={addNew}
+                            handleClick={handleClick}
+                            src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
+                    </PageHeadingAndAddButonDiv>
+                    <DropDown onSlectOption={filterObservationList} className={'filter-user-observation-list'} options={[all,
+                        acknowledgedbyRp, resolved, closed, reported]} value={filterType} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
@@ -58,7 +65,8 @@ class RpObservatonListPage extends Component {
 
                 </ObseravationsListTable>
 
-                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage} goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
+                    goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
 
             </DesktopLayoutMainPage>
         )

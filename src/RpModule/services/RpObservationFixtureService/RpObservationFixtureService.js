@@ -1,5 +1,5 @@
 import getAssignedObservationsResponse from '../../fixtures/getAssignedObservationsResponse.json'
-class ObservationFixtureService {
+class RpObservationFixtureService {
 
     updateObservationApi(id, Details) {
         console.log("observation updated...", Details);
@@ -19,4 +19,4 @@ class ObservationFixtureService {
     }
 }
 
-export { ObservationFixtureService };
+export { RpObservationFixtureService };

@@ -40,7 +40,7 @@ class ObservationsAssignedToRpRoute extends Component {
         history.push(RP_OBSERVATION_LIST_PATH)
     }
     onClickObservation = (observationId) => {
-        this.getRpStore().userStore.getObservation({}, this.onSuccess, this.onFailure);
+        this.getRpStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
@@ -48,25 +48,26 @@ class ObservationsAssignedToRpRoute extends Component {
 
     render() {
 
-        const { assignedObservationListForRp, goToPreviousPage, goToNextPage, assignedObservationsCurrentPage,
-            assignedObservationsTotalPages, goToRandomPage, filterAssignedObservationList, reportedOnSort, dueDateOnSort, userType } = this.getRpStore();
+        const { assignedObservationListForRp, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage,
+            assignedObservationsCurrentPage, filterTypeOfAssignedObservation,
+            assignedObservationsTotalPages, assignedObservationsGoToRandomPage, filterAssignedObservationList,
+            assignedObservationsReportedOnSort, assignedObservationsDueDateOnSort, userType } = this.getRpStore();
         return (
             <ObservationsAssignedToRp
                 filterAssignedObservationList={filterAssignedObservationList}
+                filterTypeOfAssignedObservation={filterTypeOfAssignedObservation}
                 handleClick={this.onClickAddNew}
                 observationList={assignedObservationListForRp}
                 onClickObservation={this.onClickObservation}
-                goToPreviousPage={goToPreviousPage}
-                goToNextPage={goToNextPage}
+                assignedObservationsGoToPreviousPage={assignedObservationsGoToPreviousPage}
+                assignedObservationsGoToNextPage={assignedObservationsGoToNextPage}
                 currentPage={assignedObservationsCurrentPage}
                 totalPages={assignedObservationsTotalPages}
-                goToRandomPage={goToRandomPage}
+                assignedObservationsGoToRandomPage={assignedObservationsGoToRandomPage}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
-                reportedOnSort={reportedOnSort}
-                dueDateOnSort={dueDateOnSort}
-
-
+                assignedObservationsReportedOnSort={assignedObservationsReportedOnSort}
+                assignedObservationsDueDateOnSort={assignedObservationsDueDateOnSort}
             />
         )
     }

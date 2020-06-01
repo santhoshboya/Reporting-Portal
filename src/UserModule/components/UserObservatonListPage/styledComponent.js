@@ -7,10 +7,11 @@ import {
 const PageHeading = styled(Typo32BrightBlueHKGroteskMedium)``;
 
 const ObseravationsHeader = styled.div`                                                                                                                                                                
-   ${tw`flex items-center justify-between`}
+   ${tw`flex flex-col`}
    padding:48px 64px;
    width:100%;
 `
+const PageHeadingAndAddButonDiv = styled.div`${tw`flex items-center justify-between`}`
 const ObseravationsListTable = styled.table`                                                                                                                                                                
    ${tw``}
 `
@@ -21,5 +22,6 @@ export {
    ObseravationsHeader,
    ObseravationsListTable,
    TableHeader,
-   TableBody
+   TableBody,
+   PageHeadingAndAddButonDiv
 }

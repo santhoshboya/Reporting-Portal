@@ -3,8 +3,12 @@ import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
 const LIMIT = 7;
-const SORT_TYPE = ["NEW", "OLD"];
+const SORT_OPTIONS = ["NEW", "OLD"]
+const SORT_KEYS = ['dueDate', 'reportedOn']
+const SORT_KEY = "reportedOn";
+const FILTER_TYPE = "ALL";
 class UserStore {
+
     @observable userType;
     @observable observationList;
     @observable observation;
@@ -13,12 +17,17 @@ class UserStore {
     @observable getObservationListAPIError;
     @observable userObservationAPIService;
 
-
     @observable getObservationAPIStatus;
     @observable getObservationAPIError;
 
     @observable getPostObservationAPIStatus;
     @observable getPostObservationAPIError;
+
+    @observable observationsSortType;
+    @observable observationsSortOption;
+    @observable reportedOnSortType;
+    @observable dueDateSortType;
+    @observable filtersOfObservation;
 
     @observable currentPage;
     @observable totalPages;
@@ -47,7 +56,10 @@ class UserStore {
         this.totalPages = null;
         this.userType = "";
         this.filterType = "ALL";
-        this.sortType = SORT_TYPE[0];
+        this.observationsSortOption = SORT_OPTIONS[0];
+        this.reportedOnSortType = SORT_OPTIONS[0];
+        this.dueDateSortType = SORT_OPTIONS[0];
+        this.observationsSortType = SORT_KEY;
     }
     @action.bound
     getObservationList() {
@@ -112,11 +124,6 @@ class UserStore {
 
     }
 
-
-
-
-
-
     @action.bound
     addNewObservation(requestObject, onSuccess, onFailure) {
         const postObservationPromise = this.userObservationAPIService.postObservationApi(requestObject)
@@ -150,6 +157,7 @@ class UserStore {
     filterObservationList(event) {
         this.filterType = event.target.value;
 
+
     }
 
 
@@ -170,6 +178,27 @@ class UserStore {
     @action.bound
     goToRandomPage(event) {
         this.currentPage = parseInt(event.target.value, 10);
+        this.getObservationList();
+    }
+
+    @action.bound
+    reportedOnSort() {
+        if (this.reportedOnSortType === SORT_OPTIONS[0])
+            this.reportedOnSortType = SORT_OPTIONS[1];
+        else
+            this.reportedOnSortType = SORT_OPTIONS[0];
+        this.observationsSortType = SORT_KEYS[1]
+        this.observationsSortOption = this.reportedOnSortType;
+        this.getObservationList();
+    }
+    @action.bound
+    dueDateOnSort() {
+        if (this.dueDateSortType === SORT_OPTIONS[0])
+            this.dueDateSortType = SORT_OPTIONS[1];
+        else
+            this.dueDateSortType = SORT_OPTIONS[0];
+        this.observationsSortType = SORT_KEYS[0]
+        this.observationsSortOption = this.dueDateSortType;
         this.getObservationList();
     }
 }

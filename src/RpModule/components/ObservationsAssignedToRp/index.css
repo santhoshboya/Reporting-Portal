@@ -3,6 +3,6 @@
 }
 tr:nth-child(even) {background-color:#d7dfe9}
 .flter-Drop-Down{
-    width: 80px;
+    width: 210px;
     align-self: flex-end;
 }

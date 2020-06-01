@@ -77,7 +77,7 @@ class RpObservationScreenRoute extends Component {
             updateObservationAPIStatus = 200;
             alert("observation updated successfully...")
             this.props.history.goBack();
-        }, 1200)
+        }, 500)
 
 
     }
@@ -92,9 +92,9 @@ class RpObservationScreenRoute extends Component {
     render() {
         const { title, cateogary, subCateogary, severity, description,
             reportedOn, attachments, assignedTO, status, dueDate, privacy
-        } = this.props.rpStore.userStore.observationDetails
+        } = this.props.rpStore.observationDetails
 
-        const { userType } = this.props.rpStore.userStore;
+        const { userType } = this.props.rpStore;
         const { updateObservationAPIStatus } = this.props.rpStore
 
         return (

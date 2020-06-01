@@ -5,32 +5,41 @@ import { PageHeader } from '../../../common/components/PageHeader'
 import { PrimaryLeftIconDefault } from '../../../common/components/PrimaryLeftIconDefault'
 import strings from '../../../common/i18n/strings.json'
 import {
-    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody
+    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody, PageHeadingAndAddButonDiv
 } from './styledComponent'
 import { ObservationListHeader } from '../../../common/components/ObservationListHeader'
 import { ObservationListItem } from '../../../common/components/ObservationListItem'
 import { observer } from 'mobx-react'
 import { Pagination } from '../../../common/components/Pagination'
+import { DropDown } from '../../../common/components/DropDown'
 @observer
 class UserObservatonListPage extends Component {
     render() {
-        const { handleClick, observationList, onClickObservation, totalPages, currentPage, goToNextPage, goToPreviousPage, goToRandomPage } = this.props
-        const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew, listofObservations } = strings.userFeatures
-        console.log(observationList);
+        const { handleClick, observationList, onClickObservation, totalPages, currentPage,
+            goToNextPage, goToPreviousPage, goToRandomPage, reportedOnSort, dueDateOnSort,
+            filterObservationList, filterType, userType } = this.props
+        const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew,
+            listofObservations, all, acknowledgedbyRp, resolved, closed, reported
+        } = strings.userFeatures;
 
         return (
             <DesktopLayoutMainPage userName={"Santhu"} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'}>
+
                 <ObseravationsHeader>
-                    <PageHeading>{listofObservations}</PageHeading>
-                    <PrimaryLeftIconDefault
-                        className={'Primary-Left-IconDefault'}
-                        value={addNew}
-                        handleClick={handleClick}
-                        src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
+                    <PageHeadingAndAddButonDiv>
+                        <PageHeading>{listofObservations}</PageHeading>
+                        <PrimaryLeftIconDefault
+                            className={'Primary-Left-IconDefault'}
+                            value={addNew}
+                            handleClick={handleClick}
+                            src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
+                    </PageHeadingAndAddButonDiv>
+                    <DropDown onSlectOption={filterObservationList} className={'filter-user-observation-list'} options={[all,
+                        acknowledgedbyRp, resolved, closed, reported]} value={filterType} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
-                        <ObservationListHeader headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
+                        <ObservationListHeader reportedOnSort={reportedOnSort} dueDateOnSort={dueDateOnSort} headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
                     </TableHeader>
                     <TableBody>
                         {observationList.length > 0 &&
