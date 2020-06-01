@@ -22,7 +22,6 @@ class RpObservatonListRoute extends Component {
     }
 
     doNetworkCalls = () => {
-        //this.getRpStore().userStore.getObservationList();
         this.getRpStore().getObservationList();
     }
     onClickAddNew = () => {
@@ -46,8 +45,8 @@ class RpObservatonListRoute extends Component {
     }
 
     render() {
-        const { observationList, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage, filterObservationList,
-            assignedObservationsGoToRandomPage, totalPages,
+        const { observationList, goToPreviousPage, goToNextPage, filterObservationList,
+            goToRandomPage, totalPages, currentPage,
             userType, filterType } = this.getRpStore();
         console.log(234, this.getRpStore().observationList)
         return (
@@ -55,11 +54,11 @@ class RpObservatonListRoute extends Component {
                 handleClick={this.onClickAddNew}
                 observationList={observationList}
                 onClickObservation={this.onClickObservation}
-                assignedObservationsGoToPreviousPage={assignedObservationsGoToPreviousPage}
-                assignedObservationsGoToNextPage={assignedObservationsGoToNextPage}
-                assignedObservationsGoToRandomPage={assignedObservationsGoToRandomPage}
+                goToPreviousPage={goToPreviousPage}
+                goToNextPage={goToNextPage}
+                goToRandomPage={goToRandomPage}
                 totalPages={totalPages}
-                assignedObservationsGoToRandomPage={assignedObservationsGoToRandomPage}
+                currentPage={currentPage}
                 filterObservationList={filterObservationList}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}

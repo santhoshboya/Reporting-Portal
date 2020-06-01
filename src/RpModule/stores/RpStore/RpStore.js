@@ -135,16 +135,20 @@ class RpStore extends UserStore {
 
         this.assignedObservationsCurrentPage--;
         this.getAssignedObservationList()
+        console.log("a", this.assignedObservationsCurrentPage);
     }
     @action.bound
     assignedObservationsGoToNextPage() {
         this.assignedObservationsCurrentPage++;
         this.getAssignedObservationList();
+        console.log("b", this.assignedObservationsCurrentPage);
+
     }
     @action.bound
     assignedObservationsGoToRandomPage(event) {
         this.assignedObservationsCurrentPage = parseInt(event.target.value, 10);
         this.getAssignedObservationList();
+        console.log("c", this.assignedObservationsCurrentPage);
     }
 }
 export { RpStore };

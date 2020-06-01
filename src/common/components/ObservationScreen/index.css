@@ -32,3 +32,8 @@
 .goback{
   cursor: pointer;
 }
+
+.datepicker-field{
+  border: solid 1px #d7dfe9;
+  background-color: rgba(215, 223, 233, 0.5);
+}

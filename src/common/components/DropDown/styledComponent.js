@@ -5,7 +5,6 @@ const SelectElement = styled.select`
    height: 40px;
    border-radius: 2px;
    border: solid 1px #d7dfe9;
-   background-color: #ffffff;
    padding-right:30px
 `
 const SlectOptions = styled.option`

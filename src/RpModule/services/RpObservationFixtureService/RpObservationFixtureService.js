@@ -6,7 +6,6 @@ class RpObservationFixtureService {
         return new Promise(resolve => resolve())
     }
     getAssignedObservationListApi(Limit, offeset, accessToken) {
-        console.log(Limit, offeset);
 
         let dataCopy = getAssignedObservationsResponse.observation_list.slice();
         let data = dataCopy.splice(offeset, Limit);

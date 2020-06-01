@@ -40,7 +40,7 @@ class ObservationsAssignedToRpRoute extends Component {
         history.push(RP_OBSERVATION_LIST_PATH)
     }
     onClickObservation = (observationId) => {
-        this.getRpStore().getObservation({}, this.onSuccess, this.onFailure);
+
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }

@@ -10,8 +10,6 @@ class RpObservationScreenRoute extends Component {
     @observable dueDate = null;
     @observable privacy = null;
     @observable status = null;
-    @observable severity = null;
-    @observable description = null;
     @observable assignedTO = null;
     cateogary = null;
     subCateogary = null;
@@ -23,10 +21,17 @@ class RpObservationScreenRoute extends Component {
         super(props);
         this.init();
     }
+    componentDidMount() {
+        this.props.rpStore.getObservation({}, this.onSuccess, this.onFailure).then(() => {
+            const { assignedTO, status, privacy, dueDate } = this.props.rpStore
+            this.assignedTO = assignedTO;
+            this.status = status;
+            this.dueDate = privacy;
+            this.privacy = dueDate;
 
+        })
+    }
     init = () => {
-        this.description = "";
-        this.attachments = [];
         this.assignedTO = "";
         this.status = "";
         this.dueDate = "";
@@ -48,10 +53,14 @@ class RpObservationScreenRoute extends Component {
 
     @action.bound onChangeStatus(event) {
         this.status = event.target.value
+        console.log(this.status);
     }
 
     @action.bound onChangeDescription(event) {
+
+
         this.description = event.target.value
+        console.log(this.description);
     }
 
     @action.bound onReset() {
@@ -91,7 +100,7 @@ class RpObservationScreenRoute extends Component {
 
     render() {
         const { title, cateogary, subCateogary, severity, description,
-            reportedOn, attachments, assignedTO, status, dueDate, privacy
+            reportedOn, attachments
         } = this.props.rpStore.observationDetails
 
         const { userType } = this.props.rpStore;
@@ -115,10 +124,10 @@ class RpObservationScreenRoute extends Component {
                 onChangeDescription={this.onChangeDescription}
                 goBack={this.goBack}
                 onReset={this.onReset}
-                assignedToOfObservation={assignedTO}
-                statusOfObservation={status}
-                dueDateOfObservation={dueDate}
-                privacyOfObservation={privacy}
+                assignedToOfObservation={this.assignedTO}
+                statusOfObservation={this.status}
+                dueDateOfObservation={this.dueDate}
+                privacyOfObservation={this.privacy}
                 apiStatus={updateObservationAPIStatus}
             />
         )

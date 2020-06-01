@@ -1,0 +1,6 @@
+.dropDown-field-normal{
+   background-color: #ffffff;
+}
+.dropDown-field-disabled{
+  background-color: rgba(215, 223, 233, 0.5);
+}

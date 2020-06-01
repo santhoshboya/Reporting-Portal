@@ -4,7 +4,7 @@ import { DatePickerElement } from './styledComponent'
 
 class DatePicker extends Component {
    render() {
-      const { value, onChangeDate, isDisabled } = this.props
+      const { value, onChangeDate, className, isDisabled } = this.props
       return (
          <DatePickerElement
             type='date'
@@ -13,6 +13,7 @@ class DatePicker extends Component {
             max='2030-12-31'
             onChange={onChangeDate}
             disabled={isDisabled}
+            className={className}
          ></DatePickerElement>
       )
    }

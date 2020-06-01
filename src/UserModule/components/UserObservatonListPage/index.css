@@ -3,6 +3,7 @@
 }
 tr:nth-child(even) {background-color:#d7dfe9}
 .filter-user-observation-list{
+    background-color: white;
     align-self: flex-end;
     margin-top:10px;
 }

@@ -18,8 +18,8 @@ import { DropDown } from '../../../common/components/DropDown'
 class RpObservatonListPage extends Component {
     render() {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
-            assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage, filterObservationList,
-            assignedObservationsGoToRandomPage, filterType } = this.props
+            goToPreviousPage, goToNextPage, filterObservationList,
+            goToRandomPage, filterType } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported } = strings.rpFeatures
 
@@ -35,7 +35,7 @@ class RpObservatonListPage extends Component {
                             handleClick={handleClick}
                             src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
                     </PageHeadingAndAddButonDiv>
-                    <DropDown onSlectOption={filterObservationList} className={'filter-user-observation-list'} options={[all,
+                    <DropDown onSlectOption={filterObservationList} className={'flter-Drop-Down'} options={[all,
                         acknowledgedbyRp, resolved, closed, reported]} value={filterType} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
@@ -65,8 +65,8 @@ class RpObservatonListPage extends Component {
 
                 </ObseravationsListTable>
 
-                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
-                    goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
+                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
+                    goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
 
             </DesktopLayoutMainPage>
         )

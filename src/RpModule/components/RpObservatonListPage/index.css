@@ -3,6 +3,7 @@
 }
 tr:nth-child(even) {background-color:#d7dfe9}
 .flter-Drop-Down{
-    width: 80px;
+    margin-top: 10px;
+    background-color: white;
     align-self: flex-end;
 }

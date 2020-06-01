@@ -7,6 +7,7 @@ import {
     FieldName, DragAndDrop, Required, Title, RadioButtonsDiv,
     RadioLable, HeaderDiv, ChatHeading, Buttons, ObsertationDiv
 } from './styledComponent'
+import { USER, RP, ADMIN } from '../../constants/NameConstants'
 import { Image } from '../Image'
 import { DropDown } from '../DropDown'
 import { TextArea } from '../TextArea'
@@ -16,14 +17,13 @@ import { observer } from 'mobx-react'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SecondaryButton } from '../SecondaryButton'
 import { RadioButton } from '../RadioButton'
-import { constants } from "../../constants/NameConstants"
+
 
 
 
 @observer
 class ObservationScreen extends Component {
     render() {
-        console.log(123, constants.rp)
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
             onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription,
@@ -35,6 +35,8 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
+        console.log("screen");
+
         return (
             <DesktopLayoutMainPage>
                 <HeaderDiv >
@@ -54,20 +56,21 @@ class ObservationScreen extends Component {
 
                     <FieldContainer>
                         <TextArea className={'observation-description'} value={descriptionOfObservation}
-                            onHandleChange={onChangeDescription} />
+                            onHandleChange={onChangeDescription} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={() => { }} value={cateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown onSlectOption={() => { }} value={cateogaryOfObservation}
+                            options={['Asset Management', 'Tech', 'Management']} isDisabled={(userType === USER || userType === RP) ? true : false}
+                        />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={() => { }} value={subCateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} />
+                            options={['Asset Management', 'Tech', 'Management']} isDisabled={(userType === USER || userType === RP) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -75,7 +78,7 @@ class ObservationScreen extends Component {
                             {status}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation}
-                            options={["action in progress", 'pending', 'completed']} />
+                            options={["action in progress", 'pending', 'completed']} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -83,14 +86,14 @@ class ObservationScreen extends Component {
                             {severity}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation}
-                            options={['HIGH', 'LOW', 'WARNING']} />
+                            options={['HIGH', 'LOW', 'WARNING']} isDisabled={(userType === USER || userType === RP) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {attachments}
                         </FieldName>
-                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} />
+                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -98,21 +101,23 @@ class ObservationScreen extends Component {
                             {assignedTo}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation}
-                            options={['PavanKumar', 'Janardhan', 'Sunny']} />
+                            options={['PavanKumar', 'Janardhan', 'Sunny']} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {reportedOn}
                         </FieldName>
-                        <DatePicker isDisabled={isDisabled} userType={userType} value={reportedOnOfObservation} />
+                        <DatePicker isDisabled={(userType === USER || userType === RP) ? true : false}
+                            className={userType === RP ? "datepicker-field" : ""} value={reportedOnOfObservation} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {dueDate}
                         </FieldName>
-                        <DatePicker isDisabled={userType === ""} value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
+                        <DatePicker isDisabled={(userType === USER) ? true : false} className={userType === USER ? "datepicker-field" : ""}
+                            value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
                     </FieldContainer>
 
                     {userType !== "user" &&

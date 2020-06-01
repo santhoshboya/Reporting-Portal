@@ -2,7 +2,7 @@ import { observable, action, computed, toJS } from "mobx"
 import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
-const LIMIT = 7;
+const LIMIT = 3;
 const SORT_OPTIONS = ["NEW", "OLD"]
 const SORT_KEYS = ['dueDate', 'reportedOn']
 const SORT_KEY = "reportedOn";
@@ -164,21 +164,22 @@ class UserStore {
     @action.bound
     goToPreviousPage() {
         this.currentPage--;
-        console.log(this.currentPage)
+        console.log(1, this.currentPage)
         this.getObservationList()
     }
 
     @action.bound
     goToNextPage() {
         this.currentPage++;
-        console.log(this.currentPage)
         this.getObservationList();
+        console.log(2, this.currentPage)
     }
 
     @action.bound
     goToRandomPage(event) {
         this.currentPage = parseInt(event.target.value, 10);
         this.getObservationList();
+        console.log(3, this.currentPage)
     }
 
     @action.bound
