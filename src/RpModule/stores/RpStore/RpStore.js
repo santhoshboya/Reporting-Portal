@@ -121,11 +121,7 @@ class RpStore extends UserStore {
 
 
     }
-    @action.bound
-    filterAssignedObservationList(event) {
-        this.filterTypeOfAssignedObservation = event.target.value;
-        this.getAssignedObservationList();
-    }
+
 
     @action.bound
     assignedObservationsGoToPreviousPage() {
@@ -138,8 +134,13 @@ class RpStore extends UserStore {
         this.getAssignedObservationList();
     }
     @action.bound
-    assignedObservationsGoToRandomPage(event) {
-        this.assignedObservationsCurrentPage = parseInt(event.target.value, 10);
+    assignedObservationsGoToRandomPage(value) {
+        this.assignedObservationsCurrentPage = parseInt(value, 10);
+        this.getAssignedObservationList();
+    }
+    @action.bound
+    filterAssignedObservationList(event) {
+        this.filterTypeOfAssignedObservation = event.target.value;
         this.getAssignedObservationList();
     }
 }

@@ -56,6 +56,7 @@ describe("UserStore Store tests", () => {
         expect(userStore.getObservationListAPIStatus).toBe(API_FAILED)
     })
 
+
 })
 
 

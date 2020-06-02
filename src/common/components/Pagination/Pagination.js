@@ -5,35 +5,38 @@ import { PaginationBtnDiv, CurrentPage } from './styledComponent'
 import './index.css'
 const COUNT = 5;
 class Pagination extends Component {
+    goToRandomPage = (event) => {
+        this.props.goToRandomPage(event.target.value);
+    }
 
-    getPageButtons = (currentPage, totalPages, goToRandomPage) => {
+    getPageButtons = (currentPage, totalPages) => {
         if (totalPages < 5) {
             let arrayOfPages = Array.from({ length: totalPages }, (v, i) => i + 1)
             return arrayOfPages.map(page => <CurrentPage key={Math.random()} className={page === currentPage ? "pagination-button-highlight"
-                : 'pagination-button'} onClick={goToRandomPage} value={page}>{page}</CurrentPage>)
+                : 'pagination-button'} onClick={this.goToRandomPage} value={page}>{page}</CurrentPage>)
         }
 
         else if (currentPage < totalPages - 4) {
             let arrayOfPages = [];
-            arrayOfPages.push(<CurrentPage className={'pagination-button-highlight'} key={Math.random()} onClick={goToRandomPage} value={currentPage}>{currentPage}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={goToRandomPage} value={currentPage + 1}>{currentPage + 1}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={goToRandomPage} value={(totalPages + currentPage) / 2}>...</CurrentPage>)
-            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
-            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage className={'pagination-button-highlight'} key={Math.random()} onClick={this.goToRandomPage} value={currentPage}>{currentPage}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={this.goToRandomPage} value={currentPage + 1}>{currentPage + 1}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={this.goToRandomPage} value={(totalPages + currentPage) / 2}>...</CurrentPage>)
+            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={this.goToRandomPage} value={totalPages - 1}>{totalPages - 1}</CurrentPage>)
+            arrayOfPages.push(<CurrentPage className={'pagination-button'} key={Math.random()} onClick={this.goToRandomPage} value={totalPages}>{totalPages}</CurrentPage>)
             return arrayOfPages;
         }
         else {
 
             let arrayOfPages = Array.from({ length: COUNT }, (v, i) => totalPages - COUNT + i + 1)
             return arrayOfPages.map(page => <CurrentPage className={page === currentPage ? "pagination-button-highlight"
-                : 'pagination-button'} key={Math.random()} onClick={goToRandomPage} value={page}>{page}</CurrentPage>)
+                : 'pagination-button'} key={Math.random()} onClick={this.goToRandomPage} value={page}>{page}</CurrentPage>)
         }
 
     }
 
     render() {
         const { currentPage, totalPages, goToPreviousPage, goToNextPage, goToRandomPage } = this.props
-        const butttons = this.getPageButtons(currentPage, totalPages, goToRandomPage)
+        const butttons = this.getPageButtons(currentPage, totalPages)
         return (
 
             <PaginationBtnDiv>

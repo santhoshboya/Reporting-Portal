@@ -3,9 +3,10 @@ class RpObservationFixtureService {
 
     updateObservationApi(id, Details) {
         console.log("observation updated...", Details);
-        return new Promise(resolve => resolve())
+        return new Promise(resolve => resolve("Updated"))
     }
     getAssignedObservationListApi(Limit, offeset, accessToken) {
+        console.log(100);
 
         let dataCopy = getAssignedObservationsResponse.observation_list.slice();
         let data = dataCopy.splice(offeset, Limit);

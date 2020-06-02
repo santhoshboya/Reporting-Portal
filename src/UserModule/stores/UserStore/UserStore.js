@@ -113,8 +113,6 @@ class UserStore {
         return temp;
     }
     @computed get getSubCateogaries() {
-        this.cateogaries.length > 0 &&
-            console.log(12345, this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries, this.subCateogaries, this.cateogary);
         let subCateogaries;
         if (this.cateogaries.length > 0)
             subCateogaries = this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries
@@ -126,8 +124,6 @@ class UserStore {
             temp.push(subCateogary.name)
         })
         return temp;
-
-
     }
 
 
@@ -246,8 +242,8 @@ class UserStore {
     }
 
     @action.bound
-    goToRandomPage(event) {
-        this.currentPage = parseInt(event.target.value, 10);
+    goToRandomPage(value) {
+        this.currentPage = parseInt(value, 10);
         this.getObservationList();
         console.log(3, this.currentPage)
     }
