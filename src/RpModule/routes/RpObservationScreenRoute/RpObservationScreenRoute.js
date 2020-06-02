@@ -25,7 +25,9 @@ class RpObservationScreenRoute extends Component {
         const { id } = this.props.match.params
 
         this.props.rpStore.getObservation({ id }, this.onSuccess, this.onFailure).then(() => {
-            const { assignedTO, status, privacy, dueDate } = this.props.rpStore
+            const { assignedTO, status, privacy, dueDate } = this.props.rpStore.observationDetails
+            console.log(123, privacy, assignedTO, status, dueDate);
+
             this.assignedTO = assignedTO;
             this.status = status;
             this.dueDate = privacy;

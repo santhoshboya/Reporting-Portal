@@ -3,8 +3,6 @@ import { SelectElement, SlectOptions } from './styledComponent'
 import { USER, RP } from '../../constants/NameConstants'
 import "./index.css"
 function Options(props) {
-   console.log(props);
-
    return <SlectOptions value={props.option}>{props.option}</SlectOptions>
 }
 class DropDown extends Component {

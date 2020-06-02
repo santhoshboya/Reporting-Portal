@@ -139,8 +139,8 @@ class RpStore extends UserStore {
         this.getAssignedObservationList();
     }
     @action.bound
-    filterAssignedObservationList(event) {
-        this.filterTypeOfAssignedObservation = event.target.value;
+    filterAssignedObservationList(value) {
+        this.filterTypeOfAssignedObservation = value;
         this.getAssignedObservationList();
     }
 }

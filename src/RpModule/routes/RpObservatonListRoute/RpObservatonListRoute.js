@@ -42,11 +42,15 @@ class RpObservatonListRoute extends Component {
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
+    filterObservationList = (event) => {
+        this.props.rpStore.filterObservationList(event.target.value)
+    }
 
     render() {
-        const { observationList, goToPreviousPage, goToNextPage, filterObservationList,
+        const { observationList, goToPreviousPage, goToNextPage,
             goToRandomPage, totalPages, currentPage,
             userType, filterType } = this.getRpStore();
+
         console.log(234, this.getRpStore().observationList)
         return (
             <RpObservatonListPage
@@ -58,7 +62,7 @@ class RpObservatonListRoute extends Component {
                 goToRandomPage={goToRandomPage}
                 totalPages={totalPages}
                 currentPage={currentPage}
-                filterObservationList={filterObservationList}
+                filterObservationList={this.filterObservationList}
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
                 filterType={filterType}

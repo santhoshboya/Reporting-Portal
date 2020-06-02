@@ -44,17 +44,20 @@ class ObservationsAssignedToRpRoute extends Component {
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
+    filterAssignedObservationList = (event) => {
+        this.props.rpStore.filterAssignedObservationList(event.target.value)
+    }
 
 
     render() {
 
         const { assignedObservationListForRp, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage,
             assignedObservationsCurrentPage, filterTypeOfAssignedObservation,
-            assignedObservationsTotalPages, assignedObservationsGoToRandomPage, filterAssignedObservationList,
+            assignedObservationsTotalPages, assignedObservationsGoToRandomPage,
             assignedObservationsReportedOnSort, assignedObservationsDueDateOnSort, userType } = this.getRpStore();
         return (
             <ObservationsAssignedToRp
-                filterAssignedObservationList={filterAssignedObservationList}
+                filterAssignedObservationList={this.filterAssignedObservationList}
                 filterTypeOfAssignedObservation={filterTypeOfAssignedObservation}
                 handleClick={this.onClickAddNew}
                 observationList={assignedObservationListForRp}

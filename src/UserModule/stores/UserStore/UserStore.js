@@ -81,7 +81,7 @@ class UserStore {
                 onSuccess()
             })
             .catch(error => {
-                this.setGetCateogariesApiAPIError(error)
+                this.setGetCateogariesApiAPIError(error);
                 onFailure();
             })
     }
@@ -102,8 +102,6 @@ class UserStore {
         this.cateogaries = response.cateogaries;
         this.cateogary = this.cateogaries[0].name
         this.subCateogaries = response.subCateogaries;
-        console.log(this.cateogaries, this.subCateogaries)
-
     }
     @computed get cateogariesList() {
         let temp = []
@@ -147,7 +145,6 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiAPIError(error) {
-        console.log(error)
         this.getObservationListAPIError = error;
     }
 
@@ -165,7 +162,7 @@ class UserStore {
         return bindPromiseWithOnSuccess(observationPromise)
             .to(this.setGetObservationApiAPIStatus, response => {
                 this.setGetObservationApiResponse(response)
-                onSuccess()
+                onSuccess();
             })
             .catch(error => {
                 this.setGetObservationApiAPIError(error)
@@ -223,14 +220,13 @@ class UserStore {
 
 
     @action.bound
-    filterObservationList(event) {
-        this.filterType = event.target.value;
+    filterObservationList(value) {
+        this.filterType = value;
     }
 
     @action.bound
     goToPreviousPage() {
         this.currentPage--;
-        console.log(1, this.currentPage)
         this.getObservationList()
     }
 
@@ -238,14 +234,12 @@ class UserStore {
     goToNextPage() {
         this.currentPage++;
         this.getObservationList();
-        console.log(2, this.currentPage)
     }
 
     @action.bound
     goToRandomPage(value) {
         this.currentPage = parseInt(value, 10);
         this.getObservationList();
-        console.log(3, this.currentPage)
     }
 
     @action.bound

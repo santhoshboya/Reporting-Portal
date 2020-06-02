@@ -109,4 +109,12 @@ describe("RpStore Store tests", () => {
 
     })
 
+    it("Should test filtering observations List", () => {
+        const value = 4;
+        let filterTypeOfAssignedObservation = value;
+        rpStore.filterAssignedObservationList(value);
+        expect(rpStore.filterTypeOfAssignedObservation).toBe(filterTypeOfAssignedObservation);
+
+    })
+
 });
