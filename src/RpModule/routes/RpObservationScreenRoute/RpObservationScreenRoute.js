@@ -22,7 +22,9 @@ class RpObservationScreenRoute extends Component {
         this.init();
     }
     componentDidMount() {
-        this.props.rpStore.getObservation({}, this.onSuccess, this.onFailure).then(() => {
+        const { id } = this.props.match.params
+
+        this.props.rpStore.getObservation({ id }, this.onSuccess, this.onFailure).then(() => {
             const { assignedTO, status, privacy, dueDate } = this.props.rpStore
             this.assignedTO = assignedTO;
             this.status = status;
@@ -91,10 +93,10 @@ class RpObservationScreenRoute extends Component {
 
     }
     onFailure() {
-        alert("something went wrong pls try again...")
+        // alert("something went wrong pls try again...")
     }
     onSuccess() {
-        alert("observation updated successfully...")
+        //alert("observation updated successfully...")
     }
 
 

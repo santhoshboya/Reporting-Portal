@@ -23,13 +23,15 @@ class UserObservationPage extends Component {
         const { onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
             descriptionOfObservation, attachmentsOfObservation,
             onChangeTitleOfTheObservation, onChangeCateogary, onChangeSubCateogary,
-            onChangeSeverity, onChangeDescription, goBack,
-            titleErrorMsg, severityErrorMsg, descriptionErrorMsg, apiStatus } = this.props
+            onChangeSeverity, onChangeDescription, goBack, getSubCateogaries, cateogaries,
+            titleErrorMsg, severityErrorMsg, descriptionErrorMsg, apiStatus, cateogariesList } = this.props
 
 
         const { titleOfTheObservation, culturalDeviations,
             backToObservations, cateogary, severity, description,
             attachments, subCateogary, submit } = strings.usersScreen
+        console.log(123, getSubCateogaries);
+
         return (
             <DesktopLayoutMainPage>
                 <ObservationForm>
@@ -54,11 +56,11 @@ class UserObservationPage extends Component {
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation} options={cateogaries.length > 0 ? cateogariesList : []} />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={['Asset Management', 'Tech', 'Management']} />
+                        <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation} options={cateogaries.length > 0 ? getSubCateogaries : []} />
                     </FieldContainer>
 
                     <FieldContainer>

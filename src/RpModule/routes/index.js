@@ -12,7 +12,7 @@ import { ObservationsAssignedToRpRoute } from './ObservationsAssignedToRpRoute'
 
 
 const rpRoutes = [<Route path={RP_OBSERVATION_LIST_PATH} component={RpObservatonListRoute} />,
-<Route path={RP_OBSERVATION_SCREEN_PATH} component={RpObservationScreenRoute} />,
+<Route path={`${RP_OBSERVATION_SCREEN_PATH}:id`} component={RpObservationScreenRoute} />,
 <Route path={RP_OBSERVATION_PATH} component={RpObservationRoute} />,
 <Route path={OBSERVATIONS_ASSIGNED_TO_RP} component={ObservationsAssignedToRpRoute} />]
 export { rpRoutes }

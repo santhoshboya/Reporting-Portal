@@ -30,6 +30,9 @@ class RpObservationRoute extends Component {
         this.description = "";
         this.attachments = [];
     }
+    componentDidMount = () => {
+        this.props.rpStore.getCateogaries({}, () => { }, () => { });
+    }
 
     @action.bound onChangeTitleOfTheObservation(event) {
 
@@ -42,6 +45,7 @@ class RpObservationRoute extends Component {
 
     @action.bound onChangeCateogary(event) {
         this.cateogary = event.target.value;
+        this.props.rpStore.cateogary = event.target.value;
 
     }
 
@@ -105,15 +109,15 @@ class RpObservationRoute extends Component {
         this.props.history.goBack();
     }
     onSuccess() {
-        alert("observation submitted successfully...")
+        //alert("observation submitted successfully...")
     }
     onFailure() {
-        alert("something went wrong pls try again...")
+        // alert("something went wrong pls try again...")
     }
 
 
     render() {
-        const { getPostObservationAPIStatus } = this.props.rpStore
+        const { getPostObservationAPIStatus, cateogaries, getSubCateogaries, cateogariesList } = this.props.rpStore
         return (
             <RpObservationPage
                 title={this.titleOfTheObservation}
@@ -133,6 +137,9 @@ class RpObservationRoute extends Component {
                 severityErrorMsg={this.severityErrorMsg}
                 descriptionErrorMsg={this.descriptionErrorMsg}
                 apiStatus={getPostObservationAPIStatus}
+                cateogaries={cateogaries}
+                getSubCateogaries={getSubCateogaries}
+                cateogariesList={cateogariesList}
             />
         )
     }

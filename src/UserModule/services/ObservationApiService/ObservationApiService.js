@@ -25,7 +25,7 @@ class ObservationApiService {
             this.api,
             endPoints.postObservation,
             { obseravation },
-            apiMethods.get
+            apiMethods.post
         )
     }
     getObservationListApi(Limit, offeset, accessToken) {
@@ -34,6 +34,15 @@ class ObservationApiService {
             this.api,
             endPoint,
             { accessToken },
+            apiMethods.get
+        )
+    }
+    getCateogariesApi() {
+        let endPoint = `catagories`
+        return networkCallWithApisauce(
+            this.api,
+            endPoint,
+            {},
             apiMethods.get
         )
     }

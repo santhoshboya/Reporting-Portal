@@ -29,17 +29,16 @@ class RpObservatonListRoute extends Component {
         history.push(RP_OBSERVATION_PATH)
     }
     onSuccess = () => {
-        alert("data recieved")
+        //alert("data recieved")
     }
     onFailure = () => {
-        alert("data recieved")
+        //alert("data recieved")
     }
     navigateTOPage = (page) => {
         const { history } = this.props
         history.push(OBSERVATIONS_ASSIGNED_TO_RP)
     }
     onClickObservation = (observationId) => {
-        this.getRpStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }

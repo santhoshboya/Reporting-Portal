@@ -23,7 +23,6 @@ class RpStore extends UserStore {
     @observable assignedObservationAPIError;
     @observable rpObservationAPIService;
     @observable assignedObservationListForRp;
-    //@observable userStore;
     @observable assignedObservationsCurrentPage;
     @observable assignedObservationsTotalPages
     @observable filterTypeOfAssignedObservation;
@@ -36,7 +35,6 @@ class RpStore extends UserStore {
     }
 
     rpStoreInit = () => {
-        //this.userStore = new UserStore(new ObservationFixtureService)
         this.updateObservationAPIStatus = API_INITIAL;
         this.updateObservationAPIError = null;
         this.assignedObservationAPIStatus = API_INITIAL;
@@ -126,29 +124,23 @@ class RpStore extends UserStore {
     @action.bound
     filterAssignedObservationList(event) {
         this.filterTypeOfAssignedObservation = event.target.value;
-        console.log(this.filterTypeOfAssignedObservation);
-
+        this.getAssignedObservationList();
     }
 
     @action.bound
     assignedObservationsGoToPreviousPage() {
-
         this.assignedObservationsCurrentPage--;
-        this.getAssignedObservationList()
-        console.log("a", this.assignedObservationsCurrentPage);
+        this.getAssignedObservationList();
     }
     @action.bound
     assignedObservationsGoToNextPage() {
         this.assignedObservationsCurrentPage++;
         this.getAssignedObservationList();
-        console.log("b", this.assignedObservationsCurrentPage);
-
     }
     @action.bound
     assignedObservationsGoToRandomPage(event) {
         this.assignedObservationsCurrentPage = parseInt(event.target.value, 10);
         this.getAssignedObservationList();
-        console.log("c", this.assignedObservationsCurrentPage);
     }
 }
 export { RpStore };

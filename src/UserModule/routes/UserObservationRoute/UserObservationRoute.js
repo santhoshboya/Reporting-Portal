@@ -29,6 +29,10 @@ class UserObservationRoute extends Component {
         this.severity = "";
         this.description = "";
         this.attachments = [];
+
+    }
+    componentDidMount = () => {
+        this.props.userStore.getCateogaries({}, () => { }, () => { });
     }
 
     @action.bound onChangeTitleOfTheObservation(event) {
@@ -42,6 +46,7 @@ class UserObservationRoute extends Component {
 
     @action.bound onChangeCateogary(event) {
         this.cateogary = event.target.value;
+        this.props.userStore.cateogary = event.target.value;
 
     }
 
@@ -113,7 +118,7 @@ class UserObservationRoute extends Component {
 
 
     render() {
-        const { getPostObservationAPIStatus } = this.props.userStore
+        const { getPostObservationAPIStatus, cateogaries, getSubCateogaries, cateogariesList } = this.props.userStore
         return (
             <UserObservationPage
                 title={this.titleOfTheObservation}
@@ -133,6 +138,9 @@ class UserObservationRoute extends Component {
                 severityErrorMsg={this.severityErrorMsg}
                 descriptionErrorMsg={this.descriptionErrorMsg}
                 apiStatus={getPostObservationAPIStatus}
+                cateogaries={cateogaries}
+                cateogariesList={cateogariesList}
+                getSubCateogaries={getSubCateogaries}
             />
         )
     }

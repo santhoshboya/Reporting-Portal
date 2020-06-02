@@ -23,7 +23,7 @@ class RpObservationPage extends Component {
         const { onClickSubmit, title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation,
             descriptionOfObservation, attachmentsOfObservation,
             onChangeTitleOfTheObservation, onChangeCateogary, onChangeSubCateogary,
-            onChangeSeverity, onChangeDescription, goBack,
+            onChangeSeverity, onChangeDescription, goBack, cateogaries, getSubCateogaries, cateogariesList,
             titleErrorMsg, severityErrorMsg, descriptionErrorMsg, apiStatus } = this.props
 
 
@@ -55,12 +55,12 @@ class RpObservationPage extends Component {
                             {cateogary}
                         </FieldName>
                         <DropDown onSlectOption={onChangeCateogary} value={cateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} />
+                            options={cateogaries.length > 0 ? cateogariesList : []} />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
                         <DropDown onSlectOption={onChangeSubCateogary} value={subCateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} />
+                            options={cateogaries.length > 0 ? getSubCateogaries : []} />
                     </FieldContainer>
 
                     <FieldContainer>

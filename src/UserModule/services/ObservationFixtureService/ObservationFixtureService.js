@@ -2,6 +2,7 @@ import { networkCallWithApisauce } from '../../utils/APIUtils'
 import { create } from "apisauce"
 import getObservationsList from '../../fixtures/getObservationsResponse.json'
 import getObservation from '../../fixtures/getObservationResponse.json'
+import getCateogaries from '../../fixtures/getCateogaries.json'
 class ObservationFixtureService {
     getObservationApi(requestObject) {
         return new Promise(resolve => resolve(getObservation))
@@ -19,6 +20,9 @@ class ObservationFixtureService {
             "user_type": getObservationsList.user_type
         }
         return new Promise(resolve => resolve(dummyData))
+    }
+    getCateogariesApi() {
+        return new Promise(resolve => resolve(getCateogaries))
     }
 }
 

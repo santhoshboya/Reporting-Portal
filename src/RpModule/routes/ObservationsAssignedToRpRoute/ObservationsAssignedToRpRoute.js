@@ -30,10 +30,10 @@ class ObservationsAssignedToRpRoute extends Component {
         history.push(RP_OBSERVATION_PATH)
     }
     onSuccess = () => {
-        alert("data recieved")
+        //alert("data recieved")
     }
     onFailure = () => {
-        alert("data recieved")
+        // alert("data recieved")
     }
     navigateTOPage = (page) => {
         const { history } = this.props

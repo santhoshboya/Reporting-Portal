@@ -33,6 +33,10 @@ class UserStore {
     @observable totalPages;
     @observable filterType;
     @observable sortType;
+    @observable cateogary;
+    @observable cateogaries;
+    @observable subCateogaries;
+
 
     constructor(userObservationAPIService) {
         this.init();
@@ -49,6 +53,10 @@ class UserStore {
 
         this.getPostObservationAPIStatus = API_INITIAL;
         this.getPostObservationAPIError = null;
+
+        this.getCateogariesAPIStatus = API_INITIAL;
+        this.getCateogariesAPIError = null;
+
         this.observationDetails = {};
         this.observationList = [];
         this.observation = {};
@@ -60,7 +68,70 @@ class UserStore {
         this.reportedOnSortType = SORT_OPTIONS[0];
         this.dueDateSortType = SORT_OPTIONS[0];
         this.observationsSortType = SORT_KEY;
+        this.cateogaries = [];
+        this.subCateogaries = [];
     }
+
+    @action.bound
+    getCateogaries(requestObject, onSuccess, onFailure) {
+        const categoriesPromise = this.userObservationAPIService.getCateogariesApi(requestObject)
+        return bindPromiseWithOnSuccess(categoriesPromise)
+            .to(this.setGetCateogariesApiAPIStatus, response => {
+                this.setGetCateogariesApiResponse(response)
+                onSuccess()
+            })
+            .catch(error => {
+                this.setGetCateogariesApiAPIError(error)
+                onFailure();
+            })
+    }
+
+
+    @action.bound
+    setGetCateogariesApiAPIStatus(apiStatus) {
+        this.getCateogariesAPIStatus = apiStatus;
+    }
+
+    @action.bound
+    setGetCateogariesApiAPIError(error) {
+        this.getCateogariesAPIError = error;
+    }
+
+    @action.bound
+    setGetCateogariesApiResponse(response) {
+        this.cateogaries = response.cateogaries;
+        this.cateogary = this.cateogaries[0].name
+        this.subCateogaries = response.subCateogaries;
+        console.log(this.cateogaries, this.subCateogaries)
+
+    }
+    @computed get cateogariesList() {
+        let temp = []
+        this.cateogaries.forEach((cateogary) => {
+            temp.push(cateogary.name)
+        })
+        return temp;
+    }
+    @computed get getSubCateogaries() {
+        this.cateogaries.length > 0 &&
+            console.log(12345, this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries, this.subCateogaries, this.cateogary);
+        let subCateogaries;
+        if (this.cateogaries.length > 0)
+            subCateogaries = this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries
+        else
+            subCateogaries = [];
+
+        let temp = []
+        subCateogaries.forEach((subCateogary) => {
+            temp.push(subCateogary.name)
+        })
+        return temp;
+
+
+    }
+
+
+
     @action.bound
     getObservationList() {
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
@@ -153,13 +224,12 @@ class UserStore {
         this.observation = postObservationResponse;
     }
 
+
+
     @action.bound
     filterObservationList(event) {
         this.filterType = event.target.value;
-
-
     }
-
 
     @action.bound
     goToPreviousPage() {
