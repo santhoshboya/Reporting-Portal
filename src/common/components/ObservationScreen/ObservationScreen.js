@@ -112,7 +112,7 @@ class ObservationScreen extends Component {
                             className={userType === RP ? "datepicker-field" : ""} value={reportedOnOfObservation} />
                     </FieldContainer>
 
-                    <FieldContainer>
+                    <FieldContainer >
                         <FieldName>
                             {dueDate}
                         </FieldName>
@@ -123,9 +123,9 @@ class ObservationScreen extends Component {
                     {userType !== "user" &&
                         <Buttons>
                             <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
-                                <RadioButton className={'radio-btn'} name={type} value={publicBtn} />
+                                <RadioButton className={'radio-btn'} name={type} value={publicBtn} onHandleCheck={onChangePrivacy} />
                                 <RadioLable>{publicBtn}</RadioLable>
-                                <RadioButton className={'radio-btn'} name={type} value={privateBtn} />
+                                <RadioButton className={'radio-btn'} name={type} value={privateBtn} onHandleCheck={onChangePrivacy} />
                                 <RadioLable>{privateBtn}</RadioLable>
                             </RadioButtonsDiv>
 

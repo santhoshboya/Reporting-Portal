@@ -71,6 +71,8 @@ class UserObservationScreenRoute extends Component {
         const { title, cateogary, subCateogary, severity, description, reportedOn,
             attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
         const { userType } = this.props.userStore
+        console.log("scren", userType);
+
         return (
             <ObservationScreen
                 userType={userType}

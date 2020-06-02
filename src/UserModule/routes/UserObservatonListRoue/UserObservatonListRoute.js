@@ -47,7 +47,7 @@ class UserObservatonListRoute extends Component {
             goToRandomPage, reportedOnSort, dueDateOnSort, filterType, userType } = this.getUserStore();
         const username = "Santhosh";
         const profilePic = ""
-        console.log(1234, observationList);
+        console.log(1234, userType);
 
 
         return (
