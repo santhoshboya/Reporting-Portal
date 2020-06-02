@@ -3,6 +3,7 @@ import { UserObservatonListPage } from '../../components/UserObservatonListPage'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import { USER_OBSERVATION_PATH, USER_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
+import { toJS } from 'mobx';
 
 
 @inject("authStore", "userStore")
@@ -38,8 +39,8 @@ class UserObservatonListRoute extends Component {
         const { history } = this.props;
         history.push(`${USER_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
-    filterObservationList = (event) => {
-        this.props.userStore.filterObservationList(event.target.value)
+    filterObservationList = (value) => {
+        this.props.userStore.filterObservationList(toJS(value).value)
     }
     render() {
         const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,

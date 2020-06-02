@@ -222,6 +222,8 @@ class UserStore {
     @action.bound
     filterObservationList(value) {
         this.filterType = value;
+        console.log(98, this.filterType);
+
     }
 
     @action.bound

@@ -5,6 +5,7 @@ import {
     RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, OBSERVATIONS_ASSIGNED_TO_RP
 } from '../../constants/RouteConstants'
 import { RpObservatonListPage } from '../../components/RpObservatonListPage'
+import { toJS } from 'mobx';
 
 @inject("rpStore")
 @observer
@@ -42,8 +43,8 @@ class RpObservatonListRoute extends Component {
         const { history } = this.props;
         history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
-    filterObservationList = (event) => {
-        this.props.rpStore.filterObservationList(event.target.value)
+    filterObservationList = (value) => {
+        this.props.rpStore.filterObservationList(toJS(value).value)
     }
 
     render() {

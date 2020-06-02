@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { observable, action } from 'mobx'
+import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { ObservationScreen } from '../../../common/components/ObservationScreen';
@@ -36,16 +36,16 @@ class UserObservationScreenRoute extends Component {
 
     }
 
-    @action.bound onChangeAssignedTO(event) {
-        this.assignedTO = event.target.value
+    @action.bound onChangeAssignedTO(value) {
+        this.assignedTO = toJS(value).value
     }
 
     @action.bound onChangeDueDate(event) {
-        this.dueDate = event.target.value
+        this.dueDate = event.target.value;
     }
 
-    @action.bound onChangeStatus(event) {
-        this.status = event.target.value
+    @action.bound onChangeStatus(value) {
+        this.status = toJS(value).value
     }
 
     @action.bound onChangeDescription(event) {

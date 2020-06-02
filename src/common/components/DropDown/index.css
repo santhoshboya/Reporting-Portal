@@ -3,4 +3,10 @@
 }
 .dropDown-field-disabled{
   background-color: rgba(215, 223, 233, 0.5);
+  
+}
+.drop-down-select{
+  padding: 20px;
+  width: 25%;
+
 }

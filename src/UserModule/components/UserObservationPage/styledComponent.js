@@ -40,7 +40,8 @@ const Required = styled.span`
 color:#ff0b37;
 font-size: 12px;`
 
-const InputAndErrorField = styled.div`${tw`flex flex-col`}`
+const InputAndErrorField = styled.div`${tw`flex flex-col`}
+width:100%`
 export {
    BackToObservationsLink,
    ObservationForm,

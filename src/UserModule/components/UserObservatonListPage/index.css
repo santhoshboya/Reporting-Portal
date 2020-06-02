@@ -6,4 +6,5 @@ tr:nth-child(even) {background-color:#d7dfe9}
     background-color: white;
     align-self: flex-end;
     margin-top:10px;
+    width: 20%;
 }

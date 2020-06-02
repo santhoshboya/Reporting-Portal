@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { RpObservationPage } from '../../components/RpObservationPage'
-import { observable, action } from 'mobx'
+import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 @inject("rpStore")
@@ -43,18 +43,19 @@ class RpObservationRoute extends Component {
             this.titleErrorMsg = ''
     }
 
-    @action.bound onChangeCateogary(event) {
-        this.cateogary = event.target.value;
-        this.props.rpStore.cateogary = event.target.value;
+    @action.bound onChangeCateogary(value) {
+        this.cateogary = toJS(value).value;
+
+        this.props.rpStore.cateogary = toJS(value).value;;
 
     }
 
-    @action.bound onChangeSubCateogary(event) {
-        this.subCateogary = event.target.value
+    @action.bound onChangeSubCateogary(value) {
+        this.subCateogary = toJS(value).value;
     }
 
-    @action.bound onChangeSeverity(event) {
-        this.severity = event.target.value;
+    @action.bound onChangeSeverity(value) {
+        this.severity = toJS(value).value;
         if (this.severity === '')
             this.severityErrorMsg = 'Please select severty'
         else
