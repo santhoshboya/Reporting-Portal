@@ -14,7 +14,7 @@ import {
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
-
+import { USER } from '../../../common/constants/NameConstants'
 @observer
 class RpObservatonListPage extends Component {
 
@@ -83,7 +83,7 @@ class RpObservatonListPage extends Component {
         const { assignedToMe, myObservations } = strings.rpFeatures;
 
         return (
-            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage} currentPage={myObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+            <DesktopLayoutMainPage userName={"Sai Ram"} userType={USER} navigateTOPage={navigateTOPage} currentPage={myObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
                 <LoadingWrapperWithFailure
                     apiStatus={getObservationListAPIStatus}
                     apiError={getObservationListAPIError}

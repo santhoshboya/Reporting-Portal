@@ -48,7 +48,7 @@ class RpObservatonListRoute extends Component {
     onClickObservation = (observationId) => {
         this.props.history.push({
             pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
-            state: { userType: "user", currentPage: "My Observations" }
+            state: { userType: "user", currentPage: strings.rpFeatures.myObservations }
         })
     }
     filterObservationList = (value) => {

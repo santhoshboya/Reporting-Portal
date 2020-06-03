@@ -14,18 +14,20 @@ import {
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
-
+import { ADMIN } from '../../../common/constants/NameConstants'
+import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 @observer
 class ListOfObservations extends Component {
-    render() {
+
+    renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
             goToPreviousPage, goToNextPage, filterCategory, filterSubCategory,
             goToRandomPage, categotyFilterType, subCategotyFilterType } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
-            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy, categories, totalObservations } = strings.rpFeatures
-
+            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy,
+            categories, totalObservations } = strings.rpFeatures
         return (
-            <DesktopLayoutMainPage userName={"Santhu"} rpFeatures={[totalObservations, categories]} navigateTOPage={navigateTOPage} currentPage={totalObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+            <React.Fragment>
                 <ObseravationsHeader>
                     <PageHeadingAndAddButonDiv>
                         <PageHeading>{totalObservations}</PageHeading>
@@ -68,7 +70,20 @@ class ListOfObservations extends Component {
 
                 <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
                     goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
-
+            </React.Fragment>
+        );
+    }
+    render() {
+        const { navigateTOPage, adminObservationsListAPIStatus, adminObservationsListAPIError, onRetryClick } = this.props
+        const { totalObservations } = strings.rpFeatures
+        return (
+            <DesktopLayoutMainPage userName={"Santhu"} userType={ADMIN} navigateTOPage={navigateTOPage} currentPage={totalObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+                <LoadingWrapperWithFailure
+                    apiStatus={adminObservationsListAPIStatus}
+                    apiError={adminObservationsListAPIError}
+                    renderSuccessUI={this.renderSuccessUi}
+                    onRetryClick={onRetryClick}
+                />
             </DesktopLayoutMainPage>
         )
     }

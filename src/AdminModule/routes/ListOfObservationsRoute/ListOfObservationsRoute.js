@@ -46,8 +46,8 @@ class ListOfObservationsRoute extends Component {
     render() {
         const { adminObservationsList, goToPreviousObservations, goToNextObservations,
             goToRandomObservations, listOfObservationsTotalPages, listOfObservationsCurrentPage,
-            userType, categotyFilterType, subCategotyFilterType } = this.getAdminStore();
-        console.log(123, adminObservationsList, this.getAdminStore().adminObservationsList, this.getAdminStore());
+            userType, categotyFilterType, subCategotyFilterType, adminObservationsListAPIStatus, adminObservationsListAPIError } = this.getAdminStore();
+
 
 
         return (
@@ -65,6 +65,9 @@ class ListOfObservationsRoute extends Component {
                 navigateTOPage={this.navigateTOPage}
                 categotyFilterType={categotyFilterType}
                 subCategotyFilterType={subCategotyFilterType}
+                adminObservationsListAPIError={adminObservationsListAPIError}
+                adminObservationsListAPIStatus={adminObservationsListAPIStatus}
+                onRetryClick={this.doNetworkCalls}
             />
         )
     }
