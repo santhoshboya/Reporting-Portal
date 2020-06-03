@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import {
-    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH
+    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH, OBSERVATIONS_ASSIGNED_TO_RP
 } from '../../constants/RouteConstants'
 import { ObservationsAssignedToRp } from '../../components/ObservationsAssignedToRp';
 import { toJS } from 'mobx';
-
+import strings from '../../../common/i18n/strings.json'
 
 @inject("rpStore")
 @observer
@@ -37,8 +37,12 @@ class ObservationsAssignedToRpRoute extends Component {
         // alert("data recieved")
     }
     navigateTOPage = (page) => {
+        const { assignedToMe, myObservations } = strings.rpFeatures;
         const { history } = this.props
-        history.push(RP_OBSERVATION_LIST_PATH)
+        if (page === myObservations)
+            history.push(RP_OBSERVATION_LIST_PATH)
+        else
+            history.push(OBSERVATIONS_ASSIGNED_TO_RP)
     }
     onClickObservation = (observationId) => {
 
@@ -56,8 +60,9 @@ class ObservationsAssignedToRpRoute extends Component {
         const { assignedObservationListForRp, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage,
             assignedObservationsCurrentPage, filterTypeOfAssignedObservation,
             assignedObservationsTotalPages, assignedObservationsGoToRandomPage,
-            assignedObservationsReportedOnSort, assignedObservationsDueDateOnSort, userType } = this.getRpStore();
-        console.log(12345, userType);
+            assignedObservationsReportedOnSort, assignedObservationsDueDateOnSort, assignedObservationAPIStatus,
+            assignedObservationAPIError, userType } = this.getRpStore();
+        console.log(12345, assignedObservationAPIStatus, userType);
         return (
             <ObservationsAssignedToRp
                 filterAssignedObservationList={this.filterAssignedObservationList}
@@ -74,6 +79,9 @@ class ObservationsAssignedToRpRoute extends Component {
                 navigateTOPage={this.navigateTOPage}
                 assignedObservationsReportedOnSort={assignedObservationsReportedOnSort}
                 assignedObservationsDueDateOnSort={assignedObservationsDueDateOnSort}
+                onRetryClick={this.doNetworkCalls}
+                assignedObservationAPIStatus={assignedObservationAPIStatus}
+                assignedObservationAPIError={assignedObservationAPIError}
             />
         )
     }

@@ -3,6 +3,7 @@ import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { ObservationScreen } from '../../../common/components/ObservationScreen';
+import { RP_OBSERVATION_LIST_PATH, USER_OBSERVATION_LIST_PATH } from '../../constants/RouteConstants'
 @inject("userStore")
 @observer
 class UserObservationScreenRoute extends Component {
@@ -31,6 +32,9 @@ class UserObservationScreenRoute extends Component {
         this.privacy = "";
     }
     componentDidMount = () => {
+        this.doNetworkCalss();
+    }
+    doNetworkCalss = () => {
         this.props.userStore.getObservation({}, this.onSuccess, this.onFailure);
     }
 
@@ -59,13 +63,34 @@ class UserObservationScreenRoute extends Component {
         this.init();
     }
     goBack = () => {
-        this.props.history.push('/userobservationslist')
+        this.props.history.goBack();
     }
     onSuccess() {
-        alert("observation submitted successfully...")
+        //alert("observation submitted successfully...")
     }
     onFailure() {
-        alert("something went wrong pls try again...")
+        //alert("something went wrong pls try again...")
+    }
+    @action.bound onUpdate() {
+        let { updateObservationAPIStatus } = this.props.rpStore;
+        updateObservationAPIStatus = 100;
+        setTimeout(() => {
+            const observation = {
+                description: this.description,
+                status: this.status,
+                subCateogary: this.subCateogary,
+                dueDate: this.dueDate,
+                assignedTO: this.assignedTO,
+                privacy: this.privacy
+            }
+            this.props.rpStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
+            this.init();
+            updateObservationAPIStatus = 200;
+            alert("observation updated successfully...")
+            this.props.history.goBack();
+        }, 500)
+
+
     }
 
 
@@ -73,7 +98,7 @@ class UserObservationScreenRoute extends Component {
         console.log(this.props.userStore);
         const { title, cateogary, subCateogary, severity, description, reportedOn,
             attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
-        const { userType } = this.props.userStore
+        const { userType, getObservationAPIStatus, getObservationAPIError } = this.props.userStore
         console.log("scren", userType);
 
         return (
@@ -98,6 +123,9 @@ class UserObservationScreenRoute extends Component {
                 statusOfObservation={status}
                 dueDateOfObservation={dueDate}
                 privacyOfObservation={privacy}
+                apiStatus={getObservationAPIStatus}
+                apiError={getObservationAPIError}
+                onRetryClick={this.doNetworkCalss}
             />
         )
     }

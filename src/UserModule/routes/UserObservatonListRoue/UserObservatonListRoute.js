@@ -42,15 +42,13 @@ class UserObservatonListRoute extends Component {
     filterObservationList = (value) => {
         this.props.userStore.filterObservationList(toJS(value).value)
     }
+    render() {
 
-    renderSuccessUi = () => {
         const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,
-            goToRandomPage, reportedOnSort, dueDateOnSort, filterType, userType } = this.getUserStore();
+            goToRandomPage, reportedOnSort, dueDateOnSort, filterType, userType, getObservationListAPIStatus
+            , getObservationListAPIError } = this.getUserStore();
         const username = "Santhosh";
         const profilePic = ""
-        console.log(1234, userType);
-
-
         return (
             <UserObservatonListPage
                 handleClick={this.onClickAddNew}
@@ -68,22 +66,15 @@ class UserObservatonListRoute extends Component {
                 filterType={filterType}
                 filterObservationList={this.filterObservationList}
                 userType={userType}
+                getObservationListAPIStatus={getObservationListAPIStatus}
+                getObservationListAPIError={getObservationListAPIError}
+                onRetryClick={this.doNetworkCalls}
 
             />
         )
-    }
 
-
-    render() {
-        const { getObservationListAPIStatus, getObservationListAPIError } = this.getUserStore();
-        return (
-            <LoadingWrapperWithFailure
-                apiStatus={getObservationListAPIStatus}
-                apiError={getObservationListAPIError}
-                renderSuccessUI={this.renderSuccessUi}
-                onRetryClick={this.doNetworkCalls}
-            />)
     }
 }
 withRouter(UserObservatonListRoute)
 export { UserObservatonListRoute }
+

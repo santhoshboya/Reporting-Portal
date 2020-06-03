@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import {
-    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, OBSERVATIONS_ASSIGNED_TO_RP
+    RP_OBSERVATION_PATH, RP_OBSERVATION_SCREEN_PATH, OBSERVATIONS_ASSIGNED_TO_RP, OBSERVATION_SCREEN_PATH, RP_OBSERVATION_LIST_PATH
 } from '../../constants/RouteConstants'
 import { RpObservatonListPage } from '../../components/RpObservatonListPage'
 import { toJS } from 'mobx';
+
+import strings from '../../../common/i18n/strings.json'
 
 @inject("rpStore")
 @observer
@@ -36,12 +38,16 @@ class RpObservatonListRoute extends Component {
         //alert("data recieved")
     }
     navigateTOPage = (page) => {
+        const { myObservations } = strings.rpFeatures;
         const { history } = this.props
-        history.push(OBSERVATIONS_ASSIGNED_TO_RP)
+        if (page === myObservations)
+            history.push(RP_OBSERVATION_LIST_PATH)
+        else
+            history.push(OBSERVATIONS_ASSIGNED_TO_RP)
     }
     onClickObservation = (observationId) => {
         const { history } = this.props;
-        history.push(`${RP_OBSERVATION_SCREEN_PATH}${observationId}`);
+        history.push(`${OBSERVATION_SCREEN_PATH}${observationId}`);
     }
     filterObservationList = (value) => {
         this.props.rpStore.filterObservationList(toJS(value).value)
@@ -50,9 +56,9 @@ class RpObservatonListRoute extends Component {
     render() {
         const { observationList, goToPreviousPage, goToNextPage,
             goToRandomPage, totalPages, currentPage,
-            userType, filterType } = this.getRpStore();
+            userType, filterType, getObservationListAPIStatus, getObservationListAPIError } = this.getRpStore();
 
-        console.log(234, userType)
+        console.log(234, getObservationListAPIStatus, getObservationListAPIError)
         return (
             <RpObservatonListPage
                 handleClick={this.onClickAddNew}
@@ -67,6 +73,10 @@ class RpObservatonListRoute extends Component {
                 userType={userType}
                 navigateTOPage={this.navigateTOPage}
                 filterType={filterType}
+                getObservationListAPIStatus={getObservationListAPIStatus}
+                getObservationListAPIError={getObservationListAPIError}
+                onRetryClick={this.doNetworkCalls}
+
 
             />
         )

@@ -13,10 +13,12 @@ import {
     ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody, PageHeadingAndAddButonDiv
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
+import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 
 @observer
 class RpObservatonListPage extends Component {
-    render() {
+
+    renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
             goToPreviousPage, goToNextPage, filterObservationList,
             goToRandomPage, filterType } = this.props
@@ -24,7 +26,7 @@ class RpObservatonListPage extends Component {
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported } = strings.rpFeatures
 
         return (
-            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage} currentPage={myObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+            <React.Fragment>
                 <ObseravationsHeader>
                     <PageHeadingAndAddButonDiv>
                         <PageHeading>{listofObservations}</PageHeading>
@@ -70,6 +72,24 @@ class RpObservatonListPage extends Component {
 
                 <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
                     goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+            </React.Fragment>
+        );
+
+    }
+
+
+    render() {
+        const { navigateTOPage, getObservationListAPIStatus, getObservationListAPIError, onRetryClick } = this.props;
+        const { assignedToMe, myObservations } = strings.rpFeatures;
+
+        return (
+            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage} currentPage={myObservations} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+                <LoadingWrapperWithFailure
+                    apiStatus={getObservationListAPIStatus}
+                    apiError={getObservationListAPIError}
+                    renderSuccessUI={this.renderSuccessUi}
+                    onRetryClick={onRetryClick}
+                />
 
             </DesktopLayoutMainPage>
         )

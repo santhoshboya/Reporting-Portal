@@ -17,13 +17,15 @@ import { observer } from 'mobx-react'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SecondaryButton } from '../SecondaryButton'
 import { RadioButton } from '../RadioButton'
+import LoadingWrapperWithFailure from '../LoadingWrapperWithFailure'
 
 
 
 
 @observer
 class ObservationScreen extends Component {
-    render() {
+    renderSuccessUi = () => {
+
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
             onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription,
@@ -35,10 +37,9 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
-        console.log("screen");
 
         return (
-            <DesktopLayoutMainPage>
+            <React.Fragment>
                 <HeaderDiv >
                     <ObsertationDiv>
                         {observation}
@@ -137,6 +138,27 @@ class ObservationScreen extends Component {
                             </ButtonsDiv>
                         </Buttons>}
                 </ObservationForm>
+            </React.Fragment>
+
+
+        );
+
+    }
+
+
+    render() {
+
+        const { apiStatus, apiError, onRetryClick } = this.props
+
+        return (
+            <DesktopLayoutMainPage>
+                <LoadingWrapperWithFailure
+                    apiStatus={apiStatus}
+                    apiError={apiError}
+                    renderSuccessUI={this.renderSuccessUi}
+                    onRetryClick={onRetryClick}
+                />
+
 
             </DesktopLayoutMainPage>
         )

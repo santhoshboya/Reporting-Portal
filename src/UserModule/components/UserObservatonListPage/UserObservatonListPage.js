@@ -12,19 +12,21 @@ import { ObservationListItem } from '../../../common/components/ObservationListI
 import { observer } from 'mobx-react'
 import { Pagination } from '../../../common/components/Pagination'
 import { DropDown } from '../../../common/components/DropDown'
+import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 @observer
 class UserObservatonListPage extends Component {
-    render() {
+
+    renderSuccessUi = () => {
+
         const { handleClick, observationList, onClickObservation, totalPages, currentPage,
             goToNextPage, goToPreviousPage, goToRandomPage, reportedOnSort, dueDateOnSort,
             filterObservationList, filterType, userType, reportedBy } = this.props
+
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew,
             listofObservations, all, acknowledgedbyRp, resolved, closed, reported
         } = strings.userFeatures;
-
         return (
-            <DesktopLayoutMainPage userName={"Santhu"} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'}>
-
+            <React.Fragment>
                 <ObseravationsHeader>
                     <PageHeadingAndAddButonDiv>
                         <PageHeading>{listofObservations}</PageHeading>
@@ -64,15 +66,30 @@ class UserObservatonListPage extends Component {
                                     } />
                             })}
                     </TableBody>
-
-
                 </ObseravationsListTable>
-
                 <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
                     goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+            </React.Fragment>
+
+        );
+    }
+    render() {
+        const { getObservationListAPIStatus, getObservationListAPIError, onRetryClick } = this.props;
+        return (
+            <DesktopLayoutMainPage userName={"Santhu"} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'}>
+
+                <LoadingWrapperWithFailure
+                    apiStatus={getObservationListAPIStatus}
+                    apiError={getObservationListAPIError}
+                    renderSuccessUI={this.renderSuccessUi}
+                    onRetryClick={onRetryClick}
+                />
 
             </DesktopLayoutMainPage>
         )
     }
 }
 export { UserObservatonListPage }
+
+
+

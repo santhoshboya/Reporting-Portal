@@ -5,7 +5,7 @@ import getObservation from '../../fixtures/getObservationResponse.json'
 import getCateogaries from '../../fixtures/getCateogaries.json'
 class ObservationFixtureService {
     getObservationApi(requestObject) {
-        return new Promise(resolve => resolve(getObservation))
+        return new Promise(resolve => setTimeout(() => resolve(getObservation), 1000))
     }
     postObservationApi(obseravation) {
         console.log("post api observation submitted...", obseravation);

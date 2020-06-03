@@ -13,22 +13,23 @@ import {
     ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
+import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 
 @observer
 class ObservationsAssignedToRp extends Component {
-    render() {
+
+    renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, assignedObservationsGoToNextPage,
             assignedObservationsGoToPreviousPage, assignedObservationsGoToRandomPage, navigateTOPage, userType,
             filterAssignedObservationList, filterTypeOfAssignedObservation, assignedObservationsDueDateOnSort,
-            assignedObservationsReportedOnSort } = this.props
+            assignedObservationsReportedOnSort, assignedObservationAPIStatus,
+            assignedObservationAPIError } = this.props
 
         const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved } = strings.rpFeatures
 
-        console.log(1234, observationList)
         return (
-            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage}
-                currentPage={assignedToMe} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+            <React.Fragment>
                 <ObseravationsHeader>
                     <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
 
@@ -68,6 +69,27 @@ class ObservationsAssignedToRp extends Component {
 
                 <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
                     goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
+
+            </React.Fragment>
+        );
+
+
+    }
+
+    render() {
+        const { assignedToMe, myObservations } = strings.rpFeatures;
+        const { assignedObservationAPIStatus, assignedObservationAPIError, onRetryClick, navigateTOPage } = this.props;
+        return (
+            <DesktopLayoutMainPage userName={"Sai Ram"} rpFeatures={[assignedToMe, myObservations]} navigateTOPage={navigateTOPage}
+                currentPage={assignedToMe} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'}>
+
+
+                <LoadingWrapperWithFailure
+                    apiStatus={assignedObservationAPIStatus}
+                    apiError={assignedObservationAPIError}
+                    renderSuccessUI={this.renderSuccessUi}
+                    onRetryClick={onRetryClick}
+                />
 
             </DesktopLayoutMainPage>
         )
