@@ -146,10 +146,11 @@ class ObservationScreen extends Component {
 
     render() {
 
-        const { apiStatus, apiError, onRetryClick, currentPage, userType } = this.props
+        const { apiStatus, apiError, onRetryClick, currentPage, navigateTOPage, userType } = this.props
 
         return (
-            <DesktopLayoutMainPage userName={"Santhu"} currentPage={currentPage} userType={userType}>
+            <DesktopLayoutMainPage userName={"Santhu"} currentPage={currentPage} navigateTOPage={navigateTOPage}
+                userType={userType}>
                 <LoadingWrapperWithFailure
                     apiStatus={apiStatus}
                     apiError={apiError}

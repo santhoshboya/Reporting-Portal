@@ -3,7 +3,11 @@ import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { ObservationScreen } from '../../../common/components/ObservationScreen';
-import { RP_OBSERVATION_LIST_PATH, USER_OBSERVATION_LIST_PATH } from '../../constants/RouteConstants'
+import {
+    RP_OBSERVATION_LIST_PATH, USER_OBSERVATION_LIST_PATH,
+    LIST_OF_OBSERVATIONS_PATH, OBSERVATIONS_ASSIGNED_TO_RP
+} from '../../constants/RouteConstants'
+import strings from '../../../common/i18n/strings.json'
 @inject("userStore")
 @observer
 class UserObservationScreenRoute extends Component {
@@ -71,6 +75,23 @@ class UserObservationScreenRoute extends Component {
     onFailure() {
         //alert("something went wrong pls try again...")
     }
+    navigateTOPage = (page) => {
+        const { totalObservations, categories, myObservations, assignedToMe } = strings.rpFeatures
+        switch (page) {
+            case totalObservations:
+                this.props.history.push(`${LIST_OF_OBSERVATIONS_PATH}`)
+                break;
+            case myObservations:
+                this.props.history.push(`${RP_OBSERVATION_LIST_PATH}`)
+                break;
+            case assignedToMe:
+                this.props.history.push(`${OBSERVATIONS_ASSIGNED_TO_RP}`)
+                break;
+            case categories:
+                break;
+
+        }
+    }
     @action.bound onUpdate() {
         let { updateObservationAPIStatus } = this.props.rpStore;
         updateObservationAPIStatus = 100;
@@ -130,6 +151,7 @@ class UserObservationScreenRoute extends Component {
                 apiStatus={getObservationAPIStatus}
                 apiError={getObservationAPIError}
                 onRetryClick={this.doNetworkCalss}
+                navigateTOPage={this.navigateTOPage}
             />
         )
     }
