@@ -8,4 +8,4 @@ class Loader extends Component {
    }
 }
 
-export { Loader }
+export default Loader

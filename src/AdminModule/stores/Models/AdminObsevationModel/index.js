@@ -1,0 +1,1 @@
+export { AdminObsevationModel } from "./AdminObsevationModel";

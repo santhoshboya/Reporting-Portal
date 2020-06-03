@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Loader from '../Icons/Loader'
+import { Loader } from '../Icons/Loader/index'
 
 import { LoadingViewContainer } from './styledComponents'
 

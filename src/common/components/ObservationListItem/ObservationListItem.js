@@ -16,6 +16,9 @@ import { Image } from '../Image'
 
 const PUBLIC = 'Public'
 const PRIVATE = 'Private'
+
+import { ADMIN, USER, RP } from '../../constants/NameConstants'
+
 class ObservationListItem extends Component {
    render() {
       const {
@@ -29,42 +32,122 @@ class ObservationListItem extends Component {
          src,
          onClickObservation,
          dueDateType,
-         observationId
+         observationId,
+         assignedTo,
+         reportedBy,
+         userType
       } = this.props
 
       let bgColor = (severty === "HIGH" ? "#ff0b37" : (severty === "LOW" ? "#2dca73" : "#ffb800"))
       return (
          <TableRow id={observationId} data-testid="observation-list-item" onClick={() => onClickObservation(observationId)}>
             <TableData>{title}</TableData>
-            <TableData>{reportedOn}</TableData>
-            <TableData>
-               {Object.keys(pairedPerson).length !== 0 ?
+
+
+
+            {userType === ADMIN ?
+               <TableData>
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>
                      <PersonData>
-                        {pairedPerson.name}<br />
-                     ph:{pairedPerson.phone_no}
+                        {reportedBy.name}<br />
+                  ph:{reportedBy.phone_no}
                      </PersonData>
                   </PersonDetails>
+               </TableData>
+               : <TableData>{reportedOn}</TableData>
+            }
+
+
+
+
+
+            {userType === ADMIN ?
+               <TableData>
+                  <RectangleSeverity bgColor={bgColor}>
+                     <SevertyStatus>{severty}</SevertyStatus>
+                  </RectangleSeverity>
+               </TableData>
+               :
+               (userType === RP ?
+                  <TableData>
+                     <PersonDetails>
+                        <Image src={src} className={'persons-xs'}></Image>
+                        <PersonData>
+                           {reportedBy.name}<br />
+                     ph:{reportedBy.phone_no}
+                        </PersonData>
+                     </PersonDetails>
+                  </TableData>
                   :
-                  <PersonDetails>
-                     <PersonData>
-                        Rp not Assigned to
+                  <TableData>
+                     {Object.keys(assignedTo).length !== 0 ?
+                        <PersonDetails>
+                           <Image src={src} className={'persons-xs'}></Image>
+                           <PersonData>
+                              {assignedTo.name}<br />
+                     ph:{assignedTo.phone_no}
+                           </PersonData>
+                        </PersonDetails>
+                        :
+                        <PersonDetails>
+                           <PersonData>
+                              Rp not Assigned to
                      </PersonData>
-                  </PersonDetails>
-               }
-            </TableData>
-            <TableData>
-               <RectangleSeverity bgColor={bgColor}>
-                  <SevertyStatus>{severty}</SevertyStatus>
-               </RectangleSeverity>
-            </TableData>
-            <TableData>
-               <RectangleActionStatus>
-                  <ObservationStatus>{status}</ObservationStatus>
-               </RectangleActionStatus>
-            </TableData>
+                        </PersonDetails>
+                     }
+                  </TableData>
+               )
+            }
+
+
+
+            {userType === ADMIN ?
+               <TableData>
+                  <RectangleActionStatus>
+                     <ObservationStatus>{status}</ObservationStatus>
+                  </RectangleActionStatus>
+               </TableData>
+
+               : <TableData>
+                  <RectangleSeverity bgColor={bgColor}>
+                     <SevertyStatus>{severty}</SevertyStatus>
+                  </RectangleSeverity>
+               </TableData>
+            }
+
+
+
+            {userType === ADMIN ?
+               <TableData>
+                  {Object.keys(assignedTo).length !== 0 ?
+                     <PersonDetails>
+                        <Image src={src} className={'persons-xs'}></Image>
+                        <PersonData>
+                           {assignedTo.name}<br />
+                     ph:{assignedTo.phone_no}
+                        </PersonData>
+                     </PersonDetails>
+                     :
+                     <PersonDetails>
+                        <PersonData>
+                           Rp not Assigned to
+                     </PersonData>
+                     </PersonDetails>
+                  }
+               </TableData>
+               : <TableData>
+                  <RectangleActionStatus>
+                     <ObservationStatus>{status}</ObservationStatus>
+                  </RectangleActionStatus>
+               </TableData>
+            }
+
+
+
             <TableData>{dueDateType === PUBLIC ? dueDate : PRIVATE}</TableData>
+
+
             <TableData>
                <Image
                   className={'message-icon'}
@@ -74,6 +157,8 @@ class ObservationListItem extends Component {
                />
                <MsgCount>{messages}</MsgCount>
             </TableData>
+
+
          </TableRow>
       )
    }

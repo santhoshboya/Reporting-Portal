@@ -4,6 +4,7 @@ import { observer, inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom';
 import { USER_OBSERVATION_PATH, USER_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
 import { toJS } from 'mobx';
+import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure';
 
 
 @inject("authStore", "userStore")
@@ -35,14 +36,14 @@ class UserObservatonListRoute extends Component {
         alert("data recieved")
     }
     onClickObservation = (observationId) => {
-        this.getUserStore().getObservation({}, this.onSuccess, this.onFailure);
         const { history } = this.props;
         history.push(`${USER_OBSERVATION_SCREEN_PATH}${observationId}`);
     }
     filterObservationList = (value) => {
         this.props.userStore.filterObservationList(toJS(value).value)
     }
-    render() {
+
+    renderSuccessUi = () => {
         const { observationList, goToPreviousPage, goToNextPage, currentPage, totalPages,
             goToRandomPage, reportedOnSort, dueDateOnSort, filterType, userType } = this.getUserStore();
         const username = "Santhosh";
@@ -70,6 +71,18 @@ class UserObservatonListRoute extends Component {
 
             />
         )
+    }
+
+
+    render() {
+        const { getObservationListAPIStatus, getObservationListAPIError } = this.getUserStore();
+        return (
+            <LoadingWrapperWithFailure
+                apiStatus={getObservationListAPIStatus}
+                apiError={getObservationListAPIError}
+                renderSuccessUI={this.renderSuccessUi}
+                onRetryClick={this.doNetworkCalls}
+            />)
     }
 }
 withRouter(UserObservatonListRoute)

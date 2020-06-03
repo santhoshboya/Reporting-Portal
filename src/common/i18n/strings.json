@@ -73,6 +73,8 @@
         "closed": "Closed",
         "assignedToMe": "Assigned to me",
         "myObservations": "My observations",
-        "reported": "Reported"
+        "reported": "Reported",
+        "totalObservations": "Total Observations",
+        "categories": "Categories"
     }
 }

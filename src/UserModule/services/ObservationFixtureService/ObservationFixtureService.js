@@ -19,7 +19,7 @@ class ObservationFixtureService {
             "total_No_Of_Observation": getObservationsList.total_No_Of_Observation,
             "user_type": getObservationsList.user_type
         }
-        return new Promise(resolve => resolve(dummyData))
+        return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))
     }
     getCateogariesApi() {
         return new Promise(resolve => resolve(getCateogaries))

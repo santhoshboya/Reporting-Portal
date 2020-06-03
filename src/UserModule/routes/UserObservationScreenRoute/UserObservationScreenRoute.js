@@ -30,6 +30,9 @@ class UserObservationScreenRoute extends Component {
         this.dueDate = "";
         this.privacy = "";
     }
+    componentDidMount = () => {
+        this.props.userStore.getObservation({}, this.onSuccess, this.onFailure);
+    }
 
     @action.bound onChangePrivacy(event) {
         this.privacy = event.target.value

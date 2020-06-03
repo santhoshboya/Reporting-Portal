@@ -10,14 +10,16 @@ import { Check } from './common/components'
 import { authRoutes } from './Authuntication/routes'
 import { userRoutes } from './UserModule/routes'
 import { rpRoutes } from './RpModule/routes'
+import { adminRoutes } from './AdminModule/routes'
 import authStore from './Authuntication/stores'
 import userStore from './UserModule/stores'
+import adminStore from './AdminModule/stores'
 import rpStore from './RpModule/stores'
 
 class App extends Component {
    render() {
       return (
-         <Provider {...authStore} {...userStore} {...rpStore}>
+         <Provider {...authStore} {...userStore} {...rpStore} {...adminStore}>
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   <Route exact path='/page-1'>
@@ -29,6 +31,7 @@ class App extends Component {
                   {authRoutes}
                   {userRoutes}
                   {rpRoutes}
+                  {adminRoutes}
                   <Route path='/'>
                      <HomePage />
                   </Route>

@@ -2,8 +2,6 @@ import { networkCallWithApisauce } from '../../utils/APIUtils'
 import { create } from "apisauce";
 import { apiMethods, apiUrls } from '../../constants/APIConstants';
 import { endPoints } from '../EndPoints'
-import getObservationsList from '../../fixtures/getObservationsResponse.json'
-import getObservation from '../../fixtures/getObservationResponse.json'
 class RpObservationApiService {
     api;
     constructor() {
