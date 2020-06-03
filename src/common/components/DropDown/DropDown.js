@@ -8,14 +8,13 @@ function Options(props) {
 }
 class DropDown extends Component {
    renderOptions = (options) => {
+      console.log(typeof (options[0]));
+
       let dummyOptions = [...options];
       return dummyOptions.map(option => { return { value: option, label: option } })
    }
    render() {
       const { onSlectOption, options, value, isDisabled, className } = this.props
-      console.log(78, value);
-
-
       return (
 
          // <SelectElement value={value} className={className ? className : (isDisabled ? "dropDown-field-disabled" : "dropDown-field-normal")}

@@ -52,10 +52,12 @@ class ObservationsAssignedToRpRoute extends Component {
 
     render() {
 
+
         const { assignedObservationListForRp, assignedObservationsGoToPreviousPage, assignedObservationsGoToNextPage,
             assignedObservationsCurrentPage, filterTypeOfAssignedObservation,
             assignedObservationsTotalPages, assignedObservationsGoToRandomPage,
             assignedObservationsReportedOnSort, assignedObservationsDueDateOnSort, userType } = this.getRpStore();
+        console.log(12345, userType);
         return (
             <ObservationsAssignedToRp
                 filterAssignedObservationList={this.filterAssignedObservationList}

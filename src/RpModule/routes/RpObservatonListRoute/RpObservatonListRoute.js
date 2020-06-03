@@ -52,7 +52,7 @@ class RpObservatonListRoute extends Component {
             goToRandomPage, totalPages, currentPage,
             userType, filterType } = this.getRpStore();
 
-        console.log(234, this.getRpStore().observationList)
+        console.log(234, userType)
         return (
             <RpObservatonListPage
                 handleClick={this.onClickAddNew}
