@@ -98,12 +98,16 @@ class UserObservationScreenRoute extends Component {
         console.log(this.props.userStore);
         const { title, cateogary, subCateogary, severity, description, reportedOn,
             attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
-        const { userType, getObservationAPIStatus, getObservationAPIError } = this.props.userStore
-        console.log("scren", userType);
+        const { getObservationAPIStatus, getObservationAPIError } = this.props.userStore
+        console.log("screen", 1234, this.props.location);
+        const { userType, currentPage } = this.props.location.state
+        console.log(userType, currentPage);
+
 
         return (
             <ObservationScreen
                 userType={userType}
+                currentPage={currentPage}
                 title={title}
                 cateogaryOfObservation={cateogary}
                 subCateogaryOfObservation={subCateogary}

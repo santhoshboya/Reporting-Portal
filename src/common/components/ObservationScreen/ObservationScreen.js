@@ -57,7 +57,7 @@ class ObservationScreen extends Component {
 
                     <FieldContainer>
                         <TextArea className={'observation-description'} value={descriptionOfObservation}
-                            onHandleChange={onChangeDescription} isDisabled={(userType === USER) ? true : false} />
+                            onHandleChange={onChangeDescription} isDisabled={true} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -79,7 +79,7 @@ class ObservationScreen extends Component {
                             {status}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation}
-                            options={["action in progress", 'pending', 'completed']} isDisabled={(userType === USER) ? true : false} />
+                            options={["action in progress", 'pending', 'completed']} isDisabled={(userType === USER || userType === ADMIN) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -87,14 +87,14 @@ class ObservationScreen extends Component {
                             {severity}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation}
-                            options={['HIGH', 'LOW', 'WARNING']} isDisabled={(userType === USER || userType === RP) ? true : false} />
+                            options={['HIGH', 'LOW', 'WARNING']} isDisabled={true} />
                     </FieldContainer>
 
                     <FieldContainer>
                         <FieldName>
                             {attachments}
                         </FieldName>
-                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} isDisabled={(userType === USER) ? true : false} />
+                        <DragAndDrop onDrag={() => { }} onDragOver={() => { }} isDisabled={true} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -109,7 +109,7 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {reportedOn}
                         </FieldName>
-                        <DatePicker isDisabled={(userType === USER || userType === RP) ? true : false}
+                        <DatePicker isDisabled={true}
                             className={userType === RP ? "datepicker-field" : ""} value={reportedOnOfObservation} />
                     </FieldContainer>
 
@@ -139,8 +139,6 @@ class ObservationScreen extends Component {
                         </Buttons>}
                 </ObservationForm>
             </React.Fragment>
-
-
         );
 
     }
@@ -148,10 +146,10 @@ class ObservationScreen extends Component {
 
     render() {
 
-        const { apiStatus, apiError, onRetryClick } = this.props
+        const { apiStatus, apiError, onRetryClick, currentPage, userType } = this.props
 
         return (
-            <DesktopLayoutMainPage>
+            <DesktopLayoutMainPage currentPage={currentPage} userType={userType}>
                 <LoadingWrapperWithFailure
                     apiStatus={apiStatus}
                     apiError={apiError}

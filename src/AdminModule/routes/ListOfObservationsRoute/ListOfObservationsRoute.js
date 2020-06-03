@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { ListOfObservations } from "../../components/ListOfObservations";
 import { observable, toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { ADMIN_OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
+import { OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
 
 @inject("adminStore")
 @observer
@@ -32,8 +32,10 @@ class ListOfObservationsRoute extends Component {
         //alert("data recieved")
     }
     onClickObservation = (observationId) => {
-        const { history } = this.props;
-        history.push(`${ADMIN_OBSERVATION_SCREEN_PATH}${observationId}`);
+        this.props.history.push({
+            pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
+            state: { userType: "admin", currentPage: "Total Observations" }
+        })
     }
     filterCategory = (value) => {
         this.getAdminStore().filterCategory(toJS(value).value)

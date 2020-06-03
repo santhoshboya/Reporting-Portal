@@ -36,8 +36,10 @@ class UserObservatonListRoute extends Component {
         alert("data recieved")
     }
     onClickObservation = (observationId) => {
-        const { history } = this.props;
-        history.push(`${USER_OBSERVATION_SCREEN_PATH}${observationId}`);
+        this.props.history.push({
+            pathname: `${USER_OBSERVATION_SCREEN_PATH}${observationId}`,
+            state: { userType: "user", currentPage: "" }
+        })
     }
     filterObservationList = (value) => {
         this.props.userStore.filterObservationList(toJS(value).value)
