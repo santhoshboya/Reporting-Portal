@@ -1,6 +1,6 @@
 import { create } from 'apisauce'
 
-import { networkCallWithApisauce } from '../../../utils/APIUtils'
+import { networkCallWithApisauce } from '../../../common/utils/APIUtils'
 
 import { apiMethods, apiUrls } from '../../constants/APIConstants'
 
@@ -13,8 +13,13 @@ class AuthAPI {
          baseURL: apiUrls.signin
       })
    }
-   signInAPI() {
-      return networkCallWithApisauce(this.api, endPoints.signin, {}, apiMethods.get)
+   signInAPI(requestObject) {
+      console.log("details", requestObject)
+      return networkCallWithApisauce(
+         this.api,
+         endPoints.signin,
+         requestObject,
+         apiMethods.post)
    }
    signOutAPI() {
       return networkCallWithApisauce(this.api, endPoints.signout, {}, apiMethods.get)

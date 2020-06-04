@@ -2,7 +2,7 @@ import { observable, action, computed, toJS } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 
-import { setAccessToken, clearUserSession } from '../../utils/StorageUtils'
+import { setAccessToken, setUserType, clearUserSession } from '../../../common/utils/StorageUtils'
 
 class AuthStore {
    @observable getUserAuthAPIStatus
@@ -10,6 +10,7 @@ class AuthStore {
    @observable getUserSignOutAPIStatus
    @observable getUserSignOutAPIError
    @observable Access_token
+   @observable User_type
    authAPIService
 
    constructor(authAPIService) {
@@ -22,36 +23,46 @@ class AuthStore {
       this.getUserAuthAPIStatus = API_INITIAL
       this.getUserAuthAPIError = null
    }
+
+   @action.bound
+   userSignIn(request, onSuccess, onFailure) {
+      const signInPromise = this.authAPIService.signInAPI(request)
+      return bindPromiseWithOnSuccess(signInPromise)
+         .to(this.setGetUserAuthAPIStatus, response => {
+            this.setUserAuthAPIResponse(response)
+            onSuccess(response.user_type)
+         })
+         .catch(error => {
+
+            this.setGetUserAuthAPIError(error)
+            //onFailure()
+         })
+   }
+   @action.bound
+   setUserAuthAPIResponse(SignInAPIResponse) {
+      // console.log("respo", SignInAPIResponse);
+
+      // this.Access_token = SignInAPIResponse.access_token
+      // this.User_type = SignInAPIResponse.user_type
+      // setAccessToken(this.Access_token)
+      // setUserType(this.User_type);
+      console.log("response", SignInAPIResponse);
+   }
+
    @action.bound
    setGetUserAuthAPIStatus(apiStatus) {
+      console.log("status", apiStatus);
+
       this.getUserAuthAPIStatus = apiStatus
    }
 
    @action.bound
    setGetUserAuthAPIError(error) {
+
       this.getUserAuthAPIError = error
-   }
+      console.log("error", error);
 
-   @action.bound
-   setUserAuthAPIResponse(SignInAPIResponse) {
-      this.Access_token = SignInAPIResponse.access_token
-      setAccessToken(this.Access_token)
    }
-
-   @action.bound
-   userSignIn(request, onSuccess, onFailure) {
-      const signInPromise = this.authAPIService.signInAPI()
-      return bindPromiseWithOnSuccess(signInPromise)
-         .to(this.setGetUserAuthAPIStatus, response => {
-            this.setUserAuthAPIResponse(response)
-            onSuccess()
-         })
-         .catch(error => {
-            this.setGetUserAuthAPIError(error)
-            onFailure()
-         })
-   }
-
 
    @action.bound
    userSignOut(request, onSuccess, onFailure) {

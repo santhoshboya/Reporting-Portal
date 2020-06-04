@@ -5,6 +5,8 @@ import { USER_OBSERVATION_LIST_PATH, USER_OBSERVATION_PATH, USER_OBSERVATION_SCR
 import { UserObservatonListRoute } from './UserObservatonListRoue'
 import { UserObservationRoute } from './UserObservationRoute'
 import { UserObservationScreenRoute } from './UserObservationScreenRoute'
+import { ProtectedRoute } from '../../common/components/ProtectedRoute/ProtectedRoute'
+
 
 
 const userRoutes = [<Route path={USER_OBSERVATION_LIST_PATH} component={UserObservatonListRoute} />,

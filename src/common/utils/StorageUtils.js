@@ -1,6 +1,7 @@
 import Cookie from 'js-cookie'
 
-export const ACCESS_TOKEN = 'dG6EABne5a'
+export const ACCESS_TOKEN = 'access_token'
+export const USER_TYPE = 'user_type'
 
 export function getCookie(key) {
    return Cookie.get(key)
@@ -12,6 +13,7 @@ function setCookie(key, value) {
       path: '/'
    })
 }
+
 
 export function getAccessToken() {
    return getCookie(ACCESS_TOKEN)

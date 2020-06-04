@@ -9,6 +9,7 @@ class AdminObservationApiService {
             baseURL: apiUrls.obseravation
         })
     }
+
     listOfObservationApi(requestObject) {
         return networkCallWithApisauce(
             this.api,

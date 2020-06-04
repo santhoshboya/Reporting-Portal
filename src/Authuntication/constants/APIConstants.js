@@ -3,5 +3,10 @@ export const apiMethods = {
   get: 'GET'
 }
 export const apiUrls = {
-  signin: "https://5ea1a14db9f5ca00166c1f27.mockapi.io/api/"
+  signin: "https://5f3b1bdad0cb.ngrok.io/api/reporting_portal/"
 }
+
+
+
+
+//signin: "https://5ea1a14db9f5ca00166c1f27.mockapi.io/api/"

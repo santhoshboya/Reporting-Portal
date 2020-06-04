@@ -8,28 +8,33 @@ function Options(props) {
 }
 class DropDown extends Component {
    renderOptions = (options) => {
-      console.log(typeof (options[0]));
 
       let dummyOptions = [...options];
       return dummyOptions.map(option => { return { value: option, label: option } })
    }
-   render() {
-      const { onSlectOption, options, value, isDisabled, className } = this.props
-      return (
+   renderValue = (value) => {
+      if (typeof (value) !== String) {
+         console.log("object", value);
 
-         // <SelectElement value={value} className={className ? className : (isDisabled ? "dropDown-field-disabled" : "dropDown-field-normal")}
-         //    disabled={isDisabled} onChange={onSlectOption}>
-         //    <SlectOptions > selectform</SlectOptions>
-         //    {options.length > 0 ? options.map(option => (
-         //       <Options option={option} />
-         //    )) : null}
-         // </SelectElement>
+         return value;
+      }
+      else {
+         console.log("string:", { value: value, label: value });
+
+         return { value: value, label: value }
+      }
+
+   }
+   render() {
+      const { onSlectOption, options, value, isDisabled, isMulti, className } = this.props
+      return (
          <Select
             isDisabled={isDisabled}
             className={className ? className : "drop-down-select"}
             options={options.length > 0 ? this.renderOptions(options) : []}
             onChange={onSlectOption}
-            defaultValue={{ value: value, label: value }}
+            defaultValue={this.renderValue(value)}
+            isMulti={isMulti}
          />
 
 
@@ -38,3 +43,20 @@ class DropDown extends Component {
    }
 }
 export { DropDown }
+
+
+
+
+
+
+
+
+
+
+/** // <SelectElement value={value} className={className ? className : (isDisabled ? "dropDown-field-disabled" : "dropDown-field-normal")}
+         //    disabled={isDisabled} onChange={onSlectOption}>
+         //    <SlectOptions > selectform</SlectOptions>
+         //    {options.length > 0 ? options.map(option => (
+         //       <Options option={option} />
+         //    )) : null}
+         // </SelectElement> */

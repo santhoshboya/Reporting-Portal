@@ -3,10 +3,11 @@ import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { Observation } from "../Models/Observation";
 const LIMIT = 3;
-const SORT_OPTIONS = ["NEW", "OLD"]
-const SORT_KEYS = ['dueDate', 'reportedOn']
-const SORT_KEY = "reportedOn";
-const FILTER_TYPE = "ALL";
+const SORT_OPTIONS = ["new", "old"]
+const SORT_KEYS = ['due_date', 'reported_on']
+const SORT_KEY = "reported_on";
+const FILTER_TYPE = "all";
+const USERTYPE = 'user'
 class UserStore {
 
     @observable userType;
@@ -69,13 +70,14 @@ class UserStore {
         this.currentPage = 1;
         this.totalPages = null;
         this.userType = "";
-        this.filterType = "ALL";
+        this.filterType = "all";
         this.observationsSortOption = SORT_OPTIONS[0];
         this.reportedOnSortType = SORT_OPTIONS[0];
         this.dueDateSortType = SORT_OPTIONS[0];
         this.observationsSortType = SORT_KEY;
         this.cateogaries = [];
         this.subCateogaries = [];
+        this.filtersOfObservation = FILTER_TYPE
     }
 
 
@@ -151,7 +153,6 @@ class UserStore {
         subCateogaries.forEach((subCateogary) => {
             temp.push(subCateogary.name)
         })
-        console.log(32, this.cateogary, temp);
         return temp;
     }
 
@@ -160,8 +161,15 @@ class UserStore {
     @action.bound
     getObservationList() {
         let offset = Math.ceil(LIMIT * (this.currentPage - 1))
-        let accessToken = "";
-        const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, accessToken);
+        let details = {
+            "user_type": USERTYPE,
+            "sort_on": this.observationsSortType,
+            "sort_by": this.observationsSortOption,
+            "filter_on": this.filterType
+        };
+        console.log(details);
+
+        const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setGetObservationListApiAPIStatus, this.setGetObservationListApiResponse)
             .catch(this.setGetObservationListApiAPIError);
@@ -253,6 +261,7 @@ class UserStore {
     @action.bound
     filterObservationList(value) {
         this.filterType = value;
+        this.getObservationList()
     }
 
     @action.bound
@@ -295,3 +304,14 @@ class UserStore {
     }
 }
 export { UserStore };
+
+
+
+//getobservation 
+
+// {
+//     "user_type": "string",
+//         "sort_on": "reported_on",
+//             "sort_by": "old",
+//                 "filter_on": "all"
+// }

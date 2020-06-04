@@ -31,8 +31,8 @@ class AdminStore extends RpStore {
         this.adminObservationsListAPIError = null;
         this.userType = null;
         this.adminObservationsList = [];
-        this.categotyFilterType = null;
-        this.subCategotyFilterType = null;
+        this.categotyFilterType = [];
+        this.subCategotyFilterType = [];
         this.listOfObservationsCurrentPage = 1;
         console.log(766666666, this);
 
@@ -68,6 +68,8 @@ class AdminStore extends RpStore {
     @action.bound
     filterCategory(value) {
         this.categotyFilterType = value;
+        console.log(this.categotyFilterType);
+
         this.getAdminObservationList();
     }
     @action.bound

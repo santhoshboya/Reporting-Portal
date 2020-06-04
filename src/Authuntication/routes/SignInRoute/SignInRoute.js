@@ -3,6 +3,9 @@ import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
 
 import { SignInForm } from '../../components/SignInForm'
+import { toast } from 'react-toastify'
+import { USER, RP } from '../../../common/constants/NameConstants'
+
 
 @inject('authStore')
 @observer
@@ -11,6 +14,7 @@ class SignInRoute extends React.Component {
    @observable password = ''
    @observable useNameErrorMessage = ''
    @observable passwordErrorMessage = ''
+   @observable errorMsg = ''
 
    @action.bound onChangeUsername(event) {
       this.username = event.target.value
@@ -28,10 +32,21 @@ class SignInRoute extends React.Component {
          this.passwordErrorMessage = ''
    }
 
-   @action.bound onFailure() {
+   onFailure = () => {
       const { getUserAuthAPIError: apiError } = this.props.authStore
       if (apiError !== null && apiError !== undefined) {
-         this.passwordErrorMessage = 'Network Error'
+         this.errorMsg = "Error"
+         console.log(this.errorMsg);
+         toast.error('Error', {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+         });
+
       }
    }
 
@@ -50,15 +65,32 @@ class SignInRoute extends React.Component {
    onClickSignIn = async () => {
       if (this.handleOnclick())
          await this.props.authStore.userSignIn(
-            { username: this.username, password: this.password },
+            { "username": this.username, "password": this.password },
             this.onSuccess,
             this.onFailure
          )
 
    }
 
-   onSuccess = () => {
-      this.props.history.push('/userobservationslist')
+   onSuccess = (userType) => {
+      // // console.log("usertype", this.authStore.userType);
+      // // let userType = this.authStore.userType;
+      // this.props.history.push('/userobservationslist')
+      console.log("user", userType);
+
+      switch (userType) {
+         case USER:
+            this.props.history.push('/userobservationslist')
+            break;
+         case RP:
+            this.props.history.push('/rpobservationslist')
+            break;
+         case ADMIN:
+            this.props.history.push('/listofobservations')
+            break;
+
+
+      }
    }
 
    render() {

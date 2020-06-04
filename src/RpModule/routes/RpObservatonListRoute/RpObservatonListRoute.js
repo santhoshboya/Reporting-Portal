@@ -57,7 +57,7 @@ class RpObservatonListRoute extends Component {
 
     render() {
         const { observationList, goToPreviousPage, goToNextPage,
-            goToRandomPage, totalPages, currentPage,
+            goToRandomPage, totalPages, currentPage, reportedOnSort, dueDateOnSort,
             userType, filterType, getObservationListAPIStatus, getObservationListAPIError } = this.getRpStore();
 
         console.log(2367890000009874, this.props.rpStore)
@@ -78,6 +78,8 @@ class RpObservatonListRoute extends Component {
                 getObservationListAPIStatus={getObservationListAPIStatus}
                 getObservationListAPIError={getObservationListAPIError}
                 onRetryClick={this.doNetworkCalls}
+                reportedOnSort={reportedOnSort}
+                dueDateOnSort={dueDateOnSort}
 
 
             />

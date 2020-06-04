@@ -11,11 +11,12 @@
         "dueDate": "DUE DATE",
         "messages": "MESSAGES",
         "addNew": "ADD NEW",
-        "all": "ALL",
+        "all": "all",
         "acknowledgedbyRp": "Acknowledged by Rp",
         "resolved": "Resolved",
         "closed": "Closed",
-        "reported": "Reported"
+        "reported": "Reported",
+        "actioninProgress": "Action in progress"
     },
     "usersScreen": {
         "titleOfTheObservation": "TITLE OF THE OBSERVATION",
@@ -66,7 +67,7 @@
         "dueDate": "DUE DATE",
         "messages": "MESSAGES",
         "addNew": "ADD NEW",
-        "all": "ALL",
+        "all": "all",
         "listofObservations": "List of Observations",
         "acknowledgedbyRp": "Acknowledged by Rp",
         "resolved": "Resolved",
@@ -75,6 +76,7 @@
         "myObservations": "My observations",
         "reported": "Reported",
         "totalObservations": "Total Observations",
-        "categories": "Categories"
+        "categories": "Categories",
+        "actioninProgress": "Action in progress"
     }
 }

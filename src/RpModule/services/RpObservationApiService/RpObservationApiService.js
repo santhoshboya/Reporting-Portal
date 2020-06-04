@@ -43,12 +43,12 @@ class RpObservationApiService {
             apiMethods.get
         )
     }
-    getAssignedObservationListApi(Limit, offeset, accessToken) {
+    getAssignedObservationListApi(Limit, offeset, details) {
         let endPoint = `${endPoints.obseravationList}?limit=${Limit}&offset=${offeset}`
         return networkCallWithApisauce(
             this.api,
             endPoint,
-            { accessToken },
+            details,
             apiMethods.get
         )
     }

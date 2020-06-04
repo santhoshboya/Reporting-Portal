@@ -5,7 +5,8 @@ import { Image } from '../../../common/components/Image'
 import strings from '../../../common/i18n/strings.json'
 import { PrimaryButton } from '../../../common/components/PrimaryButton'
 import { InputFieldWithLable } from '../../../common/components/InputFieldWithLable'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
 import {
    SignInFornDiv,
@@ -71,6 +72,17 @@ class SignInForm extends Component {
                   <SignUpSpan href={'/signin'}>{strings.logIn.signUp}</SignUpSpan>
                </SignUpLink>
             </SignInFornDiv>
+            <ToastContainer
+               position="bottom-center"
+               autoClose={3000}
+               hideProgressBar={false}
+               newestOnTop={false}
+               closeOnClick
+               rtl={false}
+               pauseOnFocusLoss
+               draggable
+               pauseOnHover
+            />
          </DesktopLayoutAuth>
       )
    }

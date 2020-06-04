@@ -6,10 +6,11 @@ import { ObservationFixtureService } from '../../../UserModule/services/Observat
 
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
 import { RpModel } from '../Models/RpModel';
-const SORT_OPTIONS = ["NEW", "OLD"]
-const SORT_KEYS = ['dueDate', 'reportedOn']
-const SORT_KEY = "reportedOn";
-const FILTER_TYPE = "ALL";
+const SORT_OPTIONS = ["new", "old"]
+const SORT_KEYS = ['due_date', 'reported_on']
+const SORT_KEY = "reported_on";
+const FILTER_TYPE = "all";
+const USERTYPE = "Rp"
 const LIMIT = 3;
 class RpStore extends UserStore {
     @observable userType
@@ -53,8 +54,15 @@ class RpStore extends UserStore {
     @action.bound
     getAssignedObservationList() {
         let offset = Math.ceil(LIMIT * (this.assignedObservationsCurrentPage - 1))
-        let accessToken = "";
-        const userObservationPromise = this.rpObservationAPIService.getAssignedObservationListApi(LIMIT, offset, accessToken);
+        let details = {
+            "user_type": USERTYPE,
+            "sort_on": this.assignedObservationsSortType,
+            "sort_by": this.assignedObservationsSortOption,
+            "filter_on": this.filterTypeOfAssignedObservation
+        };
+        console.log("rp", details);
+
+        const userObservationPromise = this.rpObservationAPIService.getAssignedObservationListApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setAssignedObservationListApiAPIStatus, this.setAssignedObservationListApiResponse)
             .catch(this.setAssignedObservationListApiAPIError);
@@ -107,6 +115,8 @@ class RpStore extends UserStore {
             this.assignedObservationReportedOnSortType = SORT_OPTIONS[0];
         this.assignedObservationsSortType = SORT_KEYS[1]
         this.assignedObservationsSortOption = this.assignedObservationReportedOnSortType;
+        console.log(this.assignedObservationsSortType, 67756475, this.assignedObservationsSortOption);
+
         this.getAssignedObservationList();
     }
     @action.bound
@@ -117,6 +127,7 @@ class RpStore extends UserStore {
             this.assignedObservationDueDateSortType = SORT_OPTIONS[0];
         this.assignedObservationsSortType = SORT_KEYS[0]
         this.assignedObservationsSortOption = this.assignedObservationDueDateSortType;
+        console.log(this.assignedObservationsSortType, 67756475, this.assignedObservationsSortOption);
         this.getAssignedObservationList();
 
 

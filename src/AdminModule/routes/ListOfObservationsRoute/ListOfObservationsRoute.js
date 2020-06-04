@@ -40,10 +40,12 @@ class ListOfObservationsRoute extends Component {
         })
     }
     filterCategory = (value) => {
-        this.getAdminStore().filterCategory(toJS(value).value)
+        console.log(12243, value);
+
+        this.getAdminStore().filterCategory(value)
     }
     filterSubCategory = (value) => {
-        this.getAdminStore().filterSubCategory(toJS(value).value)
+        this.getAdminStore().filterSubCategory(value)
     }
     render() {
         const { adminObservationsList, goToPreviousObservations, goToNextObservations,

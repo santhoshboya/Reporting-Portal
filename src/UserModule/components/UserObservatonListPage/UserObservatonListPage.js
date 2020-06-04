@@ -23,7 +23,7 @@ class UserObservatonListPage extends Component {
             filterObservationList, filterType, userType, reportedBy } = this.props
 
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, addNew,
-            listofObservations, all, acknowledgedbyRp, resolved, closed, reported
+            listofObservations, all, acknowledgedbyRp, resolved, closed, reported, actioninProgress
         } = strings.userFeatures;
         return (
             <React.Fragment>
@@ -37,7 +37,7 @@ class UserObservatonListPage extends Component {
                             src={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'} />
                     </PageHeadingAndAddButonDiv>
                     <DropDown onSlectOption={filterObservationList} className={'filter-user-observation-list'} options={[all,
-                        acknowledgedbyRp, resolved, closed, reported]} value={filterType} userType={userType} />
+                        acknowledgedbyRp, resolved, closed, reported, actioninProgress]} value={filterType} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>

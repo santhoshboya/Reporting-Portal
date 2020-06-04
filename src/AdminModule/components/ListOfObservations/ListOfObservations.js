@@ -10,7 +10,7 @@ import { Pagination } from '../../../common/components/Pagination'
 
 import './index.css'
 import {
-    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody, PageHeadingAndAddButonDiv, FilterBar
+    ObseravationsHeader, PageHeading, ObseravationsListTable, TableHeader, TableBody, PageHeadingAndAddButonDiv, FilterBar, FilterLefttSubPart
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
@@ -25,7 +25,7 @@ class ListOfObservations extends Component {
             goToRandomPage, categotyFilterType, subCategotyFilterType } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy,
-            categories, totalObservations } = strings.rpFeatures
+            categories, totalObservations, actioninProgress } = strings.rpFeatures
         return (
             <React.Fragment>
                 <ObseravationsHeader>
@@ -33,8 +33,12 @@ class ListOfObservations extends Component {
                         <PageHeading>{totalObservations}</PageHeading>
                     </PageHeadingAndAddButonDiv>
                     <FilterBar>
-                        <DropDown onSlectOption={filterCategory} className={'filters'} options={[all,
-                            acknowledgedbyRp, resolved, closed, reported]} value={categotyFilterType} userType={userType} />
+                        <FilterLefttSubPart>
+                            <DropDown onSlectOption={filterCategory} isMulti={true} className={'filters'} options={[all,
+                                acknowledgedbyRp, resolved, closed, reported]} value={categotyFilterType} userType={userType} />
+                            <DropDown onSlectOption={filterSubCategory} isMulti={true} className={'filters'} options={[all,
+                                acknowledgedbyRp, resolved, closed, reported]} value={subCategotyFilterType} userType={userType} />
+                        </FilterLefttSubPart>
                         <DropDown onSlectOption={filterSubCategory} className={'filters'} options={[all,
                             acknowledgedbyRp, resolved, closed, reported]} value={subCategotyFilterType} userType={userType} />
                     </FilterBar>

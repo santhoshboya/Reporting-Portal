@@ -15,9 +15,10 @@ const PageHeadingAndAddButonDiv = styled.div`${tw`flex items-center justify-betw
 const ObseravationsListTable = styled.table`                                                                                                                                                                
    ${tw``}
 `
-const FilterBar = styled.div`${tw` flex`}`
+const FilterBar = styled.div`${tw` flex justify-between`}`
 const TableHeader = styled.thead``
 const TableBody = styled.tbody``
+const FilterLefttSubPart = styled.div`${tw`flex`}`
 export {
    PageHeading,
    ObseravationsHeader,
@@ -25,5 +26,6 @@ export {
    TableHeader,
    TableBody,
    PageHeadingAndAddButonDiv,
-   FilterBar
+   FilterBar,
+   FilterLefttSubPart
 }

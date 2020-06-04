@@ -26,7 +26,7 @@ class ObservationsAssignedToRp extends Component {
             assignedObservationAPIError } = this.props
 
         const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe,
-            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved } = strings.rpFeatures
+            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, actioninProgress } = strings.rpFeatures
 
         return (
             <React.Fragment>
@@ -34,7 +34,7 @@ class ObservationsAssignedToRp extends Component {
                     <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
 
                     <DropDown onSlectOption={filterAssignedObservationList} className={'flter-Drop-Down'} options={[all,
-                        acknowledgedbyRp, resolved, closed]} value={filterTypeOfAssignedObservation} userType={userType} />
+                        acknowledgedbyRp, resolved, closed, actioninProgress]} value={filterTypeOfAssignedObservation} userType={userType} />
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
