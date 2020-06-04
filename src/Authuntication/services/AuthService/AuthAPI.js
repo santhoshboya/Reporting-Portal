@@ -4,7 +4,7 @@ import { networkCallWithApisauce } from '../../../utils/APIUtils'
 
 import { apiMethods, apiUrls } from '../../constants/APIConstants'
 
-import {endPoints} from '../EndPoints'
+import { endPoints } from '../EndPoints'
 
 class AuthAPI {
    api
@@ -15,6 +15,9 @@ class AuthAPI {
    }
    signInAPI() {
       return networkCallWithApisauce(this.api, endPoints.signin, {}, apiMethods.get)
+   }
+   signOutAPI() {
+      return networkCallWithApisauce(this.api, endPoints.signout, {}, apiMethods.get)
    }
 }
 

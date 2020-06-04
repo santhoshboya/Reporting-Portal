@@ -38,7 +38,7 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
-        console.log(1444444444444444444444444444, cateogaries, getSubCateogaries, cateogariesList);
+        console.log("successUi", cateogaries, getSubCateogaries, cateogariesList);
 
 
         return (
@@ -149,7 +149,8 @@ class ObservationScreen extends Component {
 
     render() {
 
-        const { apiStatus, apiError, onRetryClick, currentPage, navigateTOPage, userType, getSubCateogaries } = this.props
+        const { apiStatus, apiError, onRetryClick, currentPage, cateogariesList, cateogaries, navigateTOPage, userType, getSubCateogaries } = this.props
+        console.log("userScreen", cateogaries, getSubCateogaries, cateogariesList);
 
         return (
             <DesktopLayoutMainPage userName={"Santhu"} currentPage={currentPage} navigateTOPage={navigateTOPage}

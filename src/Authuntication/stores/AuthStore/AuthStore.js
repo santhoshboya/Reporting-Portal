@@ -7,6 +7,8 @@ import { setAccessToken, clearUserSession } from '../../utils/StorageUtils'
 class AuthStore {
    @observable getUserAuthAPIStatus
    @observable getUserAuthAPIError
+   @observable getUserSignOutAPIStatus
+   @observable getUserSignOutAPIError
    @observable Access_token
    authAPIService
 
@@ -50,8 +52,36 @@ class AuthStore {
          })
    }
 
-   userSignOut() {
-      clearUserSession()
+
+   @action.bound
+   userSignOut(request, onSuccess, onFailure) {
+      clearUserSession();
+      const signOutPromise = this.authAPIService.signOutAPI()
+      return bindPromiseWithOnSuccess(signOutPromise)
+         .to(this.setGetUserSignOutSignOutStatus, response => {
+            this.setUserSignOutAPIResponse(response)
+            onSuccess()
+         })
+         .catch(error => {
+            this.setGetUserSignOutAPIError(error)
+            onFailure()
+         })
+   }
+
+   @action.bound
+   setGetUserSignOutSignOutStatus(apiStatus) {
+      this.getUserSignOutAPIStatus = apiStatus
+   }
+
+   @action.bound
+   setGetUserSignOutAPIError(error) {
+      this.getUserSignOutAPIError = error
+   }
+
+   @action.bound
+   setUserSignOutAPIResponse(SignOutAPIResponse) {
+      console.log(SignOutAPIResponse);
+
    }
 }
 export { AuthStore }

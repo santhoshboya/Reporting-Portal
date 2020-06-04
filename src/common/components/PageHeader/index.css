@@ -12,3 +12,13 @@
     color: #0b69ff;
     font-weight: bold;
   }
+  .sign-out-popUp{
+    width:25%;
+    position: absolute;
+    top:10px;
+    left: 20px;
+  }
+ .sign-out-btn{
+   width:40%;
+   margin: 10px;
+ }

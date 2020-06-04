@@ -149,3 +149,7 @@ Observation= getObservationResponse
 
 1.carefull when handling with usertype
 2.category and subcategory modeling
+
+
+
+baseurl : 18.141.209.180:8080/

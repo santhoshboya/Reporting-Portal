@@ -5,6 +5,9 @@ class AuthFixtureService {
     signInAPI(requestObject) {
         return new Promise(resolve => resolve(getSignInResponce))
     }
+    signOutAPI(requestObject) {
+        return new Promise(resolve => resolve("log out"))
+    }
 }
 
 export { AuthFixtureService };
