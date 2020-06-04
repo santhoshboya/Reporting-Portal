@@ -28,8 +28,7 @@ class UserObservationScreenRoute extends Component {
     }
 
     init = () => {
-        this.description = "";
-        this.attachments = [];
+
         this.assignedTO = "";
         this.status = "";
         this.dueDate = "";
@@ -39,7 +38,20 @@ class UserObservationScreenRoute extends Component {
         this.doNetworkCalss();
     }
     doNetworkCalss = () => {
-        this.props.userStore.getObservation({}, this.onSuccess, this.onFailure);
+        //this.props.userStore.getObservation({}, this.onSuccess, this.onFailure);
+
+
+        const { id } = this.props.match.params
+        console.log(id);
+        this.props.userStore.getObservation({ id }, this.onSuccess, this.onFailure).then(() => {
+            const { assignedTO, status, privacy, dueDate } = this.props.userStore.observationDetails
+            console.log(123, privacy, assignedTO, status, dueDate);
+
+            this.assignedTO = assignedTO;
+            this.status = status;
+            this.dueDate = privacy;
+            this.privacy = dueDate;
+        })
     }
 
     @action.bound onChangePrivacy(event) {
@@ -92,26 +104,20 @@ class UserObservationScreenRoute extends Component {
 
         }
     }
-    @action.bound onUpdate() {
-        let { updateObservationAPIStatus } = this.props.rpStore;
-        updateObservationAPIStatus = 100;
-        setTimeout(() => {
-            const observation = {
-                description: this.description,
-                status: this.status,
-                subCateogary: this.subCateogary,
-                dueDate: this.dueDate,
-                assignedTO: this.assignedTO,
-                privacy: this.privacy
-            }
-            this.props.rpStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
-            this.init();
-            updateObservationAPIStatus = 200;
-            alert("observation updated successfully...")
-            this.props.history.goBack();
-        }, 500)
+    @action.bound onUpdate = async () => {
+        const observation = {
+            description: this.description,
+            status: this.status,
+            subCateogary: this.subCateogary,
+            dueDate: this.dueDate,
+            assignedTO: this.assignedTO,
+            privacy: this.privacy
+        }
+        console.log(1234, observation);
 
-
+        await this.props.userStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
+        this.init();
+        this.props.history.goBack();
     }
 
 
@@ -119,12 +125,10 @@ class UserObservationScreenRoute extends Component {
         console.log(this.props.userStore);
         const { title, cateogary, subCateogary, severity, description, reportedOn,
             attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
+        console.log(12134, this.props.userStore.observationDetails);
+
         const { getObservationAPIStatus, getObservationAPIError } = this.props.userStore
-        console.log("screen", 1234, this.props.location);
         const { userType, currentPage } = this.props.location.state
-        console.log(userType, currentPage);
-
-
         return (
             <ObservationScreen
                 userType={userType}

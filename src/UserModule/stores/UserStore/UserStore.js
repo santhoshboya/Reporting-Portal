@@ -23,6 +23,9 @@ class UserStore {
     @observable getPostObservationAPIStatus;
     @observable getPostObservationAPIError;
 
+    @observable updateObservationAPIStatus;
+    @observable updateObservationAPIError;
+
     @observable observationsSortType;
     @observable observationsSortOption;
     @observable reportedOnSortType;
@@ -57,6 +60,9 @@ class UserStore {
         this.getCateogariesAPIStatus = API_INITIAL;
         this.getCateogariesAPIError = null;
 
+        this.updateObservationAPIStatus = API_INITIAL;
+        this.updateObservationAPIError = null;
+
         this.observationDetails = {};
         this.observationList = [];
         this.observation = {};
@@ -70,6 +76,28 @@ class UserStore {
         this.observationsSortType = SORT_KEY;
         this.cateogaries = [];
         this.subCateogaries = [];
+    }
+
+
+    @action.bound
+    updateObservationDeatails(details) {
+        const updateObservationApiPromise = this.userObservationAPIService.updateObservationApi(details)
+        return new bindPromiseWithOnSuccess(updateObservationApiPromise)
+            .to(this.setUpdateObservationApiAPIStatus, this.setUpdateObservationApiResponse)
+            .catch(this.setUpdateObservationApiAPIError);
+    }
+
+    @action.bound
+    setUpdateObservationApiAPIStatus(apiStatus) {
+        this.updateObservationAPIStatus = apiStatus;
+    }
+    @action.bound
+    setUpdateObservationApiResponse(response) {
+        console.log(response);
+    }
+    @action.bound
+    setUpdateObservationApiAPIError(error) {
+        this.updateObservationAPIError = error;
     }
 
     @action.bound

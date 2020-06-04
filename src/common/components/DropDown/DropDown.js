@@ -29,7 +29,7 @@ class DropDown extends Component {
             className={className ? className : "drop-down-select"}
             options={options.length > 0 ? this.renderOptions(options) : []}
             onChange={onSlectOption}
-            defaultValue={value}
+            defaultValue={{ value: value, label: value }}
          />
 
 

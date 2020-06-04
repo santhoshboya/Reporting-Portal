@@ -24,6 +24,10 @@ class ObservationFixtureService {
     getCateogariesApi() {
         return new Promise(resolve => resolve(getCateogaries))
     }
+    updateObservationApi(id, Details) {
+        console.log("observation updated...", Details);
+        return new Promise(resolve => setTimeout(() => resolve("Updated"), 1000))
+    }
 }
 
 export { ObservationFixtureService };
