@@ -29,7 +29,8 @@ class ObservationScreen extends Component {
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
             onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription,
-            reportedOnOfObservation, goBack, onReset, userType, apiStatus } = this.props
+            reportedOnOfObservation, goBack, onReset, userType, apiStatus, cateogaries, getSubCateogaries, cateogariesList,
+            onChangeSubCategory, onChangeCategory } = this.props
 
 
         const {
@@ -37,6 +38,8 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
+        console.log(1444444444444444444444444444, cateogaries, getSubCateogaries, cateogariesList);
+
 
         return (
             <React.Fragment>
@@ -64,14 +67,14 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown onSlectOption={() => { }} value={cateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} isDisabled={(userType === USER || userType === RP) ? true : false}
+                        <DropDown onSlectOption={onChangeCategory} value={cateogaryOfObservation} options={cateogaries.length > 0 ? cateogariesList : []}
+                            isDisabled={(userType === USER || userType === RP) ? true : false}
                         />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={() => { }} value={subCateogaryOfObservation}
-                            options={['Asset Management', 'Tech', 'Management']} isDisabled={(userType === USER || userType === RP) ? true : false} />
+                        <DropDown userType={userType} onSlectOption={onChangeSubCategory} value={subCateogaryOfObservation} options={cateogaries.length > 0 ? getSubCateogaries : []}
+                            isDisabled={(userType === USER || userType === RP) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -146,7 +149,7 @@ class ObservationScreen extends Component {
 
     render() {
 
-        const { apiStatus, apiError, onRetryClick, currentPage, navigateTOPage, userType } = this.props
+        const { apiStatus, apiError, onRetryClick, currentPage, navigateTOPage, userType, getSubCateogaries } = this.props
 
         return (
             <DesktopLayoutMainPage userName={"Santhu"} currentPage={currentPage} navigateTOPage={navigateTOPage}

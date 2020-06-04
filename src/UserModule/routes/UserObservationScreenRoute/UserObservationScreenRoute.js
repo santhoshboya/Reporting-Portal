@@ -33,24 +33,29 @@ class UserObservationScreenRoute extends Component {
         this.status = "";
         this.dueDate = "";
         this.privacy = "";
+        this.cateogary = '';
+        this.subCateogary = '';
     }
     componentDidMount = () => {
         this.doNetworkCalss();
     }
     doNetworkCalss = () => {
-        //this.props.userStore.getObservation({}, this.onSuccess, this.onFailure);
 
 
+        this.props.userStore.getCateogaries({}, () => { }, () => { });
         const { id } = this.props.match.params
         console.log(id);
         this.props.userStore.getObservation({ id }, this.onSuccess, this.onFailure).then(() => {
-            const { assignedTO, status, privacy, dueDate } = this.props.userStore.observationDetails
-            console.log(123, privacy, assignedTO, status, dueDate);
+            const { assignedTO, status, privacy, dueDate, cateogary, subCateogary } = this.props.userStore.observationDetails
 
             this.assignedTO = assignedTO;
             this.status = status;
             this.dueDate = privacy;
             this.privacy = dueDate;
+            this.cateogary = cateogary;
+            this.subCateogary = subCateogary;
+            console.log(123, this.privacy, this.assignedTO, this.status, this.dueDate);
+
         })
     }
 
@@ -69,6 +74,15 @@ class UserObservationScreenRoute extends Component {
 
     @action.bound onChangeStatus(value) {
         this.status = toJS(value).value
+    }
+
+    @action.bound onChangeCategory(value) {
+        this.cateogary = toJS(value).value
+        this.props.userStore.cateogary = toJS(value).value;
+    }
+    @action.bound onChangeSubCategory(value) {
+        this.subCateogary = toJS(value).value
+
     }
 
     @action.bound onChangeDescription(event) {
@@ -123,19 +137,21 @@ class UserObservationScreenRoute extends Component {
 
     render() {
         console.log(this.props.userStore);
-        const { title, cateogary, subCateogary, severity, description, reportedOn,
-            attachments, assignedTO, status, dueDate, privacy } = this.props.userStore.observationDetails
-        console.log(12134, this.props.userStore.observationDetails);
+        const { title, severity, description, reportedOn,
+            attachments } = this.props.userStore.observationDetails
 
-        const { getObservationAPIStatus, getObservationAPIError } = this.props.userStore
+
+        const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, cateogariesList } = this.props.userStore
         const { userType, currentPage } = this.props.location.state
+
+        console.log(12134, getSubCateogaries, cateogaries, cateogariesList);
         return (
             <ObservationScreen
                 userType={userType}
                 currentPage={currentPage}
                 title={title}
-                cateogaryOfObservation={cateogary}
-                subCateogaryOfObservation={subCateogary}
+                cateogaryOfObservation={this.cateogary}
+                subCateogaryOfObservation={this.subCateogary}
                 severityOfObservation={severity}
                 reportedOnOfObservation={reportedOn}
                 descriptionOfObservation={description}
@@ -146,16 +162,21 @@ class UserObservationScreenRoute extends Component {
                 onChangeStatus={this.onChangeStatus}
                 onUpdate={this.onUpdate}
                 onChangeDescription={this.onChangeDescription}
+                onChangeCategory={this.onChangeCategory}
+                onChangeSubCategory={this.onChangeSubCategory}
                 goBack={this.goBack}
                 onReset={this.onReset}
-                assignedToOfObservation={assignedTO}
-                statusOfObservation={status}
-                dueDateOfObservation={dueDate}
-                privacyOfObservation={privacy}
+                assignedToOfObservation={this.assignedTO}
+                statusOfObservation={this.status}
+                dueDateOfObservation={this.dueDate}
+                privacyOfObservation={this.privacy}
                 apiStatus={getObservationAPIStatus}
                 apiError={getObservationAPIError}
                 onRetryClick={this.doNetworkCalss}
                 navigateTOPage={this.navigateTOPage}
+                cateogaries={cateogaries}
+                getSubCateogaries={getSubCateogaries}
+                cateogariesList={cateogariesList}
             />
         )
     }

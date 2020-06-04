@@ -1,9 +1,19 @@
 import { AdminObservationFixtureService } from "../services/AdminObservationFixtureService/AdminObservationFixtureService";
 import { AdminStore } from './AdminStore'
+import { RpObservationApiService } from "../../RpModule/services/RpObservationApiService/RpObservationApiService";
+import { RpObservationFixtureService } from "../../RpModule/services/RpObservationFixtureService/RpObservationFixtureService";
+import { ObservationApiService } from "../../UserModule/services/ObservationApiService/ObservationApiService";
+import { ObservationFixtureService } from "../../UserModule/services/ObservationFixtureService/ObservationFixtureService";
+
+
+const observationFixtureService = new ObservationFixtureService();
+const rpObservationFixtureService = new RpObservationFixtureService();
+
+
 
 const adminObservationFixtureService = new AdminObservationFixtureService();
 
-const adminStore = new AdminStore(adminObservationFixtureService);
+const adminStore = new AdminStore(adminObservationFixtureService, rpObservationFixtureService, observationFixtureService);
 export default { adminStore };
 
 

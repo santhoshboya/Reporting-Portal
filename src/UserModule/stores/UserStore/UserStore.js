@@ -139,6 +139,8 @@ class UserStore {
         return temp;
     }
     @computed get getSubCateogaries() {
+        console.log(32, this.cateogary);
+
         let subCateogaries;
         if (this.cateogaries.length > 0)
             subCateogaries = this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries
@@ -149,6 +151,7 @@ class UserStore {
         subCateogaries.forEach((subCateogary) => {
             temp.push(subCateogary.name)
         })
+        console.log(32, this.cateogary, temp);
         return temp;
     }
 

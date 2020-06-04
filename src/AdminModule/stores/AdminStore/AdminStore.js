@@ -4,9 +4,11 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from "@ib/api-constants";
 import { inject } from 'mobx-react';
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
+import { RpStore } from '../../../RpModule/stores/RpStore';
+import { loadOptions } from '@babel/core';
 
 const LIMIT = 3;
-class AdminStore {
+class AdminStore extends RpStore {
     @observable userType
     @observable categotyFilterType;
     @observable subCategotyFilterType;
@@ -18,8 +20,8 @@ class AdminStore {
     @observable listOfObservationsTotalPages;
 
 
-    constructor(adminObservationAPIService) {
-
+    constructor(adminObservationAPIService, rpObservationFixtureService, observationFixtureService) {
+        super(rpObservationFixtureService, observationFixtureService)
         this.adminObservationAPIService = adminObservationAPIService;
         this.initAdmin();
     }
@@ -32,6 +34,8 @@ class AdminStore {
         this.categotyFilterType = null;
         this.subCategotyFilterType = null;
         this.listOfObservationsCurrentPage = 1;
+        console.log(766666666, this);
+
     }
 
     @action.bound
