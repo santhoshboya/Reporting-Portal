@@ -34,7 +34,7 @@ class UserObservationScreenRoute extends Component {
         this.dueDate = "";
         this.privacy = "";
         this.cateogary = '';
-        this.subCateogary = '';
+        this.subCateogary = null;
     }
     componentDidMount = () => {
         this.doNetworkCalss();
@@ -78,6 +78,7 @@ class UserObservationScreenRoute extends Component {
 
     @action.bound onChangeCategory(value) {
         this.cateogary = toJS(value).value
+        this.subCateogary = null;
         this.props.userStore.cateogary = toJS(value).value;
     }
     @action.bound onChangeSubCategory(value) {

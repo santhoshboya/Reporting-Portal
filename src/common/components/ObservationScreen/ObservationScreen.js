@@ -24,7 +24,7 @@ import LoadingWrapperWithFailure from '../LoadingWrapperWithFailure'
 
 @observer
 class ObservationScreen extends Component {
-    renderSuccessUi = () => {
+    renderSuccessUi = observer(() => {
 
         const { title, cateogaryOfObservation, subCateogaryOfObservation, severityOfObservation, descriptionOfObservation,
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
@@ -38,7 +38,7 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
-        console.log("successUi", cateogaries, getSubCateogaries, cateogariesList);
+        console.log("successUi", subCateogaryOfObservation);
 
 
         return (
@@ -73,7 +73,7 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeSubCategory} value={subCateogaryOfObservation} options={cateogaries.length > 0 ? getSubCateogaries : []}
+                        <DropDown userType={userType} onSlectOption={onChangeSubCategory} key={cateogaryOfObservation} value={subCateogaryOfObservation} options={cateogaries.length > 0 ? getSubCateogaries : []}
                             isDisabled={(userType === USER || userType === RP) ? true : false} />
                     </FieldContainer>
 
@@ -144,7 +144,7 @@ class ObservationScreen extends Component {
             </React.Fragment>
         );
 
-    }
+    })
 
 
     render() {

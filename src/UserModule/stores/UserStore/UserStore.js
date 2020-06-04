@@ -141,7 +141,6 @@ class UserStore {
         return temp;
     }
     @computed get getSubCateogaries() {
-        console.log(32, this.cateogary);
 
         let subCateogaries;
         if (this.cateogaries.length > 0)
@@ -189,6 +188,7 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
+        console.log("list", ObservationListResponse);
         this.totalPages = Math.ceil(ObservationListResponse.total_No_Of_Observation / LIMIT);
         this.observationList = ObservationListResponse.observation_list.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;

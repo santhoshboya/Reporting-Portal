@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react'
 
 import { SignInForm } from '../../components/SignInForm'
 import { toast } from 'react-toastify'
-import { USER, RP } from '../../../common/constants/NameConstants'
+import { USER, RP, ADMIN } from '../../../common/constants/NameConstants'
 
 
 @inject('authStore')

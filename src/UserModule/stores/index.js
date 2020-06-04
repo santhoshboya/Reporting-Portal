@@ -5,5 +5,5 @@ import { ObservationFixtureService } from "../services/ObservationFixtureService
 
 const observationApiService = new ObservationApiService();
 const observationFixtureService = new ObservationFixtureService();
-const userStore = new UserStore(observationFixtureService);
+const userStore = new UserStore(observationApiService);
 export default { userStore };

@@ -1,3 +1,3 @@
 export const USER = "user"
-export const RP = "rp"
-export const ADMIN = 'admin'
+export const RP = "Rp"
+export const ADMIN = 'Admin'
