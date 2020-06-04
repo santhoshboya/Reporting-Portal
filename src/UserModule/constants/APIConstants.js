@@ -1,9 +1,9 @@
 export const apiMethods = {
-   post: 'POST',
-   get: 'GET'
+  post: 'POST',
+  get: 'GET'
 }
 export const apiUrls = {
-  obseravationList:"https://9ba0cd3ggi.execute-api.ap-south-1.amazonaws.com/",
-  obseravation:"https://9ba0cd3ggi.execute-api.ap-south-1.amazonaws.com/",
-  
+  obseravationList: "https://5f3b1bdad0cb.ngrok.io/api/reporting_portal/",
+  obseravation: "https://5f3b1bdad0cb.ngrok.io/api/reporting_portal/",
+
 }

@@ -1,5 +1,5 @@
 export const endPoints = {
-    observationList: 'observationlist/',
+    observationList: 'get/observations/v1/',
     observation: 'observation/',
     postObservation: 'postobservation/'
- }
+}

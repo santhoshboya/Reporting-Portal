@@ -9,15 +9,15 @@ class Observation {
     observationId
     dueDateType
     constructor(observation) {
-        const { title, reportedOn, severty, status, dueDate, messages, dueDateType, assignedTo, observation_id } = observation;
+        const { title, reported_on, severity, status, dueDate, messages_count, dueDateType, assigned_to, observation_id } = observation;
         this.title = title;
-        this.reportedOn = reportedOn;
-        this.assignedTo = assignedTo;
+        this.reportedOn = reported_on;
+        this.assignedTo = assigned_to;
         this.status = status;
-        this.severty = severty;
+        this.severty = severity;
         this.dueDate = dueDate;
         this.dueDateType = dueDateType
-        this.messages = messages;
+        this.messages = messages_count;
         this.observationId = observation_id
 
     }

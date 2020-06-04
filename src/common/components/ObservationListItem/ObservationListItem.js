@@ -38,7 +38,7 @@ class ObservationListItem extends Component {
          userType
       } = this.props
 
-      let bgColor = (severty === "HIGH" ? "#ff0b37" : (severty === "LOW" ? "#2dca73" : "#ffb800"))
+      let bgColor = (severty === "High" ? "#ff0b37" : (severty === "Low" ? "#2dca73" : "#ffb800"))
       return (
          <TableRow id={observationId} data-testid="observation-list-item" onClick={() => onClickObservation(observationId)}>
             <TableData>{title}</TableData>
@@ -50,7 +50,7 @@ class ObservationListItem extends Component {
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>
                      <PersonData>
-                        {reportedBy.name}<br />
+                        {reportedBy.first_name}<br />
                   ph:{reportedBy.phone_no}
                      </PersonData>
                   </PersonDetails>
@@ -74,18 +74,18 @@ class ObservationListItem extends Component {
                      <PersonDetails>
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
-                           {reportedBy.name}<br />
+                           {reportedBy.first_name}<br />
                      ph:{reportedBy.phone_no}
                         </PersonData>
                      </PersonDetails>
                   </TableData>
                   :
                   <TableData>
-                     {Object.keys(assignedTo).length !== 0 ?
+                     {(assignedTo != null && Object.keys(assignedTo).length !== 0) ?
                         <PersonDetails>
                            <Image src={src} className={'persons-xs'}></Image>
                            <PersonData>
-                              {assignedTo.name}<br />
+                              {assignedTo.first_name}<br />
                      ph:{assignedTo.phone_no}
                            </PersonData>
                         </PersonDetails>
@@ -124,7 +124,7 @@ class ObservationListItem extends Component {
                      <PersonDetails>
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
-                           {assignedTo.name}<br />
+                           {assignedTo.first_name}<br />
                      ph:{assignedTo.phone_no}
                         </PersonData>
                      </PersonDetails>

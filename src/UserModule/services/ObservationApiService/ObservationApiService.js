@@ -1,4 +1,4 @@
-import { networkCallWithApisauce } from '../../utils/APIUtils'
+import { networkCallWithApisauce } from '../../../common/utils/APIUtils'
 import { create } from "apisauce";
 import { apiMethods, apiUrls } from '../../constants/APIConstants';
 import { endPoints } from '../EndPoints'
@@ -28,13 +28,15 @@ class ObservationApiService {
             apiMethods.post
         )
     }
-    getObservationListApi(Limit, offeset, accessToken) {
-        let endPoint = `${endPoints.obseravationList}?limit=${Limit}&offset=${offeset}`
+    getObservationListApi(Limit, offeset, details) {
+        let endPoint = `${endPoints.observationList}?limit=${Limit}&offset=${offeset}`
+        console.log(12345, details);
+
         return networkCallWithApisauce(
             this.api,
             endPoint,
-            { accessToken },
-            apiMethods.get
+            details,
+            apiMethods.post
         )
     }
     getCateogariesApi() {

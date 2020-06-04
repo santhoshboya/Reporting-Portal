@@ -166,8 +166,6 @@ class UserStore {
             "sort_by": this.observationsSortOption,
             "filter_on": this.filterType
         };
-        console.log(details);
-
         const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setGetObservationListApiAPIStatus, this.setGetObservationListApiResponse)
@@ -188,9 +186,10 @@ class UserStore {
 
     @action.bound
     setGetObservationListApiResponse(ObservationListResponse) {
-        console.log("list", ObservationListResponse);
-        this.totalPages = Math.ceil(ObservationListResponse.total_No_Of_Observation / LIMIT);
-        this.observationList = ObservationListResponse.observation_list.map(observation => new Observation(observation))
+
+        this.totalPages = Math.ceil(ObservationListResponse.user_observations_count / LIMIT);
+        console.log("list", this.totalPages, ObservationListResponse);
+        this.observationList = ObservationListResponse.user_observations.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;
     }
 
