@@ -3,5 +3,5 @@ export const apiMethods = {
   get: 'GET'
 }
 export const apiUrls = {
-  admin: "https://162a1418243b.ngrok.io/api/reporting_portal/"
+  admin: "https://8bcb6d6537ac.ngrok.io/api/reporting_portal/"
 }

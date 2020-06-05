@@ -91,12 +91,13 @@ class UserObservationScreenRoute extends Component {
     onSuccess = () => {
         const { assigned_to, status, due_date_type, due_date, category, sub_category } = this.props.userStore.observationDetails
 
-        this.assignedTO = assigned_to;
+        this.assignedTO = assigned_to.first_name;
         this.status = status;
         this.dueDate = due_date;
         this.privacy = due_date_type;
-        this.cateogary = category;
-        this.subCateogary = sub_category;
+        this.cateogary = category.name;
+        this.subCateogary = sub_category.name;
+
 
     }
     onFailure = () => {
@@ -124,14 +125,13 @@ class UserObservationScreenRoute extends Component {
         const { id } = this.props.match.params
         let typeOfUser = this.props.location.state.userType
         let observation;
-        console.log(333333333333333333333333333333, this.getCategoryAndSubCategoryId());
-
         if (typeOfUser === ADMIN) {
             observation = {
                 observation_id: id,
-                category_id: "",
-                sub_category_id: ""
+                category_id: this.getCategoryAndSubCategoryId()[0],
+                sub_category_id: this.getCategoryAndSubCategoryId()[1]
             }
+
         }
         else {
             let due_date = null;
@@ -145,7 +145,7 @@ class UserObservationScreenRoute extends Component {
                 due_date_type: this.privacy
             }
         }
-        console.log(6666666666666666600000000000000000000000000, this.props.userStore.userType, this.props.userStore, observation);
+        console.log(6666666666666666600000000000000000000000000, typeOfUser, observation);
 
         await this.props.userStore.updateObservationDeatails(typeOfUser, observation);
         this.init();
@@ -154,10 +154,8 @@ class UserObservationScreenRoute extends Component {
 
     //change,.............
     getAssignedToId = () => {
-        console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<", this.assignedTO, this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO.first_name).user_id);
-
         if (this.assignedTO != "") {
-            return this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO.first_name).user_id;
+            return this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO).user_id;
 
         }
     }
@@ -165,17 +163,21 @@ class UserObservationScreenRoute extends Component {
         if (this.cateogary == null)
             return [0, 0]
         const { cateogaries } = this.props.userStore
-
         let category_id = 0;
         let sub_category_id = 0;
-        let category = cateogaries.find(cateogary => cateogary.category === this.cateogary)
+        let category = cateogaries.find(cateogary => cateogary.name === this.cateogary)
         if (category)
             category_id = category.category_id
         cateogaries.forEach(cateogary => {
-            if (cateogary.category === this.cateogary) {
-                sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
+            if (cateogary.name === this.cateogary) {
+                cateogary.sub_categories.forEach(subCateogary => {
+                    if (subCateogary.name === this.subCateogary)
+                        sub_category_id = subCateogary.sub_category_id
+                })
             }
         })
+        console.log(444444444444444444444444444444444444, category_id, sub_category_id);
+
         return [category_id, sub_category_id]
     }
 

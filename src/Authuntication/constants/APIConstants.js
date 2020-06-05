@@ -3,7 +3,7 @@ export const apiMethods = {
   get: 'GET'
 }
 export const apiUrls = {
-  signin: "https://162a1418243b.ngrok.io/api/reporting_portal/"
+  signin: "https://8bcb6d6537ac.ngrok.io/api/reporting_portal/"
 }
 
 

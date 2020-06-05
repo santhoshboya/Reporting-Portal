@@ -40,6 +40,8 @@ class ObservationListItem extends Component {
       console.log("dueDateType:L", dueDateType);
 
       let bgColor = (severty === "High" ? "#ff0b37" : (severty === "Low" ? "#2dca73" : "#ffb800"))
+      console.log(888888888888888888888888888888, userType);
+
       return (
          <TableRow id={observationId} data-testid="observation-list-item" onClick={() => onClickObservation(observationId)}>
             <TableData>{title}</TableData>

@@ -24,45 +24,12 @@ class ListOfObservationsRoute extends Component {
 
     doNetworkCalls = () => {
         this.getAdminStore().getCateogaries({}, () => { }, () => { });
-        const { observationsSortType, observationsSortOption, statusFilterOfList } = this.props.adminStore
-        let details = {
-            "sort_on": observationsSortType,
-            "sort_by": observationsSortOption,
-            "filter_on": statusFilterOfList,
-            "categories": [],
-            "sub_categories": []
-        };
 
-        this.getAdminStore().getAdminObservationList(details);
+
+        this.getAdminStore().getAdminObservationList();
     }
 
-    getCategoryAndSubCategoryId = () => {
 
-
-
-        // const { cateogaries } = this.props.userStore
-        // let category_id;
-        // let sub_category_id;
-        // if (cateogaries.length > 1) {
-        //     let temp = cateogaries.find(cateogary => cateogary.name === this.cateogary)
-        //     if (temp)
-        //         category_id = temp.category_id
-        //     else
-        //         return [0, 0]
-
-
-
-        //     cateogaries.forEach(cateogary => {
-        //         if (cateogary.name === this.cateogary) {
-        //             sub_category_id = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary).sub_category_id
-        //             console.log(cateogary, 999999999999999);
-
-        //         }
-        //     })
-        //     return [category_id, sub_category_id]
-        // }
-        // return [0, 0]
-    }
 
     onSuccess = () => {
         //alert("data recieved")
@@ -75,7 +42,7 @@ class ListOfObservationsRoute extends Component {
 
         this.props.history.push({
             pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
-            state: { userType: "admin", currentPage: "Total Observations" }
+            state: { userType: "Admin", currentPage: "Total Observations" }
         })
     }
     filterCategory = (value) => {

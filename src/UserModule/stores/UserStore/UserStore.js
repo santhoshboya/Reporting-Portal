@@ -232,9 +232,6 @@ class UserStore {
         this.observationDetails = ObservationResponse;
         this.userType = ObservationResponse.user_type;
         this.rpList = ObservationResponse.rp_list;
-
-        //console.log(11111111111111111, ObservationResponse);
-
     }
 
 
