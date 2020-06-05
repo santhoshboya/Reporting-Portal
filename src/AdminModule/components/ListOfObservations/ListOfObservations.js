@@ -21,11 +21,11 @@ class ListOfObservations extends Component {
 
     renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
-            goToPreviousPage, goToNextPage, filterCategory, filterSubCategory,
-            goToRandomPage, categotyFilterType, subCategotyFilterType } = this.props
+            goToPreviousPage, goToNextPage, filterCategory, filterSubCategory, getSubCateogariesMultiple,
+            goToRandomPage, categotyFilterType, subCategotyFilterType, cateogaries, getSubCateogaries, cateogariesList } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy,
-            categories, totalObservations, actioninProgress } = strings.rpFeatures
+            category, totalObservations, actioninProgress } = strings.rpFeatures
         return (
             <React.Fragment>
                 <ObseravationsHeader>
@@ -34,10 +34,10 @@ class ListOfObservations extends Component {
                     </PageHeadingAndAddButonDiv>
                     <FilterBar>
                         <FilterLefttSubPart>
-                            <DropDown onSlectOption={filterCategory} isMulti={true} className={'filters'} options={[all,
-                                acknowledgedbyRp, resolved, closed, reported]} value={categotyFilterType} userType={userType} />
-                            <DropDown onSlectOption={filterSubCategory} isMulti={true} className={'filters'} options={[all,
-                                acknowledgedbyRp, resolved, closed, reported]} value={subCategotyFilterType} userType={userType} />
+                            <DropDown onSlectOption={filterCategory} isMulti={true} className={'filters'}
+                                options={cateogaries.length > 0 ? cateogariesList : []}
+                                value={categotyFilterType} userType={userType} />
+                            <DropDown onSlectOption={filterSubCategory} isMulti={true} className={'filters'} options={getSubCateogariesMultiple} value={subCategotyFilterType} userType={userType} />
                         </FilterLefttSubPart>
                         <DropDown onSlectOption={filterSubCategory} className={'filters'} options={[all,
                             acknowledgedbyRp, resolved, closed, reported]} value={subCategotyFilterType} userType={userType} />

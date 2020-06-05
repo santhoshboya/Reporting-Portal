@@ -13,7 +13,7 @@ class DropDown extends Component {
       return dummyOptions.map(option => { return { value: option, label: option } })
    }
    renderValue = (value) => {
-      if (typeof (value) !== String) {
+      if (typeof value !== "string") {
          console.log("object", value);
 
          return value;
@@ -27,6 +27,7 @@ class DropDown extends Component {
    }
    render() {
       const { onSlectOption, options, value, isDisabled, isMulti, className } = this.props
+      console.log("drop down render:", value);
       return (
          <Select
             isDisabled={isDisabled}

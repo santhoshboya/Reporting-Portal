@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { AdminObsevationModel } from '../Models/AdminObsevationModel'
-import { observable, action } from 'mobx'
+import { observable, action, computed, toJS } from 'mobx'
 import { API_INITIAL } from "@ib/api-constants";
 import { inject } from 'mobx-react';
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
@@ -34,7 +34,6 @@ class AdminStore extends RpStore {
         this.categotyFilterType = [];
         this.subCategotyFilterType = [];
         this.listOfObservationsCurrentPage = 1;
-        console.log(766666666, this);
 
     }
 
@@ -68,8 +67,6 @@ class AdminStore extends RpStore {
     @action.bound
     filterCategory(value) {
         this.categotyFilterType = value;
-        console.log(this.categotyFilterType);
-
         this.getAdminObservationList();
     }
     @action.bound
@@ -77,6 +74,25 @@ class AdminStore extends RpStore {
         this.subCategotyFilterType = value;
         this.getAdminObservationList();
     }
+
+
+    @computed get getSubCateogariesMultiple() {
+        let categories = [];
+        (this.categotyFilterType).forEach(category => categories.push(category.value))
+        let subCategories = [];
+        this.cateogaries.forEach(category => {
+            if (categories.includes(category.category)) {
+                subCategories.push(...category.sub_catogiries)
+            }
+        })
+        console.log(999999999, toJS(subCategories));
+        let temp = [];
+        toJS(subCategories).forEach(category => temp.push(category.name))
+        console.log(11111111111111, temp);
+
+        return temp;
+    }
+
 
 
     @action.bound

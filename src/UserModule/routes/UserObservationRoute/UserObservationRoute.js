@@ -85,25 +85,39 @@ class UserObservationRoute extends Component {
             return true;
     }
 
+    getCategoryAndSubCategoryId = () => {
+        const { cateogaries } = this.props.userStore
+        let category_id;
+        let sub_category_id;
+        console.log(11111111111111111, cateogaries.find(cateogary => cateogary.category === this.cateogary));
+
+        category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
+
+        cateogaries.forEach(cateogary => {
+            if (cateogary.category === this.cateogary) {
+                sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
+            }
+        })
+        return [category_id, sub_category_id]
+    }
+
 
     @action.bound onClickSubmit() {
         if (this.onHandliErrorMsg()) {
-            this.props.userStore.getPostObservationAPIStatus = 100;
-            setTimeout(() => {
-                const observation = {
-                    titleOfTheObservation: this.titleOfTheObservation,
-                    cateogary: this.cateogary,
-                    subCateogary: this.subCateogary,
-                    severity: this.severity,
-                    description: this.description,
-                    attachments: this.attachments
-                }
-                console.log(observation)
-                this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
-                this.init();
-                this.props.userStore.getPostObservationAPIStatus = 200;
-                this.props.history.goBack();
-            }, 2000)
+            let categoriesIds = this.getCategoryAndSubCategoryId();
+
+            const observation = {
+                title: this.titleOfTheObservation,
+                category_id: categoriesIds[0],
+                sub_category_id: categoriesIds[1],
+                severity: this.severity,
+                description: this.description,
+                attachments: this.attachments
+            }
+            this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
+            this.init();
+            this.props.userStore.getPostObservationAPIStatus = 200;
+            this.props.history.goBack();
         }
     }
     goBack = () => {

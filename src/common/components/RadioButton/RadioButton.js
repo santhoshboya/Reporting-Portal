@@ -11,6 +11,7 @@ class RadioButton extends Component {
             onChange={onHandleCheck}
             name={name}
             className={className}
+
          ></RadioButtonElement>
       )
    }

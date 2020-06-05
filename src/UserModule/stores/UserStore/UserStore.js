@@ -129,22 +129,29 @@ class UserStore {
 
     @action.bound
     setGetCateogariesApiResponse(response) {
-        this.cateogaries = response.cateogaries;
-        this.cateogary = this.cateogaries[0].name
-        this.subCateogaries = response.subCateogaries;
+        this.cateogaries = response.categories;
+        this.cateogary = this.cateogaries[0].category
+        this.subCateogaries = [];
+        //response.subCateogaries;
     }
     @computed get cateogariesList() {
-        let temp = []
+        let temp = [];
         this.cateogaries.forEach((cateogary) => {
-            temp.push(cateogary.name)
+            temp.push(cateogary.category)
         })
+
         return temp;
     }
     @computed get getSubCateogaries() {
 
         let subCateogaries;
-        if (this.cateogaries.length > 0)
-            subCateogaries = this.subCateogaries.find(cateogary => cateogary.cateogary === this.cateogary).subCateogaries
+        console.log(9876, this.cateogary, this.cateogaries);
+
+        if (this.cateogaries.length > 0) {
+            subCateogaries = this.cateogaries.find(cateogary => cateogary.category === this.cateogary).sub_catogiries
+            console.log(12345, subCateogaries);
+
+        }
         else
             subCateogaries = [];
 
@@ -152,6 +159,8 @@ class UserStore {
         subCateogaries.forEach((subCateogary) => {
             temp.push(subCateogary.name)
         })
+        console.log("sub", temp);
+
         return temp;
     }
 

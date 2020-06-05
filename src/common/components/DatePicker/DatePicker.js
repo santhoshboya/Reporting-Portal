@@ -5,6 +5,7 @@ import { DatePickerElement } from './styledComponent'
 class DatePicker extends Component {
    render() {
       const { value, onChangeDate, className, isDisabled } = this.props
+      console.log("Date picker:- ", value)
       return (
          <DatePickerElement
             type='datetime-local'

@@ -45,18 +45,7 @@ class UserObservationScreenRoute extends Component {
         this.props.userStore.getCateogaries({}, () => { }, () => { });
         const { id } = this.props.match.params
         console.log(id);
-        this.props.userStore.getObservation({ id }, this.onSuccess, this.onFailure).then(() => {
-            const { assignedTO, status, privacy, dueDate, cateogary, subCateogary } = this.props.userStore.observationDetails
-
-            this.assignedTO = assignedTO;
-            this.status = status;
-            this.dueDate = privacy;
-            this.privacy = dueDate;
-            this.cateogary = cateogary;
-            this.subCateogary = subCateogary;
-            console.log(123, this.privacy, this.assignedTO, this.status, this.dueDate);
-
-        })
+        this.props.userStore.getObservation({ id }, this.onSuccess, this.onFailure)
     }
 
     @action.bound onChangePrivacy(event) {
@@ -96,10 +85,19 @@ class UserObservationScreenRoute extends Component {
     goBack = () => {
         this.props.history.goBack();
     }
-    onSuccess() {
-        //alert("observation submitted successfully...")
+    onSuccess = () => {
+        const { assignedTO, status, privacy, dueDate, cateogary, subCateogary } = this.props.userStore.observationDetails
+
+        this.assignedTO = assignedTO;
+        this.status = status;
+        this.dueDate = dueDate;
+        this.privacy = privacy;
+        this.cateogary = cateogary;
+        this.subCateogary = subCateogary;
+        console.log(9887756454, this.privacy, this.assignedTO, this.status, this.dueDate);
+
     }
-    onFailure() {
+    onFailure = () => {
         //alert("something went wrong pls try again...")
     }
     navigateTOPage = (page) => {
@@ -119,33 +117,51 @@ class UserObservationScreenRoute extends Component {
 
         }
     }
+
     @action.bound onUpdate = async () => {
+        let categoriesId = this.getCategoryAndSubCategoryId()
         const observation = {
-            description: this.description,
+            category_id: categoriesId[0],
+            sub_category_id: categoriesId[1],
             status: this.status,
-            subCateogary: this.subCateogary,
-            dueDate: this.dueDate,
-            assignedTO: this.assignedTO,
-            privacy: this.privacy
+            cateogary: this.cateogary,
+            due_date: this.dueDate,
+            assigned_to_id: this.assignedTO,
+            due_date_type: this.privacy
+
         }
-        console.log(1234, observation);
+        console.log(66666666666666666, observation);
 
         await this.props.userStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
         this.init();
         this.props.history.goBack();
     }
+    getCategoryAndSubCategoryId = () => {
+        const { cateogaries } = this.props.userStore
+
+        let category_id;
+        let sub_category_id;
+        category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
+        cateogaries.forEach(cateogary => {
+            if (cateogary.category === this.cateogary) {
+                sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
+            }
+        })
+        return [category_id, sub_category_id]
+    }
 
 
     render() {
-        console.log(this.props.userStore);
+        // console.log(this.props.userStore);
         const { title, severity, description, reportedOn,
             attachments } = this.props.userStore.observationDetails
-
+        console.count("Render dor date", this.dueDate, this.privacy)
+        console.log("Render dor date", this.dueDate, this.privacy)
 
         const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, cateogariesList } = this.props.userStore
         const { userType, currentPage } = this.props.location.state
 
-        console.log(12134, getSubCateogaries, cateogaries, cateogariesList);
+        // console.log(1215555555534, getSubCateogaries, cateogaries, cateogariesList);
         return (
             <ObservationScreen
                 userType={userType}

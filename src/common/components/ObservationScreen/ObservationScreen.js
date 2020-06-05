@@ -38,7 +38,7 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
-        console.log("successUi", subCateogaryOfObservation);
+        console.log("successUi date", reportedOnOfObservation);
 
 
         return (
@@ -126,12 +126,14 @@ class ObservationScreen extends Component {
 
                     {userType !== "user" &&
                         <Buttons>
-                            <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
-                                <RadioButton className={'radio-btn'} name={type} value={publicBtn} onHandleCheck={onChangePrivacy} />
-                                <RadioLable>{publicBtn}</RadioLable>
-                                <RadioButton className={'radio-btn'} name={type} value={privateBtn} onHandleCheck={onChangePrivacy} />
-                                <RadioLable>{privateBtn}</RadioLable>
-                            </RadioButtonsDiv>
+                            {(userType === RP) &&
+                                <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
+                                    <RadioButton className={'radio-btn'} name={type} value={publicBtn} onHandleCheck={onChangePrivacy} />
+                                    <RadioLable>{publicBtn}</RadioLable>
+                                    <RadioButton className={'radio-btn'} name={type} value={privateBtn} onHandleCheck={onChangePrivacy} />
+                                    <RadioLable>{privateBtn}</RadioLable>
+                                </RadioButtonsDiv>
+                            }
 
 
                             <ButtonsDiv>

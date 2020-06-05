@@ -1,0 +1,46 @@
+{
+    "categories": [
+        {
+            "category_id": 1,
+            "category": "Tech",
+            "sub_catogiries": [
+                {
+                    "id": 1,
+                    "name": "FrontEnd-A"
+                },
+                {
+                    "id": 2,
+                    "name": "BackEnd-B"
+                }
+            ]
+        },
+        {
+            "category_id": 2,
+            "category": "Management",
+            "sub_catogiries": [
+                {
+                    "id": 1,
+                    "name": "Management-A"
+                },
+                {
+                    "id": 2,
+                    "name": "Management-B"
+                }
+            ]
+        },
+        {
+            "category_id": 3,
+            "category": "Studio",
+            "sub_catogiries": [
+                {
+                    "id": 1,
+                    "name": "Studio-A"
+                },
+                {
+                    "id": 2,
+                    "name": "Studio-B"
+                }
+            ]
+        }
+    ]
+}

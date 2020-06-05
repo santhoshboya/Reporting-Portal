@@ -2,302 +2,95 @@
     "observation_list": [
         {
             "title": "Santhosh ",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
+            "reported_on": "11/10/2020 at 12:15pm",
+            "assigned_to": {
+                "first_name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "reported_by": {
                 "name": "Sai Ram",
                 "phone_no": "943434343"
             },
             "severty": "HIGH",
             "status": "ACTION IN PROGRESS",
-            "dueDate": "11/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 1,
+            "due_date": "11/10/2020 at 12:15pm",
+            "due_date_type": "Public",
+            "messages_count": 1,
             "observation_id": 1
         },
         {
-            "title": "Santhu ",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 3,
-            "observation_id": 2
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
+            "title": "Santhosh ",
+            "reported_on": "11/10/2020 at 12:15pm",
+            "assigned_to": {
+                "first_name": "Sai Ram",
+                "phone_no": "943434343"
             },
-            "severty": "WARNING",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 4,
-            "observation_id": 3
-        },
-        {
-            "title": "Sai Ram",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "HIGH",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 4,
-            "observation_id": 4
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
+            "reported_by": {
                 "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 4,
-            "observation_id": 5
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "WARNING",
-            "status": "ACTION IN PROGRESS",
-            "dueDateType": "Public",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "messages": 4,
-            "observation_id": 6
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 5,
-            "observation_id": 7
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "HIGH",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 4,
-            "observation_id": 8
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "WARNING",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 3,
-            "observation_id": 9
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 4,
-            "observation_id": 10
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "WARNING",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 2,
-            "observation_id": 11
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "HIGH",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 4,
-            "observation_id": 12
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 2,
-            "observation_id": 13
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "HIGH",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 4,
-            "observation_id": 14
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "HIGH",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 4,
-            "observation_id": 15
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "WARNING",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 2,
-            "observation_id": 16
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "LOW",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 4,
-            "observation_id": 17
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
-            "severty": "HIGH",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "messages": 4,
-            "observation_id": 18
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "HIGH",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "messages": 1,
-            "observation_id": 19
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "WARNING",
-            "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 4,
-            "observation_id": 20
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
-            },
-            "severty": "HIGH",
-            "status": "COMPLETED",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 3,
-            "observation_id": 21
-        },
-        {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {
-                "name": "Sai Ram",
-                "phone_no": "998988"
+                "phone_no": "943434343"
             },
             "severty": "HIGH",
             "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Public",
-            "messages": 6,
-            "observation_id": 22
+            "due_date": "11/10/2020 at 12:15pm",
+            "due_date_type": "Public",
+            "messages_count": 1,
+            "observation_id": 1
         },
         {
-            "title": "Santhosh",
-            "reportedOn": "11/10/2020 at 12:15pm",
-            "assignedTo": {},
+            "title": "Santhosh ",
+            "reported_on": "11/10/2020 at 12:15pm",
+            "assigned_to": {
+                "first_name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "reported_by": {
+                "name": "Sai Ram",
+                "phone_no": "943434343"
+            },
             "severty": "HIGH",
             "status": "ACTION IN PROGRESS",
-            "dueDate": "16/10/2020 at 12:15pm",
-            "dueDateType": "Privacy",
-            "messages": 1,
-            "observation_id": 23
+            "due_date": "11/10/2020 at 12:15pm",
+            "due_date_type": "Public",
+            "messages_count": 1,
+            "observation_id": 1
+        },
+        {
+            "title": "Santhosh ",
+            "reported_on": "11/10/2020 at 12:15pm",
+            "assigned_to": {
+                "first_name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "reported_by": {
+                "name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "severty": "HIGH",
+            "status": "ACTION IN PROGRESS",
+            "due_date": "11/10/2020 at 12:15pm",
+            "due_date_type": "Public",
+            "messages_count": 1,
+            "observation_id": 1
+        },
+        {
+            "title": "Santhosh ",
+            "reported_on": "11/10/2020 at 12:15pm",
+            "assigned_to": {
+                "first_name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "reported_by": {
+                "name": "Sai Ram",
+                "phone_no": "943434343"
+            },
+            "severty": "HIGH",
+            "status": "ACTION IN PROGRESS",
+            "due_date": "11/10/2020 at 12:15pm",
+            "due_date_type": "Public",
+            "messages_count": 1,
+            "observation_id": 1
         }
     ],
-    "total_No_Of_Observation": 23,
+    "user_observations_count": 5,
     "user_type": "user"
 }

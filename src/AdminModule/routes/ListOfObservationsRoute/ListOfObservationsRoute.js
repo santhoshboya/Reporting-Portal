@@ -23,6 +23,7 @@ class ListOfObservationsRoute extends Component {
     }
 
     doNetworkCalls = () => {
+        this.getAdminStore().getCateogaries({}, () => { }, () => { });
         this.getAdminStore().getAdminObservationList();
     }
     onSuccess = () => {
@@ -41,7 +42,6 @@ class ListOfObservationsRoute extends Component {
     }
     filterCategory = (value) => {
         console.log(12243, value);
-
         this.getAdminStore().filterCategory(value)
     }
     filterSubCategory = (value) => {
@@ -50,7 +50,8 @@ class ListOfObservationsRoute extends Component {
     render() {
         const { adminObservationsList, goToPreviousObservations, goToNextObservations,
             goToRandomObservations, listOfObservationsTotalPages, listOfObservationsCurrentPage,
-            userType, categotyFilterType, subCategotyFilterType, adminObservationsListAPIStatus, adminObservationsListAPIError } = this.getAdminStore();
+            userType, categotyFilterType, subCategotyFilterType, adminObservationsListAPIStatus, adminObservationsListAPIError,
+            cateogaries, getSubCateogaries, cateogariesList, getSubCateogariesMultiple } = this.getAdminStore();
 
 
 
@@ -72,6 +73,10 @@ class ListOfObservationsRoute extends Component {
                 adminObservationsListAPIError={adminObservationsListAPIError}
                 adminObservationsListAPIStatus={adminObservationsListAPIStatus}
                 onRetryClick={this.doNetworkCalls}
+                cateogaries={cateogaries}
+                getSubCateogaries={getSubCateogaries}
+                cateogariesList={cateogariesList}
+                getSubCateogariesMultiple={getSubCateogariesMultiple}
             />
         )
     }
