@@ -63,13 +63,13 @@ class PageHeader extends Component {
                      <RpFeatures onClick={() => navigateTOPage(myObservations)} className={currentPage === myObservations ? "active-head" : ""}>{myObservations}</RpFeatures>
                   </RightSubPartOne>
                }
-               {(userType === "rp") &&
+               {(userType === "Rp") &&
                   <RightSubPartOne>
                      <RpFeatures onClick={() => navigateTOPage(assignedToMe)} className="active-head" >{assignedToMe}</RpFeatures>
                      <RpFeatures onClick={() => navigateTOPage(myObservations)} >{myObservations}</RpFeatures>
                   </RightSubPartOne>
                }
-               {(userType === "admin") &&
+               {(userType === "Admin") &&
                   <RightSubPartOne>
                      <RpFeatures onClick={() => navigateTOPage(totalObservations)} className="active-head" >{totalObservations}</RpFeatures>
                      <RpFeatures onClick={() => navigateTOPage(categories)} >{categories}</RpFeatures>

@@ -49,7 +49,7 @@ class ObservationsAssignedToRpRoute extends Component {
 
         this.props.history.push({
             pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
-            state: { userType: "rp", currentPage: "Assigned To Me" }
+            state: { userType: "Rp", currentPage: "Assigned To Me" }
         })
     }
     filterAssignedObservationList = (value) => {

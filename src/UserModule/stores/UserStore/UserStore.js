@@ -78,6 +78,7 @@ class UserStore {
         this.cateogaries = [];
         this.subCateogaries = [];
         this.filtersOfObservation = FILTER_TYPE
+        this.cateogary = null;
     }
 
 
@@ -130,37 +131,31 @@ class UserStore {
     @action.bound
     setGetCateogariesApiResponse(response) {
         this.cateogaries = response.categories;
-        this.cateogary = this.cateogaries[0].category
+        //this.cateogary = this.cateogaries[0].name
         this.subCateogaries = [];
-        //response.subCateogaries;
     }
     @computed get cateogariesList() {
         let temp = [];
         this.cateogaries.forEach((cateogary) => {
-            temp.push(cateogary.category)
+            temp.push(cateogary.name)
         })
-
         return temp;
     }
     @computed get getSubCateogaries() {
 
-        let subCateogaries;
-        console.log(9876, this.cateogary, this.cateogaries);
-
-        if (this.cateogaries.length > 0) {
-            subCateogaries = this.cateogaries.find(cateogary => cateogary.category === this.cateogary).sub_catogiries
-            console.log(12345, subCateogaries);
+        let subCateogaries = [];
+        if (this.cateogaries.length > 0 && this.cateogary != null) {
+            subCateogaries = this.cateogaries.find(cateogary => cateogary.name === this.cateogary).sub_categories
 
         }
         else
             subCateogaries = [];
 
         let temp = []
-        subCateogaries.forEach((subCateogary) => {
-            temp.push(subCateogary.name)
-        })
-        console.log("sub", temp);
-
+        if (subCateogaries)
+            subCateogaries.forEach((subCateogary) => {
+                temp.push(subCateogary.name)
+            })
         return temp;
     }
 
@@ -175,6 +170,7 @@ class UserStore {
             "sort_by": this.observationsSortOption,
             "filter_on": this.filterType
         };
+
         const userObservationPromise = this.userObservationAPIService.getObservationListApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setGetObservationListApiAPIStatus, this.setGetObservationListApiResponse)
@@ -204,8 +200,8 @@ class UserStore {
 
 
     @action.bound
-    getObservation(requestObject, onSuccess, onFailure) {
-        const observationPromise = this.userObservationAPIService.getObservationApi(requestObject)
+    getObservation(observation_id, onSuccess, onFailure) {
+        const observationPromise = this.userObservationAPIService.getObservationApi(observation_id)
         return bindPromiseWithOnSuccess(observationPromise)
             .to(this.setGetObservationApiAPIStatus, response => {
                 this.setGetObservationApiResponse(response)
@@ -315,11 +311,3 @@ export { UserStore };
 
 
 
-//getobservation 
-
-// {
-//     "user_type": "string",
-//         "sort_on": "reported_on",
-//             "sort_by": "old",
-//                 "filter_on": "all"
-// }

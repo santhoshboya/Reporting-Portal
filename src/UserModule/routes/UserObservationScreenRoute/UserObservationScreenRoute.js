@@ -42,10 +42,12 @@ class UserObservationScreenRoute extends Component {
     doNetworkCalss = () => {
 
 
-        this.props.userStore.getCateogaries({}, () => { }, () => { });
         const { id } = this.props.match.params
-        console.log(id);
-        this.props.userStore.getObservation({ id }, this.onSuccess, this.onFailure)
+
+        this.props.userStore.getObservation(id, this.onSuccess, this.onFailure)
+        this.props.userStore.getCateogaries({}, () => { }, () => { });
+
+        console.log("categories", id, this.props.userStore.categories);
     }
 
     @action.bound onChangePrivacy(event) {
@@ -68,6 +70,8 @@ class UserObservationScreenRoute extends Component {
     @action.bound onChangeCategory(value) {
         this.cateogary = toJS(value).value
         this.subCateogary = null;
+        console.log("ssssssssssss", this.cateogary);
+
         this.props.userStore.cateogary = toJS(value).value;
     }
     @action.bound onChangeSubCategory(value) {
@@ -86,14 +90,14 @@ class UserObservationScreenRoute extends Component {
         this.props.history.goBack();
     }
     onSuccess = () => {
-        const { assignedTO, status, privacy, dueDate, cateogary, subCateogary } = this.props.userStore.observationDetails
+        const { assigned_to, status, privacy, due_date, category, sub_category } = this.props.userStore.observationDetails
 
-        this.assignedTO = assignedTO;
+        this.assignedTO = assigned_to;
         this.status = status;
-        this.dueDate = dueDate;
+        this.dueDate = due_date;
         this.privacy = privacy;
-        this.cateogary = cateogary;
-        this.subCateogary = subCateogary;
+        this.cateogary = category;
+        this.subCateogary = sub_category;
         console.log(9887756454, this.privacy, this.assignedTO, this.status, this.dueDate);
 
     }
@@ -119,41 +123,45 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onUpdate = async () => {
-        let categoriesId = this.getCategoryAndSubCategoryId()
+        const { id } = this.props.match.params
         const observation = {
-            category_id: categoriesId[0],
-            sub_category_id: categoriesId[1],
+            observation_id: id,
             status: this.status,
-            cateogary: this.cateogary,
             due_date: this.dueDate,
             assigned_to_id: this.assignedTO,
             due_date_type: this.privacy
-
         }
         console.log(66666666666666666, observation);
 
-        await this.props.userStore.updateObservationDeatails(observation, this.onSuccess, this.onFailure);
+        await this.props.userStore.updateObservationDeatails(this.userType, observation);
         this.init();
         this.props.history.goBack();
     }
     getCategoryAndSubCategoryId = () => {
+        if (this.cateogary == null)
+            return [0, 0]
         const { cateogaries } = this.props.userStore
 
         let category_id;
         let sub_category_id;
-        category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
+        let category = cateogaries.find(cateogary => cateogary.category === this.cateogary)
+        if (category)
+            category_id = category.category_id
+        // category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
         cateogaries.forEach(cateogary => {
             if (cateogary.category === this.cateogary) {
                 sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
             }
         })
+        console.log(11111111111111111, category_id, sub_category_id);
+
         return [category_id, sub_category_id]
     }
 
 
     render() {
         // console.log(this.props.userStore);
-        const { title, severity, description, reportedOn,
+        const { title, severity, description, reported_on,
             attachments } = this.props.userStore.observationDetails
         console.count("Render dor date", this.dueDate, this.privacy)
         console.log("Render dor date", this.dueDate, this.privacy)
@@ -170,7 +178,7 @@ class UserObservationScreenRoute extends Component {
                 cateogaryOfObservation={this.cateogary}
                 subCateogaryOfObservation={this.subCateogary}
                 severityOfObservation={severity}
-                reportedOnOfObservation={reportedOn}
+                reportedOnOfObservation={reported_on}
                 descriptionOfObservation={description}
                 attachmentsOfObservation={attachments}
                 onChangePrivacy={this.onChangePrivacy}

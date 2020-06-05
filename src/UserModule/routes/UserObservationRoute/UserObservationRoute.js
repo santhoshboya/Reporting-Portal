@@ -30,6 +30,8 @@ class UserObservationRoute extends Component {
         this.description = "";
         this.attachments = [];
 
+
+
     }
     componentDidMount = () => {
         this.props.userStore.getCateogaries({}, () => { }, () => { });
@@ -46,6 +48,8 @@ class UserObservationRoute extends Component {
 
     @action.bound onChangeCateogary(value) {
         this.cateogary = toJS(value).value;
+        console.log("sssssssss", this.cateogary);
+
         this.props.userStore.cateogary = toJS(value).value;
 
     }
@@ -89,16 +93,25 @@ class UserObservationRoute extends Component {
         const { cateogaries } = this.props.userStore
         let category_id;
         let sub_category_id;
-        console.log(11111111111111111, cateogaries.find(cateogary => cateogary.category === this.cateogary));
+        if (cateogaries.length > 1) {
+            let temp = cateogaries.find(cateogary => cateogary.name === this.cateogary)
+            if (temp)
+                category_id = temp.category_id
+            else
+                return [0, 0]
 
-        category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
 
-        cateogaries.forEach(cateogary => {
-            if (cateogary.category === this.cateogary) {
-                sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
-            }
-        })
-        return [category_id, sub_category_id]
+
+            cateogaries.forEach(cateogary => {
+                if (cateogary.name === this.cateogary) {
+                    sub_category_id = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary).sub_category_id
+                    console.log(cateogary, 999999999999999);
+
+                }
+            })
+            return [category_id, sub_category_id]
+        }
+        return [0, 0]
     }
 
 
@@ -112,7 +125,7 @@ class UserObservationRoute extends Component {
                 sub_category_id: categoriesIds[1],
                 severity: this.severity,
                 description: this.description,
-                attachments: this.attachments
+                attachments: []
             }
             this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
             this.init();

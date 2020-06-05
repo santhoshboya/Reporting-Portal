@@ -70,7 +70,7 @@ class RpObservationPage extends Component {
                         </FieldName>
                         <InputAndErrorField>
                             <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation}
-                                options={['HIGH', 'LOW', 'WARNING']} />
+                                options={['High', 'Low', 'Medium']} />
                             {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
                         </InputAndErrorField>
 

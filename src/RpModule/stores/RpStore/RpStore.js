@@ -13,7 +13,6 @@ const FILTER_TYPE = "all";
 const USERTYPE = "Rp"
 const LIMIT = 3;
 class RpStore extends UserStore {
-    @observable userType
     @observable assignedObservationsSortType;
     @observable assignedObservationsSortOption;
     @observable assignedObservationReportedOnSortType;
@@ -60,8 +59,6 @@ class RpStore extends UserStore {
             "sort_by": this.assignedObservationsSortOption,
             "filter_on": this.filterTypeOfAssignedObservation
         };
-        console.log("rp", details);
-
         const userObservationPromise = this.rpObservationAPIService.getAssignedObservationListApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(userObservationPromise)
             .to(this.setAssignedObservationListApiAPIStatus, this.setAssignedObservationListApiResponse)
@@ -81,9 +78,13 @@ class RpStore extends UserStore {
 
     @action.bound
     setAssignedObservationListApiResponse(assignedObservationListResponse) {
-        this.assignedObservationsTotalPages = Math.ceil(assignedObservationListResponse.total_No_Of_Observation / LIMIT);
-        this.assignedObservationListForRp = assignedObservationListResponse.observation_list.map(observation => new RpModel(observation))
+
+        this.assignedObservationsTotalPages = Math.ceil(assignedObservationListResponse.total_observations_count / LIMIT);
+        this.assignedObservationListForRp = assignedObservationListResponse.observations_assigned_to_rp.map(observation => new RpModel(observation))
+        //alert(this.userType)
         this.userType = assignedObservationListResponse.user_type;
+        console.log("type 99999999", assignedObservationListResponse.user_type);
+
     }
 
 

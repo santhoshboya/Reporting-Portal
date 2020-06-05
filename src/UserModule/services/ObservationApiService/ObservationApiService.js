@@ -11,20 +11,20 @@ class ObservationApiService {
             baseURL: apiUrls.obseravation
         })
     }
-    getObservationApi(requestObject) {
+    getObservationApi(observation_id) {
+        let endPoint = `/get/${observation_id}/observation/v1/`
         return networkCallWithApisauce(
             this.api,
-            endPoints.observation,
-            { requestObject },
+            endPoint,
+            {},
             apiMethods.get
         )
     }
     postObservationApi(obseravation) {
-        console.log("post api observation submitted...", obseravation);
         return networkCallWithApisauce(
             this.api,
             endPoints.postObservation,
-            { obseravation },
+            obseravation,
             apiMethods.post
         )
     }
@@ -40,21 +40,30 @@ class ObservationApiService {
         )
     }
     getCateogariesApi() {
-        let endPoint = `catagories`
         return networkCallWithApisauce(
             this.api,
-            endPoint,
+            endPoints.categories,
             {},
             apiMethods.get
         )
     }
-    updateObservationApi(id, Details) {
-        return networkCallWithApisauce(
-            this.api,
-            endPoint,
-            { id, Details },
-            apiMethods.get
-        )
+    updateObservationApi(userType, Details) {
+        if (userType === "Rp")
+            return networkCallWithApisauce(
+                this.api,
+                endPoints.updateObservation,
+                Details,
+                apiMethods.post
+            )
+        else {
+            return networkCallWithApisauce(
+                this.api,
+                endPoints.updateObservationByAdmin,
+                Details,
+                apiMethods.post
+            )
+
+        }
     }
 }
 

@@ -86,24 +86,44 @@ class RpObservationRoute extends Component {
     }
 
 
+    getCategoryAndSubCategoryId = () => {
+        const { cateogaries } = this.props.rpStore
+        let category_id;
+        let sub_category_id;
+        if (cateogaries.length > 1) {
+            let temp = cateogaries.find(cateogary => cateogary.name === this.cateogary)
+            if (temp)
+                category_id = temp.category_id
+            else
+                return [0, 0]
+
+            cateogaries.forEach(cateogary => {
+                if (cateogary.name === this.cateogary) {
+                    sub_category_id = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary).sub_category_id
+                    console.log(cateogary, 999999999999999);
+
+                }
+            })
+            return [category_id, sub_category_id]
+        }
+        return [0, 0]
+    }
+
     @action.bound onClickSubmit() {
         if (this.onHandleErrorMsg()) {
-            let { getPostObservationAPIStatus } = this.props.rpStore;
-            getPostObservationAPIStatus = 100;
-            setTimeout(() => {
-                const observation = {
-                    titleOfTheObservation: this.titleOfTheObservation,
-                    cateogary: this.cateogary,
-                    subCateogary: this.subCateogary,
-                    severity: this.severity,
-                    description: this.description,
-                    attachments: this.attachments
-                }
-                this.props.rpStore.addNewObservation(observation, this.onSuccess, this.onFailure);
-                this.init();
-                getPostObservationAPIStatus = 200;
-                this.props.history.goBack();
-            }, 1200)
+
+            let categoriesIds = this.getCategoryAndSubCategoryId();
+            const observation = {
+                title: this.titleOfTheObservation,
+                category_id: categoriesIds[0],
+                sub_category_id: categoriesIds[1],
+                severity: this.severity,
+                description: this.description,
+                attachments: []
+            }
+            this.props.rpStore.addNewObservation(observation, this.onSuccess, this.onFailure);
+            this.init();
+            this.props.history.goBack();
         }
     }
     goBack = () => {

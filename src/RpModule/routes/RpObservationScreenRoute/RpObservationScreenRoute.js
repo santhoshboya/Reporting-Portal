@@ -20,6 +20,7 @@ class RpObservationScreenRoute extends Component {
     constructor(props) {
         super(props);
         this.init();
+        alert(2)
     }
     componentDidMount() {
         const { id } = this.props.match.params

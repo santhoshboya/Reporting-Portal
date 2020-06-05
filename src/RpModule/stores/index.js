@@ -5,11 +5,13 @@ import { ObservationApiService } from '../../UserModule/services/ObservationApiS
 import { ObservationFixtureService } from "../../UserModule/services/ObservationFixtureService/ObservationFixtureService";
 
 import { RpStore } from "./RpStore";
+const rpObservationApiService = new RpObservationApiService();
+const observationApiService = new ObservationApiService();
 const observationFixtureService = new ObservationFixtureService();
 const rpObservationFixtureService = new RpObservationFixtureService();
 
 // const observationApiService = new ObservationApiService();
 // const rpObservationApiService = new RpObservationApiService();
 
-const rpStore = new RpStore(rpObservationFixtureService, observationFixtureService);
+const rpStore = new RpStore(rpObservationApiService, observationApiService);
 export default { rpStore };

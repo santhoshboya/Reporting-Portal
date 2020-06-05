@@ -68,7 +68,7 @@ class UserObservationPage extends Component {
                             {severity}
                             <Required>*</Required>
                         </FieldName>
-                        <InputAndErrorField>                       <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['HIGH', 'LOW', 'WARNING']} />
+                        <InputAndErrorField>                       <DropDown onSlectOption={onChangeSeverity} value={severityOfObservation} options={['High', 'Low', 'Medium']} />
                             {severityErrorMsg !== "" && <Required>{severityErrorMsg}</Required>}
                         </InputAndErrorField>
 

@@ -52,7 +52,7 @@ class ObservationListItem extends Component {
                      <Image src={src} className={'persons-xs'}></Image>
                      <PersonData>
                         {reportedBy.first_name}<br />
-                  ph:{reportedBy.phone_no}
+                  ph:{reportedBy.phone_number}
                      </PersonData>
                   </PersonDetails>
                </TableData>
@@ -76,7 +76,7 @@ class ObservationListItem extends Component {
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
                            {reportedBy.first_name}<br />
-                     ph:{reportedBy.phone_no}
+                     ph:{reportedBy.phone_number}
                         </PersonData>
                      </PersonDetails>
                   </TableData>
@@ -84,10 +84,10 @@ class ObservationListItem extends Component {
                   <TableData>
                      {(assignedTo != null && Object.keys(assignedTo).length !== 0) ?
                         <PersonDetails>
-                           <Image src={src} className={'persons-xs'}></Image>
+                           <Image src={assignedTo.profile_pic ? assignedTo.profile_pic : src} className={'persons-xs'}></Image>
                            <PersonData>
                               {assignedTo.first_name}<br />
-                     ph:{assignedTo.phone_no}
+                     ph:{assignedTo.phone_number}
                            </PersonData>
                         </PersonDetails>
                         :
@@ -126,7 +126,7 @@ class ObservationListItem extends Component {
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
                            {assignedTo.first_name}<br />
-                     ph:{assignedTo.phone_no}
+                     ph:{assignedTo.phone_number}
                         </PersonData>
                      </PersonDetails>
                      :

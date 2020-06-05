@@ -67,13 +67,13 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {cateogary}
                         </FieldName>
-                        <DropDown onSlectOption={onChangeCategory} value={cateogaryOfObservation} options={cateogaries.length > 0 ? cateogariesList : []}
+                        <DropDown onSlectOption={onChangeCategory} value={cateogaryOfObservation ? cateogaryOfObservation.name : ""} options={cateogaries.length > 0 ? cateogariesList : []}
                             isDisabled={(userType === USER || userType === RP) ? true : false}
                         />
                         <FieldName>
                             {subCateogary}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeSubCategory} key={cateogaryOfObservation} value={subCateogaryOfObservation} options={cateogaries.length > 0 ? getSubCateogaries : []}
+                        <DropDown userType={userType} onSlectOption={onChangeSubCategory} key={cateogaryOfObservation ? cateogaryOfObservation.name : ""} value={subCateogaryOfObservation ? subCateogaryOfObservation.name : ""} options={cateogaries.length > 0 ? getSubCateogaries : []}
                             isDisabled={(userType === USER || userType === RP) ? true : false} />
                     </FieldContainer>
 
@@ -90,7 +90,7 @@ class ObservationScreen extends Component {
                             {severity}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={() => { }} value={severityOfObservation}
-                            options={['HIGH', 'LOW', 'WARNING']} isDisabled={true} />
+                            options={['High', 'Low', 'Medium']} isDisabled={true} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -104,7 +104,7 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {assignedTo}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation}
+                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation.first_name}
                             options={['PavanKumar', 'Janardhan', 'Sunny']} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
