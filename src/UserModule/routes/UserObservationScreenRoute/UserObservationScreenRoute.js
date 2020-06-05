@@ -8,6 +8,7 @@ import {
     LIST_OF_OBSERVATIONS_PATH, OBSERVATIONS_ASSIGNED_TO_RP
 } from '../../constants/RouteConstants'
 import strings from '../../../common/i18n/strings.json'
+const ADMIN = "Admin"
 @inject("userStore")
 @observer
 class UserObservationScreenRoute extends Component {
@@ -32,7 +33,7 @@ class UserObservationScreenRoute extends Component {
         this.assignedTO = "";
         this.status = "";
         this.dueDate = "";
-        this.privacy = "";
+        this.privacy = null;
         this.cateogary = '';
         this.subCateogary = null;
     }
@@ -46,8 +47,6 @@ class UserObservationScreenRoute extends Component {
 
         this.props.userStore.getObservation(id, this.onSuccess, this.onFailure)
         this.props.userStore.getCateogaries({}, () => { }, () => { });
-
-        console.log("categories", id, this.props.userStore.categories);
     }
 
     @action.bound onChangePrivacy(event) {
@@ -60,6 +59,8 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onChangeDueDate(event) {
+        console.log(1111111111111111111119999999999999999999999999999, event);
+
         this.dueDate = event.target.value;
     }
 
@@ -70,8 +71,6 @@ class UserObservationScreenRoute extends Component {
     @action.bound onChangeCategory(value) {
         this.cateogary = toJS(value).value
         this.subCateogary = null;
-        console.log("ssssssssssss", this.cateogary);
-
         this.props.userStore.cateogary = toJS(value).value;
     }
     @action.bound onChangeSubCategory(value) {
@@ -90,15 +89,14 @@ class UserObservationScreenRoute extends Component {
         this.props.history.goBack();
     }
     onSuccess = () => {
-        const { assigned_to, status, privacy, due_date, category, sub_category } = this.props.userStore.observationDetails
+        const { assigned_to, status, due_date_type, due_date, category, sub_category } = this.props.userStore.observationDetails
 
         this.assignedTO = assigned_to;
         this.status = status;
         this.dueDate = due_date;
-        this.privacy = privacy;
+        this.privacy = due_date_type;
         this.cateogary = category;
         this.subCateogary = sub_category;
-        console.log(9887756454, this.privacy, this.assignedTO, this.status, this.dueDate);
 
     }
     onFailure = () => {
@@ -124,40 +122,72 @@ class UserObservationScreenRoute extends Component {
 
     @action.bound onUpdate = async () => {
         const { id } = this.props.match.params
-        const observation = {
-            observation_id: id,
-            status: this.status,
-            due_date: this.dueDate,
-            assigned_to_id: this.assignedTO,
-            due_date_type: this.privacy
-        }
-        console.log(66666666666666666, observation);
+        let typeOfUser = this.props.location.state.userType
+        let observation;
+        console.log(333333333333333333333333333333, this.getCategoryAndSubCategoryId());
 
-        await this.props.userStore.updateObservationDeatails(this.userType, observation);
+        if (typeOfUser === ADMIN) {
+            observation = {
+                observation_id: id,
+                category_id: "",
+                sub_category_id: ""
+            }
+        }
+        else {
+            let due_date = null;
+            if (this.dueDate)
+                due_date = `${this.dueDate.slice(0, 10)} ${this.dueDate.slice(11)}`
+            observation = {
+                observation_id: id,
+                status: this.status,
+                due_date: due_date,
+                assigned_to_id: this.getAssignedToId(),
+                due_date_type: this.privacy
+            }
+        }
+        console.log(6666666666666666600000000000000000000000000, this.props.userStore.userType, this.props.userStore, observation);
+
+        await this.props.userStore.updateObservationDeatails(typeOfUser, observation);
         this.init();
         this.props.history.goBack();
+    }
+
+    //change,.............
+    getAssignedToId = () => {
+        console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<", this.assignedTO, this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO.first_name).user_id);
+
+        if (this.assignedTO != "") {
+            return this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO.first_name).user_id;
+
+        }
     }
     getCategoryAndSubCategoryId = () => {
         if (this.cateogary == null)
             return [0, 0]
         const { cateogaries } = this.props.userStore
 
-        let category_id;
-        let sub_category_id;
+        let category_id = 0;
+        let sub_category_id = 0;
         let category = cateogaries.find(cateogary => cateogary.category === this.cateogary)
         if (category)
             category_id = category.category_id
-        // category_id = cateogaries.find(cateogary => cateogary.category === this.cateogary).category_id
         cateogaries.forEach(cateogary => {
             if (cateogary.category === this.cateogary) {
                 sub_category_id = cateogary.sub_catogiries.find(subCateogary => subCateogary.name === this.subCateogary).id
             }
         })
-        console.log(11111111111111111, category_id, sub_category_id);
-
         return [category_id, sub_category_id]
     }
 
+    getComputedRpList = () => {
+        let rpList = [];
+        this.props.userStore.rpList.forEach(rp => {
+            rpList.push(rp.first_name)
+        })
+        console.log(rpList);
+        return rpList;
+
+    }
 
     render() {
         // console.log(this.props.userStore);
@@ -166,15 +196,18 @@ class UserObservationScreenRoute extends Component {
         console.count("Render dor date", this.dueDate, this.privacy)
         console.log("Render dor date", this.dueDate, this.privacy)
 
-        const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, cateogariesList } = this.props.userStore
+        const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, rpList, cateogariesList } = this.props.userStore
         const { userType, currentPage } = this.props.location.state
 
         // console.log(1215555555534, getSubCateogaries, cateogaries, cateogariesList);
+        console.log(222222222222222, rpList, this.getComputedRpList());
+
         return (
             <ObservationScreen
                 userType={userType}
                 currentPage={currentPage}
                 title={title}
+                rpList={this.getComputedRpList()}
                 cateogaryOfObservation={this.cateogary}
                 subCateogaryOfObservation={this.subCateogary}
                 severityOfObservation={severity}

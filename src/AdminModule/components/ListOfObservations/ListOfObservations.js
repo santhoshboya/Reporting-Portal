@@ -21,7 +21,7 @@ class ListOfObservations extends Component {
 
     renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
-            goToPreviousPage, goToNextPage, filterCategory, filterSubCategory, getSubCateogariesMultiple,
+            goToPreviousPage, goToNextPage, filterCategory, filterSubCategory, getSubCateogariesMultiple, statusFilterOfList, setStatusFilterOfList,
             goToRandomPage, categotyFilterType, subCategotyFilterType, cateogaries, getSubCateogaries, cateogariesList } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy,
@@ -39,8 +39,8 @@ class ListOfObservations extends Component {
                                 value={categotyFilterType} userType={userType} />
                             <DropDown onSlectOption={filterSubCategory} isMulti={true} className={'filters'} options={getSubCateogariesMultiple} value={subCategotyFilterType} userType={userType} />
                         </FilterLefttSubPart>
-                        <DropDown onSlectOption={filterSubCategory} className={'filters'} options={[all,
-                            acknowledgedbyRp, resolved, closed, reported]} value={subCategotyFilterType} userType={userType} />
+                        <DropDown onSlectOption={setStatusFilterOfList} className={'filters'} options={[all,
+                            actioninProgress, acknowledgedbyRp, resolved, closed, reported]} value={statusFilterOfList} userType={userType} />
                     </FilterBar>
                 </ObseravationsHeader>
                 <ObseravationsListTable>

@@ -40,6 +40,7 @@ class UserStore {
     @observable cateogary;
     @observable cateogaries;
     @observable subCateogaries;
+    @observable rpList;
 
 
     constructor(userObservationAPIService) {
@@ -79,12 +80,13 @@ class UserStore {
         this.subCateogaries = [];
         this.filtersOfObservation = FILTER_TYPE
         this.cateogary = null;
+        this.rpList = []
     }
 
 
     @action.bound
-    updateObservationDeatails(details) {
-        const updateObservationApiPromise = this.userObservationAPIService.updateObservationApi(details)
+    updateObservationDeatails(userType, details) {
+        const updateObservationApiPromise = this.userObservationAPIService.updateObservationApi(userType, details)
         return new bindPromiseWithOnSuccess(updateObservationApiPromise)
             .to(this.setUpdateObservationApiAPIStatus, this.setUpdateObservationApiResponse)
             .catch(this.setUpdateObservationApiAPIError);
@@ -226,10 +228,16 @@ class UserStore {
 
     @action.bound
     setGetObservationApiResponse(ObservationResponse) {
+
         this.observationDetails = ObservationResponse;
         this.userType = ObservationResponse.user_type;
+        this.rpList = ObservationResponse.rp_list;
+
+        //console.log(11111111111111111, ObservationResponse);
 
     }
+
+
 
     @action.bound
     addNewObservation(requestObject, onSuccess, onFailure) {

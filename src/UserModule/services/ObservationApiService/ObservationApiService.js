@@ -48,10 +48,12 @@ class ObservationApiService {
         )
     }
     updateObservationApi(userType, Details) {
+        console.log(userType, Details, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
         if (userType === "Rp")
             return networkCallWithApisauce(
                 this.api,
-                endPoints.updateObservation,
+                endPoints.updateObservationByRp,
                 Details,
                 apiMethods.post
             )

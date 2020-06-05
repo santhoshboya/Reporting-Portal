@@ -30,7 +30,7 @@ class ObservationScreen extends Component {
             attachmentsOfObservation, assignedToOfObservation, statusOfObservation, dueDateOfObservation, privacyOfObservation,
             onChangePrivacy, onChangeAssignedTO, onChangeDueDate, onChangeStatus, onUpdate, onChangeDescription,
             reportedOnOfObservation, goBack, onReset, userType, apiStatus, cateogaries, getSubCateogaries, cateogariesList,
-            onChangeSubCategory, onChangeCategory } = this.props
+            onChangeSubCategory, onChangeCategory, rpList } = this.props
 
 
         const {
@@ -38,7 +38,9 @@ class ObservationScreen extends Component {
             submit, status, reportedOn, assignedTo, dueDate,
             reset, type, publicBtn, privateBtn, observation, chat, update
         } = strings.usersScreen
-        console.log("successUi date", reportedOnOfObservation);
+        let reportedDate = reportedOnOfObservation ? `${reportedOnOfObservation.slice(0, 10)}T${reportedOnOfObservation.slice(11)}` : "";
+        let dueDateNewFormat = dueDateOfObservation ? `${dueDateOfObservation.slice(0, 10)}T${dueDateOfObservation.slice(11)}` : "";
+        console.log("successUi date", reportedDate);
 
 
         return (
@@ -82,7 +84,7 @@ class ObservationScreen extends Component {
                             {status}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={onChangeStatus} value={statusOfObservation}
-                            options={["action in progress", 'pending', 'completed']} isDisabled={(userType === USER || userType === ADMIN) ? true : false} />
+                            options={["Reported", "Action in progress", "Resolved", "Closed", "Acknowledged by Rp"]} isDisabled={(userType === USER || userType === ADMIN) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -104,8 +106,8 @@ class ObservationScreen extends Component {
                         <FieldName>
                             {assignedTo}
                         </FieldName>
-                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation.first_name}
-                            options={['PavanKumar', 'Janardhan', 'Sunny']} isDisabled={(userType === USER) ? true : false} />
+                        <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation ? assignedToOfObservation.first_name : ""}
+                            options={rpList} isDisabled={(userType === USER) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -113,7 +115,7 @@ class ObservationScreen extends Component {
                             {reportedOn}
                         </FieldName>
                         <DatePicker isDisabled={true}
-                            className={userType === RP ? "datepicker-field" : ""} value={reportedOnOfObservation} />
+                            className={userType === RP ? "datepicker-field" : ""} value={reportedDate} />
                     </FieldContainer>
 
                     <FieldContainer >
@@ -121,7 +123,7 @@ class ObservationScreen extends Component {
                             {dueDate}
                         </FieldName>
                         <DatePicker isDisabled={(userType === USER) ? true : false} className={userType === USER ? "datepicker-field" : ""}
-                            value={dueDateOfObservation} onChangeDate={onChangeDueDate} />
+                            value={dueDateNewFormat} onChangeDate={onChangeDueDate} />
                     </FieldContainer>
 
                     {userType !== "user" &&

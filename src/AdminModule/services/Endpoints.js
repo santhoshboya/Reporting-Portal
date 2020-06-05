@@ -1,3 +1,3 @@
 export const endPoints = {
-    listofObservations: 'listofObservations/',
+    listofObservations: '/get/admin/observations/v1/',
 }

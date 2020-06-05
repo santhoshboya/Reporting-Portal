@@ -6,7 +6,7 @@ import { inject } from 'mobx-react';
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
 import { RpStore } from '../../../RpModule/stores/RpStore';
 import { loadOptions } from '@babel/core';
-
+const ALL = "all"
 const LIMIT = 3;
 class AdminStore extends RpStore {
     @observable userType
@@ -18,6 +18,7 @@ class AdminStore extends RpStore {
     @observable adminObservationAPIService;
     @observable listOfObservationsCurrentPage;
     @observable listOfObservationsTotalPages;
+    @observable statusFilterOfList;
 
 
     constructor(adminObservationAPIService, rpObservationFixtureService, observationFixtureService) {
@@ -34,14 +35,16 @@ class AdminStore extends RpStore {
         this.categotyFilterType = [];
         this.subCategotyFilterType = [];
         this.listOfObservationsCurrentPage = 1;
+        this.statusFilterOfList = ALL;
 
     }
 
     @action.bound
-    getAdminObservationList() {
+    getAdminObservationList(details) {
+        console.log(8888888888888888888, details);
+
         let offset = Math.ceil(LIMIT * (this.listOfObservationsCurrentPage - 1))
-        let accessToken = "";
-        const adminObservationPromise = this.adminObservationAPIService.listOfObservationApi(LIMIT, offset, accessToken);
+        const adminObservationPromise = this.adminObservationAPIService.listOfObservationApi(LIMIT, offset, details);
         return bindPromiseWithOnSuccess(adminObservationPromise)
             .to(this.setAdminObservationListApiAPIStatus, this.setAdminObservationListApiResponse)
             .catch(this.setAdminObservationListApiAPIError);
@@ -59,8 +62,10 @@ class AdminStore extends RpStore {
 
     @action.bound
     setAdminObservationListApiResponse(adminObservationListResponse) {
-        this.listOfObservationsTotalPages = Math.ceil(adminObservationListResponse.total_No_Of_Observation / LIMIT);
-        this.adminObservationsList = adminObservationListResponse.observation_list.map(observation => new AdminObsevationModel(observation))
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", adminObservationListResponse);
+
+        this.listOfObservationsTotalPages = Math.ceil(adminObservationListResponse.total_observations_count / LIMIT);
+        this.adminObservationsList = adminObservationListResponse.all_observations.map(observation => new AdminObsevationModel(observation))
         this.userType = adminObservationListResponse.user_type;
 
     }
@@ -74,6 +79,12 @@ class AdminStore extends RpStore {
         this.subCategotyFilterType = value;
         this.getAdminObservationList();
     }
+    @action.bound
+    setStatusFilterOfList = (value) => {
+        this.statusFilterOfList = value;
+        this.getAdminObservationList();
+    }
+
 
 
     @computed get getSubCateogariesMultiple() {

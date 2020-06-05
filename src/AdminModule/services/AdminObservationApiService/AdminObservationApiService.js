@@ -1,21 +1,22 @@
 import { networkCallWithApisauce } from "../../../common/utils/APIUtils";
 import { create } from "apisauce";
 import { apiMethods, apiUrls } from '../../constants/APIConstants';
-import { endPoints } from '../EndPoints'
+import { endPoints } from '../Endpoints'
 class AdminObservationApiService {
     api;
     constructor() {
         this.api = create({
-            baseURL: apiUrls.obseravation
+            baseURL: apiUrls.admin
         })
     }
 
-    listOfObservationApi(requestObject) {
+    listOfObservationApi(Limit, offeset, details) {
+        let endPoint = `${endPoints.listofObservations}?limit=${Limit}&offset=${offeset}`
         return networkCallWithApisauce(
             this.api,
-            endPoints.listofObservations,
-            { requestObject },
-            apiMethods.get
+            endPoint,
+            details,
+            apiMethods.post
         )
     }
 }

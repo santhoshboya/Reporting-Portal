@@ -52,6 +52,7 @@ class UserObservationRoute extends Component {
 
         this.props.userStore.cateogary = toJS(value).value;
 
+
     }
 
     @action.bound onChangeSubCateogary(value) {

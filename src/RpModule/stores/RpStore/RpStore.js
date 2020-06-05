@@ -83,7 +83,6 @@ class RpStore extends UserStore {
         this.assignedObservationListForRp = assignedObservationListResponse.observations_assigned_to_rp.map(observation => new RpModel(observation))
         //alert(this.userType)
         this.userType = assignedObservationListResponse.user_type;
-        console.log("type 99999999", assignedObservationListResponse.user_type);
 
     }
 

@@ -19,8 +19,7 @@ class Observation {
         this.dueDateType = due_date_type
         this.messages = messages_count;
         this.observationId = observation_id
-        console.log(777777777777777, assigned_to);
-
+        // console.log(777777777777777, observation)
     }
 
 }
