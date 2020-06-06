@@ -15,6 +15,7 @@ const PageHeadingAndAddButonDiv = styled.div`${tw`flex items-center justify-betw
 const ObseravationsListTable = styled.table`                                                                                                                                                                
    ${tw``}
 `
+const ParentDiv = styled.div``
 const FilterBar = styled.div`${tw` flex justify-between`}`
 const TableHeader = styled.thead``
 const TableBody = styled.tbody``
@@ -27,5 +28,6 @@ export {
    TableBody,
    PageHeadingAndAddButonDiv,
    FilterBar,
-   FilterLefttSubPart
+   FilterLefttSubPart,
+   ParentDiv
 }

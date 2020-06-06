@@ -58,7 +58,7 @@ class ObservationListItem extends Component {
                      </PersonData>
                   </PersonDetails>
                </TableData>
-               : <TableData>{reportedOn}</TableData>
+               : <TableData>{`${reportedOn.slice(0, 10)} at ${reportedOn.slice(11)}`}</TableData>
             }
 
 

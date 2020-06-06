@@ -50,7 +50,10 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onChangePrivacy(event) {
+        console.log(event.target.value, 99999999999999999999999999999);
+
         this.privacy = event.target.value
+
 
     }
 
@@ -59,8 +62,6 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onChangeDueDate(event) {
-        console.log(1111111111111111111119999999999999999999999999999, event);
-
         this.dueDate = event.target.value;
     }
 
@@ -83,7 +84,20 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onReset() {
-        this.init();
+        const { userType } = this.props.userStore
+        if (userType == ADMIN) {
+
+            this.cateogary = '';
+            this.subCateogary = null;
+        }
+        else {
+            this.assignedTO = "";
+            this.status = "";
+            this.dueDate = "";
+            this.privacy = null;
+        }
+
+
     }
     goBack = () => {
         this.props.history.goBack();
@@ -101,7 +115,6 @@ class UserObservationScreenRoute extends Component {
 
     }
     onFailure = () => {
-        //alert("something went wrong pls try again...")
     }
     navigateTOPage = (page) => {
         const { totalObservations, categories, myObservations, assignedToMe } = strings.rpFeatures
@@ -119,6 +132,8 @@ class UserObservationScreenRoute extends Component {
                 break;
 
         }
+    }
+    updationFail = () => {
     }
 
     @action.bound onUpdate = async () => {
@@ -145,14 +160,17 @@ class UserObservationScreenRoute extends Component {
                 due_date_type: this.privacy
             }
         }
-        console.log(6666666666666666600000000000000000000000000, typeOfUser, observation);
 
-        await this.props.userStore.updateObservationDeatails(typeOfUser, observation);
+        await this.props.userStore.updateObservationDeatails(this.updationFail, typeOfUser, observation);
+
+        if (this.props.userStore.updateObservationAPIError != null) {
+
+
+        }
         this.init();
         this.props.history.goBack();
     }
 
-    //change,.............
     getAssignedToId = () => {
         if (this.assignedTO != "") {
             return this.props.userStore.rpList.find(rp => rp.first_name === this.assignedTO).user_id;
@@ -176,8 +194,6 @@ class UserObservationScreenRoute extends Component {
                 })
             }
         })
-        console.log(444444444444444444444444444444444444, category_id, sub_category_id);
-
         return [category_id, sub_category_id]
     }
 
@@ -192,17 +208,10 @@ class UserObservationScreenRoute extends Component {
     }
 
     render() {
-        // console.log(this.props.userStore);
         const { title, severity, description, reported_on,
             attachments } = this.props.userStore.observationDetails
-        console.count("Render dor date", this.dueDate, this.privacy)
-        console.log("Render dor date", this.dueDate, this.privacy)
-
         const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, rpList, cateogariesList } = this.props.userStore
         const { userType, currentPage } = this.props.location.state
-
-        // console.log(1215555555534, getSubCateogaries, cateogaries, cateogariesList);
-        console.log(222222222222222, rpList, this.getComputedRpList());
 
         return (
             <ObservationScreen

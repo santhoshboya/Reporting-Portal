@@ -8,14 +8,9 @@ import { RpObservatonListRoute } from './RpObservatonListRoute'
 import { RpObservationRoute } from './RpObservationRoute'
 import { RpObservationScreenRoute } from './RpObservationScreenRoute'
 import { ObservationsAssignedToRpRoute } from './ObservationsAssignedToRpRoute'
+import { ProtectedRoute } from '../../common/components/ProtectedRoute/ProtectedRoute'
 
-
-
-const rpRoutes = [<Route exact path={RP_OBSERVATION_LIST_PATH} component={RpObservatonListRoute} />,
-
-< Route exact path={RP_OBSERVATION_PATH} component={RpObservationRoute} />,
-<Route exact path={OBSERVATIONS_ASSIGNED_TO_RP} component={ObservationsAssignedToRpRoute} />]
+const rpRoutes = [<ProtectedRoute exact path={RP_OBSERVATION_LIST_PATH} component={RpObservatonListRoute} />,
+< ProtectedRoute exact path={RP_OBSERVATION_PATH} component={RpObservationRoute} />,
+<ProtectedRoute exact path={OBSERVATIONS_ASSIGNED_TO_RP} component={ObservationsAssignedToRpRoute} />]
 export { rpRoutes }
-
-
-{/* <Route exact path={`/observationscreen/:id`} component={RpObservationScreenRoute} />, */ }

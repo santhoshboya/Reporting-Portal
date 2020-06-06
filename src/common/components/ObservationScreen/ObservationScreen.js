@@ -18,6 +18,7 @@ import { DatePicker } from '../DatePicker/DatePicker'
 import { SecondaryButton } from '../SecondaryButton'
 import { RadioButton } from '../RadioButton'
 import LoadingWrapperWithFailure from '../LoadingWrapperWithFailure'
+import { ToastContainer } from 'react-toastify'
 
 
 
@@ -115,21 +116,24 @@ class ObservationScreen extends Component {
                             className={"datepicker-field"} value={reportedDate} />
                     </FieldContainer>
 
+
                     <FieldContainer >
                         <FieldName>
                             {dueDate}
                         </FieldName>
-                        <DatePicker isDisabled={(userType === USER) ? true : false} className={userType === USER || userType === ADMIN ? "datepicker-field" : ""}
-                            value={dueDateNewFormat} onChangeDate={onChangeDueDate} />
+                        {dueDateNewFormat || userType == RP ?
+                            <DatePicker isDisabled={(userType === USER || userType === ADMIN) ? true : false} className={userType === USER || userType === ADMIN ? "datepicker-field" : ""}
+                                value={dueDateNewFormat} onChangeDate={onChangeDueDate} />
+                            :
+                            <p>Due Date Not set</p>}
                     </FieldContainer>
-
                     {userType !== "user" &&
                         <Buttons>
                             {(userType === RP) &&
-                                <RadioButtonsDiv userType={userType} id={type} onChange={onChangePrivacy} value={privacyOfObservation}>
-                                    <RadioButton className={'radio-btn'} name={type} value={publicBtn} onHandleCheck={onChangePrivacy} />
+                                <RadioButtonsDiv userType={userType} >
+                                    <RadioButton className={'radio-btn'} privacy={privacyOfObservation} name={type} value={"Public"} onHandleCheck={onChangePrivacy} />
                                     <RadioLable>{publicBtn}</RadioLable>
-                                    <RadioButton className={'radio-btn'} name={type} value={privateBtn} onHandleCheck={onChangePrivacy} />
+                                    <RadioButton className={'radio-btn'} privacy={privacyOfObservation} name={type} value={"Private"} onHandleCheck={onChangePrivacy} />
                                     <RadioLable>{privateBtn}</RadioLable>
                                 </RadioButtonsDiv>
                             }
@@ -155,15 +159,13 @@ class ObservationScreen extends Component {
 
         return (
             <DesktopLayoutMainPage userName={"Santhu"} currentPage={currentPage} navigateTOPage={navigateTOPage}
-                userType={userType}>
+                userType={userType} profilePic={'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'}>
                 <LoadingWrapperWithFailure
                     apiStatus={apiStatus}
                     apiError={apiError}
                     renderSuccessUI={this.renderSuccessUi}
                     onRetryClick={onRetryClick}
                 />
-
-
             </DesktopLayoutMainPage>
         )
     }

@@ -58,6 +58,9 @@ class ListOfObservationsRoute extends Component {
         this.getAdminStore().getAdminObservationList();
 
     }
+    navigateTOPage = () => {
+
+    }
 
     render() {
         const { adminObservationsList, goToPreviousObservations, goToNextObservations,

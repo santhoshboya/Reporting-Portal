@@ -7,9 +7,10 @@ import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
 import { RpStore } from '../../../RpModule/stores/RpStore';
 const ALL = "all"
 const SORT_OPTIONS = ["new", "old"]
-const LIMIT = 3;
+const LIMIT = 4;
+const USER = "Admin"
 class AdminStore extends RpStore {
-    @observable userType
+
     @observable categotyFilterType;
     @observable subCategotyFilterType;
     @observable adminObservationsListAPIStatus;
@@ -43,8 +44,6 @@ class AdminStore extends RpStore {
     getAdminObservationList() {
 
 
-        console.log(111111111111111111111111111111, this.getCategoryAndSubCategoryId()[0], this.getCategoryAndSubCategoryId()[1]);
-
         let details = {
             "sort_on": this.observationsSortType,
             "sort_by": this.observationsSortOption,
@@ -75,25 +74,30 @@ class AdminStore extends RpStore {
     @action.bound
     setAdminObservationListApiResponse(adminObservationListResponse) {
         this.listOfObservationsTotalPages = Math.ceil(adminObservationListResponse.total_observations_count / LIMIT);
+        if (this.listOfObservationsTotalPages < this.listOfObservationsCurrentPage)
+            this.listOfObservationsCurrentPage = 1;
         this.adminObservationsList = adminObservationListResponse.all_observations.map(observation => new AdminObsevationModel(observation))
-        this.userType = adminObservationListResponse.user_type;
+        this.userType = USER;
 
     }
     @action.bound
     filterCategory(value) {
         this.categotyFilterType = value;
+        this.listOfObservationsCurrentPage = 1;
         this.getCategoryAndSubCategoryId()
         this.getAdminObservationList();
     }
     @action.bound
     filterSubCategory(value) {
         this.subCategotyFilterType = value;
+        this.listOfObservationsCurrentPage = 1;
         this.getCategoryAndSubCategoryId()
         this.getAdminObservationList();
     }
     @action.bound
     setStatusFilterOfList = (value) => {
         this.statusFilterOfList = value.value;
+        this.listOfObservationsCurrentPage = 1;
         this.getAdminObservationList();
     }
 
@@ -119,22 +123,25 @@ class AdminStore extends RpStore {
 
 
     getCategoryAndSubCategoryId = () => {
-
+        let categories_ids = [];
         if (this.categotyFilterType) {
-            let categories_ids = [];
+
             this.categotyFilterType.forEach(cateogary => {
                 this.cateogaries.forEach(cateogary2 => {
                     if (cateogary.value == cateogary2.name)
                         categories_ids.push(cateogary2.category_id)
                 })
             })
+        }
+        else
+            return [[], []];
+        if (this.subCategotyFilterType) {
+
             let sub_category_ids = [];
             this.subCategotyFilterType.forEach(subCategory => {
                 this.cateogaries.forEach(cateogary => {
                     cateogary.sub_categories.forEach(subCategory2 => {
                         if (subCategory2.name === subCategory.value) {
-                            console.log("ddddddddddddddddddddd", subCategory2, subCategory);
-
                             sub_category_ids.push(subCategory2.sub_category_id)
                         }
                     })

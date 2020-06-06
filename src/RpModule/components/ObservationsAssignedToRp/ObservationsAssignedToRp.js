@@ -15,6 +15,8 @@ import {
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 import { RP } from '../../../common/constants/NameConstants'
+import NoDataView from '../../../common/components/NoDataView'
+import { ToastContainer } from 'react-toastify'
 @observer
 class ObservationsAssignedToRp extends Component {
 
@@ -26,7 +28,7 @@ class ObservationsAssignedToRp extends Component {
             assignedObservationAPIError } = this.props
 
         const { title, reportedOn, reportedBy, severty, status, dueDate, messages, ObservationsAssignedTOMe,
-            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, actioninProgress } = strings.rpFeatures
+            closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, actioninProgress } = strings.rpFeatures
 
         return (
             <React.Fragment>
@@ -34,41 +36,46 @@ class ObservationsAssignedToRp extends Component {
                     <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
 
                     <DropDown onSlectOption={filterAssignedObservationList} className={'flter-Drop-Down'} options={[all,
-                        acknowledgedbyRp, resolved, closed, actioninProgress]} value={filterTypeOfAssignedObservation} userType={userType} />
+                        acknowledgedbyRp, resolved, closed, reported, actioninProgress]} value={filterTypeOfAssignedObservation} userType={userType} />
                 </ObseravationsHeader>
-                <ObseravationsListTable>
-                    <TableHeader>
-                        <ObservationListHeader reportedOnSort={assignedObservationsReportedOnSort}
-                            dueDateOnSort={assignedObservationsDueDateOnSort}
-                            headings={[title, reportedOn, reportedBy, severty, status, dueDate, messages]} />
-                    </TableHeader>
-                    <TableBody>
-                        {observationList.length > 0 &&
-                            observationList.map(observation => {
-                                return <ObservationListItem key={Math.random()}
-                                    onClickObservation={onClickObservation}
-                                    title={observation.title}
-                                    reportedOn={observation.reportedOn}
-                                    severty={observation.severty}
-                                    status={observation.status}
-                                    dueDate={observation.dueDate}
-                                    dueDateType={observation.dueDateType}
-                                    pairedPerson={observation.reportedBy}
-                                    messages={observation.messages}
-                                    observationId={observation.observationId}
-                                    reportedBy={observation.reportedBy}
-                                    userType={userType}
-                                    src={
-                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
-                                    } />
-                            })}
-                    </TableBody>
+                {observationList.length > 0 ?
+                    <React.Fragment>
+                        <ObseravationsListTable>
+                            <TableHeader>
+                                <ObservationListHeader reportedOnSort={assignedObservationsReportedOnSort}
+                                    dueDateOnSort={assignedObservationsDueDateOnSort}
+                                    headings={[title, reportedOn, reportedBy, severty, status, dueDate, messages]} />
+                            </TableHeader>
+                            <TableBody>
+                                {observationList.length > 0 &&
+                                    observationList.map(observation => {
+                                        return <ObservationListItem key={Math.random()}
+                                            onClickObservation={onClickObservation}
+                                            title={observation.title}
+                                            reportedOn={observation.reportedOn}
+                                            severty={observation.severty}
+                                            status={observation.status}
+                                            dueDate={observation.dueDate}
+                                            dueDateType={observation.dueDateType}
+                                            pairedPerson={observation.reportedBy}
+                                            messages={observation.messages}
+                                            observationId={observation.observationId}
+                                            reportedBy={observation.reportedBy}
+                                            userType={userType}
+                                            src={
+                                                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
+                                            } />
+                                    })}
+                            </TableBody>
 
 
-                </ObseravationsListTable>
+                        </ObseravationsListTable>
 
-                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
-                    goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
+                        <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={assignedObservationsGoToNextPage}
+                            goToRandomPage={assignedObservationsGoToRandomPage} goToPreviousPage={assignedObservationsGoToPreviousPage} />
+                    </React.Fragment>
+                    :
+                    <NoDataView />}
 
             </React.Fragment>
         );

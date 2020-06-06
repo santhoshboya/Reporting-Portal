@@ -1,8 +1,9 @@
 import { observable, action, computed, toJS } from "mobx"
 import { API_INITIAL } from "@ib/api-constants";
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
+import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
 import { Observation } from "../Models/Observation";
-const LIMIT = 3;
+const LIMIT = 4;
 const SORT_OPTIONS = ["new", "old"]
 const SORT_KEYS = ['due_date', 'reported_on']
 const SORT_KEY = "reported_on";
@@ -85,11 +86,14 @@ class UserStore {
 
 
     @action.bound
-    updateObservationDeatails(userType, details) {
+    updateObservationDeatails(updationFail, userType, details) {
         const updateObservationApiPromise = this.userObservationAPIService.updateObservationApi(userType, details)
         return new bindPromiseWithOnSuccess(updateObservationApiPromise)
             .to(this.setUpdateObservationApiAPIStatus, this.setUpdateObservationApiResponse)
-            .catch(this.setUpdateObservationApiAPIError);
+            .catch(error => {
+                this.setUpdateObservationApiAPIError(error);
+                updationFail();
+            });
     }
 
     @action.bound
@@ -102,7 +106,7 @@ class UserStore {
     }
     @action.bound
     setUpdateObservationApiAPIError(error) {
-        this.updateObservationAPIError = error;
+        this.updateObservationAPIError = getUserDisplayableErrorMessage(error);
     }
 
     @action.bound
@@ -133,7 +137,6 @@ class UserStore {
     @action.bound
     setGetCateogariesApiResponse(response) {
         this.cateogaries = response.categories;
-        //this.cateogary = this.cateogaries[0].name
         this.subCateogaries = [];
     }
     @computed get cateogariesList() {
@@ -195,7 +198,8 @@ class UserStore {
     setGetObservationListApiResponse(ObservationListResponse) {
 
         this.totalPages = Math.ceil(ObservationListResponse.user_observations_count / LIMIT);
-        console.log("list", this.totalPages, ObservationListResponse);
+        if (this.totalPages < 1)
+            this.currentPage = 1;
         this.observationList = ObservationListResponse.user_observations.map(observation => new Observation(observation))
         this.userType = ObservationListResponse.user_type;
     }
@@ -270,6 +274,7 @@ class UserStore {
     @action.bound
     filterObservationList(value) {
         this.filterType = value;
+        this.currentPage = 1;
         this.getObservationList()
     }
 

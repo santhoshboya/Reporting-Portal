@@ -13,6 +13,7 @@ import { observer } from 'mobx-react'
 import { Pagination } from '../../../common/components/Pagination'
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
+import NoDataView from '../../../common/components/NoDataView'
 @observer
 class UserObservatonListPage extends Component {
 
@@ -39,36 +40,41 @@ class UserObservatonListPage extends Component {
                     <DropDown onSlectOption={filterObservationList} className={'filter-user-observation-list'} options={[all,
                         acknowledgedbyRp, resolved, closed, reported, actioninProgress]} value={filterType} userType={userType} />
                 </ObseravationsHeader>
-                <ObseravationsListTable>
-                    <TableHeader>
-                        <ObservationListHeader reportedOnSort={reportedOnSort} dueDateOnSort={dueDateOnSort}
-                            headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
-                    </TableHeader>
-                    <TableBody>
-                        {observationList.length > 0 &&
-                            observationList.map(observation => {
-                                return <ObservationListItem key={Math.random()}
-                                    onClickObservation={onClickObservation}
-                                    title={observation.title}
-                                    reportedOn={observation.reportedOn}
-                                    severty={observation.severty}
-                                    status={observation.status}
-                                    dueDate={observation.dueDate}
-                                    dueDateType={observation.dueDateType}
-                                    pairedPerson={observation.assignedTo}
-                                    messages={observation.messages}
-                                    userType={userType}
-                                    reportedBy={observation.reportedBy}
-                                    assignedTo={observation.assignedTo}
-                                    observationId={observation.observationId}
-                                    src={
-                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
-                                    } />
-                            })}
-                    </TableBody>
-                </ObseravationsListTable>
-                <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
-                    goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+                {observationList.length > 0 ?
+                    <React.Fragment>
+                        <ObseravationsListTable>
+                            <TableHeader>
+                                <ObservationListHeader reportedOnSort={reportedOnSort} dueDateOnSort={dueDateOnSort}
+                                    headings={[title, reportedOn, assignedTo, severty, status, dueDate, messages]} />
+                            </TableHeader>
+                            <TableBody>
+                                {observationList.length > 0 &&
+                                    observationList.map(observation => {
+                                        return <ObservationListItem key={Math.random()}
+                                            onClickObservation={onClickObservation}
+                                            title={observation.title}
+                                            reportedOn={observation.reportedOn}
+                                            severty={observation.severty}
+                                            status={observation.status}
+                                            dueDate={observation.dueDate}
+                                            dueDateType={observation.dueDateType}
+                                            pairedPerson={observation.assignedTo}
+                                            messages={observation.messages}
+                                            userType={userType}
+                                            reportedBy={observation.reportedBy}
+                                            assignedTo={observation.assignedTo}
+                                            observationId={observation.observationId}
+                                            src={
+                                                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
+                                            } />
+                                    })}
+                            </TableBody>
+                        </ObseravationsListTable>
+                        <Pagination totalPages={totalPages} currentPage={currentPage} goToNextPage={goToNextPage}
+                            goToRandomPage={goToRandomPage} goToPreviousPage={goToPreviousPage} />
+                    </React.Fragment>
+                    :
+                    <NoDataView />}
             </React.Fragment>
 
         );

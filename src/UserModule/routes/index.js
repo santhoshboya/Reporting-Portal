@@ -9,8 +9,8 @@ import { ProtectedRoute } from '../../common/components/ProtectedRoute/Protected
 
 
 
-const userRoutes = [<Route path={USER_OBSERVATION_LIST_PATH} exact component={UserObservatonListRoute} />,
-<Route exact path={USER_OBSERVATION_PATH} component={UserObservationRoute} />,
-<Route exact path={`${USER_OBSERVATION_SCREEN_PATH}:id`} component={UserObservationScreenRoute} />]
+const userRoutes = [<ProtectedRoute path={USER_OBSERVATION_LIST_PATH} exact component={UserObservatonListRoute} />,
+<ProtectedRoute exact path={USER_OBSERVATION_PATH} component={UserObservationRoute} />,
+<ProtectedRoute exact path={`${USER_OBSERVATION_SCREEN_PATH}:id`} component={UserObservationScreenRoute} />]
 
 export { userRoutes }

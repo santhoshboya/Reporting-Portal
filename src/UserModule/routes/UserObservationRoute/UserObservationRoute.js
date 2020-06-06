@@ -48,7 +48,6 @@ class UserObservationRoute extends Component {
 
     @action.bound onChangeCateogary(value) {
         this.cateogary = toJS(value).value;
-        console.log("sssssssss", this.cateogary);
 
         this.props.userStore.cateogary = toJS(value).value;
 
@@ -92,8 +91,8 @@ class UserObservationRoute extends Component {
 
     getCategoryAndSubCategoryId = () => {
         const { cateogaries } = this.props.userStore
-        let category_id;
-        let sub_category_id;
+        let category_id = 0;
+        let sub_category_id = 0;
         if (cateogaries.length > 1) {
             let temp = cateogaries.find(cateogary => cateogary.name === this.cateogary)
             if (temp)
@@ -105,8 +104,12 @@ class UserObservationRoute extends Component {
 
             cateogaries.forEach(cateogary => {
                 if (cateogary.name === this.cateogary) {
-                    sub_category_id = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary).sub_category_id
-                    console.log(cateogary, 999999999999999);
+
+                    let temp2 = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary)
+                    if (temp2)
+                        sub_category_id = temp2.sub_category_id
+                    else
+                        return [0, 0]
 
                 }
             })
@@ -128,6 +131,8 @@ class UserObservationRoute extends Component {
                 description: this.description,
                 attachments: []
             }
+            console.log(8888888888888888, observation);
+
             this.props.userStore.addNewObservation(observation, this.onSuccess, this.onFailure);
             this.init();
             this.props.userStore.getPostObservationAPIStatus = 200;

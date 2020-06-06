@@ -1,7 +1,7 @@
 import { observable, action, computed, toJS } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
-
+import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
 import { setAccessToken, getAccessToken, clearUserSession } from '../../../common/utils/StorageUtils'
 
 class AuthStore {
@@ -50,8 +50,8 @@ class AuthStore {
 
    @action.bound
    setGetUserAuthAPIError(error) {
-
-      this.getUserAuthAPIError = error
+      console.log(error, 999999988888);
+      this.getUserAuthAPIError = getUserDisplayableErrorMessage(error)
    }
 
    @action.bound

@@ -35,7 +35,7 @@ class SignInRoute extends React.Component {
    onFailure = () => {
       const { getUserAuthAPIError: apiError } = this.props.authStore
       if (apiError !== null && apiError !== undefined) {
-         toast.error('Something went wrong', {
+         toast.error(this.props.authStore.getUserAuthAPIError, {
             position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: false,
@@ -44,7 +44,6 @@ class SignInRoute extends React.Component {
             draggable: true,
             progress: undefined,
          });
-
       }
    }
 

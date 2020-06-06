@@ -14,20 +14,15 @@ class DropDown extends Component {
    }
    renderValue = (value) => {
       if (typeof value !== "string") {
-         console.log("object", value);
-
          return value;
       }
       else {
-         console.log("string:", { value: value, label: value });
-
          return { value: value, label: value }
       }
 
    }
    render() {
       const { onSlectOption, options, value, isDisabled, isMulti, className } = this.props
-      console.log("drop down render:", value);
       return (
          <Select
             isDisabled={isDisabled}

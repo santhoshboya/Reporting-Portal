@@ -11,14 +11,12 @@ const SORT_KEYS = ['due_date', 'reported_on']
 const SORT_KEY = "reported_on";
 const FILTER_TYPE = "all";
 const USERTYPE = "Rp"
-const LIMIT = 3;
+const LIMIT = 4;
 class RpStore extends UserStore {
     @observable assignedObservationsSortType;
     @observable assignedObservationsSortOption;
     @observable assignedObservationReportedOnSortType;
     @observable assignedObservationDueDateSortType;
-    // @observable updateObservationAPIStatus;
-    // @observable updateObservationAPIError;
     @observable assignedObservationAPIStatus;
     @observable assignedObservationAPIError;
     @observable rpObservationAPIService;
@@ -35,8 +33,6 @@ class RpStore extends UserStore {
     }
 
     rpStoreInit = () => {
-        // this.updateObservationAPIStatus = API_INITIAL;
-        // this.updateObservationAPIError = null;
         this.assignedObservationAPIStatus = API_INITIAL;
         this.assignedObservationAPIError = null;
         this.assignedObservationListForRp = [];
@@ -80,33 +76,12 @@ class RpStore extends UserStore {
     setAssignedObservationListApiResponse(assignedObservationListResponse) {
 
         this.assignedObservationsTotalPages = Math.ceil(assignedObservationListResponse.total_observations_count / LIMIT);
+        if (this.assignedObservationsTotalPages < this.assignedObservationsCurrentPage)
+            this.assignedObservationsCurrentPage = 1;
         this.assignedObservationListForRp = assignedObservationListResponse.observations_assigned_to_rp.map(observation => new RpModel(observation))
-        //alert(this.userType)
         this.userType = assignedObservationListResponse.user_type;
 
     }
-
-
-    // @action.bound
-    // updateObservationDeatails(details) {
-    //     const updateObservationApiPromise = this.rpObservationAPIService.updateObservationApi(details)
-    //     return new bindPromiseWithOnSuccess(updateObservationApiPromise)
-    //         .to(this.setUpdateObservationApiAPIStatus, this.setUpdateObservationApiResponse)
-    //         .catch(this.setUpdateObservationApiAPIError);
-    // }
-
-    // @action.bound
-    // setUpdateObservationApiAPIStatus(apiStatus) {
-    //     this.updateObservationAPIStatus = apiStatus;
-    // }
-    // @action.bound
-    // setUpdateObservationApiResponse(response) {
-    //     console.log(response);
-    // }
-    // @action.bound
-    // setUpdateObservationApiAPIError(error) {
-    //     this.updateObservationAPIError = error;
-    // }
     @action.bound
     assignedObservationsReportedOnSort() {
         if (this.assignedObservationReportedOnSortType === SORT_OPTIONS[0])
@@ -152,6 +127,7 @@ class RpStore extends UserStore {
     @action.bound
     filterAssignedObservationList(value) {
         this.filterTypeOfAssignedObservation = value;
+        this.assignedObservationsCurrentPage = 1;
         this.getAssignedObservationList();
     }
 }
