@@ -32,10 +32,8 @@ class ListOfObservationsRoute extends Component {
 
 
     onSuccess = () => {
-        //alert("data recieved")
     }
     onFailure = () => {
-        //alert("data recieved")
     }
     onClickObservation = (observationId) => {
         console.log(this.props, 567890);
@@ -54,6 +52,11 @@ class ListOfObservationsRoute extends Component {
     }
     setStatusFilterOfList = (value) => {
         this.getAdminStore().setStatusFilterOfList(value)
+    }
+    dueDateSortOfList = () => {
+        this.props.adminStore.dueDateOnSort();
+        this.getAdminStore().getAdminObservationList();
+
     }
 
     render() {
@@ -88,6 +91,7 @@ class ListOfObservationsRoute extends Component {
                 getSubCateogariesMultiple={getSubCateogariesMultiple}
                 statusFilterOfList={statusFilterOfList}
                 setStatusFilterOfList={this.setStatusFilterOfList}
+                dueDateOnSort={this.dueDateSortOfList}
             />
         )
     }

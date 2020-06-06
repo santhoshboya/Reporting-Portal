@@ -22,7 +22,7 @@ class ListOfObservations extends Component {
     renderSuccessUi = () => {
         const { observationList, onClickObservation, totalPages, currentPage, handleClick, navigateTOPage, userType,
             goToPreviousPage, goToNextPage, filterCategory, filterSubCategory, getSubCateogariesMultiple, statusFilterOfList, setStatusFilterOfList,
-            goToRandomPage, categotyFilterType, subCategotyFilterType, cateogaries, getSubCateogaries, cateogariesList } = this.props
+            goToRandomPage, categotyFilterType, subCategotyFilterType, cateogaries, getSubCateogaries, dueDateOnSort, cateogariesList } = this.props
         const { title, reportedOn, assignedTo, severty, status, dueDate, messages, listofObservations, addNew,
             closed, all, acknowledgedbyRp, assignedToMe, myObservations, resolved, reported, reportedBy,
             category, totalObservations, actioninProgress } = strings.rpFeatures
@@ -45,7 +45,7 @@ class ListOfObservations extends Component {
                 </ObseravationsHeader>
                 <ObseravationsListTable>
                     <TableHeader>
-                        <ObservationListHeader headings={[title, reportedBy, severty, status, assignedTo, dueDate, messages]} />
+                        <ObservationListHeader dueDateOnSort={dueDateOnSort} headings={[title, reportedBy, severty, status, assignedTo, dueDate, messages]} />
                     </TableHeader>
                     <TableBody>
                         {observationList.length > 0 &&

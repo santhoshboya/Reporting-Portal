@@ -6,6 +6,7 @@ import { inject } from 'mobx-react';
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise';
 import { RpStore } from '../../../RpModule/stores/RpStore';
 const ALL = "all"
+const SORT_OPTIONS = ["new", "old"]
 const LIMIT = 3;
 class AdminStore extends RpStore {
     @observable userType
@@ -119,53 +120,30 @@ class AdminStore extends RpStore {
 
     getCategoryAndSubCategoryId = () => {
 
-
-        let categories_ids = [];
-        this.categotyFilterType.forEach(cateogary => {
-            this.cateogaries.forEach(cateogary2 => {
-                if (cateogary.value == cateogary2.name)
-                    categories_ids.push(cateogary2.category_id)
-            })
-        })
-        let sub_category_ids = [];
-        this.subCategotyFilterType.forEach(subCategory => {
-            this.cateogaries.forEach(cateogary => {
-                cateogary.sub_categories.forEach(subCategory2 => {
-                    if (subCategory2.name === subCategory.value) {
-                        console.log("ddddddddddddddddddddd", subCategory2, subCategory);
-
-                        sub_category_ids.push(subCategory2.sub_category_id)
-                    }
+        if (this.categotyFilterType) {
+            let categories_ids = [];
+            this.categotyFilterType.forEach(cateogary => {
+                this.cateogaries.forEach(cateogary2 => {
+                    if (cateogary.value == cateogary2.name)
+                        categories_ids.push(cateogary2.category_id)
                 })
             })
-        })
-        return [categories_ids, sub_category_ids]
+            let sub_category_ids = [];
+            this.subCategotyFilterType.forEach(subCategory => {
+                this.cateogaries.forEach(cateogary => {
+                    cateogary.sub_categories.forEach(subCategory2 => {
+                        if (subCategory2.name === subCategory.value) {
+                            console.log("ddddddddddddddddddddd", subCategory2, subCategory);
 
-        console.log(2222222222222222222222, categories_ids, sub_category_ids, this.subCategotyFilterType);
-
-
-        // const { cateogaries } = this.props.userStore
-        // let category_id;
-        // let sub_category_id;
-        // if (cateogaries.length > 1) {
-        //     let temp = cateogaries.find(cateogary => cateogary.name === this.cateogary)
-        //     if (temp)
-        //         category_id = temp.category_id
-        //     else
-        //         return [0, 0]
-
-
-
-        //     cateogaries.forEach(cateogary => {
-        //         if (cateogary.name === this.cateogary) {
-        //             sub_category_id = cateogary.sub_categories.find(subCateogary => subCateogary.name === this.subCateogary).sub_category_id
-        //             console.log(cateogary, 999999999999999);
-
-        //         }
-        //     })
-        //     return [category_id, sub_category_id]
-        // }
-        // return [0, 0]
+                            sub_category_ids.push(subCategory2.sub_category_id)
+                        }
+                    })
+                })
+            })
+            return [categories_ids, sub_category_ids]
+        }
+        else
+            return [[], []];
     }
 
 

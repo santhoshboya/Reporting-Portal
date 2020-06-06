@@ -40,9 +40,6 @@ class ObservationScreen extends Component {
         } = strings.usersScreen
         let reportedDate = reportedOnOfObservation ? `${reportedOnOfObservation.slice(0, 10)}T${reportedOnOfObservation.slice(11)}` : "";
         let dueDateNewFormat = dueDateOfObservation ? `${dueDateOfObservation.slice(0, 10)}T${dueDateOfObservation.slice(11)}` : "";
-        console.log("successUi date", reportedDate);
-
-
         return (
             <React.Fragment>
                 <HeaderDiv >
@@ -107,7 +104,7 @@ class ObservationScreen extends Component {
                             {assignedTo}
                         </FieldName>
                         <DropDown userType={userType} onSlectOption={onChangeAssignedTO} value={assignedToOfObservation ? assignedToOfObservation.first_name : ""}
-                            options={rpList} isDisabled={(userType === USER) ? true : false} />
+                            options={rpList} isDisabled={(userType === USER || userType === ADMIN) ? true : false} />
                     </FieldContainer>
 
                     <FieldContainer>
@@ -115,14 +112,14 @@ class ObservationScreen extends Component {
                             {reportedOn}
                         </FieldName>
                         <DatePicker isDisabled={true}
-                            className={userType === RP ? "datepicker-field" : ""} value={reportedDate} />
+                            className={"datepicker-field"} value={reportedDate} />
                     </FieldContainer>
 
                     <FieldContainer >
                         <FieldName>
                             {dueDate}
                         </FieldName>
-                        <DatePicker isDisabled={(userType === USER) ? true : false} className={userType === USER ? "datepicker-field" : ""}
+                        <DatePicker isDisabled={(userType === USER) ? true : false} className={userType === USER || userType === ADMIN ? "datepicker-field" : ""}
                             value={dueDateNewFormat} onChangeDate={onChangeDueDate} />
                     </FieldContainer>
 

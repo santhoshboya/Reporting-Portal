@@ -34,21 +34,17 @@ class AuthStore {
          .catch(error => {
 
             this.setGetUserAuthAPIError(error)
-            //onFailure()
+            onFailure()
          })
    }
    @action.bound
    setUserAuthAPIResponse(SignInAPIResponse) {
-      console.log("respo", SignInAPIResponse);
       this.Access_token = SignInAPIResponse.access_token
       setAccessToken(this.Access_token)
-
-      console.log("response", getAccessToken(), SignInAPIResponse);
    }
 
    @action.bound
    setGetUserAuthAPIStatus(apiStatus) {
-      console.log("status", apiStatus);
       this.getUserAuthAPIStatus = apiStatus
    }
 
@@ -56,8 +52,6 @@ class AuthStore {
    setGetUserAuthAPIError(error) {
 
       this.getUserAuthAPIError = error
-      console.log("error", error);
-
    }
 
    @action.bound

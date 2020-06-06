@@ -7,9 +7,9 @@ class ProtectedRoute extends React.Component {
     }
 
     render() {
-        const { component: Component } = this.props;
+        const { path, component: Component } = this.props;
         if (getAccessToken()) {
-            return <Route path={"/userobservationslist"} component={Component} />
+            return <Route path={path} component={Component} />
         }
         return (
             <Redirect

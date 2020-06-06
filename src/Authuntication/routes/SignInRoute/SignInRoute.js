@@ -35,9 +35,7 @@ class SignInRoute extends React.Component {
    onFailure = () => {
       const { getUserAuthAPIError: apiError } = this.props.authStore
       if (apiError !== null && apiError !== undefined) {
-         this.errorMsg = "Error"
-         console.log(this.errorMsg);
-         toast.error('Error', {
+         toast.error('Something went wrong', {
             position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: false,
@@ -73,11 +71,6 @@ class SignInRoute extends React.Component {
    }
 
    onSuccess = (userType) => {
-      // // console.log("usertype", this.authStore.userType);
-      // // let userType = this.authStore.userType;
-      // this.props.history.push('/userobservationslist')
-      console.log("user", userType);
-
       switch (userType) {
          case USER:
             this.props.history.push('/userobservationslist')
