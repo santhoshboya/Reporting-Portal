@@ -50,8 +50,6 @@ class UserObservationScreenRoute extends Component {
     }
 
     @action.bound onChangePrivacy(event) {
-        console.log(event.target.value, 99999999999999999999999999999);
-
         this.privacy = event.target.value
 
 
@@ -103,18 +101,30 @@ class UserObservationScreenRoute extends Component {
         this.props.history.goBack();
     }
     onSuccess = () => {
-        const { assigned_to, status, due_date_type, due_date, category, sub_category } = this.props.userStore.observationDetails
 
-        this.assignedTO = assigned_to.first_name;
+
+        const { assigned_to, status, due_date_type, due_date, category, sub_category
+        } = this.props.userStore.observationDetails
+        if (assigned_to)
+            this.assignedTO = assigned_to.first_name;
+
         this.status = status;
-        this.dueDate = due_date;
+        if (due_date)
+            this.dueDate = due_date;
+
+        if (category) {
+            this.cateogary = category.name;
+            this.subCateogary = sub_category.name;
+        }
         this.privacy = due_date_type;
-        this.cateogary = category.name;
-        this.subCateogary = sub_category.name;
+
+        console.log(1111111111111111111111111111, this.cateogary, this.assignedTO, this.status, this.dueDate, this.cateogary, this.subCateogary);
+
 
 
     }
     onFailure = () => {
+        alert("hi")
     }
     navigateTOPage = (page) => {
         const { totalObservations, categories, myObservations, assignedToMe } = strings.rpFeatures
@@ -210,7 +220,8 @@ class UserObservationScreenRoute extends Component {
     render() {
         const { title, severity, description, reported_on,
             attachments } = this.props.userStore.observationDetails
-        const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, rpList, cateogariesList } = this.props.userStore
+        const { getObservationAPIStatus, getObservationAPIError, cateogaries, getSubCateogaries, rpList, cateogariesList
+        } = this.props.userStore
         const { userType, currentPage } = this.props.location.state
 
         return (

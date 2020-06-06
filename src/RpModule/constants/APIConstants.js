@@ -3,7 +3,7 @@ export const apiMethods = {
   get: 'GET'
 }
 export const apiUrls = {
-  obseravationList: "https://2c1a6df2f49c.ngrok.io/api/reporting_portal/",
-  obseravation: "https://2c1a6df2f49c.ngrok.io/api/reporting_portal/",
+  obseravationList: "https://42c5946b5357.ngrok.io/api/reporting_portal/",
+  obseravation: "https://42c5946b5357.ngrok.io/api/reporting_portal/",
 
 }

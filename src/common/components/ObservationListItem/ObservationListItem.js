@@ -123,7 +123,7 @@ class ObservationListItem extends Component {
 
             {userType === ADMIN ?
                <TableData>
-                  {Object.keys(assignedTo).length !== 0 ?
+                  {assignedTo != null && Object.keys(assignedTo).length !== 0 ?
                      <PersonDetails>
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
