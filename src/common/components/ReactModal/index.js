@@ -1,3 +1,3 @@
-import ReactModalPopUp from "./ReactModalPopUp";
+import ReactModalPopUp from './ReactModalPopUp'
 
 export { ReactModalPopUp }

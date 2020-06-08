@@ -1,1 +1,1 @@
-export { AdminStore } from "./AdminStore";
+export { AdminStore } from './AdminStore'

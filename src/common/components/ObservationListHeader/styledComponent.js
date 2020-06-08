@@ -8,11 +8,11 @@ height: 66px;
 border: solid 1px  #d7dfe9;
 background-color: #ffffff;
 }`
-const PersonTypeDiv = styled.span`${tw`flex justify-around items-center`}`
-const TableHeading = styled(Typo12DarkBlueGreyHKGroteskSemiBold)`${tw`flex justify-center`}
-width:14%;`
-export {
-   TableRow,
-   TableHeading,
-   PersonTypeDiv
-}
+const PersonTypeDiv = styled.span`
+   ${tw`flex justify-around items-center`}
+`
+const TableHeading = styled(Typo12DarkBlueGreyHKGroteskSemiBold)`
+   ${tw`flex justify-center`}
+   width:14%;
+`
+export { TableRow, TableHeading, PersonTypeDiv }

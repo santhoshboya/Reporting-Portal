@@ -1,2 +1,1 @@
-export { RpModel } from "./RpModel";
-
+export { RpModel } from './RpModel'

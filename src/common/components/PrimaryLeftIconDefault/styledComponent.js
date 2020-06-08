@@ -5,7 +5,7 @@ const ButtonElement = styled.button`
    height: 40px;
    border-radius: 4px;
    background-color: #0b69ff;
-   color:white;
+   color: white;
 `
 const LeftIcon = styled.img`
    ${tw``}

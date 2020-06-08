@@ -1,2 +1,1 @@
-export { UserObservatonListPage } from "./UserObservatonListPage";
-
+export { UserObservatonListPage } from './UserObservatonListPage'

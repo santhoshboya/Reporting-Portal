@@ -37,131 +37,136 @@ class ObservationListItem extends Component {
          reportedBy,
          userType
       } = this.props
-      console.log("dueDateType:L", dueDateType);
+      console.log('dueDateType:L', dueDateType)
 
-      let bgColor = (severty === "High" ? "#ff0b37" : (severty === "Low" ? "#2dca73" : "#ffb800"))
-      console.log(888888888888888888888888888888, userType);
+      let bgColor =
+         severty === 'High'
+            ? '#ff0b37'
+            : severty === 'Low'
+            ? '#2dca73'
+            : '#ffb800'
+      console.log(888888888888888888888888888888, userType)
 
       return (
-         <TableRow id={observationId} data-testid="observation-list-item" onClick={() => onClickObservation(observationId)}>
+         <TableRow
+            id={observationId}
+            data-testid='observation-list-item'
+            onClick={() => onClickObservation(observationId)}
+         >
             <TableData>{title}</TableData>
 
-
-
-            {userType === ADMIN ?
+            {userType === ADMIN ? (
                <TableData>
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>
                      <PersonData>
-                        {reportedBy.first_name}<br />
-                  ph:{reportedBy.phone_number}
+                        {reportedBy.first_name}
+                        <br />
+                        ph:{reportedBy.phone_number}
                      </PersonData>
                   </PersonDetails>
                </TableData>
-               : <TableData>{`${reportedOn.slice(0, 10)} at ${reportedOn.slice(11)}`}</TableData>
-            }
+            ) : (
+               <TableData>{`${reportedOn.slice(0, 10)} at ${reportedOn.slice(
+                  11
+               )}`}</TableData>
+            )}
 
-
-
-
-
-            {userType === ADMIN ?
+            {userType === ADMIN ? (
                <TableData>
                   <RectangleSeverity bgColor={bgColor}>
                      <SevertyStatus>{severty}</SevertyStatus>
                   </RectangleSeverity>
                </TableData>
-               :
-               (userType === RP ?
-                  <TableData>
+            ) : userType === RP ? (
+               <TableData>
+                  <PersonDetails>
+                     <Image src={src} className={'persons-xs'}></Image>
+                     <PersonData>
+                        {reportedBy.first_name}
+                        <br />
+                        ph:{reportedBy.phone_number}
+                     </PersonData>
+                  </PersonDetails>
+               </TableData>
+            ) : (
+               <TableData>
+                  {assignedTo != null &&
+                  Object.keys(assignedTo).length !== 0 ? (
                      <PersonDetails>
-                        <Image src={src} className={'persons-xs'}></Image>
+                        <Image
+                           src={
+                              assignedTo.profile_pic
+                                 ? assignedTo.profile_pic
+                                 : src
+                           }
+                           className={'persons-xs'}
+                        ></Image>
                         <PersonData>
-                           {reportedBy.first_name}<br />
-                     ph:{reportedBy.phone_number}
+                           {assignedTo.first_name}
+                           <br />
+                           ph:{assignedTo.phone_number}
                         </PersonData>
                      </PersonDetails>
-                  </TableData>
-                  :
-                  <TableData>
-                     {(assignedTo != null && Object.keys(assignedTo).length !== 0) ?
-                        <PersonDetails>
-                           <Image src={assignedTo.profile_pic ? assignedTo.profile_pic : src} className={'persons-xs'}></Image>
-                           <PersonData>
-                              {assignedTo.first_name}<br />
-                     ph:{assignedTo.phone_number}
-                           </PersonData>
-                        </PersonDetails>
-                        :
-                        <PersonDetails>
-                           <PersonData>
-                              Rp not Assigned to
-                     </PersonData>
-                        </PersonDetails>
-                     }
-                  </TableData>
-               )
-            }
+                  ) : (
+                     <PersonDetails>
+                        <PersonData>Rp not Assigned to</PersonData>
+                     </PersonDetails>
+                  )}
+               </TableData>
+            )}
 
-
-
-            {userType === ADMIN ?
+            {userType === ADMIN ? (
                <TableData>
                   <RectangleActionStatus>
                      <ObservationStatus>{status}</ObservationStatus>
                   </RectangleActionStatus>
                </TableData>
-
-               : <TableData>
+            ) : (
+               <TableData>
                   <RectangleSeverity bgColor={bgColor}>
                      <SevertyStatus>{severty}</SevertyStatus>
                   </RectangleSeverity>
                </TableData>
-            }
+            )}
 
-
-
-            {userType === ADMIN ?
+            {userType === ADMIN ? (
                <TableData>
-                  {assignedTo != null && Object.keys(assignedTo).length !== 0 ?
+                  {assignedTo != null &&
+                  Object.keys(assignedTo).length !== 0 ? (
                      <PersonDetails>
                         <Image src={src} className={'persons-xs'}></Image>
                         <PersonData>
-                           {assignedTo.first_name}<br />
-                     ph:{assignedTo.phone_number}
+                           {assignedTo.first_name}
+                           <br />
+                           ph:{assignedTo.phone_number}
                         </PersonData>
                      </PersonDetails>
-                     :
+                  ) : (
                      <PersonDetails>
-                        <PersonData>
-                           Rp not Assigned to
-                     </PersonData>
+                        <PersonData>Rp not Assigned to</PersonData>
                      </PersonDetails>
-                  }
+                  )}
                </TableData>
-               : <TableData>
+            ) : (
+               <TableData>
                   <RectangleActionStatus>
                      <ObservationStatus>{status}</ObservationStatus>
                   </RectangleActionStatus>
                </TableData>
-            }
-
-
+            )}
 
             <TableData>{dueDateType === PUBLIC ? dueDate : PRIVATE}</TableData>
-
 
             <TableData>
                <Image
                   className={'message-icon'}
                   src={
-                     "https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4983aced-8454-4506-9eee-0ff83acf662f.svg"
+                     'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4983aced-8454-4506-9eee-0ff83acf662f.svg'
                   }
                />
                <MsgCount>{messages}</MsgCount>
             </TableData>
-
-
          </TableRow>
       )
    }

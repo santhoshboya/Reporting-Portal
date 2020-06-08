@@ -1,1 +1,1 @@
-export { RpStore } from "./RpStore";
+export { RpStore } from './RpStore'

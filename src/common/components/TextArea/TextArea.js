@@ -4,7 +4,13 @@ import { TextAreaElement } from './styledComponent'
 
 class TextArea extends Component {
    render() {
-      const { value, className, onHandleChange, placeHolder, isDisabled } = this.props
+      const {
+         value,
+         className,
+         onHandleChange,
+         placeHolder,
+         isDisabled
+      } = this.props
 
       return (
          <TextAreaElement

@@ -1,1 +1,1 @@
-export { RpObservationRoute } from "./RpObservationRoute";
+export { RpObservationRoute } from './RpObservationRoute'

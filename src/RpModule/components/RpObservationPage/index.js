@@ -1,1 +1,1 @@
-export { RpObservationPage } from "./RpObservationPage";
+export { RpObservationPage } from './RpObservationPage'

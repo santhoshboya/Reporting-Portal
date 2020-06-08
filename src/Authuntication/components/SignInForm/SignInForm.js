@@ -5,8 +5,8 @@ import { Image } from '../../../common/components/Image'
 import strings from '../../../common/i18n/strings.json'
 import { PrimaryButton } from '../../../common/components/PrimaryButton'
 import { InputFieldWithLable } from '../../../common/components/InputFieldWithLable'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './index.css'
 import {
    SignInFornDiv,
@@ -46,9 +46,13 @@ class SignInForm extends Component {
                   value={username}
                   onHandleChange={onChangeUsername}
                   errorMsg={useNameErrorMessage}
-                  placeHolder={"Username"}
+                  placeHolder={'Username'}
                   errorIconClassName={'error-icon'}
-                  inputClassName={useNameErrorMessage !== "" ? "error-input-element" : "input-element"}
+                  inputClassName={
+                     useNameErrorMessage !== ''
+                        ? 'error-input-element'
+                        : 'input-element'
+                  }
                />
                <InputFieldWithLable
                   className={'sign-input-field'}
@@ -57,9 +61,13 @@ class SignInForm extends Component {
                   lable={strings.logIn.password}
                   onHandleChange={onChangePassword}
                   errorMsg={passwordErrorMessage}
-                  placeHolder={"Password"}
+                  placeHolder={'Password'}
                   errorIconClassName={'error-icon'}
-                  inputClassName={passwordErrorMessage !== "" ? "error-input-element" : "input-element"}
+                  inputClassName={
+                     passwordErrorMessage !== ''
+                        ? 'error-input-element'
+                        : 'input-element'
+                  }
                />
                <PrimaryButton
                   className={'primary-button-large'}
@@ -67,13 +75,15 @@ class SignInForm extends Component {
                   handleClick={onClickSignIn}
                   apiStatus={getUserAuthAPIStatus}
                />
-               <SignUpLink >
+               <SignUpLink>
                   {strings.logIn.doNotHaveAnAccount}
-                  <SignUpSpan href={'/signin'}>{strings.logIn.signUp}</SignUpSpan>
+                  <SignUpSpan href={'/signin'}>
+                     {strings.logIn.signUp}
+                  </SignUpSpan>
                </SignUpLink>
             </SignInFornDiv>
             <ToastContainer
-               position="bottom-center"
+               position='bottom-center'
                autoClose={3000}
                hideProgressBar={false}
                newestOnTop={false}

@@ -18,86 +18,124 @@ import { ReactModalPopUp } from '../ReactModal'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 
-
 const customStyles = {
    content: {
       top: '10%',
       left: '85%',
-      position: "absolute",
-      width: "200px",
-      height: "200px"
+      position: 'absolute',
+      width: '200px',
+      height: '200px'
    }
-};
+}
 @observer
 class PageHeader extends Component {
-   @observable isOpen = false;
+   @observable isOpen = false
 
    closeTab = () => {
-      this.isOpen = false;
-
+      this.isOpen = false
    }
    onHandleClick = () => {
-      this.isOpen = true;
-      console.log("hi.....", this.isOpen);
-
+      this.isOpen = true
+      console.log('hi.....', this.isOpen)
    }
 
    render() {
-      const { reportingPortal, assignedToMe, myObservations, totalObservations, categories } = strings.rpFeatures
-      const { src, userName, rpFeatures, currentPage, userType, navigateTOPage } = this.props;
+      const {
+         reportingPortal,
+         assignedToMe,
+         myObservations,
+         totalObservations,
+         categories
+      } = strings.rpFeatures
+      const {
+         src,
+         userName,
+         rpFeatures,
+         currentPage,
+         userType,
+         navigateTOPage
+      } = this.props
 
       return (
          <PageHeaderDiv>
             <LeftPart>
                <Image
-
                   className={'logo'}
-                  src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/9e43886f-8c57-4319-a0a9-e01d50479197.svg" />
+                  src='https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/9e43886f-8c57-4319-a0a9-e01d50479197.svg'
+               />
                <Title>{reportingPortal}</Title>
-
             </LeftPart>
             <RightPart>
-               {(userType === "user" && currentPage !== "") &&
+               {userType === 'user' && currentPage !== '' && (
                   <RightSubPartOne>
-                     <RpFeatures onClick={() => navigateTOPage(assignedToMe)} className={currentPage === assignedToMe ? "active-head" : ""}>{assignedToMe}</RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(myObservations)} className={currentPage === myObservations ? "active-head" : ""}>{myObservations}</RpFeatures>
+                     <RpFeatures
+                        onClick={() => navigateTOPage(assignedToMe)}
+                        className={
+                           currentPage === assignedToMe ? 'active-head' : ''
+                        }
+                     >
+                        {assignedToMe}
+                     </RpFeatures>
+                     <RpFeatures
+                        onClick={() => navigateTOPage(myObservations)}
+                        className={
+                           currentPage === myObservations ? 'active-head' : ''
+                        }
+                     >
+                        {myObservations}
+                     </RpFeatures>
                   </RightSubPartOne>
-               }
-               {(userType === "Rp") &&
+               )}
+               {userType === 'Rp' && (
                   <RightSubPartOne>
-                     <RpFeatures onClick={() => navigateTOPage(assignedToMe)} className="active-head" >{assignedToMe}</RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(myObservations)} >{myObservations}</RpFeatures>
+                     <RpFeatures
+                        onClick={() => navigateTOPage(assignedToMe)}
+                        className='active-head'
+                     >
+                        {assignedToMe}
+                     </RpFeatures>
+                     <RpFeatures onClick={() => navigateTOPage(myObservations)}>
+                        {myObservations}
+                     </RpFeatures>
                   </RightSubPartOne>
-               }
-               {(userType === "Admin") &&
+               )}
+               {userType === 'Admin' && (
                   <RightSubPartOne>
-                     <RpFeatures onClick={() => navigateTOPage(totalObservations)} className="active-head" >{totalObservations}</RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(categories)} >{categories}</RpFeatures>
+                     <RpFeatures
+                        onClick={() => navigateTOPage(totalObservations)}
+                        className='active-head'
+                     >
+                        {totalObservations}
+                     </RpFeatures>
+                     <RpFeatures onClick={() => navigateTOPage(categories)}>
+                        {categories}
+                     </RpFeatures>
                   </RightSubPartOne>
-               }
+               )}
                <RightSubPartTwo>
                   <UserName>{userName}</UserName>
-                  <Image className={'PersonM'} src={src} onHandleClick={this.onHandleClick} />
-                  <ReactModalPopUp customStyles={customStyles} btnStyle={"sign-out-btn"} BtnValue={"Sign Out"}
-                     userName={userName} handleClick={this.closeTab} isOpen={this.isOpen} src={src} profilePicStyle={"PersonM"} />
+                  <Image
+                     className={'PersonM'}
+                     src={src}
+                     onHandleClick={this.onHandleClick}
+                  />
+                  <ReactModalPopUp
+                     customStyles={customStyles}
+                     btnStyle={'sign-out-btn'}
+                     BtnValue={'Sign Out'}
+                     userName={userName}
+                     handleClick={this.closeTab}
+                     isOpen={this.isOpen}
+                     src={src}
+                     profilePicStyle={'PersonM'}
+                  />
                </RightSubPartTwo>
             </RightPart>
          </PageHeaderDiv>
-      );
+      )
    }
 }
 export { PageHeader }
-
-
-
-
-
-
-
-
-
-
-
 
 /*class PageHeader extends Component {
    render() {

@@ -2,7 +2,11 @@ import { observable, action, computed, toJS } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
-import { setAccessToken, getAccessToken, clearUserSession } from '../../../common/utils/StorageUtils'
+import {
+   setAccessToken,
+   getAccessToken,
+   clearUserSession
+} from '../../../common/utils/StorageUtils'
 
 class AuthStore {
    @observable getUserAuthAPIStatus
@@ -32,7 +36,6 @@ class AuthStore {
             onSuccess(response.user_type)
          })
          .catch(error => {
-
             this.setGetUserAuthAPIError(error)
             onFailure()
          })
@@ -50,13 +53,13 @@ class AuthStore {
 
    @action.bound
    setGetUserAuthAPIError(error) {
-      console.log(error, 999999988888);
+      console.log(error, 999999988888)
       this.getUserAuthAPIError = getUserDisplayableErrorMessage(error)
    }
 
    @action.bound
    userSignOut(request, onSuccess, onFailure) {
-      clearUserSession();
+      clearUserSession()
       const signOutPromise = this.authAPIService.signOutAPI()
       return bindPromiseWithOnSuccess(signOutPromise)
          .to(this.setGetUserSignOutSignOutStatus, response => {
@@ -81,8 +84,7 @@ class AuthStore {
 
    @action.bound
    setUserSignOutAPIResponse(SignOutAPIResponse) {
-      console.log(SignOutAPIResponse);
-
+      console.log(SignOutAPIResponse)
    }
 }
 export { AuthStore }

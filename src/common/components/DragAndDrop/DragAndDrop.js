@@ -12,7 +12,7 @@ class DragAndDrop extends Component {
             placeholder={placeHolder}
             className={className}
          >
-            <InputField type={"input"} />
+            <InputField type={'input'} />
          </TextAreaElement>
       )
    }

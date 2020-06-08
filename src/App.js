@@ -32,9 +32,7 @@ class App extends Component {
                   {userRoutes}
                   {rpRoutes}
                   {adminRoutes}
-                  <Route path='/'>
-                     <HomePage />
-                  </Route>
+                  <Route path='/'>{authRoutes}</Route>
                </Switch>
             </Router>
          </Provider>

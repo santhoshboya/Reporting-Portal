@@ -1,1 +1,1 @@
-export { Observation } from "./Observation";
+export { Observation } from './Observation'

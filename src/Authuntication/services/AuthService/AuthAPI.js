@@ -14,15 +14,21 @@ class AuthAPI {
       })
    }
    signInAPI(requestObject) {
-      console.log("details", requestObject)
+      console.log('details', requestObject)
       return networkCallWithApisauce(
          this.api,
          endPoints.signin,
          requestObject,
-         apiMethods.post)
+         apiMethods.post
+      )
    }
    signOutAPI() {
-      return networkCallWithApisauce(this.api, endPoints.signout, {}, apiMethods.get)
+      return networkCallWithApisauce(
+         this.api,
+         endPoints.signout,
+         {},
+         apiMethods.get
+      )
    }
 }
 

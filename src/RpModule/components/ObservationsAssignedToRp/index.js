@@ -1,1 +1,1 @@
-export { ObservationsAssignedToRp } from "./ObservationsAssignedToRp";
+export { ObservationsAssignedToRp } from './ObservationsAssignedToRp'

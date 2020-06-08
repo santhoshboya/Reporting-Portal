@@ -1,1 +1,1 @@
-export { AdminObsevationModel } from "./AdminObsevationModel";
+export { AdminObsevationModel } from './AdminObsevationModel'

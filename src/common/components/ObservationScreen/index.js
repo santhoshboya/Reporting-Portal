@@ -1,2 +1,1 @@
-export { ObservationScreen } from "./ObservationScreen";
-
+export { ObservationScreen } from './ObservationScreen'

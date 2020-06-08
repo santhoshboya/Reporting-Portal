@@ -14,7 +14,6 @@ function setCookie(key, value) {
    })
 }
 
-
 export function getAccessToken() {
    return getCookie(ACCESS_TOKEN)
 }

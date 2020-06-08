@@ -18,7 +18,7 @@ const SignUpSpan = styled.a`
 const GreetingMessage = styled(Typo32DarkBlueGreyRubikRegular)`
    ${tw`flex justify-center text-center mb-8`}
    width:214px;
-   height:80px;
+   height: 80px;
 `
 const SignUpLink = styled(Typo14DarkBlueGreyHKGroteskRegular)``
 

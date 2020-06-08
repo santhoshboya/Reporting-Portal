@@ -1,2 +1,1 @@
-export { ListOfObservationsRoute } from "./ListOfObservationsRoute";
-
+export { ListOfObservationsRoute } from './ListOfObservationsRoute'

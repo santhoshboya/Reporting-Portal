@@ -1,1 +1,1 @@
-export { UserObservationRoute } from "./UserObservationRoute";
+export { UserObservationRoute } from './UserObservationRoute'

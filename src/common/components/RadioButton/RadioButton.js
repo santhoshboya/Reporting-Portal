@@ -13,8 +13,6 @@ class RadioButton extends Component {
             className={className}
             value={value}
             checked={value === privacy ? true : false}
-
-
          ></RadioButtonElement>
       )
    }

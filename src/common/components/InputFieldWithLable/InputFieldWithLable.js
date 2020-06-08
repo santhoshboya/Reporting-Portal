@@ -26,11 +26,8 @@ class InputFieldWithLable extends Component {
                onHandleChange={onHandleChange}
                placeHolder={placeHolder}
                className={inputClassName}
-            >
-
-            </InputField>
-            {errorMsg !== '' &&
-               <ErrorIcon className={errorIconClassName} />}
+            ></InputField>
+            {errorMsg !== '' && <ErrorIcon className={errorIconClassName} />}
             <ErrorMsgField>{errorMsg}</ErrorMsgField>
          </InputWithLableDiv>
       )

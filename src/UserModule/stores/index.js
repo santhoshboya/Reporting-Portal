@@ -1,9 +1,9 @@
-import { UserStore } from "./UserStore";
+import { UserStore } from './UserStore'
 
 import { ObservationApiService } from '../services/ObservationApiService/ObservationApiService'
-import { ObservationFixtureService } from "../services/ObservationFixtureService/ObservationFixtureService";
+import { ObservationFixtureService } from '../services/ObservationFixtureService/ObservationFixtureService'
 
-const observationApiService = new ObservationApiService();
-const observationFixtureService = new ObservationFixtureService();
-const userStore = new UserStore(observationApiService);
-export default { userStore };
+const observationApiService = new ObservationApiService()
+const observationFixtureService = new ObservationFixtureService()
+const userStore = new UserStore(observationApiService)
+export default { userStore }

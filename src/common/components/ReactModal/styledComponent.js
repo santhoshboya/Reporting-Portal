@@ -7,5 +7,6 @@ const PopUpDiv = styled.div`${tw`flex flex-col justify-around items-center`}
    250px;
 `
 const UserNmae = styled(Typo18BrightBlueHKGroteskBold)`
-margin:10px;`
+   margin: 10px;
+`
 export { PopUpDiv, UserNmae }

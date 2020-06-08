@@ -1,2 +1,1 @@
-export { ListOfObservations } from "./ListOfObservations";
-
+export { ListOfObservations } from './ListOfObservations'

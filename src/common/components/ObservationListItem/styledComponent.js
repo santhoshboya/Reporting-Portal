@@ -23,7 +23,7 @@ const RectangleSeverity = styled.div`
 const RectangleActionStatus = styled.div`
    ${tw``}
    height: 20px;
-   padding:3px 10px;
+   padding: 3px 10px;
    border-radius: 100px;
    border: solid 1px #171f46;
    background-color: white;
@@ -35,28 +35,29 @@ const PersonDetails = styled.div`
 const PersonData = styled.div`
    ${tw`flex flex-col `}
    margin-left:10px;
-  ;
 `
-const TableData = styled(Typo12SteelHKGroteskSemiBold)`${tw`flex justify-center items-center`}
-width:14%;
-height:64px;
-overflow:auto;
-;
+const TableData = styled(Typo12SteelHKGroteskSemiBold)`
+   ${tw`flex justify-center items-center`}
+   width:14%;
+   height: 64px;
+   overflow: auto;
 `
 
-const MsgCount = styled.span`${tw`flex justify-center items-center`}
-background-color:#ff0b37;
-width: 11px;
-height: 11px;
-color:white;
-border-radius:50%;
-position:relative;
-top:-10px;
-left:-5px;
-
+const MsgCount = styled.span`
+   ${tw`flex justify-center items-center`}
+   background-color:#ff0b37;
+   width: 11px;
+   height: 11px;
+   color: white;
+   border-radius: 50%;
+   position: relative;
+   top: -10px;
+   left: -5px;
 `
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
-const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`;`
+const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`
+
+`
 export {
    TableRow,
    TableData,

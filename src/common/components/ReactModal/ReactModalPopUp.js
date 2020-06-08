@@ -8,29 +8,42 @@ import { withRouter } from 'react-router-dom'
 
 @inject('authStore')
 class ReactModalPopUp extends Component {
+   signOut = () => {
+      console.log(this.props.history, 12987896876)
+      this.props.history.push('/signin')
+      this.props.authStore.userSignOut(
+         {},
+         () => {},
+         () => {}
+      )
+   }
+   render() {
+      const {
+         src,
+         userName,
+         isOpen,
+         handleClick,
+         profilePicStyle,
+         btnStyle,
+         BtnValue,
+         customStyles
+      } = this.props
+      console.log(isOpen, 123)
 
-    signOut = () => {
-        console.log(this.props.history, 12987896876);
-        this.props.history.push("/signin")
-        this.props.authStore.userSignOut({}, () => { }, () => { });
-
-    }
-    render() {
-        const { src, userName, isOpen, handleClick, profilePicStyle, btnStyle, BtnValue, customStyles } = this.props
-        console.log(isOpen, 123);
-
-        return (
-            <Modal isOpen={isOpen} style={customStyles} >
-                <PopUpDiv onBlur={handleClick}>
-                    <Image src={src} className={profilePicStyle} />
-                    <UserNmae>{userName}</UserNmae>
-                    <PrimaryButton handleClick={this.signOut} className={btnStyle} value={BtnValue} />
-
-                </PopUpDiv>
-            </Modal>
-
-        )
-    }
+      return (
+         <Modal isOpen={isOpen} style={customStyles}>
+            <PopUpDiv onBlur={handleClick}>
+               <Image src={src} className={profilePicStyle} />
+               <UserNmae>{userName}</UserNmae>
+               <PrimaryButton
+                  handleClick={this.signOut}
+                  className={btnStyle}
+                  value={BtnValue}
+               />
+            </PopUpDiv>
+         </Modal>
+      )
+   }
 }
 
 export default withRouter(ReactModalPopUp)

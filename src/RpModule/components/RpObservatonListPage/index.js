@@ -1,2 +1,1 @@
-export { RpObservatonListPage } from "./RpObservatonListPage";
-
+export { RpObservatonListPage } from './RpObservatonListPage'

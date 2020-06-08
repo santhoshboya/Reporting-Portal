@@ -4,7 +4,11 @@ class SecondaryButton extends Component {
    render() {
       const { value, handleClick, className } = this.props
       return (
-         <ButtonElement className={className} value={value} onClick={handleClick}>
+         <ButtonElement
+            className={className}
+            value={value}
+            onClick={handleClick}
+         >
             {value}
          </ButtonElement>
       )

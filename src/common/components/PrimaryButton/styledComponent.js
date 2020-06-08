@@ -7,6 +7,5 @@ const ButtonElement = styled.button`
    background-color: #0b69ff;
    color: white;
    font-size: 14px;
-
 `
 export { ButtonElement }

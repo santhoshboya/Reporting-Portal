@@ -1,1 +1,1 @@
-export { UserObservatonListRoute } from "./UserObservatonListRoute";
+export { UserObservatonListRoute } from './UserObservatonListRoute'

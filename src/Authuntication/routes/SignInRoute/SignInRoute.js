@@ -6,7 +6,6 @@ import { SignInForm } from '../../components/SignInForm'
 import { toast } from 'react-toastify'
 import { USER, RP, ADMIN } from '../../../common/constants/NameConstants'
 
-
 @inject('authStore')
 @observer
 class SignInRoute extends React.Component {
@@ -20,30 +19,28 @@ class SignInRoute extends React.Component {
       this.username = event.target.value
       if (this.username === '')
          this.useNameErrorMessage = 'Please enter username'
-      else
-         this.useNameErrorMessage = ''
+      else this.useNameErrorMessage = ''
    }
 
    @action.bound onChangePassword(event) {
       this.password = event.target.value
       if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
-      else
-         this.passwordErrorMessage = ''
+      else this.passwordErrorMessage = ''
    }
 
    onFailure = () => {
       const { getUserAuthAPIError: apiError } = this.props.authStore
       if (apiError !== null && apiError !== undefined) {
          toast.error(this.props.authStore.getUserAuthAPIError, {
-            position: "bottom-center",
+            position: 'bottom-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
-         });
+            progress: undefined
+         })
       }
    }
 
@@ -55,33 +52,30 @@ class SignInRoute extends React.Component {
       if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
       if (this.username !== '' && this.password !== '') {
-         return true;
+         return true
       }
    }
 
    onClickSignIn = async () => {
       if (this.handleOnclick())
          await this.props.authStore.userSignIn(
-            { "username": this.username, "password": this.password },
+            { username: this.username, password: this.password },
             this.onSuccess,
             this.onFailure
          )
-
    }
 
-   onSuccess = (userType) => {
+   onSuccess = userType => {
       switch (userType) {
          case USER:
             this.props.history.push('/userobservationslist')
-            break;
+            break
          case RP:
             this.props.history.push('/rpobservationslist')
-            break;
+            break
          case ADMIN:
             this.props.history.push('/listofobservations')
-            break;
-
-
+            break
       }
    }
 

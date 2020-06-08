@@ -29,7 +29,6 @@ import { ObservationListHeader } from './ObservationListHeader'
 import { PageHeader } from './PageHeader'
 import { ObservationScreen } from './ObservationScreen'
 
-
 class Check extends Component {
    render() {
       return (

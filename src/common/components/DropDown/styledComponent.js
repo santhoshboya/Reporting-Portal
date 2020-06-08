@@ -5,10 +5,9 @@ const SelectElement = styled.select`
    height: 40px;
    border-radius: 2px;
    border: solid 1px #d7dfe9;
-   padding-right:30px
+   padding-right: 30px;
 `
 const SlectOptions = styled.option`
-   ${tw``}
-   ;
+   ${tw``};
 `
 export { SelectElement, SlectOptions }
