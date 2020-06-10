@@ -82,6 +82,7 @@ class AdminStore extends RpStore {
 
    @action.bound
    setAdminObservationListApiResponse(adminObservationListResponse) {
+      console.log('admin response', adminObservationListResponse)
       this.listOfObservationsTotalPages = Math.ceil(
          adminObservationListResponse.total_observations_count / LIMIT
       )

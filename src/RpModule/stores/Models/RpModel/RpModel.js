@@ -7,6 +7,7 @@ class RpModel {
    dueDate
    messages
    observationId
+
    dueDateType
    constructor(observation) {
       const {

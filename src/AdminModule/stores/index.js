@@ -14,9 +14,9 @@ const rpObservationFixtureService = new RpObservationFixtureService()
 const adminObservationFixtureService = new AdminObservationFixtureService()
 
 const adminStore = new AdminStore(
-   adminObservationApiService,
-   rpObservationApiService,
-   observationApiService
+   adminObservationFixtureService,
+   rpObservationFixtureService,
+   observationFixtureService
 )
 export default { adminStore }
 

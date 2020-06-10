@@ -7,7 +7,7 @@ import { ListOfObservationsRoute } from './ListOfObservationsRoute'
 import { ProtectedRoute } from '../../common/components/ProtectedRoute/ProtectedRoute'
 
 const adminRoutes = [
-   <ProtectedRoute
+   <Route
       exact
       path={LIST_OF_OBSERVATIONS_PATH}
       component={ListOfObservationsRoute}

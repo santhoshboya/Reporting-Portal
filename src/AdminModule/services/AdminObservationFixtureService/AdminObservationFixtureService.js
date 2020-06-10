@@ -1,12 +1,12 @@
 import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
 class AdminObservationFixtureService {
    listOfObservationApi(Limit, offeset, accessToken) {
-      let dataCopy = getObservationsResponse.observation_list.slice()
+      let dataCopy = getObservationsResponse.all_observations.slice()
       let data = dataCopy.splice(offeset, Limit)
       let dummyData = {
-         observation_list: data,
-         total_No_Of_Observation:
-            getObservationsResponse.total_No_Of_Observation,
+         all_observations: data,
+         total_observations_count:
+            getObservationsResponse.total_observations_count,
          user_type: getObservationsResponse.user_type
       }
       return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))

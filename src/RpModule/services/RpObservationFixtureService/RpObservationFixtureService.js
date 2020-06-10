@@ -5,12 +5,12 @@ class RpObservationFixtureService {
       return new Promise(resolve => setTimeout(resolve('Updated')))
    }
    getAssignedObservationListApi(Limit, offeset, accessToken) {
-      let dataCopy = getAssignedObservationsResponse.observation_list.slice()
+      let dataCopy = getAssignedObservationsResponse.observations_assigned_to_rp.slice()
       let data = dataCopy.splice(offeset, Limit)
       let dummyData = {
-         observation_list: data,
-         total_No_Of_Observation:
-            getAssignedObservationsResponse.total_No_Of_Observation,
+         observations_assigned_to_rp: data,
+         total_observations_count:
+            getAssignedObservationsResponse.total_observations_count,
          user_type: getAssignedObservationsResponse.user_type
       }
       return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))

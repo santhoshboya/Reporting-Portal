@@ -13,5 +13,8 @@ const rpObservationFixtureService = new RpObservationFixtureService()
 // const observationApiService = new ObservationApiService();
 // const rpObservationApiService = new RpObservationApiService();
 
-const rpStore = new RpStore(rpObservationApiService, observationApiService)
+const rpStore = new RpStore(
+   rpObservationFixtureService,
+   observationFixtureService
+)
 export default { rpStore }

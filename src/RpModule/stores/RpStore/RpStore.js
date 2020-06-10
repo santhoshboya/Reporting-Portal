@@ -77,17 +77,23 @@ class RpStore extends UserStore {
 
    @action.bound
    setAssignedObservationListApiResponse(assignedObservationListResponse) {
+      console.log(11111111111111111, assignedObservationListResponse)
+
       this.assignedObservationsTotalPages = Math.ceil(
          assignedObservationListResponse.total_observations_count / LIMIT
       )
+
       if (
          this.assignedObservationsTotalPages <
          this.assignedObservationsCurrentPage
-      )
+      ) {
          this.assignedObservationsCurrentPage = 1
+      }
+
       this.assignedObservationListForRp = assignedObservationListResponse.observations_assigned_to_rp.map(
          observation => new RpModel(observation)
       )
+
       this.userType = assignedObservationListResponse.user_type
    }
    @action.bound

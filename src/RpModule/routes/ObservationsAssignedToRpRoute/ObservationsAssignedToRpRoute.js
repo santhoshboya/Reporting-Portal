@@ -71,7 +71,6 @@ class ObservationsAssignedToRpRoute extends Component {
          assignedObservationAPIError,
          userType
       } = this.getRpStore()
-      console.log(12345, assignedObservationAPIStatus, userType)
       return (
          <ObservationsAssignedToRp
             filterAssignedObservationList={this.filterAssignedObservationList}
