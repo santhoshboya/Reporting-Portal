@@ -296,7 +296,6 @@ class ObservationScreen extends Component {
          userType,
          getSubCateogaries
       } = this.props
-      console.log('userScreen', cateogaries, getSubCateogaries, cateogariesList)
 
       return (
          <DesktopLayoutMainPage

@@ -1,6 +1,8 @@
 import getObservationsList from '../../fixtures/getObservationsResponse.json'
 import getObservation from '../../fixtures/getObservationResponse.json'
 import getCateogaries from '../../fixtures/getCateogaries.json'
+import getPostObservationResponse from '../../fixtures/getPostObservationResponse.json'
+import getUpdateObservationResponse from '../../fixtures/getUpdateObservationResponse.json'
 class ObservationFixtureService {
    getObservationApi(requestObject) {
       return new Promise(resolve =>
@@ -8,11 +10,12 @@ class ObservationFixtureService {
       )
    }
    postObservationApi(obseravation) {
-      return new Promise(resolve => resolve())
+      return new Promise(resolve => resolve(getPostObservationResponse))
    }
    getObservationListApi(Limit, offeset, accessToken) {
       let dataCopy = getObservationsList.observation_list.slice()
       let data = dataCopy.splice(offeset, Limit)
+
       let dummyData = {
          user_observations: data,
          user_observations_count: getObservationsList.user_observations_count,
@@ -22,10 +25,14 @@ class ObservationFixtureService {
       return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))
    }
    getCateogariesApi() {
-      return new Promise(resolve => resolve(getCateogaries))
+      return new Promise(resolve =>
+         setTimeout(() => resolve(getCateogaries), 500)
+      )
    }
    updateObservationApi(id, Details) {
-      return new Promise(resolve => setTimeout(() => resolve('Updated'), 1000))
+      return new Promise(resolve =>
+         setTimeout(() => resolve(getUpdateObservationResponse), 1000)
+      )
    }
 }
 

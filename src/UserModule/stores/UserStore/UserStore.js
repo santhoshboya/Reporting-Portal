@@ -1,7 +1,9 @@
-import { observable, action, computed, toJS } from 'mobx'
+import { observable, action, computed, reaction, toJS } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
+
+import { getLoadingStatus } from '@ib/api-utils'
 import { Observation } from '../Models/Observation'
 const LIMIT = 4
 const SORT_OPTIONS = ['new', 'old']
@@ -130,6 +132,7 @@ class UserStore {
    @action.bound
    setGetCateogariesApiAPIStatus(apiStatus) {
       this.getCateogariesAPIStatus = apiStatus
+      console.log('Categorie ststus', apiStatus)
    }
 
    @action.bound
@@ -139,6 +142,8 @@ class UserStore {
 
    @action.bound
    setGetCateogariesApiResponse(response) {
+      console.log('categories', response)
+
       this.cateogaries = response.categories
       this.subCateogaries = []
    }
@@ -229,6 +234,7 @@ class UserStore {
    @action.bound
    setGetObservationApiAPIStatus(apiStatus) {
       this.getObservationAPIStatus = apiStatus
+      console.log('observation ststus', apiStatus)
    }
 
    @action.bound
@@ -241,6 +247,7 @@ class UserStore {
       this.observationDetails = ObservationResponse
       this.userType = ObservationResponse.user_type
       this.rpList = ObservationResponse.rp_list
+      console.log('observation>>>>>>>>>>>')
    }
 
    @action.bound
@@ -278,26 +285,35 @@ class UserStore {
    filterObservationList(value) {
       this.filterType = value
       this.currentPage = 1
-      this.getObservationList()
+      //this.getObservationList()
    }
 
    @action.bound
    goToPreviousPage() {
       this.currentPage--
-      this.getObservationList()
+      //this.getObservationList()
    }
 
    @action.bound
    goToNextPage() {
       this.currentPage++
-      this.getObservationList()
+      //this.getObservationList()
    }
 
    @action.bound
    goToRandomPage(value) {
       this.currentPage = parseInt(value, 10)
-      this.getObservationList()
+      //this.getObservationList()
    }
+   currentPage = reaction(
+      () => {
+         return {
+            currentPage: this.currentPage,
+            filterType: this.filterType
+         }
+      },
+      () => this.getObservationList()
+   )
 
    @action.bound
    reportedOnSort() {
@@ -306,6 +322,7 @@ class UserStore {
       else this.reportedOnSortType = SORT_OPTIONS[0]
       this.observationsSortType = SORT_KEYS[1]
       this.observationsSortOption = this.reportedOnSortType
+      this.currentPage = 1
       this.getObservationList()
    }
    @action.bound
@@ -315,6 +332,7 @@ class UserStore {
       else this.dueDateSortType = SORT_OPTIONS[0]
       this.observationsSortType = SORT_KEYS[0]
       this.observationsSortOption = this.dueDateSortType
+      this.currentPage = 1
       this.getObservationList()
    }
 }

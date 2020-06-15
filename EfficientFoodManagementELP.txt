@@ -1,0 +1,76 @@
+EfficientFoodManagementELP
+
+    Modules:
+        1.User Module
+            1.Stores
+                1.MealInfoSrore
+            2.Models
+                1.MealModel
+                2.ItemModel
+            3.Routes
+                1.Userhomepage
+                2.Usermealpreference   pathparameter{ mealtype=breckfast/lunch/dinner}
+                3.Userfeedback
+            4.Services
+                1.getAllMealsDetails
+                2.getMealDetails
+                3.updateCustomeMealDetails
+                4.submitReview
+            5.Components    
+                1.Userhomepage
+                2.Usermealpreference
+                3.Userfeedback
+                    
+                comman
+                    mealCard
+
+        2.Admin Module
+            1.Stores
+            2.Models
+            3.Routes
+                1.adminhomepage
+                2.adminhomeheadcount
+                3.adminhomefoodwastage
+            4.Services
+
+            5.Components
+
+        3.Comman Modules
+            1.components
+                Image 
+                Button
+                Primaryutton
+                Secondarybutton
+                Datepicker
+                DropDown
+                Inputfield
+                counter
+                Buttonsgroup
+                courosel
+                foodwastagegraph
+            2.stores
+                1.Food wastage Store
+
+                model
+                    1.WastedmealDetails
+                        breckfast/lunch/dinner
+            3.services
+                getWeeklyFoodWastageDetails
+
+
+
+Single Button 
+creating model for food wastge log
+
+
+
+<Routes>
+    1.2.3
+    switch(){
+        <Route>
+        <Route>
+    }
+
+</Routes>
+               
+

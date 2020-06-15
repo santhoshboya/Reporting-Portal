@@ -5,7 +5,6 @@ import { Image } from '../Image'
 import { PrimaryButton } from '../PrimaryButton'
 import { inject } from 'mobx-react'
 import { withRouter } from 'react-router-dom'
-
 @inject('authStore')
 class ReactModalPopUp extends Component {
    signOut = () => {

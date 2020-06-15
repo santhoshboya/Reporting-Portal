@@ -10,6 +10,7 @@ import {
    OBSERVATIONS_ASSIGNED_TO_RP
 } from '../../constants/RouteConstants'
 import strings from '../../../common/i18n/strings.json'
+import { getLoadingStatus } from '@ib/api-utils'
 const ADMIN = 'Admin'
 @inject('userStore')
 @observer
@@ -115,16 +116,6 @@ class UserObservationScreenRoute extends Component {
          this.subCateogary = sub_category.name
       }
       this.privacy = due_date_type
-
-      console.log(
-         1111111111111111111111111111,
-         this.cateogary,
-         this.assignedTO,
-         this.status,
-         this.dueDate,
-         this.cateogary,
-         this.subCateogary
-      )
    }
    onFailure = () => {
       alert('hi')
@@ -219,7 +210,6 @@ class UserObservationScreenRoute extends Component {
       this.props.userStore.rpList.forEach(rp => {
          rpList.push(rp.first_name)
       })
-      console.log(rpList)
       return rpList
    }
 
@@ -233,7 +223,9 @@ class UserObservationScreenRoute extends Component {
       } = this.props.userStore.observationDetails
       const {
          getObservationAPIStatus,
+         getCateogariesAPIStatus,
          getObservationAPIError,
+         getCateogariesAPIError,
          cateogaries,
          getSubCateogaries,
          rpList,
@@ -241,6 +233,10 @@ class UserObservationScreenRoute extends Component {
       } = this.props.userStore
       const { userType, currentPage } = this.props.location.state
 
+      const apiStatus = getLoadingStatus(
+         getCateogariesAPIStatus,
+         getObservationAPIStatus
+      )
       return (
          <ObservationScreen
             userType={userType}
@@ -267,7 +263,7 @@ class UserObservationScreenRoute extends Component {
             statusOfObservation={this.status}
             dueDateOfObservation={this.dueDate}
             privacyOfObservation={this.privacy}
-            apiStatus={getObservationAPIStatus}
+            apiStatus={apiStatus}
             apiError={getObservationAPIError}
             onRetryClick={this.doNetworkCalss}
             navigateTOPage={this.navigateTOPage}

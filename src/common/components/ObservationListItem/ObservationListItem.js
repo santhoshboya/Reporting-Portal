@@ -45,7 +45,6 @@ class ObservationListItem extends Component {
             : severty === 'Low'
             ? '#2dca73'
             : '#ffb800'
-      console.log(888888888888888888888888888888, userType)
 
       return (
          <TableRow

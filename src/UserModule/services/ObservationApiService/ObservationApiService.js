@@ -25,7 +25,6 @@ class ObservationApiService {
    }
    getObservationListApi(Limit, offeset, details) {
       let endPoint = `${endPoints.observationList}?limit=${Limit}&offset=${offeset}`
-      console.log(12345, details)
 
       return networkCallWithApisauce(
          this.api,
