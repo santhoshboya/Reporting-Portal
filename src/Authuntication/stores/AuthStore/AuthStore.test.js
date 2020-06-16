@@ -6,6 +6,7 @@ import {
 } from '@ib/api-constants'
 import { AuthAPI } from '../../services/AuthService/AuthAPI'
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
+import getUserSignOutResponse from '../../fixtures/getUserSignOutResponse.json'
 import { AuthStore } from '.'
 
 describe('AuthStore Tests', () => {
@@ -92,9 +93,52 @@ describe('AuthStore Tests', () => {
       expect(onFailure).toBeCalled()
    })
 
-   it('should test user sign-out', () => {
-      authStore.userSignOut()
-      expect(authStore.getUserAuthAPIStatus).toBe(API_INITIAL)
-      expect(authStore.getUserAuthAPIError).toBe(null)
+   it('should test userSignOutAPI data fetching state', () => {
+      const onSuccess = jest.fn()
+      const onFailure = jest.fn()
+
+      const mockLoadingPromise = new Promise(function(resolve, reject) {})
+      const mockAuthAPI = jest.fn()
+      mockAuthAPI.mockReturnValue(mockLoadingPromise)
+      authAPI.signOutAPI = mockAuthAPI
+
+      authStore.userSignOut({}, onSuccess, onFailure)
+      expect(authStore.getUserSignOutAPIStatus).toBe(API_FETCHING)
+      expect(onSuccess).not.toBeCalled()
+      expect(onFailure).not.toBeCalled()
    })
+
+   it('should test userSignOutAPI data success state', async () => {
+      const onSuccess = jest.fn()
+      const onFailure = jest.fn()
+
+      const mockLoadingPromise = Promise.resolve(getUserSignOutResponse)
+      const mockAuthAPI = jest.fn()
+      mockAuthAPI.mockReturnValue(mockLoadingPromise)
+      authAPI.signOutAPI = mockAuthAPI
+      await authStore.userSignOut({}, onSuccess, onFailure)
+      expect(authStore.getUserSignOutAPIStatus).toBe(API_SUCCESS)
+      expect(onSuccess).toBeCalled()
+      expect(onFailure).not.toBeCalled()
+   })
+
+   it('should test userSignOutAPI data failure state', async () => {
+      const onSuccess = jest.fn()
+      const onFailure = jest.fn()
+
+      const mockLoadingPromise = Promise.reject('error')
+      const mockAuthAPI = jest.fn()
+      mockAuthAPI.mockReturnValue(mockLoadingPromise)
+      authAPI.signOutAPI = mockAuthAPI
+      await authStore.userSignOut({}, onSuccess, onFailure)
+      expect(authStore.getUserSignOutAPIStatus).toBe(API_FAILED)
+      expect(onSuccess).not.toBeCalled()
+      expect(onFailure).toBeCalled()
+   })
+
+   // it('should test user sign-out', () => {
+   //    authStore.userSignOut()
+   //    expect(authStore.getUserAuthAPIStatus).toBe(API_INITIAL)
+   //    expect(authStore.getUserAuthAPIError).toBe(null)
+   // })
 })

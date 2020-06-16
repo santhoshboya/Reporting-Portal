@@ -14,7 +14,6 @@ class AuthAPI {
       })
    }
    signInAPI(requestObject) {
-      console.log('details', requestObject)
       return networkCallWithApisauce(
          this.api,
          endPoints.signin,

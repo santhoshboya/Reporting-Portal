@@ -89,6 +89,7 @@ class UserStore {
          userType,
          details
       )
+
       return new bindPromiseWithOnSuccess(updateObservationApiPromise)
 
          .to(
@@ -97,7 +98,6 @@ class UserStore {
          )
          .catch(error => {
             this.setUpdateObservationApiAPIError(error)
-
             updationFail()
          })
    }
@@ -105,10 +105,10 @@ class UserStore {
    @action.bound
    setUpdateObservationApiAPIStatus(apiStatus) {
       this.updateObservationAPIStatus = apiStatus
-      //console.log('update status>>>>>>>>>>', apiStatus)
    }
    @action.bound
    setUpdateObservationApiResponse(response) {}
+
    @action.bound
    setUpdateObservationApiAPIError(error) {
       this.updateObservationAPIError = getUserDisplayableErrorMessage(error)

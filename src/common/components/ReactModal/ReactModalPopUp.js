@@ -8,13 +8,12 @@ import { withRouter } from 'react-router-dom'
 @inject('authStore')
 class ReactModalPopUp extends Component {
    signOut = () => {
-      console.log(this.props.history, 12987896876)
-      this.props.history.push('/signin')
       this.props.authStore.userSignOut(
          {},
          () => {},
          () => {}
       )
+      this.props.history.push('/signin')
    }
    render() {
       const {

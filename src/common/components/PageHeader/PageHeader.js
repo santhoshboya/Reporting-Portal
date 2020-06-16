@@ -36,7 +36,6 @@ class PageHeader extends Component {
    }
    onHandleClick = () => {
       this.isOpen = true
-      console.log('hi.....', this.isOpen)
    }
 
    render() {

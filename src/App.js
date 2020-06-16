@@ -22,12 +22,6 @@ class App extends Component {
          <Provider {...authStore} {...userStore} {...rpStore} {...adminStore}>
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
-                  <Route exact path='/page-1'>
-                     <Page1 />
-                  </Route>
-                  <Route path='/check'>
-                     <Check />
-                  </Route>
                   {authRoutes}
                   {userRoutes}
                   {rpRoutes}

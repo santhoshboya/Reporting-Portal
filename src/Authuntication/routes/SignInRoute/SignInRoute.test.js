@@ -44,6 +44,8 @@ describe('SigninRoute tests', () => {
       fireEvent.click(signInButton)
       getByText(/Please enter username/i)
    })
+
+   it
    it('should render password empty error message', () => {
       const { getByText, getByRole, getByPlaceholderText } = render(
          <Router history={createMemoryHistory()}>

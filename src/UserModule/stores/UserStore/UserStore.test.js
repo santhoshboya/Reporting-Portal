@@ -12,6 +12,9 @@ import { ObservationFixtureService } from '../../services/ObservationFixtureServ
 import { UserStore } from './UserStore'
 import { ObservationApiService } from '../../services/ObservationApiService/ObservationApiService'
 
+const SORT_OPTIONS = ['new', 'old']
+const SORT_KEYS = ['due_date', 'reported_on']
+const SORT_KEY = 'reported_on'
 describe('UserStore Store tests', () => {
    let obsevationsAPI
    let userStore
@@ -188,5 +191,16 @@ describe('UserStore Store tests', () => {
       let filterTypeOfObservation = value
       userStore.filterObservationList(value)
       expect(userStore.filterType).toBe(filterTypeOfObservation)
+   })
+
+   it('Should test reported on sort function', () => {
+      userStore.reportedOnSort()
+      expect(userStore.observationsSortType).toBe(SORT_KEYS[1])
+      expect(userStore.observationsSortOption).toBe(SORT_OPTIONS[1])
+   })
+   it('Should test duedate sort function', () => {
+      userStore.dueDateOnSort()
+      expect(userStore.observationsSortType).toBe(SORT_KEYS[0])
+      expect(userStore.observationsSortOption).toBe(SORT_OPTIONS[1])
    })
 })

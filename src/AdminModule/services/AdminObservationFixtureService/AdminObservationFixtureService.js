@@ -9,7 +9,7 @@ class AdminObservationFixtureService {
             getObservationsResponse.total_observations_count,
          user_type: getObservationsResponse.user_type
       }
-      return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))
+      return new Promise(resolve => resolve(dummyData))
    }
 }
 

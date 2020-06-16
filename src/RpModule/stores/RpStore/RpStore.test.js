@@ -97,6 +97,17 @@ describe('RpStore Store tests', () => {
    })
 
    // it('should test get Update observations list failure state', async () => {
+   //    const mockUpdateObservationPromise = Promise.reject('not updated')
+   //    const mockUpdateObservationApi = jest
+   //       .fn()
+   //       .mockReturnValue(mockUpdateObservationPromise)
+   //    rpObsevationsAPI.updateObservationApi = mockUpdateObservationApi
+   //    const mockFn = jest.fn()
+   //    await rpStore.updateObservationDeatails(mockFn, 'Santhu', {})
+   //    expect(rpStore.updateObservationAPIStatus).toBe(API_FAILED)
+   // })
+
+   // it('should test get Update observations list failure state', async () => {
    //    const mockUpdateObservationPromise = Promise.reject('error')
    //    const mockUpdateObservationApi = jest
    //       .fn()

@@ -50,12 +50,6 @@ class AdminStore extends RpStore {
          categories: this.getCategoryAndSubCategoryId()[0],
          sub_categories: this.getCategoryAndSubCategoryId()[1]
       }
-      console.log(
-         'details>>>>>>>',
-         this.observationsSortType,
-         this.observationsSortOption,
-         this.getCategoryAndSubCategoryId()
-      )
       let offset = Math.ceil(LIMIT * (this.listOfObservationsCurrentPage - 1))
       const adminObservationPromise = this.adminObservationAPIService.listOfObservationApi(
          LIMIT,
@@ -82,7 +76,6 @@ class AdminStore extends RpStore {
 
    @action.bound
    setAdminObservationListApiResponse(adminObservationListResponse) {
-      console.log('admin response', adminObservationListResponse)
       this.listOfObservationsTotalPages = Math.ceil(
          adminObservationListResponse.total_observations_count / LIMIT
       )
