@@ -6,15 +6,8 @@ import {
 } from '@ib/api-constants'
 
 import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
-// import getObservation from '../../fixtures/getObservationResponse.json'
-// import getCateogaries from '../../fixtures/getCateogaries.json'
 import { AdminObservationFixtureService } from '../../services/AdminObservationFixtureService/AdminObservationFixtureService'
 import { AdminStore } from './AdminStore'
-// import { ObservationApiService } from '../../services/ObservationApiService/ObservationApiService'
-
-// const SORT_OPTIONS = ['new', 'old']
-// const SORT_KEYS = ['due_date', 'reported_on']
-// const SORT_KEY = 'reported_on'
 describe('AdminStore Store tests', () => {
    let obsevationsAPI
    let adminStore
@@ -103,5 +96,9 @@ describe('AdminStore Store tests', () => {
       const value = 5
       adminStore.goToRandomObservations(value)
       expect(adminStore.listOfObservationsCurrentPage).toBe(value)
+   })
+
+   it('Should test computed getSubCateogariesMultiple', () => {
+      expect(adminStore.getSubCateogariesMultiple).toStrictEqual([])
    })
 })

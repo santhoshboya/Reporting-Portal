@@ -9,6 +9,9 @@ import { ObservationFixtureService } from '../../../UserModule/services/Observat
 import getAssignedObservationsResponse from '../../fixtures/getAssignedObservationsResponse.json'
 import { RpStore } from './RpStore'
 
+const SORT_OPTIONS = ['new', 'old']
+const SORT_KEYS = ['due_date', 'reported_on']
+const SORT_KEY = 'reported_on'
 describe('RpStore Store tests', () => {
    let rpObsevationsAPI
    let userObsevationsAPI
@@ -151,5 +154,15 @@ describe('RpStore Store tests', () => {
       expect(rpStore.filterTypeOfAssignedObservation).toBe(
          filterTypeOfAssignedObservation
       )
+   })
+   it('Should test duedate sort function', () => {
+      rpStore.assignedObservationsDueDateOnSort()
+      expect(rpStore.assignedObservationsSortType).toBe(SORT_KEYS[0])
+      expect(rpStore.assignedObservationsSortOption).toBe(SORT_OPTIONS[1])
+   })
+   it('Should test reported sort function', () => {
+      rpStore.assignedObservationsReportedOnSort()
+      expect(rpStore.assignedObservationsSortType).toBe(SORT_KEYS[1])
+      expect(rpStore.assignedObservationsSortOption).toBe(SORT_OPTIONS[1])
    })
 })

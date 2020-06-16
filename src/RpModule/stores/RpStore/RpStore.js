@@ -101,12 +101,6 @@ class RpStore extends UserStore {
       else this.assignedObservationReportedOnSortType = SORT_OPTIONS[0]
       this.assignedObservationsSortType = SORT_KEYS[1]
       this.assignedObservationsSortOption = this.assignedObservationReportedOnSortType
-      console.log(
-         this.assignedObservationsSortType,
-         67756475,
-         this.assignedObservationsSortOption
-      )
-
       this.getAssignedObservationList()
    }
    @action.bound
@@ -116,11 +110,6 @@ class RpStore extends UserStore {
       else this.assignedObservationDueDateSortType = SORT_OPTIONS[0]
       this.assignedObservationsSortType = SORT_KEYS[0]
       this.assignedObservationsSortOption = this.assignedObservationDueDateSortType
-      console.log(
-         this.assignedObservationsSortType,
-         67756475,
-         this.assignedObservationsSortOption
-      )
       this.getAssignedObservationList()
    }
 
