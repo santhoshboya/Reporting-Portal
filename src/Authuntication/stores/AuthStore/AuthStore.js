@@ -53,7 +53,6 @@ class AuthStore {
 
    @action.bound
    setGetUserAuthAPIError(error) {
-      console.log(error, 999999988888)
       this.getUserAuthAPIError = getUserDisplayableErrorMessage(error)
    }
 

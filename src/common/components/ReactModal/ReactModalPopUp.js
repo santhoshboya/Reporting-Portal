@@ -27,8 +27,6 @@ class ReactModalPopUp extends Component {
          BtnValue,
          customStyles
       } = this.props
-      console.log(isOpen, 123)
-
       return (
          <Modal isOpen={isOpen} style={customStyles}>
             <PopUpDiv onBlur={handleClick}>

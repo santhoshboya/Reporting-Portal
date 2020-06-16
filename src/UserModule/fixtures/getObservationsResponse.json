@@ -1,7 +1,7 @@
 {
-   "observation_list": [
+   "user_observations": [
       {
-         "title": "Santhosh ",
+         "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
             "first_name": "Sai Ram",
@@ -19,7 +19,7 @@
          "observation_id": 1
       },
       {
-         "title": "Santhosh ",
+         "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
             "first_name": "Sai Ram",
@@ -37,7 +37,7 @@
          "observation_id": 1
       },
       {
-         "title": "Santhosh ",
+         "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
             "first_name": "Sai Ram",
@@ -55,7 +55,7 @@
          "observation_id": 1
       },
       {
-         "title": "Santhosh ",
+         "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
             "first_name": "Sai Ram",
@@ -73,7 +73,7 @@
          "observation_id": 1
       },
       {
-         "title": "Santhosh ",
+         "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
             "first_name": "Sai Ram",

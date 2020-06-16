@@ -159,7 +159,9 @@ describe('SigninRoute tests', () => {
       fireEvent.click(signInButton)
 
       await waitFor(() => {
-         getByText(/Network Error/i)
+         getByText(
+            /We're having some trouble completing your request. Please try again./i
+         )
       })
    })
 })

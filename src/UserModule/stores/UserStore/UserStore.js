@@ -90,12 +90,14 @@ class UserStore {
          details
       )
       return new bindPromiseWithOnSuccess(updateObservationApiPromise)
+
          .to(
             this.setUpdateObservationApiAPIStatus,
             this.setUpdateObservationApiResponse
          )
          .catch(error => {
             this.setUpdateObservationApiAPIError(error)
+
             updationFail()
          })
    }
@@ -103,11 +105,10 @@ class UserStore {
    @action.bound
    setUpdateObservationApiAPIStatus(apiStatus) {
       this.updateObservationAPIStatus = apiStatus
+      //console.log('update status>>>>>>>>>>', apiStatus)
    }
    @action.bound
-   setUpdateObservationApiResponse(response) {
-      console.log(response)
-   }
+   setUpdateObservationApiResponse(response) {}
    @action.bound
    setUpdateObservationApiAPIError(error) {
       this.updateObservationAPIError = getUserDisplayableErrorMessage(error)
@@ -132,7 +133,6 @@ class UserStore {
    @action.bound
    setGetCateogariesApiAPIStatus(apiStatus) {
       this.getCateogariesAPIStatus = apiStatus
-      console.log('Categorie ststus', apiStatus)
    }
 
    @action.bound
@@ -142,8 +142,6 @@ class UserStore {
 
    @action.bound
    setGetCateogariesApiResponse(response) {
-      console.log('categories', response)
-
       this.cateogaries = response.categories
       this.subCateogaries = []
    }
@@ -234,7 +232,6 @@ class UserStore {
    @action.bound
    setGetObservationApiAPIStatus(apiStatus) {
       this.getObservationAPIStatus = apiStatus
-      console.log('observation ststus', apiStatus)
    }
 
    @action.bound
@@ -247,7 +244,6 @@ class UserStore {
       this.observationDetails = ObservationResponse
       this.userType = ObservationResponse.user_type
       this.rpList = ObservationResponse.rp_list
-      console.log('observation>>>>>>>>>>>')
    }
 
    @action.bound
@@ -285,35 +281,35 @@ class UserStore {
    filterObservationList(value) {
       this.filterType = value
       this.currentPage = 1
-      //this.getObservationList()
+      this.getObservationList()
    }
 
    @action.bound
    goToPreviousPage() {
       this.currentPage--
-      //this.getObservationList()
+      this.getObservationList()
    }
 
    @action.bound
    goToNextPage() {
       this.currentPage++
-      //this.getObservationList()
+      this.getObservationList()
    }
 
    @action.bound
    goToRandomPage(value) {
       this.currentPage = parseInt(value, 10)
-      //this.getObservationList()
+      this.getObservationList()
    }
-   currentPage = reaction(
-      () => {
-         return {
-            currentPage: this.currentPage,
-            filterType: this.filterType
-         }
-      },
-      () => this.getObservationList()
-   )
+   // currentPage = reaction(
+   //    () => {
+   //       return {
+   //          currentPage: this.currentPage,
+   //          filterType: this.filterType
+   //       }
+   //    },
+   //    () => this.getObservationList()
+   // )
 
    @action.bound
    reportedOnSort() {

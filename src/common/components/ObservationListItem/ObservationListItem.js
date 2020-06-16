@@ -37,7 +37,6 @@ class ObservationListItem extends Component {
          reportedBy,
          userType
       } = this.props
-      console.log('dueDateType:L', dueDateType)
 
       let bgColor =
          severty === 'High'

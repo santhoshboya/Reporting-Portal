@@ -152,7 +152,7 @@ class UserObservatonListPage extends Component {
       } = this.props
       return (
          <DesktopLayoutMainPage
-            userName={'Santhu'}
+            userName={'ProfileName'}
             profilePic={
                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/5a060d96-2b5d-4c5d-8c81-cb89b5b8328a@3x.png'
             }

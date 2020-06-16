@@ -77,8 +77,6 @@ class RpStore extends UserStore {
 
    @action.bound
    setAssignedObservationListApiResponse(assignedObservationListResponse) {
-      console.log(11111111111111111, assignedObservationListResponse)
-
       this.assignedObservationsTotalPages = Math.ceil(
          assignedObservationListResponse.total_observations_count / LIMIT
       )

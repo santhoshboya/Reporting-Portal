@@ -72,7 +72,11 @@ describe('AuthStore Tests', () => {
       }
 
       const mockFailurePromise = new Promise(function(resolve, reject) {
-         reject(new Error('error'))
+         reject(
+            new Error(
+               "We're having some trouble completing your request. Please try again."
+            )
+         )
       })
       const mockAuthAPI = jest.fn()
       mockAuthAPI.mockReturnValue(mockFailurePromise)
@@ -82,7 +86,9 @@ describe('AuthStore Tests', () => {
       await authStore.userSignIn(requestObject, onSuccess, onFailure)
 
       expect(authStore.getUserAuthAPIStatus).toBe(API_FAILED)
-      expect(authStore.getUserAuthAPIError).toBe('error')
+      expect(authStore.getUserAuthAPIError).toBe(
+         "We're having some trouble completing your request. Please try again."
+      )
       expect(onFailure).toBeCalled()
    })
 

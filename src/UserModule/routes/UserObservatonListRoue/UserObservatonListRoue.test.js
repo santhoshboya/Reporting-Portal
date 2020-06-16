@@ -9,10 +9,10 @@ import { Router, Route, withRouter } from 'react-router-dom'
 import { Provider } from 'mobx-react'
 import { createMemoryHistory } from 'history'
 
+import getObservationResponse from '../../fixtures/getObservationResponse.json'
 import { ObservationFixtureService } from '../../services/ObservationFixtureService/ObservationFixtureService'
 import { UserObservatonListRoute } from './UserObservatonListRoute'
 import { UserStore } from '../../stores/UserStore'
-import getObservationsResponseForTesting from '../../fixtures/getObservationsResponseForTesting.json'
 
 import { AuthAPI } from '../../../Authuntication/services/AuthService/AuthAPI'
 import { AuthStore } from '../../../Authuntication/stores/AuthStore'
@@ -23,9 +23,9 @@ const LocationDisplay = withRouter(({ location }) => (
 
 const OBSERVATION = '/userobservation/'
 const USER_OBSERVATION_LIST_PATH = '/userobservationslist'
-const USER_OBSERVATION_SCREEN_PATH = '/userobservationscreen/'
+const USER_OBSERVATION_SCREEN_PATH = '/observationscreen/'
 
-describe('SigninRoute tests', () => {
+describe('User ObservationListRoute tests', () => {
    let observationApi
    let userStore
    let authAPI
@@ -55,53 +55,71 @@ describe('SigninRoute tests', () => {
          <Provider userStore={userStore} authStore={authStore}>
             <Router history={history}>
                <Route
+                  exact
                   path={USER_OBSERVATION_LIST_PATH}
                   component={UserObservatonListRoute}
                />
-               <Route path={OBSERVATION} component={LocationDisplay} />
+               <Route exact path={OBSERVATION} component={LocationDisplay} />
             </Router>
          </Provider>
       )
+
+      await waitFor(() => {
+         getByRole('button', { name: 'ADD NEW' })
+      })
       const addNewButton = getByRole('button', { name: 'ADD NEW' })
       fireEvent.click(addNewButton)
-      debug()
+      await waitFor(() => {
+         getByTestId('location-display')
+      })
       expect(getByTestId('location-display')).toHaveTextContent(OBSERVATION)
    })
 
-   // it("should render UserObservationScreen state", async () => {
-   //   const history = createMemoryHistory();
-   //   const route = USER_OBSERVATION_LIST_PATH;
-   //   history.push(route);
-   //   const {
-   //     getByPlaceholderText,
-   //     getByRole,
-   //     queryByRole,
-   //     getByTestId,
-   //     debug,
-   //     getAllByTestId
-   //   } = render(
-   //     <Provider userStore={userStore} authStore={authStore}>
-   //       <Router history={history}>
-   //         <Route path={USER_OBSERVATION_LIST_PATH} component={UserObservatonListRoute} />
-   //         <Route path={OBSERVATION} component={LocationDisplay} />
-   //       </Router>
-   //     </Provider>
-   //   );
+   it('should render UserObservationScreen state', async () => {
+      const history = createMemoryHistory()
+      const route = USER_OBSERVATION_LIST_PATH
+      history.push(route)
+      const {
+         getByPlaceholderText,
+         getByRole,
+         queryByRole,
+         getByTestId,
+         debug,
+         getAllByTestId
+      } = render(
+         <Provider userStore={userStore} authStore={authStore}>
+            <Router history={history}>
+               <Route
+                  exact
+                  path={USER_OBSERVATION_LIST_PATH}
+                  component={UserObservatonListRoute}
+               />
+               <Route
+                  exact
+                  path={`${USER_OBSERVATION_SCREEN_PATH}:id`}
+                  component={LocationDisplay}
+               />
+            </Router>
+         </Provider>
+      )
 
-   //   const result = getAllByTestId('observation-list-item')
-   //   fireEvent.click(result[0]);
-   //   console.log("result", result);
-
-   //   const mockSuccessPromise = new Promise(function (resolve, reject) {
-   //     resolve(getObservationResponse);
-   //   });
-   //   const mockObservationsAPI = jest.fn();
-   //   mockObservationsAPI.mockReturnValue(mockSuccessPromise);
-   //   observationApi.getObservationApi = mockObservationsAPI;
-   //   await userStore.getObservation();
-
-   //   debug();
-   //   expect(getByTestId("location-display")).toHaveTextContent(
-   //     OBSERVATION);
-   // });
+      await waitFor(() => {
+         getAllByTestId('observation-list-item')
+      })
+      const result = getAllByTestId('observation-list-item')
+      fireEvent.click(result[0])
+      const mockSuccessPromise = Promise.resolve(getObservationResponse)
+      const mockObservationsAPI = jest.fn().mockReturnValue(mockSuccessPromise)
+      observationApi.getObservationApi = mockObservationsAPI
+      const observationId = 1
+      const onSuccess = jest.fn()
+      const onFailure = jest.fn()
+      await userStore.getObservation(observationId, onSuccess, onFailure)
+      await waitFor(() => {
+         getAllByTestId('location-display')
+      })
+      expect(getByTestId('location-display')).toHaveTextContent(
+         USER_OBSERVATION_SCREEN_PATH
+      )
+   })
 })

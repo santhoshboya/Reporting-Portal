@@ -35,14 +35,14 @@ class RpObservationApiService {
    //         apiMethods.get
    //     )
    // }
-   // updateObservationApi(id, Details) {
-   //    return networkCallWithApisauce(
-   //       this.api,
-   //       endPoint,
-   //       { id, Details },
-   //       apiMethods.post
-   //    )
-   // }
+   updateObservationApi(id, Details) {
+      return networkCallWithApisauce(
+         this.api,
+         endPoint,
+         { id, Details },
+         apiMethods.post
+      )
+   }
    getAssignedObservationListApi(Limit, offeset, details) {
       let endPoint = `${endPoints.observationList}?limit=${Limit}&offset=${offeset}`
       return networkCallWithApisauce(

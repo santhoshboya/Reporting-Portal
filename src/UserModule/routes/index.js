@@ -12,17 +12,17 @@ import { UserObservationScreenRoute } from './UserObservationScreenRoute'
 import { ProtectedRoute } from '../../common/components/ProtectedRoute/ProtectedRoute'
 
 const userRoutes = [
-   <ProtectedRoute
+   <Route
       path={USER_OBSERVATION_LIST_PATH}
       exact
       component={UserObservatonListRoute}
    />,
-   <ProtectedRoute
+   <Route
       exact
       path={USER_OBSERVATION_PATH}
       component={UserObservationRoute}
    />,
-   <ProtectedRoute
+   <Route
       exact
       path={`${USER_OBSERVATION_SCREEN_PATH}:id`}
       component={UserObservationScreenRoute}

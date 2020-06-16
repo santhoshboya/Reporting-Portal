@@ -12,7 +12,7 @@ class Observation {
       const {
          title,
          reported_on,
-         severity,
+         severty,
          status,
          due_date,
          messages_count,
@@ -24,7 +24,7 @@ class Observation {
       this.reportedOn = reported_on
       this.assignedTo = assigned_to
       this.status = status
-      this.severty = severity
+      this.severty = severty
       this.dueDate = due_date
       this.dueDateType = due_date_type
       this.messages = messages_count

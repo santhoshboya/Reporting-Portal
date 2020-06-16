@@ -55,9 +55,7 @@ const MsgCount = styled.span`
    left: -5px;
 `
 const SevertyStatus = styled(Typo12WhiteHKGroteskBold)``
-const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)`
-
-`
+const ObservationStatus = styled(Typo8DarkBlueGreyHKGroteskSemiBold)``
 export {
    TableRow,
    TableData,

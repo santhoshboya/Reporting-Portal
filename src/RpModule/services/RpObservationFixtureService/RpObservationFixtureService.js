@@ -1,9 +1,9 @@
 import getAssignedObservationsResponse from '../../fixtures/getAssignedObservationsResponse.json'
 class RpObservationFixtureService {
-   // updateObservationApi(id, Details) {
-   //    console.log('observation updated...', Details)
-   //    return new Promise(resolve => setTimeout(resolve('Updated')))
-   // }
+   updateObservationApi(id, Details) {
+      console.log('observation updated...', Details)
+      return new Promise(resolve => setTimeout(resolve('Updated'), 1000))
+   }
    getAssignedObservationListApi(Limit, offeset, accessToken) {
       let dataCopy = getAssignedObservationsResponse.observations_assigned_to_rp.slice()
       let data = dataCopy.splice(offeset, Limit)
