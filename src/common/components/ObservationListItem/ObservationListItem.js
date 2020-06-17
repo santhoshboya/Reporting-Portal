@@ -44,6 +44,7 @@ class ObservationListItem extends Component {
             : severty === 'Low'
             ? '#2dca73'
             : '#ffb800'
+      console.log('reported>>', reportedOn)
 
       return (
          <TableRow

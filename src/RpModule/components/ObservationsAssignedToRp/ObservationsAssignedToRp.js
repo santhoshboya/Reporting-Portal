@@ -23,7 +23,7 @@ import NoDataView from '../../../common/components/NoDataView'
 import { ToastContainer } from 'react-toastify'
 @observer
 class ObservationsAssignedToRp extends Component {
-   renderSuccessUi = () => {
+   renderSuccessUi = observer(() => {
       const {
          observationList,
          onClickObservation,
@@ -41,7 +41,6 @@ class ObservationsAssignedToRp extends Component {
          assignedObservationAPIStatus,
          assignedObservationAPIError
       } = this.props
-
       const {
          title,
          reportedOn,
@@ -60,7 +59,6 @@ class ObservationsAssignedToRp extends Component {
          reported,
          actioninProgress
       } = strings.rpFeatures
-
       return (
          <React.Fragment>
             <ObseravationsHeader>
@@ -139,7 +137,7 @@ class ObservationsAssignedToRp extends Component {
             )}
          </React.Fragment>
       )
-   }
+   })
 
    render() {
       const { assignedToMe, myObservations } = strings.rpFeatures

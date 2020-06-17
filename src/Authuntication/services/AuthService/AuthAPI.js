@@ -1,5 +1,6 @@
 import { create } from 'apisauce'
 
+import { networkCallWithApisauceWithoutAccessToken } from '../../../common/utils/AuthUtils'
 import { networkCallWithApisauce } from '../../../common/utils/APIUtils'
 
 import { apiMethods, apiUrls } from '../../constants/APIConstants'
@@ -14,7 +15,7 @@ class AuthAPI {
       })
    }
    signInAPI(requestObject) {
-      return networkCallWithApisauce(
+      return networkCallWithApisauceWithoutAccessToken(
          this.api,
          endPoints.signin,
          requestObject,

@@ -32,8 +32,6 @@ class ListOfObservationsRoute extends Component {
    onSuccess = () => {}
    onFailure = () => {}
    onClickObservation = observationId => {
-      console.log(this.props, 567890)
-
       this.props.history.push({
          pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
          state: { userType: 'Admin', currentPage: 'Total Observations' }
