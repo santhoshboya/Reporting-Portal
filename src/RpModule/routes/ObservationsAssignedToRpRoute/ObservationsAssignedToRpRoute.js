@@ -30,16 +30,16 @@ class ObservationsAssignedToRpRoute extends Component {
    doNetworkCalls = () => {
       this.getRpStore().getAssignedObservationList()
    }
-   onClickAddNew = () => {
-      const { history } = this.props
-      history.push(RP_OBSERVATION_PATH)
-   }
-   onSuccess = () => {
-      //alert("data recieved")
-   }
-   onFailure = () => {
-      // alert("data recieved")
-   }
+   // onClickAddNew = () => {
+   //    const { history } = this.props
+   //    history.push(RP_OBSERVATION_PATH)
+   // }
+   // onSuccess = () => {
+   //    //alert("data recieved")
+   // }
+   // onFailure = () => {
+   //    // alert("data recieved")
+   // }
    navigateTOPage = page => {
       const { myObservations } = strings.rpFeatures
       const { history } = this.props

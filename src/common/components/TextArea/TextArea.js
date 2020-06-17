@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import { TextAreaElement } from './styledComponent'
 
 class TextArea extends Component {
+   onHandleChange = event => {
+      this.props.onHandleChange(event.target.value)
+   }
+
    render() {
       const {
          value,
@@ -15,7 +19,7 @@ class TextArea extends Component {
       return (
          <TextAreaElement
             value={value}
-            onChange={onHandleChange}
+            onChange={this.onHandleChange}
             placeholder={placeHolder}
             className={className}
             disabled={isDisabled}

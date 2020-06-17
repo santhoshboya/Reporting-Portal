@@ -53,16 +53,16 @@ class UserObservationScreenRoute extends Component {
       )
    }
 
-   @action.bound onChangePrivacy(event) {
-      this.privacy = event.target.value
+   @action.bound onChangePrivacy(value) {
+      this.privacy = value
    }
 
    @action.bound onChangeAssignedTO(value) {
       this.assignedTO = toJS(value).value
    }
 
-   @action.bound onChangeDueDate(event) {
-      this.dueDate = event.target.value
+   @action.bound onChangeDueDate(value) {
+      this.dueDate = value
    }
 
    @action.bound onChangeStatus(value) {
@@ -78,8 +78,9 @@ class UserObservationScreenRoute extends Component {
       this.subCateogary = toJS(value).value
    }
 
-   @action.bound onChangeDescription(event) {
-      this.description = event.target.value
+   @action.bound onChangeDescription(value) {
+      this.description = value
+      console.log(value)
    }
 
    @action.bound onReset() {

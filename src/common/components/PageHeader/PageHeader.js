@@ -72,6 +72,7 @@ class PageHeader extends Component {
                         className={
                            currentPage === assignedToMe ? 'active-head' : ''
                         }
+                        data-testid={assignedToMe}
                      >
                         {assignedToMe}
                      </RpFeatures>
@@ -80,6 +81,7 @@ class PageHeader extends Component {
                         className={
                            currentPage === myObservations ? 'active-head' : ''
                         }
+                        data-testid={myObservations}
                      >
                         {myObservations}
                      </RpFeatures>
@@ -90,10 +92,14 @@ class PageHeader extends Component {
                      <RpFeatures
                         onClick={() => navigateTOPage(assignedToMe)}
                         className='active-head'
+                        data-testid={assignedToMe}
                      >
                         {assignedToMe}
                      </RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(myObservations)}>
+                     <RpFeatures
+                        onClick={() => navigateTOPage(myObservations)}
+                        data-testid={myObservations}
+                     >
                         {myObservations}
                      </RpFeatures>
                   </RightSubPartOne>
@@ -135,32 +141,3 @@ class PageHeader extends Component {
    }
 }
 export { PageHeader }
-
-/*class PageHeader extends Component {
-   render() {
-      const { reportingPortal, assignedToMe, myObservations, totalObservations, categories } = strings.userFeatures
-      const { src, userName, rpFeatures, currentPage, userType, navigateTOPage } = this.props;
-      return (
-         <PageHeaderDiv>
-            <LeftPart>
-               <Image
-                  className={'logo'}
-                  src="https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/9e43886f-8c57-4319-a0a9-e01d50479197.svg" />
-               <Title>{reportingPortal}</Title>
-            </LeftPart>
-            <RightPart>
-               {rpFeatures &&
-                  <RightSubPartOne>
-                     <RpFeatures onClick={() => navigateTOPage(rpFeatures[0])} className={currentPage === rpFeatures[0] ? "active-head" : ""}>{rpFeatures[0]}</RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(rpFeatures[1])} className={currentPage === rpFeatures[1] ? "active-head" : ""}>{rpFeatures[1]}</RpFeatures>
-                  </RightSubPartOne>
-               }
-               <RightSubPartTwo>
-                  <UserName>{userName}</UserName>
-                  <Image className={'PersonM'} src={src} />
-               </RightSubPartTwo>
-            </RightPart>
-         </PageHeaderDiv>
-      );
-   }
-} */

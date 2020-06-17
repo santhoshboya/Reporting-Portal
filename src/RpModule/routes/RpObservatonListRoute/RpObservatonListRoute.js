@@ -75,8 +75,6 @@ class RpObservatonListRoute extends Component {
          getObservationListAPIStatus,
          getObservationListAPIError
       } = this.getRpStore()
-
-      console.log(2367890000009874, this.props.rpStore.observationList)
       return (
          <RpObservatonListPage
             handleClick={this.onClickAddNew}

@@ -81,6 +81,7 @@ class UserObservationPage extends Component {
                         className={'title'}
                         type={'text'}
                         value={title}
+                        testid={'title'}
                         onHandleChange={onChangeTitleOfTheObservation}
                         placeHolder={culturalDeviations}
                      />

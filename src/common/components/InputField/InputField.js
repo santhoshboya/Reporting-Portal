@@ -5,7 +5,14 @@ import { observer } from 'mobx-react'
 @observer
 class InputField extends Component {
    render() {
-      const { type, value, onHandleChange, placeHolder, className } = this.props
+      const {
+         type,
+         testid,
+         value,
+         onHandleChange,
+         placeHolder,
+         className
+      } = this.props
       return (
          <InputElement
             type={type}
@@ -13,6 +20,7 @@ class InputField extends Component {
             onChange={onHandleChange}
             placeholder={placeHolder}
             className={className}
+            data-testid={testid}
          ></InputElement>
       )
    }
