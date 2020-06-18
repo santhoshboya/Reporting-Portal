@@ -38,7 +38,6 @@ class ListOfObservationsRoute extends Component {
       })
    }
    filterCategory = value => {
-      console.log(12243, value)
       this.getAdminStore().filterCategory(value)
    }
    filterSubCategory = value => {
@@ -51,8 +50,6 @@ class ListOfObservationsRoute extends Component {
       this.props.adminStore.dueDateOnSort()
       this.getAdminStore().getAdminObservationList()
    }
-   navigateTOPage = () => {}
-
    render() {
       const {
          adminObservationsList,
