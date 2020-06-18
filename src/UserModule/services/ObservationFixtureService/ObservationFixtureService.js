@@ -3,6 +3,7 @@ import getObservation from '../../fixtures/getObservationResponse.json'
 import getCateogaries from '../../fixtures/getCateogaries.json'
 import getPostObservationResponse from '../../fixtures/getPostObservationResponse.json'
 import getUpdateObservationResponse from '../../fixtures/getUpdateObservationResponse.json'
+import { action } from '@storybook/addon-actions'
 class ObservationFixtureService {
    getObservationApi(requestObject) {
       return new Promise(resolve =>
@@ -12,6 +13,7 @@ class ObservationFixtureService {
    postObservationApi(obseravation) {
       return new Promise(resolve => resolve(getPostObservationResponse))
    }
+
    getObservationListApi(Limit, offeset, accessToken) {
       let dataCopy = getObservationsList.user_observations.slice()
       let data = dataCopy.splice(offeset, Limit)

@@ -2,6 +2,7 @@ import { observable, action } from 'mobx'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { getUserDisplayableErrorMessage } from '../../utils/APIUtils'
 import { RpModel } from '../../../RpModule/stores/Models/RpModel'
+import { API_INITIAL } from '@ib/api-constants'
 
 class PaginationStore {
    getEntitiesApi
@@ -9,13 +10,20 @@ class PaginationStore {
    EntityModel
    @observable entitiesListApiStatus
    @observable entitiesListApiError
-   @observable entitiesList
+   @observable entitiesList = []
    @observable selectedPage = 1
    @observable totalPages
    constructor(getEntitiesApi, limit, EntityModel) {
       this.getEntitiesApi = getEntitiesApi
       this.limit = limit
       this.EntityModel = EntityModel
+      this.init()
+   }
+   @action.bound
+   init() {
+      this.entitiesList = []
+      this.entitiesListApiStatus = API_INITIAL
+      this.entitiesListApiError = null
    }
    @action.bound
    getEntities(details) {
@@ -25,16 +33,23 @@ class PaginationStore {
          offset,
          details
       )
+
+      console.log('promise status', entitiesListPromise)
+
       return bindPromiseWithOnSuccess(entitiesListPromise)
          .to(this.setEntitiesListApiStatus, this.setEntitiesListApiResponse)
          .catch(this.setEntitiesListApiError)
    }
    @action.bound
    setEntitiesListApiStatus(apiStatus) {
+      console.log('status', apiStatus)
+
       this.entitiesListApiStatus = apiStatus
    }
    @action.bound
    setEntitiesListApiError(error) {
+      console.log(error)
+
       this.entitiesListApiError = getUserDisplayableErrorMessage(error)
    }
    @action.bound
@@ -42,8 +57,6 @@ class PaginationStore {
       if (this.totalPages < this.selectedPage) {
          this.selectedPage = 1
       }
-      console.log(response)
-
       this.totalPages = Math.ceil(response.total / this.limit)
       this.entitiesList = response.result.map(item => new RpModel(item))
    }
