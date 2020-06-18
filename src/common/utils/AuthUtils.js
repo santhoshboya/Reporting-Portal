@@ -99,6 +99,7 @@ export const getFormattedError = apiError => {
             if (parsedError.http_status_code) {
                errorCode = parsedError.http_status_code
                errorConstant = parsedError.res_status
+
                if (
                   parsedError.http_status_code ===
                   statusCodes.noInternetErrorCode
@@ -112,9 +113,7 @@ export const getFormattedError = apiError => {
             title = connectionLost
             description = internetConnection
          }
-      } catch (e) {
-         // console.log('err >><<<', e)
-      }
+      } catch (e) {}
    }
 
    if (description === null || description === '') {

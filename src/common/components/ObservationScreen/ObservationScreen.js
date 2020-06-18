@@ -246,6 +246,7 @@ class ObservationScreen extends Component {
                      {userType === RP && (
                         <RadioButtonsDiv userType={userType}>
                            <RadioButton
+                              data-testid='public'
                               className={'radio-btn'}
                               privacy={privacyOfObservation}
                               name={type}
@@ -254,6 +255,7 @@ class ObservationScreen extends Component {
                            />
                            <RadioLable>{publicBtn}</RadioLable>
                            <RadioButton
+                              data-testid='private'
                               className={'radio-btn'}
                               privacy={privacyOfObservation}
                               name={type}
@@ -266,11 +268,13 @@ class ObservationScreen extends Component {
 
                      <ButtonsDiv>
                         <SecondaryButton
+                           data-testid='reset'
                            value={reset}
                            handleClick={onReset}
                            className={'reset-btn'}
                         />
                         <PrimaryButton
+                           data-testid='submit'
                            apiStatus={apiStatus}
                            value={update}
                            handleClick={onUpdate}

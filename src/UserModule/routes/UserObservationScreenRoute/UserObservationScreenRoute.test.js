@@ -72,6 +72,92 @@ describe('User ObservationScreenRoute tests', () => {
          expect(userStore.getObservationAPIStatus).toBe(API_SUCCESS)
       })
       getByText(/OBSERVATION/i)
-      debug()
+   })
+
+   it('should render reset Rp observation screen', async () => {
+      const history = createMemoryHistory()
+      const observationId = 1
+      history.push({
+         pathname: `${USER_OBSERVATION_SCREEN_PATH}${observationId}`,
+         state: { userType: 'rp', currentPage: 'My Observations' }
+      })
+      const {
+         getByText,
+         getByRole,
+         debug,
+         getByTestId,
+         getByPlaceholderText
+      } = render(
+         <Provider userStore={userStore} authStore={authStore}>
+            <Router history={history}>
+               <Route
+                  exact
+                  path={`${USER_OBSERVATION_SCREEN_PATH}:id`}
+                  component={UserObservationScreenRoute}
+               />
+               <Route
+                  exact
+                  path={USER_OBSERVATION_LIST_PATH}
+                  component={LocationDisplay}
+               />
+            </Router>
+         </Provider>
+      )
+
+      await waitFor(() => {
+         expect(userStore.getObservationAPIStatus).toBe(API_SUCCESS)
+      })
+      const resetBtn = getByRole('button', { name: 'RESET' })
+      fireEvent.click(resetBtn)
+
+      // await waitFor(() => {
+      //    getByTestId('location-display')
+      // })
+      // expect(getByTestId('location-display')).toHaveTextContent(OBSERVATION)
+      // getByText(/OBSERVATION/i)
+      // debug()
+   })
+   it('should render reset Admin observation screen', async () => {
+      const history = createMemoryHistory()
+      const observationId = 1
+      history.push({
+         pathname: `${USER_OBSERVATION_SCREEN_PATH}${observationId}`,
+         state: { userType: 'Admin', currentPage: 'Total Observations' }
+      })
+      const {
+         getByText,
+         getByRole,
+         debug,
+         getByTestId,
+         getByPlaceholderText
+      } = render(
+         <Provider userStore={userStore} authStore={authStore}>
+            <Router history={history}>
+               <Route
+                  exact
+                  path={`${USER_OBSERVATION_SCREEN_PATH}:id`}
+                  component={UserObservationScreenRoute}
+               />
+               <Route
+                  exact
+                  path={USER_OBSERVATION_LIST_PATH}
+                  component={LocationDisplay}
+               />
+            </Router>
+         </Provider>
+      )
+
+      await waitFor(() => {
+         expect(userStore.getObservationAPIStatus).toBe(API_SUCCESS)
+      })
+      const resetBtn = getByRole('button', { name: 'RESET' })
+      fireEvent.click(resetBtn)
+
+      // await waitFor(() => {
+      //    getByTestId('location-display')
+      // })
+      // expect(getByTestId('location-display')).toHaveTextContent(OBSERVATION)
+      // getByText(/OBSERVATION/i)
+      // debug()
    })
 })
