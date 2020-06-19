@@ -76,6 +76,7 @@ class RpObservationPage extends Component {
                   </FieldName>
                   <InputAndErrorField>
                      <InputField
+                        testid={'title'}
                         className={'title'}
                         type={'text'}
                         value={title}
@@ -127,6 +128,7 @@ class RpObservationPage extends Component {
                   </FieldName>
                   <InputAndErrorField>
                      <TextArea
+                        testid={'description'}
                         className={'user-observation-description'}
                         value={descriptionOfObservation}
                         onHandleChange={onChangeDescription}

@@ -33,8 +33,6 @@ class RpObservationScreenRoute extends Component {
                privacy,
                dueDate
             } = this.props.rpStore.observationDetails
-            console.log(123, privacy, assignedTO, status, dueDate)
-
             this.assignedTO = assignedTO
             this.status = status
             this.dueDate = privacy

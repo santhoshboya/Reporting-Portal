@@ -76,19 +76,14 @@ class AuthStore {
    @action.bound
    setGetUserSignOutSignOutStatus(apiStatus) {
       this.getUserSignOutAPIStatus = apiStatus
-      console.log('status', this.getUserSignOutAPIStatus)
    }
 
    @action.bound
    setGetUserSignOutAPIError(error) {
-      console.log('error', error)
-
       this.getUserSignOutAPIError = error
    }
 
    @action.bound
-   setUserSignOutAPIResponse(SignOutAPIResponse) {
-      console.log(SignOutAPIResponse)
-   }
+   setUserSignOutAPIResponse(SignOutAPIResponse) {}
 }
 export { AuthStore }

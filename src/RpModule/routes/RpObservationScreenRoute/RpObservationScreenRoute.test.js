@@ -42,12 +42,48 @@ describe('User ObservationScreenRoute tests', () => {
    afterEach(() => {
       jest.restoreAllMocks()
    })
+   // it('should render user observation screen', async () => {
+   //    const history = createMemoryHistory()
+   //    const observationId = 1
+   //    history.push({
+   //       pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
+   //       state: { userType: 'rp', currentPage: 'My Observations' }
+   //    })
+   //    const {
+   //       getByText,
+   //       getByRole,
+   //       debug,
+   //       getByTestId,
+   //       getByPlaceholderText
+   //    } = render(
+   //       <Provider rpStore={rpStore} authStore={authStore}>
+   //          <Router history={history}>
+   //             <Route
+   //                exact
+   //                path={`${OBSERVATION_SCREEN_PATH}:id`}
+   //                component={RpObservationScreenRoute}
+   //             />
+   //             <Route
+   //                exact
+   //                path={RP_OBSERVATION_LIST_PATH}
+   //                component={LocationDisplay}
+   //             />
+   //          </Router>
+   //       </Provider>
+   //    )
+   //    debug()
+   //    await waitFor(() => {
+   //       expect(rpStore.getObservationAPIStatus).toBe(API_SUCCESS)
+   //    })
+   //    getByText(/OBSERVATION/i)
+   // })
+
    it('should render user observation screen', async () => {
       const history = createMemoryHistory()
       const observationId = 1
       history.push({
          pathname: `${OBSERVATION_SCREEN_PATH}${observationId}`,
-         state: { userType: 'rp', currentPage: 'My Observations' }
+         state: { userType: 'Rp', currentPage: 'My Observations' }
       })
       const {
          getByText,
@@ -71,11 +107,10 @@ describe('User ObservationScreenRoute tests', () => {
             </Router>
          </Provider>
       )
-
+      debug()
       // await waitFor(() => {
       //    expect(rpStore.getObservationAPIStatus).toBe(API_SUCCESS)
       // })
-      //getByText(/OBSERVATION/i)
-      debug()
+      // getByText(/OBSERVATION/i)
    })
 })

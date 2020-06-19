@@ -18,9 +18,14 @@ const SORT_KEY = 'reported_on'
 describe('UserStore Store tests', () => {
    let obsevationsAPI
    let userStore
+   let dummyObservationApi
+   let apiUserStore
    beforeEach(() => {
       obsevationsAPI = new ObservationFixtureService()
       userStore = new UserStore(obsevationsAPI)
+
+      dummyObservationApi = new ObservationApiService()
+      apiUserStore = new UserStore(dummyObservationApi)
    })
    it('should test initialising user store', () => {
       expect(userStore.getObservationListAPIStatus).toBe(API_INITIAL)
@@ -33,7 +38,8 @@ describe('UserStore Store tests', () => {
       const mockObservationsAPI = jest.fn()
       mockObservationsAPI.mockReturnValue(mockLoadingPromise)
       obsevationsAPI.getObservationListApi = mockObservationsAPI
-
+      dummyObservationApi.getObservationListApi = mockObservationsAPI
+      apiUserStore.getObservationList()
       userStore.getObservationList()
       expect(userStore.getObservationListAPIStatus).toBe(API_FETCHING)
    })

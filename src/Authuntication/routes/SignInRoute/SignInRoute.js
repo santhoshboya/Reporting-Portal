@@ -15,15 +15,15 @@ class SignInRoute extends React.Component {
    @observable passwordErrorMessage = ''
    @observable errorMsg = ''
 
-   @action.bound onChangeUsername(event) {
-      this.username = event.target.value
+   @action.bound onChangeUsername(value) {
+      this.username = value
       if (this.username === '')
          this.useNameErrorMessage = 'Please enter username'
       else this.useNameErrorMessage = ''
    }
 
-   @action.bound onChangePassword(event) {
-      this.password = event.target.value
+   @action.bound onChangePassword(value) {
+      this.password = value
       if (this.password === '')
          this.passwordErrorMessage = 'Please enter password'
       else this.passwordErrorMessage = ''

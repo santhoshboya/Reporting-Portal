@@ -37,8 +37,8 @@ class RpObservationRoute extends Component {
       )
    }
 
-   @action.bound onChangeTitleOfTheObservation(event) {
-      this.titleOfTheObservation = event.target.value
+   @action.bound onChangeTitleOfTheObservation(value) {
+      this.titleOfTheObservation = value
       if (this.titleOfTheObservation === '')
          this.titleErrorMsg = 'Please enter title'
       else this.titleErrorMsg = ''
@@ -60,8 +60,8 @@ class RpObservationRoute extends Component {
       else this.severityErrorMsg = ''
    }
 
-   @action.bound onChangeDescription(event) {
-      this.description = event.target.value
+   @action.bound onChangeDescription(value) {
+      this.description = value
       if (this.description === '')
          this.descriptionErrorMsg = 'Please enter description'
       else this.descriptionErrorMsg = ''

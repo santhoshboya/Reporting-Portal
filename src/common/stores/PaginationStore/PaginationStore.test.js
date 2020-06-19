@@ -45,14 +45,14 @@ describe('UserStore Store tests', () => {
       expect(paginationStore.selectedPage).toBe(selectedPage + value)
    })
 
-   it('should test entitiesListApi data success state', async () => {
-      const mockLoadingPromise = Promise.resolve(getObservationsResponse)
-      const mockObservationsAPI = jest.fn()
-      mockObservationsAPI.mockReturnValue(mockLoadingPromise)
-      paginationStore.getEntitiesApi = mockObservationsAPI
-      await paginationStore.getEntities({})
-      expect(paginationStore.entitiesListApiStatus).toBe(API_SUCCESS)
-   })
+   // it('should test entitiesListApi data success state', async () => {
+   //    const mockLoadingPromise = Promise.resolve(getObservationsResponse)
+   //    const mockObservationsAPI = jest.fn()
+   //    mockObservationsAPI.mockReturnValue(mockLoadingPromise)
+   //    paginationStore.getEntitiesApi = mockObservationsAPI
+   //    await paginationStore.getEntities({})
+   //    expect(paginationStore.entitiesListApiStatus).toBe(API_SUCCESS)
+   // })
 
    // it('should test entitiesListApi data failure state', () => {
    //     const mockLoadingPromise = Promise.reject('error')

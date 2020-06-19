@@ -69,7 +69,6 @@ describe('User ObservationListRoute tests', () => {
             </Router>
          </Provider>
       )
-      debug()
       getByText(/TITLE OF THE OBSERVATION/i)
    })
 
@@ -130,46 +129,17 @@ describe('User ObservationListRoute tests', () => {
             </Router>
          </Provider>
       )
-      const submitButton = getByRole('button', { name: 'Submit' })
-      fireEvent.click(submitButton)
-      getByText(/Please enter title/i)
-      debug()
-   })
 
-   // it('should render onchange title state', async () => {
-   //    const history = createMemoryHistory()
-   //    const route = OBSERVATION
-   //    history.push(route)
-   //    const {
-   //       getByText,
-   //       getByRole,
-   //       debug,
-   //       getByTestId,
-   //       getByPlaceholderText
-   //    } = render(
-   //       <Provider userStore={userStore} authStore={authStore}>
-   //          <Router history={history}>
-   //             <Route
-   //                exact
-   //                path={OBSERVATION}
-   //                component={UserObservationRoute}
-   //             />
-   //             <Route
-   //                exact
-   //                path={USER_OBSERVATION_LIST_PATH}
-   //                component={LocationDisplay}
-   //             />
-   //          </Router>
-   //       </Provider>
-   //    )
-   //    const submitButton = getByRole('button', { name: 'Submit' })
-   //    fireEvent.click(submitButton)
-   //    getByText(/Please enter title/i)
-   // const title = 'title'
-   // const titleField = getByTestId('title')
-   // const submitButton = getByRole('button', { name: 'Submit' })
-   // //fireEvent.change(titleField, { target: { value: title } })
-   // fireEvent.click(submitButton)
-   // getByText(/Please enter/i)
-   //})
+      const title = 'title'
+      const description = 'description'
+      const titleField = getByTestId('title')
+      const descriptionField = getByTestId('description')
+      const submitBtn = getByRole('button', { name: 'Submit' })
+      fireEvent.change(titleField, { target: { value: title } })
+      fireEvent.change(descriptionField, { target: { value: description } })
+      console.log('title', titleField)
+
+      fireEvent.click(submitBtn)
+      getByText(/Please select severty/i)
+   })
 })
