@@ -5,7 +5,7 @@ import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
 
 import { getLoadingStatus } from '@ib/api-utils'
 import { Observation } from '../Models/Observation'
-const LIMIT = 3
+const LIMIT = 1
 const SORT_OPTIONS = ['new', 'old']
 const SORT_KEYS = ['due_date', 'reported_on']
 const SORT_KEY = 'reported_on'

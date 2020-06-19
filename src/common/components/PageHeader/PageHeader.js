@@ -107,12 +107,16 @@ class PageHeader extends Component {
                {userType === 'Admin' && (
                   <RightSubPartOne>
                      <RpFeatures
+                        data-testid={'Total Observations'}
                         onClick={() => navigateTOPage(totalObservations)}
                         className='active-head'
                      >
                         {totalObservations}
                      </RpFeatures>
-                     <RpFeatures onClick={() => navigateTOPage(categories)}>
+                     <RpFeatures
+                        data-testid={'Categories'}
+                        onClick={() => navigateTOPage(categories)}
+                     >
                         {categories}
                      </RpFeatures>
                   </RightSubPartOne>

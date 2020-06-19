@@ -37,8 +37,8 @@ class UserObservationRoute extends Component {
       )
    }
 
-   @action.bound onChangeTitleOfTheObservation(event) {
-      this.titleOfTheObservation = event.target.value
+   @action.bound onChangeTitleOfTheObservation(value) {
+      this.titleOfTheObservation = value
       if (this.titleOfTheObservation === '')
          this.titleErrorMsg = 'Please enter title'
       else this.titleErrorMsg = ''
@@ -60,8 +60,8 @@ class UserObservationRoute extends Component {
       else this.severityErrorMsg = ''
    }
 
-   @action.bound onChangeDescription(event) {
-      this.description = event.target.value
+   @action.bound onChangeDescription(value) {
+      this.description = value
       if (this.description === '')
          this.descriptionErrorMsg = 'Please enter description'
       else this.descriptionErrorMsg = ''
@@ -121,13 +121,14 @@ class UserObservationRoute extends Component {
             description: this.description,
             attachments: []
          }
-         console.log(8888888888888888, observation)
 
          this.props.userStore.addNewObservation(
             observation,
             this.onSuccess,
             this.onFailure
          )
+         console.log('status', this.props.userStore.getPostObservationAPIStatus)
+
          this.init()
          this.props.userStore.getPostObservationAPIStatus = 200
          this.props.history.goBack()

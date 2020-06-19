@@ -118,9 +118,7 @@ class UserObservationScreenRoute extends Component {
       }
       this.privacy = due_date_type
    }
-   onFailure = () => {
-      alert('hi')
-   }
+   onFailure = () => {}
    navigateTOPage = page => {
       const {
          totalObservations,

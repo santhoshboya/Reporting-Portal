@@ -13,7 +13,8 @@ class TextArea extends Component {
          className,
          onHandleChange,
          placeHolder,
-         isDisabled
+         isDisabled,
+         testid
       } = this.props
 
       return (
@@ -23,6 +24,7 @@ class TextArea extends Component {
             placeholder={placeHolder}
             className={className}
             disabled={isDisabled}
+            data-testid={testid}
          />
       )
    }

@@ -57,8 +57,6 @@ class UserObservationPage extends Component {
          subCateogary,
          submit
       } = strings.usersScreen
-      console.log(123, getSubCateogaries)
-
       return (
          <DesktopLayoutMainPage>
             <ObservationForm>
@@ -131,6 +129,7 @@ class UserObservationPage extends Component {
                   </FieldName>
                   <InputAndErrorField>
                      <TextArea
+                        testid={'description'}
                         className={'user-observation-description'}
                         value={descriptionOfObservation}
                         onHandleChange={onChangeDescription}

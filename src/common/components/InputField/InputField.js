@@ -4,6 +4,9 @@ import { InputElement } from './styledComponent'
 import { observer } from 'mobx-react'
 @observer
 class InputField extends Component {
+   onHandleChange = event => {
+      this.props.onHandleChange(event.target.value)
+   }
    render() {
       const {
          type,
@@ -17,7 +20,7 @@ class InputField extends Component {
          <InputElement
             type={type}
             value={value}
-            onChange={onHandleChange}
+            onChange={this.onHandleChange}
             placeholder={placeHolder}
             className={className}
             data-testid={testid}
