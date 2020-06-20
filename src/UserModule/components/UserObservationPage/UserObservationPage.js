@@ -112,6 +112,7 @@ class UserObservationPage extends Component {
                   <InputAndErrorField>
                      {' '}
                      <DropDown
+                        placeholder={'severity'}
                         onSlectOption={onChangeSeverity}
                         value={severityOfObservation}
                         options={['High', 'Low', 'Medium']}

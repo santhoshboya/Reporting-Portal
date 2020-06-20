@@ -27,8 +27,11 @@ class DropDown extends Component {
          value,
          isDisabled,
          isMulti,
-         className
+         className,
+         placeholder
       } = this.props
+      console.log(placeholder)
+
       return (
          <Select
             isDisabled={isDisabled}
@@ -37,6 +40,7 @@ class DropDown extends Component {
             onChange={onSlectOption}
             defaultValue={this.renderValue(value)}
             isMulti={isMulti}
+            placeholder={placeholder}
          />
       )
    }

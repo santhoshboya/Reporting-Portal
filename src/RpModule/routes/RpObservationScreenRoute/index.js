@@ -1,1 +1,0 @@
-export { RpObservationScreenRoute } from './RpObservationScreenRoute'

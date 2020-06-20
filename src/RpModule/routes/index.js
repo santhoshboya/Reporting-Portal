@@ -9,7 +9,7 @@ import {
 } from '../constants/RouteConstants'
 import { RpObservatonListRoute } from './RpObservatonListRoute'
 import { RpObservationRoute } from './RpObservationRoute'
-import { RpObservationScreenRoute } from './RpObservationScreenRoute'
+//import { RpObservationScreenRoute } from './RpObservationScreenRoute'
 import { ObservationsAssignedToRpRoute } from './ObservationsAssignedToRpRoute'
 import { ProtectedRoute } from '../../common/components/ProtectedRoute/ProtectedRoute'
 
