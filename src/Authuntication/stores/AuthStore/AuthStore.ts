@@ -7,16 +7,24 @@ import {
    getAccessToken,
    clearUserSession
 } from '../../../common/utils/StorageUtils'
+import { object } from "@storybook/addon-knobs"
+import { AuthAPI } from "../../services/AuthService/AuthAPI"
+import { AuthFixtureService } from "../../services/AuthService/AuthFixtureService"
+
+type SigninResponseType={
+   access_token:string,
+   user_type:string
+}
 
 class AuthStore {
-   @observable getUserAuthAPIStatus
-   @observable getUserAuthAPIError
-   @observable getUserSignOutAPIStatus
-   @observable getUserSignOutAPIError
-   @observable Access_token
-   authAPIService
+   @observable getUserAuthAPIStatus:number=API_INITIAL
+   @observable getUserAuthAPIError:string|null=null
+   @observable getUserSignOutAPIStatus:number=API_INITIAL
+   @observable getUserSignOutAPIError:string|null=null
+   @observable Access_token:string|null=null
+   authAPIService :AuthFixtureService
 
-   constructor(authAPIService) {
+   constructor(authAPIService:AuthFixtureService) {
       this.authAPIService = authAPIService
       this.init()
    }
@@ -28,12 +36,12 @@ class AuthStore {
       this.getUserAuthAPIError = null
       this.getUserSignOutAPIError = null
    }
-
+   //TODO
    @action.bound
    userSignIn(request, onSuccess, onFailure) {
       const signInPromise = this.authAPIService.signInAPI(request)
       return bindPromiseWithOnSuccess(signInPromise)
-         .to(this.setGetUserAuthAPIStatus, response => {
+         .to(this.setGetUserAuthAPIStatus, (response:any) => {
             this.setUserAuthAPIResponse(response)
             onSuccess(response.user_type)
          })
@@ -43,7 +51,7 @@ class AuthStore {
          })
    }
    @action.bound
-   setUserAuthAPIResponse(SignInAPIResponse) {
+   setUserAuthAPIResponse(SignInAPIResponse:SigninResponseType) {
       this.Access_token = SignInAPIResponse.access_token
       setAccessToken(this.Access_token)
    }
@@ -61,7 +69,7 @@ class AuthStore {
    @action.bound
    userSignOut(request, onSuccess, onFailure) {
       clearUserSession()
-      const signOutPromise = this.authAPIService.signOutAPI()
+      const signOutPromise = this.authAPIService.signOutAPI({})
       return bindPromiseWithOnSuccess(signOutPromise)
          .to(this.setGetUserSignOutSignOutStatus, response => {
             this.setUserSignOutAPIResponse(response)

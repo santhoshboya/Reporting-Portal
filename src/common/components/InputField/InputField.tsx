@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 
 import { InputElement } from './styledComponent'
 import { observer } from 'mobx-react'
+type InputFieldProps={
+   type:string,
+   testid?:string,
+   value:string,
+   onHandleChange:Function,
+   placeHolder?:string,
+   className?:string
+}
+
 @observer
-class InputField extends Component {
+class InputField extends Component<InputFieldProps> {
    onHandleChange = event => {
       this.props.onHandleChange(event.target.value)
    }

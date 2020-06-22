@@ -1,14 +1,21 @@
-import React from 'react'
+import * as React from "react";
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
 
 import { SignInForm } from '../../components/SignInForm'
 import { toast } from 'react-toastify'
 import { USER, RP, ADMIN } from '../../../common/constants/NameConstants'
-
+import { AuthStore } from "../../stores/AuthStore";
+import {withRouter} from 'react-router-dom'
+import {History} from 'history'
+type SignInRouteProp={
+   authStore:AuthStore
+   history:History,
+   getUserAuthAPIStatus:number
+}
 @inject('authStore')
 @observer
-class SignInRoute extends React.Component {
+class SignInRoute extends React.Component<SignInRouteProp> {
    @observable username = ''
    @observable password = ''
    @observable useNameErrorMessage = ''
@@ -65,7 +72,7 @@ class SignInRoute extends React.Component {
          )
    }
 
-   onSuccess = userType => {
+   onSuccess = (userType:string) => {
       switch (userType) {
          case USER:
             this.props.history.push('/userobservationslist')
@@ -95,4 +102,4 @@ class SignInRoute extends React.Component {
       )
    }
 }
-export { SignInRoute }
+export default withRouter(SignInRoute)  

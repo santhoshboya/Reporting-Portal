@@ -15,7 +15,18 @@ import {
    SignUpSpan
 } from './styledComponent'
 
-class SignInForm extends Component {
+type SignInFormProps={
+   username:string,
+   password:string,
+   useNameErrorMessage:string,
+   passwordErrorMessage:string,
+   onChangePassword:Function,
+   onClickSignIn:Function,
+   onChangeUsername:Function,
+   getUserAuthAPIStatus:number
+}
+
+class SignInForm extends Component<SignInFormProps> {
    render() {
       const {
          username,
