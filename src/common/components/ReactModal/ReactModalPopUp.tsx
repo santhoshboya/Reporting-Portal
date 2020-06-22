@@ -4,9 +4,22 @@ import { PopUpDiv, UserNmae } from './styledComponent'
 import { Image } from '../Image'
 import { PrimaryButton } from '../PrimaryButton'
 import { inject } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouterProps } from 'react-router-dom'
+import { AuthStore } from "../../../Authuntication/stores/AuthStore"
+type ReactModalPopUpProps={
+   src:string,
+   userName:string,
+   isOpen:boolean,
+   handleClick:()=>void,
+   profilePicStyle:string,
+   btnStyle:string,
+   BtnValue:string,
+   customStyles:any,
+   authStore:AuthStore
+}
+
 @inject('authStore')
-class ReactModalPopUp extends Component {
+class ReactModalPopUp extends Component <ReactModalPopUpProps &RouterProps >{
    signOut = () => {
       this.props.authStore.userSignOut(
          {},

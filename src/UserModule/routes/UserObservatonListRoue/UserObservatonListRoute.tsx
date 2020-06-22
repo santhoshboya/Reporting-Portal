@@ -8,10 +8,18 @@ import {
 } from '../../constants/RouteConstants'
 import { toJS } from 'mobx'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
+import { UserStore } from "../../stores/UserStore"
+import {History} from 'history'
+
+type UserObservatonListRouteProps={
+   userStore:UserStore,
+   history:History
+}
+
 
 @inject('authStore', 'userStore')
 @observer
-class UserObservatonListRoute extends Component {
+class UserObservatonListRoute extends Component<UserObservatonListRouteProps> {
    constructor(props) {
       super(props)
    }
@@ -67,8 +75,6 @@ class UserObservatonListRoute extends Component {
          <UserObservatonListPage
             handleClick={this.onClickAddNew}
             observationList={observationList}
-            username={username}
-            profilePic={profilePic}
             onClickObservation={this.onClickObservation}
             goToPreviousPage={goToPreviousPage}
             goToNextPage={goToNextPage}

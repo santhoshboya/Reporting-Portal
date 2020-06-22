@@ -20,8 +20,32 @@ import {
 } from './styledComponent'
 import './index.css'
 
+type UserObservationPageProps={
+   onClickSubmit:Function,
+   title:string,
+   cateogaryOfObservation:string,
+   subCateogaryOfObservation:string,
+   severityOfObservation:string,
+   descriptionOfObservation:string,
+   attachmentsOfObservation:Array<string>,
+   onChangeTitleOfTheObservation:(value:string)=>void,
+   onChangeCateogary:(value:string)=>void,
+   onChangeSubCateogary:Function,
+   onChangeSeverity:(value:string)=>void,
+   onChangeDescription:(value:string)=>void,
+   goBack:() => void,
+   getSubCateogaries:Array<string>,
+   cateogaries,
+   titleErrorMsg:string,
+   severityErrorMsg:string,
+   descriptionErrorMsg:string,
+   apiStatus:number,
+   cateogariesList:Array<string>
+}
+
+
 @observer
-class UserObservationPage extends Component {
+class UserObservationPage extends Component<UserObservationPageProps> {
    render() {
       const {
          onClickSubmit,
@@ -145,7 +169,7 @@ class UserObservationPage extends Component {
                <FieldContainer>
                   <FieldName>{attachments}</FieldName>
                   <DragAndDrop onDrag={() => {}} onDragOver={() => {}}>
-                     <InputField type={'file'} />
+                     <InputField  value={""} type={'file'} />
                   </DragAndDrop>
                </FieldContainer>
 

@@ -19,8 +19,29 @@ import { Pagination } from '../../../common/components/Pagination'
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 import NoDataView from '../../../common/components/NoDataView'
+import { Observation } from "../../stores/Models/Observation"
+
+type UserObservatonListPageProps={
+         handleClick:()=>void,
+         observationList:Array<Observation>,
+         onClickObservation:(id:number)=>void,
+         totalPages:number,
+         currentPage:number,
+         goToNextPage:()=>void,
+         goToPreviousPage:()=>void,
+         goToRandomPage:(value:string)=>void,
+         reportedOnSort:()=>void,
+         dueDateOnSort:()=>void,
+         filterObservationList:(value:string)=>void,
+         filterType:string,
+         userType:string,
+         getObservationListAPIStatus:number,
+         getObservationListAPIError:string,
+         onRetryClick:()=>void
+}
+
 @observer
-class UserObservatonListPage extends Component {
+class UserObservatonListPage extends Component<UserObservatonListPageProps> {
    renderSuccessUi = () => {
       const {
          handleClick,
@@ -35,8 +56,7 @@ class UserObservatonListPage extends Component {
          dueDateOnSort,
          filterObservationList,
          filterType,
-         userType,
-         reportedBy
+         userType
       } = this.props
 
       const {
@@ -119,7 +139,7 @@ class UserObservatonListPage extends Component {
                                     pairedPerson={observation.assignedTo}
                                     messages={observation.messages}
                                     userType={userType}
-                                    reportedBy={observation.reportedBy}
+                                    // reportedBy={observation.reportedBy}
                                     assignedTo={observation.assignedTo}
                                     observationId={observation.observationId}
                                     src={

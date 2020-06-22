@@ -6,13 +6,16 @@ type InputFieldProps={
    type:string,
    testid?:string,
    value:string,
-   onHandleChange:Function,
+   onHandleChange:(value:string)=>void,
    placeHolder?:string,
    className?:string
 }
 
 @observer
 class InputField extends Component<InputFieldProps> {
+   static defaultProps={
+      onHandleChange:()=>{}
+   }
    onHandleChange = event => {
       this.props.onHandleChange(event.target.value)
    }

@@ -2,8 +2,26 @@ import React, { Component } from 'react'
 import { DesktopLayoutMainPageDiv } from './styledComponent'
 import { PageHeader } from '../PageHeader'
 import { observer } from 'mobx-react'
+
+type DesktopLayoutMainPageProps={
+   userName:string,
+   profilePic:string,
+   rpFeatures:Array<string>,
+   currentPage:string,
+   userType:string,
+   navigateTOPage:(value:string)=>void
+}
+
 @observer
-class DesktopLayoutMainPage extends Component {
+class DesktopLayoutMainPage extends Component<DesktopLayoutMainPageProps> {
+   static defaultProps={
+      userName:"",
+      profilePic:"",
+      rpFeatures:[],
+      currentPage:"",
+      userType:"",
+      navigateTOPage:()=>{}
+   }
    render() {
       const {
          userName,

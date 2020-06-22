@@ -31,8 +31,60 @@ import { RadioButton } from '../RadioButton'
 import LoadingWrapperWithFailure from '../LoadingWrapperWithFailure'
 import { ToastContainer } from 'react-toastify'
 
+type UserDetails={
+   first_name:string,
+   last_name:string
+}
+
+
+type subCategoriesType={
+   "id": number,
+   "name": string
+}
+
+type categoriesType={
+   "category_id": number,
+   "category": string,
+   "sub_catogiries":Array<subCategoriesType>
+}
+
+type ObservationScreenProps={
+   title:string,
+   cateogaryOfObservation:string,
+   subCateogaryOfObservation:string,
+   severityOfObservation:string,
+   descriptionOfObservation:string,
+   attachmentsOfObservation:Array<string>,
+   assignedToOfObservation:string,
+   statusOfObservation:number,
+   dueDateOfObservation:string,
+   privacyOfObservation:string,
+   onChangePrivacy:(value:string)=>void,
+   onChangeAssignedTO:(value:string)=>void,
+   onChangeDueDate:(value:string)=>void,
+   onChangeStatus:(value:string)=>void,
+   onUpdate:()=>void,
+   onChangeDescription:(value:string)=>void,
+   reportedOnOfObservation:string,
+   goBack:()=>void,
+   onReset:()=>void,
+   userType:string,
+   apiStatus:number,
+   cateogaries:Array<categoriesType>,
+   getSubCateogaries:Array<string>,
+   cateogariesList:Array<string>,
+   onChangeSubCategory:(value:string)=>void,
+   onChangeCategory:(value:string)=>void,
+   rpList:Array<string>
+   apiError:string,
+   onRetryClick:()=>void,
+   currentPage:string,
+   navigateTOPage:(value:string)=>void
+}
+
+
 @observer
-class ObservationScreen extends Component {
+class ObservationScreen extends Component<ObservationScreenProps>{
    renderSuccessUi = observer(() => {
       const {
          title,
@@ -126,7 +178,7 @@ class ObservationScreen extends Component {
                      onSlectOption={onChangeCategory}
                      value={
                         cateogaryOfObservation
-                           ? cateogaryOfObservation.name
+                           ? cateogaryOfObservation
                            : ''
                      }
                      options={cateogaries.length > 0 ? cateogariesList : []}
@@ -135,17 +187,18 @@ class ObservationScreen extends Component {
                      }
                   />
                   <FieldName>{subCateogary}</FieldName>
+                  {/* cateogaryOfObservation.name */}
                   <DropDown
                      userType={userType}
                      onSlectOption={onChangeSubCategory}
                      key={
                         cateogaryOfObservation
-                           ? cateogaryOfObservation.name
+                           ? cateogaryOfObservation
                            : ''
                      }
                      value={
                         subCateogaryOfObservation
-                           ? subCateogaryOfObservation.name
+                           ? subCateogaryOfObservation
                            : ''
                      }
                      options={cateogaries.length > 0 ? getSubCateogaries : []}
@@ -190,18 +243,17 @@ class ObservationScreen extends Component {
                   <DragAndDrop
                      onDrag={() => {}}
                      onDragOver={() => {}}
-                     isDisabled={true}
                   />
                </FieldContainer>
-
                <FieldContainer>
                   <FieldName>{assignedTo}</FieldName>
+                  {/* assignedToOfObservation.first_name */}
                   <DropDown
                      userType={userType}
                      onSlectOption={onChangeAssignedTO}
                      value={
                         assignedToOfObservation
-                           ? assignedToOfObservation.first_name
+                           ? assignedToOfObservation
                            : ''
                      }
                      options={rpList}
@@ -244,7 +296,7 @@ class ObservationScreen extends Component {
                {userType !== 'user' && (
                   <Buttons>
                      {userType === RP && (
-                        <RadioButtonsDiv userType={userType}>
+                        <RadioButtonsDiv>
                            <RadioButton
                               data-testid='public'
                               className={'radio-btn'}
@@ -294,11 +346,8 @@ class ObservationScreen extends Component {
          apiError,
          onRetryClick,
          currentPage,
-         cateogariesList,
-         cateogaries,
          navigateTOPage,
          userType,
-         getSubCateogaries
       } = this.props
 
       return (

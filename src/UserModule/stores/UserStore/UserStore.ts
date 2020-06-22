@@ -5,12 +5,25 @@ import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
 
 import { getLoadingStatus } from '@ib/api-utils'
 import { Observation } from '../Models/Observation'
-const LIMIT = 1
+const LIMIT = 3
 const SORT_OPTIONS = ['new', 'old']
 const SORT_KEYS = ['due_date', 'reported_on']
 const SORT_KEY = 'reported_on'
 const FILTER_TYPE = 'all'
 const USERTYPE = 'user'
+
+
+type subCategoriesType={
+   "id": number,
+   "name": string
+}
+
+
+type categoriesType={
+   "category_id": number,
+   "category": string,
+   "sub_catogiries":Array<subCategoriesType>
+}
 class UserStore {
    @observable userType
    @observable observationList
@@ -43,6 +56,9 @@ class UserStore {
    @observable cateogaries
    @observable subCateogaries
    @observable rpList
+
+   @observable getCateogariesAPIStatus
+   @observable getCateogariesAPIError
 
    constructor(userObservationAPIService) {
       this.init()
@@ -90,7 +106,7 @@ class UserStore {
          details
       )
 
-      return new bindPromiseWithOnSuccess(updateObservationApiPromise)
+      return  bindPromiseWithOnSuccess(updateObservationApiPromise)
 
          .to(
             this.setUpdateObservationApiAPIStatus,
@@ -146,9 +162,9 @@ class UserStore {
       this.subCateogaries = []
    }
    @computed get cateogariesList() {
-      let temp = []
-      this.cateogaries.forEach(cateogary => {
-         temp.push(cateogary.name)
+      let temp:Array<string>  = []
+      this.cateogaries.forEach((cateogary:categoriesType) => {
+         temp.push(cateogary.category)
       })
       return temp
    }
@@ -160,9 +176,9 @@ class UserStore {
          ).sub_categories
       } else subCateogaries = []
 
-      let temp = []
+      let temp:Array<string> = []
       if (subCateogaries)
-         subCateogaries.forEach(subCateogary => {
+         subCateogaries.forEach((subCateogary:subCategoriesType) => {
             temp.push(subCateogary.name)
          })
       return temp

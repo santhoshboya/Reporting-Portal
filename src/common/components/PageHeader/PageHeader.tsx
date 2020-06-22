@@ -27,8 +27,17 @@ const customStyles = {
       height: '200px'
    }
 }
+
+type PageHeaderProps={
+   src:string,
+   userName:string,
+   rpFeatures:Array<string>,
+   currentPage:string,
+   userType:string,
+   navigateTOPage:(value:string)=>void
+}
 @observer
-class PageHeader extends Component {
+class PageHeader extends Component<PageHeaderProps> {
    @observable isOpen = false
 
    closeTab = () => {

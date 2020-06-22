@@ -11,21 +11,39 @@ import {
 } from '../../constants/RouteConstants'
 import strings from '../../../common/i18n/strings.json'
 import { getLoadingStatus } from '@ib/api-utils'
+import { API_INITIAL } from "@ib/api-constants"
+import { UserStore } from "../../stores/UserStore"
+import {History} from 'history'
 const ADMIN = 'Admin'
+
+type UserObservationScreenRouteProp={
+   userStore:UserStore,
+   history:History,
+   match:any,
+   location:any
+}
+
+
+
+
+type UserTye={
+
+}
+
 @inject('userStore')
 @observer
-class UserObservationScreenRoute extends Component {
-   @observable titleOfTheObservation = null
-   @observable description = null
-   @observable cateogary = null
-   @observable subCateogary = null
-   @observable status = null
-   @observable severity = null
-   @observable attachments = null
-   @observable assignedTO = null
-   @observable reportedOn = null
-   @observable dueDate = null
-   @observable privacy = null
+class UserObservationScreenRoute extends Component<UserObservationScreenRouteProp> {
+   @observable titleOfTheObservation:string = ""
+   @observable description:string = ""
+   @observable cateogary :null|any 
+   @observable subCateogary :null|any 
+   @observable status :number=API_INITIAL
+   @observable severity  :string = ""
+   @observable attachments:Array<string>=[]
+   @observable assignedTO  :string = ""
+   @observable reportedOn  :string = ""
+   @observable dueDate  :string = ""
+   @observable privacy :string = ""
    constructor(props) {
       super(props)
       this.init()
@@ -33,17 +51,18 @@ class UserObservationScreenRoute extends Component {
 
    init = () => {
       this.assignedTO = ''
-      this.status = ''
+      this.status = API_INITIAL
       this.dueDate = ''
-      this.privacy = null
+      this.privacy = ""
       this.cateogary = ''
-      this.subCateogary = null
+      this.subCateogary = ""
    }
    componentDidMount = () => {
       this.doNetworkCalss()
    }
    doNetworkCalss = () => {
       const { id } = this.props.match.params
+      
 
       this.props.userStore.getObservation(id, this.onSuccess, this.onFailure)
       this.props.userStore.getCateogaries(
@@ -90,9 +109,9 @@ class UserObservationScreenRoute extends Component {
          this.subCateogary = null
       } else {
          this.assignedTO = ''
-         this.status = ''
+         this.status =API_INITIAL
          this.dueDate = ''
-         this.privacy = null
+         this.privacy = ""
       }
    }
    goBack = () => {
@@ -153,7 +172,7 @@ class UserObservationScreenRoute extends Component {
             sub_category_id: this.getCategoryAndSubCategoryId()[1]
          }
       } else {
-         let due_date = null
+         let due_date:string|null = null
          if (this.dueDate)
             due_date = `${this.dueDate.slice(0, 10)} ${this.dueDate.slice(11)}`
          observation = {
@@ -205,7 +224,7 @@ class UserObservationScreenRoute extends Component {
    }
 
    getComputedRpList = () => {
-      let rpList = []
+      let rpList:Array<string> = []
       this.props.userStore.rpList.forEach(rp => {
          rpList.push(rp.first_name)
       })

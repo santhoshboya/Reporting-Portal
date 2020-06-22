@@ -3,18 +3,26 @@ import { UserObservationPage } from '../../components/UserObservationPage'
 import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import { withRouter } from 'react-router-dom'
+import { UserStore } from "../../stores/UserStore"
+import {History} from 'history'
+
+type UserObservationRouteProps={
+   userStore:UserStore,
+   history:History
+}
+
 @inject('userStore')
 @observer
-class UserObservationRoute extends Component {
-   @observable titleOfTheObservation = null
-   @observable cateogary = null
-   @observable subCateogary = null
-   @observable severity = null
-   @observable description = null
-   @observable attachments = null
-   @observable titleErrorMsg = ''
-   @observable severityErrorMsg = ''
-   @observable descriptionErrorMsg = ''
+class UserObservationRoute extends Component <UserObservationRouteProps>{
+   @observable titleOfTheObservation:string =""
+   @observable cateogary :string =""
+   @observable subCateogary :string =""
+   @observable severity :string =""
+   @observable description :string =""
+   @observable attachments :Array<string>=[]
+   @observable titleErrorMsg :string =""
+   @observable severityErrorMsg :string =""
+   @observable descriptionErrorMsg :string =""
 
    constructor(props) {
       super(props)

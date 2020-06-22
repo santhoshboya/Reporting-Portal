@@ -30,7 +30,7 @@ class DropDown extends Component {
          className,
          placeholder
       } = this.props
-      console.log(placeholder)
+
 
       return (
          <Select

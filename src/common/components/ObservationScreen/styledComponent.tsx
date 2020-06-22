@@ -5,7 +5,7 @@ import {
    Typo12SteelHKGroteskSemiBold,
    Typo12DarkBlueGreyRubikMedium,
    Typo24DarkBlueGreyHKGroteskMedium
-} from '../../../common/styleGuide/Typos'
+} from '../../styleGuide/Typos'
 
 const BackToObservationsLink = styled(Typo14SteelHKGroteskRegular)`
    ${tw`flex`}
