@@ -82,6 +82,8 @@ describe('SigninRoute tests', () => {
       fireEvent.change(passwordField, { target: { value: password } })
       fireEvent.click(signInButton)
       expect(signInButton.disabled).toBe(true)
+      console.log(signInButton.disabled,">>>>>>>>>>>>",signInButton);
+      
    })
 
    it('should render signInRoute success state', async () => {
