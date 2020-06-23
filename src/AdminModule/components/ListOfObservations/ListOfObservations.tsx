@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 
 import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutMainPage'
-import { PrimaryLeftIconDefault } from '../../../common/components/PrimaryLeftIconDefault'
 import strings from '../../../common/i18n/strings.json'
 import { ObservationListHeader } from '../../../common/components/ObservationListHeader'
 import { ObservationListItem } from '../../../common/components/ObservationListItem'
@@ -20,20 +19,46 @@ import {
    FilterLefttSubPart
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
-import getObservationsResponse from '../../fixtures/getObservationsResponse.json'
 import { ADMIN } from '../../../common/constants/NameConstants'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
 import NoDataView from '../../../common/components/NoDataView'
+import {UserObservatonListPageProps} from '../../../UserModule/components/UserObservatonListPage/UserObservatonListPage'
+import {categoriesType} from '../../../UserModule/stores/UserStore/UserStore'
+import { AdminObsevationModel } from "../../stores/Models/AdminObsevationModel"
+
+interface ListOfObservationsProps {
+   filterCategory:(value:string)=>void,
+   filterSubCategory:(value:string)=>void,
+   getSubCateogariesMultiple:Array<string>,
+   statusFilterOfList:string,
+   setStatusFilterOfList:(value:string)=>void,
+   categotyFilterType:string,
+   subCategotyFilterType:string,
+   cateogaries:Array<categoriesType>,
+   getSubCateogaries:()=>Array<string>,
+   cateogariesList:Array<string>,
+   observationList:Array<AdminObsevationModel>,
+   adminObservationsListAPIStatus:number,
+   adminObservationsListAPIError:string,
+   onClickObservation:(id:number)=>void,
+   totalPages:number,
+   currentPage:number,
+   goToNextPage:()=>void,
+   goToPreviousPage:()=>void,
+   goToRandomPage:(value:string)=>void,
+   dueDateOnSort:()=>void,
+   userType:string,
+   onRetryClick:()=>void
+}
+
 @observer
-class ListOfObservations extends Component {
+class ListOfObservations extends Component <ListOfObservationsProps>{
    renderSuccessUi = () => {
       const {
          observationList,
          onClickObservation,
          totalPages,
          currentPage,
-         handleClick,
-         navigateTOPage,
          userType,
          goToPreviousPage,
          goToNextPage,
@@ -46,29 +71,22 @@ class ListOfObservations extends Component {
          categotyFilterType,
          subCategotyFilterType,
          cateogaries,
-         getSubCateogaries,
          dueDateOnSort,
          cateogariesList
       } = this.props
       const {
          title,
-         reportedOn,
          assignedTo,
          severty,
          status,
          dueDate,
          messages,
-         listofObservations,
-         addNew,
          closed,
          all,
          acknowledgedbyRp,
-         assignedToMe,
-         myObservations,
          resolved,
          reported,
          reportedBy,
-         category,
          totalObservations,
          actioninProgress
       } = strings.rpFeatures
@@ -173,7 +191,6 @@ class ListOfObservations extends Component {
    }
    render() {
       const {
-         navigateTOPage,
          adminObservationsListAPIStatus,
          adminObservationsListAPIError,
          onRetryClick
@@ -183,7 +200,6 @@ class ListOfObservations extends Component {
          <DesktopLayoutMainPage
             userName={'Santhu'}
             userType={ADMIN}
-            navigateTOPage={navigateTOPage}
             currentPage={totalObservations}
             profilePic={
                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'

@@ -9,6 +9,9 @@ const ALL = 'all'
 const SORT_OPTIONS = ['new', 'old']
 const LIMIT = 4
 const USER = 'Admin'
+
+import {subCategoriesType,categoriesType} from '../../../UserModule/stores/UserStore/UserStore'
+
 class AdminStore extends RpStore {
    @observable categotyFilterType
    @observable subCategotyFilterType
@@ -110,18 +113,18 @@ class AdminStore extends RpStore {
    }
 
    @computed get getSubCateogariesMultiple() {
-      let categories = []
+      let categories:Array<string> = []
       if (this.categotyFilterType) {
          this.categotyFilterType.forEach(category =>
             categories.push(category.value)
          )
-         let subCategories = []
+         let subCategories:Array<subCategoriesType> = []
          this.cateogaries.forEach(category => {
             if (categories.includes(category.name)) {
                subCategories.push(...category.sub_categories)
             }
          })
-         let temp = []
+         let temp:Array<string> = []
          toJS(subCategories).forEach(category => temp.push(category.name))
          return temp
       }
@@ -129,7 +132,7 @@ class AdminStore extends RpStore {
    }
 
    getCategoryAndSubCategoryId = () => {
-      let categories_ids = []
+      let categories_ids:Array<number> = []
       if (this.categotyFilterType) {
          this.categotyFilterType.forEach(cateogary => {
             this.cateogaries.forEach(cateogary2 => {
@@ -139,7 +142,7 @@ class AdminStore extends RpStore {
          })
       } else return [[], []]
       if (this.subCategotyFilterType) {
-         let sub_category_ids = []
+         let sub_category_ids:Array<number> = []
          this.subCategotyFilterType.forEach(subCategory => {
             this.cateogaries.forEach(cateogary => {
                cateogary.sub_categories.forEach(subCategory2 => {

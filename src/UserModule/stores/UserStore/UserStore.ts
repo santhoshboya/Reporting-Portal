@@ -13,13 +13,13 @@ const FILTER_TYPE = 'all'
 const USERTYPE = 'user'
 
 
-type subCategoriesType={
+export interface subCategoriesType{
    "id": number,
    "name": string
 }
 
 
-type categoriesType={
+export interface  categoriesType{
    "category_id": number,
    "category": string,
    "sub_catogiries":Array<subCategoriesType>
