@@ -20,8 +20,14 @@ import {
 } from './styledComponent'
 import './index.css'
 
+import {UserObservationPageProps} from '../../../UserModule/components/UserObservationPage/UserObservationPage'
+
+interface RpObservationPageProps extends UserObservationPageProps{
+
+}
+
 @observer
-class RpObservationPage extends Component {
+class RpObservationPage extends Component<RpObservationPageProps> {
    render() {
       const {
          onClickSubmit,
@@ -143,7 +149,7 @@ class RpObservationPage extends Component {
                <FieldContainer>
                   <FieldName>{attachments}</FieldName>
                   <DragAndDrop onDrag={() => {}} onDragOver={() => {}}>
-                     <InputField type={'file'} />
+                     <InputField value="" type={'file'} />
                   </DragAndDrop>
                </FieldContainer>
 

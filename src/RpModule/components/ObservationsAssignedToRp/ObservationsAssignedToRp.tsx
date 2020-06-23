@@ -14,42 +14,64 @@ import {
    PageHeading,
    ObseravationsListTable,
    TableHeader,
-   TableBody,
-   PageHeadingAndAddButonDiv
+   TableBody
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
-import { USER } from '../../../common/constants/NameConstants'
+import { RP } from '../../../common/constants/NameConstants'
 import NoDataView from '../../../common/components/NoDataView'
+import { ToastContainer } from 'react-toastify'
+import { RpModel } from "../../stores/Models/RpModel"
+
+type ObservationsAssignedToRpProps={
+   observationList:Array<RpModel>,
+   onClickObservation:(id:number)=>void,
+   totalPages:number,
+   currentPage:number,
+   assignedObservationsGoToNextPage:()=>void,
+   assignedObservationsGoToPreviousPage:()=>void,
+   assignedObservationsGoToRandomPage:(no:number)=>void
+   navigateTOPage:(page:String)=>void,
+   userType:string,
+   filterAssignedObservationList:(value:string)=>void,
+   filterTypeOfAssignedObservation:string,
+   assignedObservationsDueDateOnSort:()=>void,
+   assignedObservationsReportedOnSort:()=>void,
+   assignedObservationAPIStatus:number,
+   assignedObservationAPIError:string,
+   onRetryClick:()=>void
+}
+
+
 @observer
-class RpObservatonListPage extends Component {
-   renderSuccessUi = () => {
+class ObservationsAssignedToRp extends Component<ObservationsAssignedToRpProps> {
+   renderSuccessUi = observer(() => {
       const {
          observationList,
          onClickObservation,
          totalPages,
          currentPage,
-         handleClick,
+         assignedObservationsGoToNextPage,
+         assignedObservationsGoToPreviousPage,
+         assignedObservationsGoToRandomPage,
          navigateTOPage,
          userType,
-         goToPreviousPage,
-         goToNextPage,
-         filterObservationList,
-         goToRandomPage,
-         filterType,
-         reportedOnSort,
-         dueDateOnSort
+         filterAssignedObservationList,
+         filterTypeOfAssignedObservation,
+         assignedObservationsDueDateOnSort,
+         assignedObservationsReportedOnSort,
+         assignedObservationAPIStatus,
+         assignedObservationAPIError
       } = this.props
       const {
          title,
          reportedOn,
-         assignedTo,
+         reportedBy,
          severty,
          status,
          dueDate,
          messages,
-         listofObservations,
-         addNew,
+         ObservationsAssignedTOMe,
          closed,
          all,
          acknowledgedbyRp,
@@ -59,24 +81,13 @@ class RpObservatonListPage extends Component {
          reported,
          actioninProgress
       } = strings.rpFeatures
-
       return (
          <React.Fragment>
             <ObseravationsHeader>
-               <PageHeadingAndAddButonDiv>
-                  <PageHeading>{listofObservations}</PageHeading>
+               <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
 
-                  <PrimaryLeftIconDefault
-                     className={'Primary-Left-IconDefault'}
-                     value={addNew}
-                     handleClick={handleClick}
-                     src={
-                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'
-                     }
-                  />
-               </PageHeadingAndAddButonDiv>
                <DropDown
-                  onSlectOption={filterObservationList}
+                  onSlectOption={filterAssignedObservationList}
                   className={'flter-Drop-Down'}
                   options={[
                      all,
@@ -86,7 +97,7 @@ class RpObservatonListPage extends Component {
                      reported,
                      actioninProgress
                   ]}
-                  value={filterType}
+                  value={filterTypeOfAssignedObservation}
                   userType={userType}
                />
             </ObseravationsHeader>
@@ -95,12 +106,12 @@ class RpObservatonListPage extends Component {
                   <ObseravationsListTable>
                      <TableHeader>
                         <ObservationListHeader
-                           dueDateOnSort={dueDateOnSort}
-                           reportedOnSort={reportedOnSort}
+                           reportedOnSort={assignedObservationsReportedOnSort}
+                           dueDateOnSort={assignedObservationsDueDateOnSort}
                            headings={[
                               title,
                               reportedOn,
-                              assignedTo,
+                              reportedBy,
                               severty,
                               status,
                               dueDate,
@@ -121,12 +132,11 @@ class RpObservatonListPage extends Component {
                                     status={observation.status}
                                     dueDate={observation.dueDate}
                                     dueDateType={observation.dueDateType}
-                                    pairedPerson={observation.assignedTo}
+                                    pairedPerson={observation.reportedBy}
                                     messages={observation.messages}
                                     observationId={observation.observationId}
+                                    reportedBy={observation.reportedBy}
                                     userType={userType}
-                                    assignedTo={observation.assignedTo}
-                                    reportedBy={''}
                                     src={
                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
                                     }
@@ -139,9 +149,9 @@ class RpObservatonListPage extends Component {
                   <Pagination
                      totalPages={totalPages}
                      currentPage={currentPage}
-                     goToNextPage={goToNextPage}
-                     goToRandomPage={goToRandomPage}
-                     goToPreviousPage={goToPreviousPage}
+                     goToNextPage={assignedObservationsGoToNextPage}
+                     goToRandomPage={assignedObservationsGoToRandomPage}
+                     goToPreviousPage={assignedObservationsGoToPreviousPage}
                   />
                </React.Fragment>
             ) : (
@@ -149,30 +159,29 @@ class RpObservatonListPage extends Component {
             )}
          </React.Fragment>
       )
-   }
+   })
 
    render() {
-      const {
-         navigateTOPage,
-         getObservationListAPIStatus,
-         getObservationListAPIError,
-         onRetryClick
-      } = this.props
       const { assignedToMe, myObservations } = strings.rpFeatures
-
+      const {
+         assignedObservationAPIStatus,
+         assignedObservationAPIError,
+         onRetryClick,
+         navigateTOPage
+      } = this.props
       return (
          <DesktopLayoutMainPage
             userName={'Sai Ram'}
-            userType={USER}
+            userType={RP}
             navigateTOPage={navigateTOPage}
-            currentPage={myObservations}
+            currentPage={assignedToMe}
             profilePic={
                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'
             }
          >
             <LoadingWrapperWithFailure
-               apiStatus={getObservationListAPIStatus}
-               apiError={getObservationListAPIError}
+               apiStatus={assignedObservationAPIStatus}
+               apiError={assignedObservationAPIError}
                renderSuccessUI={this.renderSuccessUi}
                onRetryClick={onRetryClick}
             />
@@ -180,4 +189,4 @@ class RpObservatonListPage extends Component {
       )
    }
 }
-export { RpObservatonListPage }
+export { ObservationsAssignedToRp }

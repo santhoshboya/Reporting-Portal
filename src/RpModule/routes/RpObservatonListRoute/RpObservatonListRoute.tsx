@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouterProps } from 'react-router-dom'
 import {
    RP_OBSERVATION_PATH,
    RP_OBSERVATION_SCREEN_PATH,
@@ -13,9 +13,12 @@ import { toJS } from 'mobx'
 
 import strings from '../../../common/i18n/strings.json'
 
+
+
+
 @inject('rpStore')
 @observer
-class RpObservatonListRoute extends Component {
+class RpObservatonListRoute extends Component<RouterProps> {
    constructor(props) {
       super(props)
    }

@@ -20,7 +20,7 @@ import {
 } from './styledComponent'
 import './index.css'
 
-type UserObservationPageProps={
+export interface UserObservationPageProps{
    onClickSubmit:Function,
    title:string,
    cateogaryOfObservation:string,

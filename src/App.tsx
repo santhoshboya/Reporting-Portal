@@ -7,23 +7,23 @@ import HomePage from './common/components/HomePage'
 import './App.css'
 import { authRoutes } from './Authuntication/routes'
  import { userRoutes } from './UserModule/routes'
-// import { rpRoutes } from './RpModule/routes'
+import { rpRoutes } from './RpModule/routes'
 // import { adminRoutes } from './AdminModule/routes'
 import authStore from './Authuntication/stores'
  import userStore from './UserModule/stores'
 // import adminStore from './AdminModule/stores'
-//import rpStore from './RpModule/stores'
+import rpStore from './RpModule/stores'
 
 class App extends Component {
    render() {
       return (
-         <Provider {...authStore} {...userStore}>
+         <Provider {...authStore} {...userStore} {...rpStore}>
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   {authRoutes}
                   {userRoutes}
-                  {/* {rpRoutes}
-                  {adminRoutes} */}
+                  {rpRoutes}
+                  {/* {adminRoutes} */}
                   <Route path='/'>
                      <HomePage />
                   </Route>

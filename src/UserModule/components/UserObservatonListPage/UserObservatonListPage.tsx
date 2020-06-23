@@ -21,7 +21,7 @@ import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapper
 import NoDataView from '../../../common/components/NoDataView'
 import { Observation } from "../../stores/Models/Observation"
 
-type UserObservatonListPageProps={
+export interface UserObservatonListPageProps{
          handleClick:()=>void,
          observationList:Array<Observation>,
          onClickObservation:(id:number)=>void,

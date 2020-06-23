@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouterProps } from 'react-router-dom'
 import {
    RP_OBSERVATION_PATH,
    RP_OBSERVATION_SCREEN_PATH,
@@ -14,7 +14,7 @@ import strings from '../../../common/i18n/strings.json'
 
 @inject('rpStore')
 @observer
-class ObservationsAssignedToRpRoute extends Component {
+class ObservationsAssignedToRpRoute extends Component<RouterProps> {
    constructor(props) {
       super(props)
    }
@@ -75,7 +75,7 @@ class ObservationsAssignedToRpRoute extends Component {
          <ObservationsAssignedToRp
             filterAssignedObservationList={this.filterAssignedObservationList}
             filterTypeOfAssignedObservation={filterTypeOfAssignedObservation}
-            handleClick={this.onClickAddNew}
+            // handleClick={this.onClickAddNew}
             observationList={assignedObservationListForRp}
             onClickObservation={this.onClickObservation}
             assignedObservationsGoToPreviousPage={

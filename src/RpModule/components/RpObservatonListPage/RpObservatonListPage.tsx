@@ -14,42 +14,48 @@ import {
    PageHeading,
    ObseravationsListTable,
    TableHeader,
-   TableBody
+   TableBody,
+   PageHeadingAndAddButonDiv
 } from './styledComponent'
 import { DropDown } from '../../../common/components/DropDown'
 import LoadingWrapperWithFailure from '../../../common/components/LoadingWrapperWithFailure'
-import { RP } from '../../../common/constants/NameConstants'
+import { USER } from '../../../common/constants/NameConstants'
 import NoDataView from '../../../common/components/NoDataView'
-import { ToastContainer } from 'react-toastify'
+
+import {UserObservatonListPageProps} from '../../../UserModule/components/UserObservatonListPage/UserObservatonListPage'
+
+interface RpObservatonListPageProps extends UserObservatonListPageProps{
+   navigateTOPage:(page:string)=>void
+}
+
 @observer
-class ObservationsAssignedToRp extends Component {
-   renderSuccessUi = observer(() => {
+class RpObservatonListPage extends Component <RpObservatonListPageProps>{
+   renderSuccessUi = () => {
       const {
          observationList,
          onClickObservation,
          totalPages,
          currentPage,
-         assignedObservationsGoToNextPage,
-         assignedObservationsGoToPreviousPage,
-         assignedObservationsGoToRandomPage,
-         navigateTOPage,
+         handleClick,
          userType,
-         filterAssignedObservationList,
-         filterTypeOfAssignedObservation,
-         assignedObservationsDueDateOnSort,
-         assignedObservationsReportedOnSort,
-         assignedObservationAPIStatus,
-         assignedObservationAPIError
+         goToPreviousPage,
+         goToNextPage,
+         filterObservationList,
+         goToRandomPage,
+         filterType,
+         reportedOnSort,
+         dueDateOnSort
       } = this.props
       const {
          title,
          reportedOn,
-         reportedBy,
+         assignedTo,
          severty,
          status,
          dueDate,
          messages,
-         ObservationsAssignedTOMe,
+         listofObservations,
+         addNew,
          closed,
          all,
          acknowledgedbyRp,
@@ -59,13 +65,24 @@ class ObservationsAssignedToRp extends Component {
          reported,
          actioninProgress
       } = strings.rpFeatures
+
       return (
          <React.Fragment>
             <ObseravationsHeader>
-               <PageHeading>{ObservationsAssignedTOMe}</PageHeading>
+               <PageHeadingAndAddButonDiv>
+                  <PageHeading>{listofObservations}</PageHeading>
 
+                  <PrimaryLeftIconDefault
+                     className={'Primary-Left-IconDefault'}
+                     value={addNew}
+                     handleClick={handleClick}
+                     src={
+                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/7930d80d-a88c-485e-b54b-4239b82c39f0.svg'
+                     }
+                  />
+               </PageHeadingAndAddButonDiv>
                <DropDown
-                  onSlectOption={filterAssignedObservationList}
+                  onSlectOption={filterObservationList}
                   className={'flter-Drop-Down'}
                   options={[
                      all,
@@ -75,7 +92,7 @@ class ObservationsAssignedToRp extends Component {
                      reported,
                      actioninProgress
                   ]}
-                  value={filterTypeOfAssignedObservation}
+                  value={filterType}
                   userType={userType}
                />
             </ObseravationsHeader>
@@ -84,12 +101,12 @@ class ObservationsAssignedToRp extends Component {
                   <ObseravationsListTable>
                      <TableHeader>
                         <ObservationListHeader
-                           reportedOnSort={assignedObservationsReportedOnSort}
-                           dueDateOnSort={assignedObservationsDueDateOnSort}
+                           dueDateOnSort={dueDateOnSort}
+                           reportedOnSort={reportedOnSort}
                            headings={[
                               title,
                               reportedOn,
-                              reportedBy,
+                              assignedTo,
                               severty,
                               status,
                               dueDate,
@@ -110,11 +127,12 @@ class ObservationsAssignedToRp extends Component {
                                     status={observation.status}
                                     dueDate={observation.dueDate}
                                     dueDateType={observation.dueDateType}
-                                    pairedPerson={observation.reportedBy}
+                                    pairedPerson={observation.assignedTo}
                                     messages={observation.messages}
                                     observationId={observation.observationId}
-                                    reportedBy={observation.reportedBy}
                                     userType={userType}
+                                    assignedTo={observation.assignedTo}
+                                    reportedBy={''}
                                     src={
                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
                                     }
@@ -127,9 +145,9 @@ class ObservationsAssignedToRp extends Component {
                   <Pagination
                      totalPages={totalPages}
                      currentPage={currentPage}
-                     goToNextPage={assignedObservationsGoToNextPage}
-                     goToRandomPage={assignedObservationsGoToRandomPage}
-                     goToPreviousPage={assignedObservationsGoToPreviousPage}
+                     goToNextPage={goToNextPage}
+                     goToRandomPage={goToRandomPage}
+                     goToPreviousPage={goToPreviousPage}
                   />
                </React.Fragment>
             ) : (
@@ -137,29 +155,30 @@ class ObservationsAssignedToRp extends Component {
             )}
          </React.Fragment>
       )
-   })
+   }
 
    render() {
-      const { assignedToMe, myObservations } = strings.rpFeatures
       const {
-         assignedObservationAPIStatus,
-         assignedObservationAPIError,
-         onRetryClick,
-         navigateTOPage
+         navigateTOPage,
+         getObservationListAPIStatus,
+         getObservationListAPIError,
+         onRetryClick
       } = this.props
+      const { assignedToMe, myObservations } = strings.rpFeatures
+
       return (
          <DesktopLayoutMainPage
             userName={'Sai Ram'}
-            userType={RP}
+            userType={USER}
             navigateTOPage={navigateTOPage}
-            currentPage={assignedToMe}
+            currentPage={myObservations}
             profilePic={
                'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4f00d506-2d1f-4bba-9084-f0666b4e3f2b@3x.png'
             }
          >
             <LoadingWrapperWithFailure
-               apiStatus={assignedObservationAPIStatus}
-               apiError={assignedObservationAPIError}
+               apiStatus={getObservationListAPIStatus}
+               apiError={getObservationListAPIError}
                renderSuccessUI={this.renderSuccessUi}
                onRetryClick={onRetryClick}
             />
@@ -167,4 +186,4 @@ class ObservationsAssignedToRp extends Component {
       )
    }
 }
-export { ObservationsAssignedToRp }
+export { RpObservatonListPage }

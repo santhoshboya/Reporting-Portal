@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import { RpObservationPage } from '../../components/RpObservationPage'
 import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouterProps } from 'react-router-dom'
 @inject('rpStore')
 @observer
-class RpObservationRoute extends Component {
-   @observable titleOfTheObservation = null
-   @observable cateogary = null
-   @observable subCateogary = null
-   @observable severity = null
-   @observable description = null
-   @observable attachments = null
-   @observable titleErrorMsg = ''
-   @observable severityErrorMsg = ''
-   @observable descriptionErrorMsg = ''
+class RpObservationRoute extends Component<RouterProps> {
+   @observable titleOfTheObservation:string =""
+   @observable cateogary :string =""
+   @observable subCateogary :string =""
+   @observable severity :string =""
+   @observable description :string =""
+   @observable attachments :Array<string>=[]
+   @observable titleErrorMsg :string =""
+   @observable severityErrorMsg :string =""
+   @observable descriptionErrorMsg :string =""
 
    constructor(props) {
       super(props)
@@ -100,7 +100,6 @@ class RpObservationRoute extends Component {
                sub_category_id = cateogary.sub_categories.find(
                   subCateogary => subCateogary.name === this.subCateogary
                ).sub_category_id
-               console.log(cateogary, 999999999999999)
             }
          })
          return [category_id, sub_category_id]
