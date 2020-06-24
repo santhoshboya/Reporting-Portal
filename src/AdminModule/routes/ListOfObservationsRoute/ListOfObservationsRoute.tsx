@@ -3,7 +3,7 @@ import { ListOfObservations } from '../../components/ListOfObservations'
 import { observable, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import { OBSERVATION_SCREEN_PATH } from '../../constants/RouteConstants'
-import {withRouter,RouterProps} from 'react-router-dom'
+import {RouterProps} from 'react-router-dom'
 @inject('adminStore')
 @observer
 class ListOfObservationsRoute extends Component<RouterProps> {
