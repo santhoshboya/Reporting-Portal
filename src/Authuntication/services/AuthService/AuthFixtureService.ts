@@ -1,12 +1,17 @@
+import { resolveWithTimeout } from "../../../common/utils/TestUtils"
+
 import getSignInResponce from '../../fixtures/getUserSignInResponse.json'
+
 import getUserSignOutResponse from '../../fixtures/getUserSignOutResponse.json'
-class AuthFixtureService {
-   signInAPI(requestObject) {
-      return new Promise((resolve, reject) => resolve(getSignInResponce))
+
+import { SigninService } from "./index.js"
+
+class AuthFixtureService implements SigninService {
+   signInAPI(requestObject){
+      return resolveWithTimeout(getSignInResponce)
    }
-   signOutAPI(requestObject) {
-      return new Promise(resolve => resolve(getUserSignOutResponse))
+   signoutAPI() {
+      return resolveWithTimeout(getUserSignOutResponse);
    }
 }
-
 export { AuthFixtureService }

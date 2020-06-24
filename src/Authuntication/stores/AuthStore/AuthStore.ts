@@ -17,11 +17,11 @@ type SigninResponseType={
 }
 
 class AuthStore {
-   @observable getUserAuthAPIStatus:number=API_INITIAL
-   @observable getUserAuthAPIError:string|null=null
-   @observable getUserSignOutAPIStatus:number=API_INITIAL
-   @observable getUserSignOutAPIError:string|null=null
-   @observable Access_token:string|null=null
+   @observable getUserAuthAPIStatus!:number
+   @observable getUserAuthAPIError!:string|null
+   @observable getUserSignOutAPIStatus!:number
+   @observable getUserSignOutAPIError!:string|null
+   @observable Access_token!:string|null
    authAPIService :AuthFixtureService
 
    constructor(authAPIService:AuthFixtureService) {
@@ -36,14 +36,16 @@ class AuthStore {
       this.getUserAuthAPIError = null
       this.getUserSignOutAPIError = null
    }
-   //TODO
    @action.bound
    userSignIn(request, onSuccess, onFailure) {
       const signInPromise = this.authAPIService.signInAPI(request)
       return bindPromiseWithOnSuccess(signInPromise)
-         .to(this.setGetUserAuthAPIStatus, (response:any) => {
+         .to(this.setGetUserAuthAPIStatus, (response) => {
             this.setUserAuthAPIResponse(response)
+            if(response)
             onSuccess(response.user_type)
+            else
+            alert("Something went wrong...")
          })
          .catch(error => {
             this.setGetUserAuthAPIError(error)
@@ -51,7 +53,7 @@ class AuthStore {
          })
    }
    @action.bound
-   setUserAuthAPIResponse(SignInAPIResponse:SigninResponseType) {
+   setUserAuthAPIResponse(SignInAPIResponse) {
       this.Access_token = SignInAPIResponse.access_token
       setAccessToken(this.Access_token)
    }
@@ -69,7 +71,7 @@ class AuthStore {
    @action.bound
    userSignOut(request, onSuccess, onFailure) {
       clearUserSession()
-      const signOutPromise = this.authAPIService.signOutAPI({})
+      const signOutPromise = this.authAPIService.signoutAPI()
       return bindPromiseWithOnSuccess(signOutPromise)
          .to(this.setGetUserSignOutSignOutStatus, response => {
             this.setUserSignOutAPIResponse(response)

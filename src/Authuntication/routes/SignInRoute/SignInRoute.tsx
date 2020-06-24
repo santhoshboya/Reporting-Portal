@@ -8,11 +8,14 @@ import { USER, RP, ADMIN } from '../../../common/constants/NameConstants'
 import { AuthStore } from "../../stores/AuthStore";
 import {withRouter} from 'react-router-dom'
 import {History} from 'history'
-type SignInRouteProp={
-   authStore:AuthStore
+interface SignInRouteProp{
    history:History,
    getUserAuthAPIStatus:number
 }
+interface InjectedProps extends SignInRouteProp{
+   authStore:AuthStore
+}
+
 @inject('authStore')
 @observer
 class SignInRoute extends React.Component<SignInRouteProp> {
@@ -21,6 +24,14 @@ class SignInRoute extends React.Component<SignInRouteProp> {
    @observable useNameErrorMessage = ''
    @observable passwordErrorMessage = ''
    @observable errorMsg = ''
+
+   
+   getAuthStore=()=>{
+      return this.getInjectedProps().authStore
+   }
+   
+   getInjectedProps=():InjectedProps =>  this.props as InjectedProps
+   
 
    @action.bound onChangeUsername(value) {
       this.username = value
@@ -37,9 +48,9 @@ class SignInRoute extends React.Component<SignInRouteProp> {
    }
 
    onFailure = () => {
-      const { getUserAuthAPIError: apiError } = this.props.authStore
+      const { getUserAuthAPIError: apiError } = this.getAuthStore()
       if (apiError !== null && apiError !== undefined) {
-         toast.error(this.props.authStore.getUserAuthAPIError, {
+         toast.error(this.getAuthStore().getUserAuthAPIError, {
             position: 'bottom-center',
             autoClose: 3000,
             hideProgressBar: false,
@@ -65,7 +76,7 @@ class SignInRoute extends React.Component<SignInRouteProp> {
 
    onClickSignIn = async () => {
       if (this.handleOnclick())
-         await this.props.authStore.userSignIn(
+         await this.getAuthStore().userSignIn(
             { username: this.username, password: this.password },
             this.onSuccess,
             this.onFailure
@@ -87,7 +98,7 @@ class SignInRoute extends React.Component<SignInRouteProp> {
    }
 
    render() {
-      const { getUserAuthAPIStatus } = this.props.authStore
+      const { getUserAuthAPIStatus } = this.getAuthStore()
       return (
          <SignInForm
             username={this.username}

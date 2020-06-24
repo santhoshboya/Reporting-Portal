@@ -20,9 +20,9 @@ type SignInFormProps={
    password:string,
    useNameErrorMessage:string,
    passwordErrorMessage:string,
-   onChangePassword:Function,
-   onClickSignIn:Function,
-   onChangeUsername:Function,
+   onChangePassword:(value:string)=>void,
+   onClickSignIn:()=>void,
+   onChangeUsername:(value:string)=>void,
    getUserAuthAPIStatus:number
 }
 

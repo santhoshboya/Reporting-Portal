@@ -7,7 +7,10 @@ import { apiMethods, apiUrls } from '../../constants/APIConstants'
 
 import { endPoints } from '../EndPoints'
 
-class AuthAPI {
+import { SigninService } from "."
+
+
+class AuthAPI implements SigninService {
    api
    constructor() {
       this.api = create({
@@ -22,7 +25,7 @@ class AuthAPI {
          apiMethods.post
       )
    }
-   signOutAPI() {
+   signoutAPI() {
       return networkCallWithApisauce(
          this.api,
          endPoints.signout,
