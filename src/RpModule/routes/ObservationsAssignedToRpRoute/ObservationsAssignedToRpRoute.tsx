@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
-import { withRouter,RouterProps } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 import {
    RP_OBSERVATION_PATH,
    RP_OBSERVATION_SCREEN_PATH,
@@ -11,20 +11,30 @@ import {
 import { ObservationsAssignedToRp } from '../../components/ObservationsAssignedToRp'
 import { toJS } from 'mobx'
 import strings from '../../../common/i18n/strings.json'
+import { RpStore } from "../../stores/RpStore"
 
+interface ObservationsAssignedToRpRouteProps{
+
+}
+interface InjectedProps{
+   rpStore:RpStore
+}
 @inject('rpStore')
 @observer
-class ObservationsAssignedToRpRoute extends Component<RouterProps> {
+class ObservationsAssignedToRpRoute extends Component<ObservationsAssignedToRpRouteProps & RouteComponentProps> {
    constructor(props) {
       super(props)
-   }
+   } 
 
    componentDidMount = () => {
       this.doNetworkCalls()
    }
 
+   getInjectedProps=():InjectedProps=>(
+      this.props as InjectedProps
+   )
    getRpStore = () => {
-      return this.props.rpStore
+      return this.getInjectedProps().rpStore
    }
 
    doNetworkCalls = () => {

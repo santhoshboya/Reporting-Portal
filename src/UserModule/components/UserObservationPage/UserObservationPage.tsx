@@ -21,7 +21,7 @@ import {
 import './index.css'
 
 export interface UserObservationPageProps{
-   onClickSubmit:Function,
+   onClickSubmit:()=>void,
    title:string,
    cateogaryOfObservation:string,
    subCateogaryOfObservation:string,
@@ -30,7 +30,7 @@ export interface UserObservationPageProps{
    attachmentsOfObservation:Array<string>,
    onChangeTitleOfTheObservation:(value:string)=>void,
    onChangeCateogary:(value:string)=>void,
-   onChangeSubCateogary:Function,
+   onChangeSubCateogary:(value: string) => void,
    onChangeSeverity:(value:string)=>void,
    onChangeDescription:(value:string)=>void,
    goBack:() => void,

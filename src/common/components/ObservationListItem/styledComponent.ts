@@ -12,7 +12,11 @@ height: 66px;
 border: solid 1px  #d7dfe9;
 
 }`
-const RectangleSeverity = styled.div`
+
+interface RectangleSeverityProps{
+   bgColor:string
+}
+const RectangleSeverity = styled.div<RectangleSeverityProps>`
    ${tw` flex justify-center items-center`}
    width: 72px;
    height: 21px;

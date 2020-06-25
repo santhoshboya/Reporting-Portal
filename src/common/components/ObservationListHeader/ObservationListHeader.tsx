@@ -5,6 +5,13 @@ import { TableRow, TableHeading, PersonTypeDiv } from './styledComponent'
 import strings from '../../i18n/strings.json'
 import { Image } from '../Image'
 
+interface ObservationListHeaderProps{
+   headings:Array<string>
+   dueDateOnSort?:() => void
+   reportedOnSort?:() => void
+
+}
+
 function TableHeadingDiv(props) {
    const { reportedOn, dueDate } = strings.userFeatures
    let onClick
@@ -28,7 +35,7 @@ function TableHeadingDiv(props) {
    }
 }
 
-class ObservationListHeader extends Component {
+class ObservationListHeader extends Component <ObservationListHeaderProps>{
    render() {
       const { headings, dueDateOnSort, reportedOnSort } = this.props
       return (

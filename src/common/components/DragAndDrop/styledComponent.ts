@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-const DatePickerElement = styled.div`
+const TextAreaElement = styled.div`
    ${tw``}
    width: 320px;
    height: 40px;
@@ -8,4 +8,4 @@ const DatePickerElement = styled.div`
    border: solid 1px var(--light-blue-grey);
    background-color: var(--white);
 `
-export { DatePickerElement }
+export { TextAreaElement }

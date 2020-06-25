@@ -3,8 +3,18 @@ import { LableTag, InputWithLableDiv, ErrorMsgField } from './styledComponents'
 import strings from '../../i18n/strings.json'
 import { InputField } from '../InputField/InputField'
 import { ErrorIcon } from '../ErrorIcon'
-
-class InputFieldWithLable extends Component {
+interface InputFieldWithLableProps{
+   lable:string,
+   type:string
+   value:string,
+   onHandleChange:(value:string)=>void,
+   errorMsg:string,
+   className:string,
+   placeHolder:string,
+   errorIconClassName:string,
+   inputClassName:string   
+}
+class InputFieldWithLable extends Component <InputFieldWithLableProps>{
    render() {
       const {
          lable,

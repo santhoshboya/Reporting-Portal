@@ -19,7 +19,32 @@ const PRIVATE = 'Private'
 
 import { ADMIN, USER, RP } from '../../constants/NameConstants'
 
-class ObservationListItem extends Component {
+interface PersonData{
+   first_name:string,
+   profile_pic:string,
+   last_name:string,
+   phone_number:number
+   
+}
+
+interface ObservationListItemProps{
+   title:string,
+   reportedOn:string,
+   pairedPerson,
+   severty:string,
+   status:string,
+   dueDate:string,
+   messages:string,
+   src:string,
+   onClickObservation:(value:number)=>void,
+   dueDateType:string,
+   observationId:number,
+   assignedTo?:PersonData,
+   reportedBy?:PersonData,
+   userType:string   
+}
+
+class ObservationListItem extends Component <ObservationListItemProps>{
    render() {
       const {
          title,
@@ -47,13 +72,13 @@ class ObservationListItem extends Component {
 
       return (
          <TableRow
-            id={observationId}
+            id={`${observationId}`}
             data-testid='observation-list-item'
             onClick={() => onClickObservation(observationId)}
          >
             <TableData>{title}</TableData>
 
-            {userType === ADMIN ? (
+            {userType === ADMIN && reportedBy ? (
                <TableData>
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>
@@ -70,13 +95,13 @@ class ObservationListItem extends Component {
                )}`}</TableData>
             )}
 
-            {userType === ADMIN ? (
+            {userType === ADMIN? (
                <TableData>
                   <RectangleSeverity bgColor={bgColor}>
                      <SevertyStatus>{severty}</SevertyStatus>
                   </RectangleSeverity>
                </TableData>
-            ) : userType === RP ? (
+            ) : userType === RP  && reportedBy? (
                <TableData>
                   <PersonDetails>
                      <Image src={src} className={'persons-xs'}></Image>

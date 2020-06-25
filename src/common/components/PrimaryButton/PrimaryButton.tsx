@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import { ButtonElement } from './styledComponent'
 import Loader from 'react-loader-spinner'
-class PrimaryButton extends Component {
+
+interface PrimaryButtonProps{
+   value:string,
+   handleClick:()=>void,
+   className:string,
+   apiStatus?:number
+}
+class PrimaryButton extends Component<PrimaryButtonProps> {
    render() {
       const { value, handleClick, className, apiStatus } = this.props
       return (

@@ -4,7 +4,14 @@ import { PaginationBtnDiv, CurrentPage } from './styledComponent'
 
 import './index.css'
 const COUNT = 5
-class Pagination extends Component {
+interface PaginationProps{
+         currentPage:number,
+         totalPages:number,
+         goToPreviousPage:()=>void,
+         goToNextPage:()=>void,
+         goToRandomPage:(page:string)=>void
+}
+class Pagination extends Component<PaginationProps> {
    goToRandomPage = event => {
       this.props.goToRandomPage(event.target.value)
    }
@@ -27,7 +34,7 @@ class Pagination extends Component {
             </CurrentPage>
          ))
       } else if (currentPage < totalPages - 4) {
-         let arrayOfPages = []
+         let arrayOfPages:Array<any>= []
          arrayOfPages.push(
             <CurrentPage
                className={'pagination-button-highlight'}

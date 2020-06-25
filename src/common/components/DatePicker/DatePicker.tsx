@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 
 import { DatePickerElement } from './styledComponent'
 
-class DatePicker extends Component {
+interface DatePickerProps{
+   onChangeDate:(value:string)=>void
+   className?:string
+   isDisabled?:boolean
+   value?:string
+}
+class DatePicker extends Component <DatePickerProps>{
    onChangeDate = event => {
       this.props.onChangeDate(event.target.value)
    }

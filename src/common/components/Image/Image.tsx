@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { ImageElement } from './styledComponent'
-import style from './style.css'
-class Image extends Component {
+interface ImageProps{
+   src:string,
+   className?:string,
+   onHandleClick?:()=>void
+}
+class Image extends Component <ImageProps>{
    render() {
       const { src, className, onHandleClick } = this.props
       return (

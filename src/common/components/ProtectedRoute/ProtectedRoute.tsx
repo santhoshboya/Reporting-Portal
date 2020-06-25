@@ -2,12 +2,13 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { getAccessToken } from '../../utils/StorageUtils'
 
-// interface ProtectedRouteProps{
-//    path:string,
-//    component:Function
-// }
+interface ProtectedRouteProps{
+   path:string,
+   component:Function
+   exact:boolean
+}
 
-class ProtectedRoute extends React.Component {
+class ProtectedRoute extends React.Component <ProtectedRouteProps>{
    constructor(props) {
       super(props)
    }

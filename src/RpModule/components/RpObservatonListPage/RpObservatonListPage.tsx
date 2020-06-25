@@ -132,7 +132,7 @@ class RpObservatonListPage extends Component <RpObservatonListPageProps>{
                                     observationId={observation.observationId}
                                     userType={userType}
                                     assignedTo={observation.assignedTo}
-                                    reportedBy={''}
+                                    //reportedBy={''}
                                     src={
                                        'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/867a98d4-d61b-45cf-89cc-0a50a9dddb38@3x.png'
                                     }

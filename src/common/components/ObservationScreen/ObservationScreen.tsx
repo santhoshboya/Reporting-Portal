@@ -56,7 +56,7 @@ type ObservationScreenProps={
    descriptionOfObservation:string,
    attachmentsOfObservation:Array<string>,
    assignedToOfObservation:string,
-   statusOfObservation:number,
+   statusOfObservation:string,
    dueDateOfObservation:string,
    privacyOfObservation:string,
    onChangePrivacy:(value:string)=>void,
@@ -269,6 +269,7 @@ class ObservationScreen extends Component<ObservationScreenProps>{
                      isDisabled={true}
                      className={'datepicker-field'}
                      value={reportedDate}
+                     onChangeDate={()=>{}}
                   />
                </FieldContainer>
 

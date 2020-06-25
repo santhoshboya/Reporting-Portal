@@ -37,7 +37,7 @@ class UserObservationScreenRoute extends Component<UserObservationScreenRoutePro
    @observable description:string = ""
    @observable cateogary :null|any 
    @observable subCateogary :null|any 
-   @observable status :number=API_INITIAL
+   @observable status !:string
    @observable severity  :string = ""
    @observable attachments:Array<string>=[]
    @observable assignedTO  :string = ""
@@ -51,7 +51,7 @@ class UserObservationScreenRoute extends Component<UserObservationScreenRoutePro
 
    init = () => {
       this.assignedTO = ''
-      this.status = API_INITIAL
+      this.status = ""
       this.dueDate = ''
       this.privacy = ""
       this.cateogary = ''
@@ -109,7 +109,7 @@ class UserObservationScreenRoute extends Component<UserObservationScreenRoutePro
          this.subCateogary = null
       } else {
          this.assignedTO = ''
-         this.status =API_INITIAL
+         this.status =""
          this.dueDate = ''
          this.privacy = ""
       }

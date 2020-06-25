@@ -3,10 +3,22 @@ import { SelectElement, SlectOptions } from './styledComponent'
 import { USER, RP } from '../../constants/NameConstants'
 import './index.css'
 import Select from 'react-select'
+
+interface DropDownProps{
+   onSlectOption:(value:string)=>void,
+   options:Array<string>,
+   value:string,
+   isDisabled?:boolean,
+   isMulti?:boolean,
+   className?:string,
+   placeholder?:string,
+   userType?:string
+}
+
 function Options(props) {
    return <SlectOptions value={props.option}>{props.option}</SlectOptions>
 }
-class DropDown extends Component {
+class DropDown extends Component<DropDownProps> {
    renderOptions = options => {
       let dummyOptions = [...options]
       return dummyOptions.map(option => {
@@ -46,11 +58,3 @@ class DropDown extends Component {
    }
 }
 export { DropDown }
-
-/** // <SelectElement value={value} className={className ? className : (isDisabled ? "dropDown-field-disabled" : "dropDown-field-normal")}
-         //    disabled={isDisabled} onChange={onSlectOption}>
-         //    <SlectOptions > selectform</SlectOptions>
-         //    {options.length > 0 ? options.map(option => (
-         //       <Options option={option} />
-         //    )) : null}
-         // </SelectElement> */

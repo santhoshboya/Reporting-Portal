@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 
 import { TextAreaElement } from './styledComponent'
-
-class TextArea extends Component {
+interface TextAreaProps{
+   value:string,
+   className:string,
+   onHandleChange:(value:string)=>void,
+   placeHolder?:string,
+   isDisabled?:boolean,
+   testid?:string
+}
+class TextArea extends Component <TextAreaProps>{
    onHandleChange = event => {
       this.props.onHandleChange(event.target.value)
    }
@@ -11,7 +18,7 @@ class TextArea extends Component {
       const {
          value,
          className,
-         onHandleChange,
+         
          placeHolder,
          isDisabled,
          testid
