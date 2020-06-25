@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-// interface SvgComponentProps{
-//    // renderComponent:React.ComponentType
-//    // className:string
-// }
-class SvgComponent extends Component {
+interface SvgComponentProps{
+   renderComponent:Function
+   className?:string
+}
+class SvgComponent extends Component<SvgComponentProps> {
    render() {
       const {
          renderComponent: RenderComponent,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ReactElement } from 'react'
 import { PaginationButton } from '../PaginationButton'
 import { PaginationBtnDiv, CurrentPage } from './styledComponent'
 
@@ -34,8 +34,9 @@ class Pagination extends Component<PaginationProps> {
             </CurrentPage>
          ))
       } else if (currentPage < totalPages - 4) {
-         let arrayOfPages:Array<any>= []
+         let arrayOfPages:Array<ReactElement<HTMLButtonElement>>= []
          arrayOfPages.push(
+            
             <CurrentPage
                className={'pagination-button-highlight'}
                key={Math.random()}
@@ -109,6 +110,8 @@ class Pagination extends Component<PaginationProps> {
    }
 
    render() {
+      console.log(CurrentPage);
+      
       const {
          currentPage,
          totalPages,
