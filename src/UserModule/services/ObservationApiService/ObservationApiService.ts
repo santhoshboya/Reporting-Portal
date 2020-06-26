@@ -2,6 +2,7 @@ import { networkCallWithApisauce } from '../../../common/utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods, apiUrls } from '../../constants/APIConstants'
 import { endPoints } from '../EndPoints'
+import { UserService } from ".."
 class ObservationApiService {
    api
    constructor() {

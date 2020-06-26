@@ -32,7 +32,7 @@ type ObservationsAssignedToRpProps={
    assignedObservationsGoToPreviousPage:()=>void,
    assignedObservationsGoToRandomPage:(no:string)=>void
    navigateTOPage:(page:String)=>void,
-   userType:string,
+   userType:string|null,
    filterAssignedObservationList:(value:string)=>void,
    filterTypeOfAssignedObservation:string,
    assignedObservationsDueDateOnSort:()=>void,

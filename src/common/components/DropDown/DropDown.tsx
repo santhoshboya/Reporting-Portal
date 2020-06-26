@@ -12,7 +12,7 @@ interface DropDownProps{
    isMulti?:boolean,
    className?:string,
    placeholder?:string,
-   userType?:string
+   userType?:string|null
 }
 
 function Options(props) {

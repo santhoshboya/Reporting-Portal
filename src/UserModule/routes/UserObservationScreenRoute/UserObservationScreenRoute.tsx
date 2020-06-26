@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observable, action, toJS } from 'mobx'
 import { inject, observer } from 'mobx-react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 import { ObservationScreen } from '../../../common/components/ObservationScreen'
 import {
    RP_OBSERVATION_LIST_PATH,
@@ -16,7 +16,7 @@ import { UserStore } from "../../stores/UserStore"
 import {History} from 'history'
 const ADMIN = 'Admin'
 
-type UserObservationScreenRouteProp={
+interface UserObservationScreenRouteProp extends RouteComponentProps{
    userStore:UserStore,
    history:History,
    match:any,

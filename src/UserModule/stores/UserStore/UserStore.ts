@@ -1,10 +1,12 @@
 import { observable, action, computed, reaction, toJS } from 'mobx'
-import { API_INITIAL } from '@ib/api-constants'
+import { API_INITIAL, APIStatus } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { getUserDisplayableErrorMessage } from '../../../common/utils/APIUtils'
 
 import { getLoadingStatus } from '@ib/api-utils'
 import { Observation } from '../Models/Observation'
+import { observationType, getObservationApiResponce } from "../types"
+import { ObservationApiService } from "../../services/ObservationApiService/ObservationApiService"
 const LIMIT = 3
 const SORT_OPTIONS = ['new', 'old']
 const SORT_KEYS = ['due_date', 'reported_on']
@@ -133,7 +135,6 @@ class UserStore {
    @action.bound
    getCateogaries(requestObject, onSuccess, onFailure) {
       const categoriesPromise = this.userObservationAPIService.getCateogariesApi(
-         requestObject
       )
       return bindPromiseWithOnSuccess(categoriesPromise)
          .to(this.setGetCateogariesApiAPIStatus, response => {

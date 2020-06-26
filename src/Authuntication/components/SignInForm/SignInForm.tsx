@@ -14,6 +14,7 @@ import {
    SignUpLink,
    SignUpSpan
 } from './styledComponent'
+import { Logo } from "../../../common/components/Icons/Logo"
 
 type SignInFormProps={
    username:string,
@@ -25,7 +26,6 @@ type SignInFormProps={
    onChangeUsername:(value:string)=>void,
    getUserAuthAPIStatus:number
 }
-
 class SignInForm extends Component<SignInFormProps> {
    render() {
       const {
@@ -41,12 +41,7 @@ class SignInForm extends Component<SignInFormProps> {
       return (
          <DesktopLayoutAuth>
             <SignInFornDiv>
-               <Image
-                  className={'ib-hubs-logo'}
-                  src={
-                     'https://cdn.zeplin.io/5d0afc9102b7fa56760995cc/assets/4ae9f7c5-6bee-4c47-a3ff-cb4fd7421ee3.svg'
-                  }
-               />
+               <Logo/>
                <GreetingMessage className={'greeting-message'}>
                   {strings.logIn.hiTherePleaseSignIn}
                </GreetingMessage>

@@ -41,7 +41,7 @@ interface ObservationListItemProps{
    observationId:number,
    assignedTo?:PersonData,
    reportedBy?:PersonData,
-   userType:string   
+   userType:string |null  
 }
 
 class ObservationListItem extends Component <ObservationListItemProps>{

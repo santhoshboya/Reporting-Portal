@@ -4,11 +4,12 @@ import getCateogaries from '../../fixtures/getCateogaries.json'
 import getPostObservationResponse from '../../fixtures/getPostObservationResponse.json'
 import getUpdateObservationResponse from '../../fixtures/getUpdateObservationResponse.json'
 import { action } from '@storybook/addon-actions'
-class ObservationFixtureService {
+import { UserService } from ".."
+import { resolveWithTimeout } from "../../../common/utils/TestUtils"
+class ObservationFixtureService{
+   
    getObservationApi(requestObject) {
-      return new Promise(resolve =>
-         setTimeout(() => resolve(getObservation), 1000)
-      )
+      return resolveWithTimeout(getObservation)
    }
    postObservationApi(obseravation) {
       return new Promise(resolve => resolve(getPostObservationResponse))
@@ -23,14 +24,15 @@ class ObservationFixtureService {
          user_observations_count: getObservationsList.user_observations_count,
          user_type: getObservationsList.user_type
       }
-      return new Promise(resolve => setTimeout(() => resolve(dummyData), 1000))
+      return resolveWithTimeout(dummyData)
+
    }
    getCateogariesApi() {
-      return new Promise(resolve =>
-         setTimeout(() => resolve(getCateogaries), 500)
-      )
+      return resolveWithTimeout(getCateogaries)
+
    }
    updateObservationApi(id, Details) {
+      
       return new Promise(resolve =>
          setTimeout(() => resolve(getUpdateObservationResponse), 1000)
       )
