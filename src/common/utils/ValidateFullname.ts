@@ -1,0 +1,3 @@
+function ValidateFullname=(): (value: string) => {
+    
+}
