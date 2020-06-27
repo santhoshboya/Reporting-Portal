@@ -6,5 +6,6 @@ const InputElement = styled.input`
    padding-left:5px;
 `
 const InputElementWrapper = styled.div``
-const ErrorMsgSpan = styled.span``
+const ErrorMsgSpan = styled.span`
+color:red`
 export { InputElement, InputElementWrapper, ErrorMsgSpan }

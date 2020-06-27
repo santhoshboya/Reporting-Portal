@@ -8,14 +8,17 @@ import { apiMethods, apiUrls } from '../../constants/APIConstants'
 import { endPoints } from '../EndPoints'
 
 import { SigninService } from "."
-
+import baseURL from '../../../common/constants/EnvironmentConstants'
 
 class AuthAPI implements SigninService {
    api
+   
+   
    constructor() {
       this.api = create({
          baseURL: apiUrls.signin
       })
+      console.log(baseURL);
    }
    signInAPI(requestObject) {
       return networkCallWithApisauceWithoutAccessToken(

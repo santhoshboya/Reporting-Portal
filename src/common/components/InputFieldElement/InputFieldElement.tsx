@@ -9,9 +9,11 @@ import {
 import { observer } from 'mobx-react'
 
 import { observable } from 'mobx'
+export interface validateFormReturnType{
+    shouldShowErrorMessage: boolean; errorMessage: string
+    }
 
 type InputFieldProps = {
-   type: string
    testid?: string
    onChange: (value: string) => void
    placeHolder?: string
@@ -19,9 +21,8 @@ type InputFieldProps = {
    onBlur?: (value: string) => void
    validateForm: (
       value: string
-   ) => { shouldShowErrorMessage: boolean; errorMessage: string }
-}
-
+   ) => validateFormReturnType
+   }
 @observer
 class InputFieldElement extends Component<InputFieldProps> {
    @observable value
@@ -32,15 +33,22 @@ class InputFieldElement extends Component<InputFieldProps> {
    }
    onChange = event => {
       this.value = event.target.value
-      if (this.value) {
+      const isEmpty=this.value?false:true
+      if (isEmpty) {
          this.shouldShowErrorMessage = true
          this.errorMessage = '*Required'
       }
+      else
+      {
+         this.shouldShowErrorMessage = false
+         this.errorMessage = ''
+      }   
+      this.props.onChange(this.value)
    }
    onBlur = event => {
       const { shouldShowErrorMessage, errorMessage } = this.props.validateForm(
          this.value
-      )
+      ) 
       this.shouldShowErrorMessage = shouldShowErrorMessage
       this.errorMessage = errorMessage
    }
