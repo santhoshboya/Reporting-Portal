@@ -6,14 +6,15 @@ import HomePage from './common/components/HomePage'
 
 import './App.css'
 import { authRoutes } from './Authuntication/routes'
- import { userRoutes } from './UserModule/routes'
+import { userRoutes } from './UserModule/routes'
 import { rpRoutes } from './RpModule/routes'
 import { adminRoutes } from './AdminModule/routes'
 import authStore from './Authuntication/stores'
- import userStore from './UserModule/stores'
+import userStore from './UserModule/stores'
 import adminStore from './AdminModule/stores'
 import rpStore from './RpModule/stores'
 
+//Comment added
 class App extends Component {
    render() {
       return (
