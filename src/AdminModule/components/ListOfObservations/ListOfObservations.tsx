@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+//worst practise
 import { observer } from 'mobx-react'
 
 import { DesktopLayoutMainPage } from '../../../common/components/DesktopLayoutMainPage'
