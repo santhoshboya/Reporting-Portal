@@ -4,7 +4,7 @@
          "title": "Title ",
          "reported_on": "11/10/2020 at 12:15pm",
          "assigned_to": {
-            "first_name": "Sai Ram",
+            "first_nam": "Sai Ram",
             "phone_no": "943434343"
          },
          "reported_by": {

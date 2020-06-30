@@ -14,19 +14,34 @@ import {
    SignUpLink,
    SignUpSpan
 } from './styledComponent'
-import { Logo } from "../../../common/components/Icons/Logo"
+import { Logo } from '../../../common/components/Icons/Logo'
 
-type SignInFormProps={
-   username:string,
-   password:string,
-   useNameErrorMessage:string,
-   passwordErrorMessage:string,
-   onChangePassword:(value:string)=>void,
-   onClickSignIn:()=>void,
-   onChangeUsername:(value:string)=>void,
-   getUserAuthAPIStatus:number
+type SignInFormProps = {
+   username: string
+   password: string
+   useNameErrorMessage: string
+   passwordErrorMessage: string
+   onChangePassword: (value: string) => void
+   onClickSignIn: () => void
+   onChangeUsername: (value: string) => void
+   getUserAuthAPIStatus: number
 }
 class SignInForm extends Component<SignInFormProps> {
+   usernameRef: React.RefObject<InputFieldWithLable>
+   passwordRef: React.RefObject<InputFieldWithLable>
+   constructor(props) {
+      super(props)
+      this.usernameRef = React.createRef()
+      this.passwordRef = React.createRef()
+   }
+   componentDidMount = () => {
+      this.usernameRef.current?.inpuFieldRef.current?.inputRef.current?.focus()
+      console.log(
+         this.passwordRef.current?.inpuFieldRef.current?.inputRef.current
+            ?.placeholder
+      )
+   }
+
    render() {
       const {
          username,
@@ -41,11 +56,12 @@ class SignInForm extends Component<SignInFormProps> {
       return (
          <DesktopLayoutAuth>
             <SignInFornDiv>
-               <Logo/>
+               <Logo />
                <GreetingMessage className={'greeting-message'}>
                   {strings.logIn.hiTherePleaseSignIn}
                </GreetingMessage>
                <InputFieldWithLable
+                  ref={this.usernameRef}
                   className={'sign-input-field'}
                   type={'text'}
                   lable={strings.logIn.userName}
@@ -61,6 +77,7 @@ class SignInForm extends Component<SignInFormProps> {
                   }
                />
                <InputFieldWithLable
+                  ref={this.passwordRef}
                   className={'sign-input-field'}
                   type={'password'}
                   value={password}

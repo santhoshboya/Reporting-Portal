@@ -146,6 +146,7 @@ class UserStore {
             onFailure()
          })
    }
+   
 
    @action.bound
    setGetCateogariesApiAPIStatus(apiStatus) {

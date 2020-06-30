@@ -3,18 +3,24 @@ import { LableTag, InputWithLableDiv, ErrorMsgField } from './styledComponents'
 import strings from '../../i18n/strings.json'
 import { InputField } from '../InputField/InputField'
 import { ErrorIcon } from '../ErrorIcon'
-interface InputFieldWithLableProps{
-   lable:string,
-   type:string
-   value:string,
-   onHandleChange:(value:string)=>void,
-   errorMsg:string,
-   className:string,
-   placeHolder:string,
-   errorIconClassName:string,
-   inputClassName:string   
+interface InputFieldWithLableProps {
+   lable: string
+   type: string
+   value: string
+   onHandleChange: (value: string) => void
+   errorMsg: string
+   className: string
+   placeHolder: string
+   errorIconClassName: string
+   inputClassName: string
 }
-class InputFieldWithLable extends Component <InputFieldWithLableProps>{
+class InputFieldWithLable extends Component<InputFieldWithLableProps> {
+   inpuFieldRef: React.RefObject<InputField>
+
+   constructor(props) {
+      super(props)
+      this.inpuFieldRef = React.createRef()
+   }
    render() {
       const {
          lable,
@@ -31,6 +37,7 @@ class InputFieldWithLable extends Component <InputFieldWithLableProps>{
          <InputWithLableDiv className={className}>
             <LableTag>{lable}</LableTag>
             <InputField
+               ref={this.inpuFieldRef}
                type={type}
                value={value}
                onHandleChange={onHandleChange}
