@@ -1,11 +1,9 @@
-const buttonType = {
+export const buttonType = {
    filled: 'FILLED',
    outline: 'OUTLINE'
 }
 
-const buttonVarient = {
+export const buttonVariant = {
    oval: 'OVAL',
    rectangular: 'RECTANGULAR'
 }
-
-export { buttonType, buttonVarient }

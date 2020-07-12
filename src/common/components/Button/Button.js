@@ -1,34 +1,33 @@
 import React, { Component } from 'react'
-
-import { ovalCss, rectangularCss } from './styledComponent'
-import { buttonType, buttonVarient } from './constants'
+import { buttonType, buttonVariant } from './constants'
 
 import { BaseButton } from './BaseButton'
 import { OutlineButton } from './OutlineButton'
+import { ovalCss, rectangularCss } from './styledComponent'
 
 class Button extends Component {
    static defaultProps = {
       type: buttonType.filled,
-      varient: buttonVarient.oval
+      variant: buttonVariant.oval
    }
+
    static buttonTypes = buttonType
-   static buttonVarients = buttonVarient
+   static buttonVariants = buttonVariant
+
    getButtonCss = () => {
-      const { varient } = this.props
-      switch (varient) {
-         case buttonVarient.oval:
+      const { variant } = this.props
+      switch (variant) {
+         case buttonVariant.oval:
             return ovalCss
-         case buttonVarient.re:
+         case buttonVariant.rectangular:
             return rectangularCss
          default:
-            console.warn('invalid varient')
+            console.warn('Invalid Variant')
             return null
       }
    }
    render() {
-      const { type, varient, ...otherProps } = this.props
-      console.log(type, buttonType, Button.buttonTypes)
-
+      const { type, variant, ...otherProps } = this.props
       switch (type) {
          case buttonType.filled:
             return (
@@ -39,9 +38,10 @@ class Button extends Component {
                <OutlineButton {...otherProps} buttonCss={this.getButtonCss()} />
             )
          default:
-            console.warn('invalid type')
+            console.warn('Invalid Type')
             return null
       }
    }
 }
+
 export { Button }

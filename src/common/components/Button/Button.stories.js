@@ -1,34 +1,37 @@
 import React from 'react'
-import '../../../styles/tailwind.css'
+import { Button } from '.'
 import styled from '@emotion/styled'
-const TextTypo = styled.span``
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { Button } from './Button'
+
+const TextTypo = styled.span`
+   font-size: 14px;
+   padding: 2px;
+`
+
 export default {
    component: Button,
-   title: 'Button/CommonButton'
+   title: 'Buttons/CommonButton'
 }
 
-export const buttonDefaultView = () => (
+export const defaultView = () => (
    <Button
-      text={'Submit'}
+      onClick={action('onClick')}
+      text={'Button'}
       textTypo={TextTypo}
-      isDisabled={false}
-      type={'OUTLINE'}
-      varient={Button.buttonVarients.oval}
-      onClick={action('Submit')}
+      variant={Button.buttonVariants.oval}
+      type={Button.buttonTypes.outline}
+      disabled={false}
    />
 )
 
 export const knobs = () => (
    <Button
-      text={text('ButtonName', 'Submit')}
+      text={text('ButtonName', 'Button')}
       textTypo={TextTypo}
-      onClick={action('Submit')}
-      isDisabled={boolean('isDisable', false)}
-      type={text('Type', Button.buttonTypes.outline)}
-      varient={text('Varient', Button.buttonVarients.oval)}
+      variant={text('Variant', Button.buttonVariants.oval)}
+      type={text('Type', Button.buttonTypes.filled)}
+      disabled={boolean('isDisable', true)}
    />
 )
 

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
 import { BaseButton } from '../BaseButton'
-const OutlineButtonWrapper = styled(BaseButton)`
-   background-color: red;
-   ${props => (props.isDisabled ? 'color:white' : 'color:black')};
+
+export const OutlineButtonWrapper = styled(BaseButton)`
+   background-color: ${props => (props.disabled ? 'grey' : 'white')};
    border: 1px solid grey;
+   color: ${props => (props.disabled ? 'white' : 'black')};
 `
-export { OutlineButtonWrapper }
