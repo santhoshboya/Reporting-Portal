@@ -1,0 +1,7 @@
+.card-component {
+   width: 263px !important;
+   height: fit-content;
+   border: 1px solid lightblue;
+   background-color: white;
+   padding: 10px;
+}

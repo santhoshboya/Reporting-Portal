@@ -1,0 +1,7 @@
+.radioItems-container-className {
+   display: flex;
+   background-color: #f2f2f2;
+   flex-direction: column;
+   height: 90px;
+   justify-content: space-around;
+}

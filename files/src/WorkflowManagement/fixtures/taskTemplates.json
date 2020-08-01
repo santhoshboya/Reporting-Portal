@@ -1,0 +1,640 @@
+{
+   "task_templates": [
+      {
+         "template_id": "FIN_VENDOR",
+         "template_name": "Vendor",
+         "actions": [
+            {
+               "action_id": "Save as Draft",
+               "button_text": "Save as Draft",
+               "button_color": "Blue"
+            },
+            {
+               "action_id": "Create Task",
+               "button_text": "Create Task",
+               "button_color": "green"
+            }
+         ],
+         "group_of_fields": [
+            {
+               "gof_id": "FIN_VENDOR_BASIC_DETAILS",
+               "gof_display_name": "Vendor Basic Details",
+               "max_columns": 2,
+               "order": 0,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_TYPE_OF_VENDOR",
+                     "display_name": "Type of Vendor",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Individual.\",\"Company\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Saluation",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_SALUATION",
+                     "display_name": "Saluation",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Mr.\",\"Ms.\",\"Mrs\"\n]",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "error",
+                     "tooltip": "string",
+                     "placeholder_text": "Saluation",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_FIRST NAME",
+                     "display_name": "First Name",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_LAST NAME",
+                     "display_name": "Last Name",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_DISPLAY NAME",
+                     "display_name": "Display Name",
+                     "is_field_required": true,
+                     "field_type": "SEARCHABLE",
+                     "field_values": "\"VENDOR\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_WEBSITE",
+                     "display_name": "Website",
+                     "is_field_required": true,
+                     "field_type": "URL",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_EMAIL",
+                     "display_name": "Email",
+                     "is_field_required": true,
+                     "field_type": "EMAIL",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: abcd@gmail.com",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_PHONE",
+                     "display_name": "Phone ",
+                     "is_field_required": true,
+                     "field_type": "PHONE_NUMBER",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: 9876543210",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+            {
+               "gof_id": "FIN_GST&TDS_DETAILS",
+               "gof_display_name": "GST & TDSDetails",
+               "max_columns": 2,
+               "order": 1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_GST_REGISTRATION",
+                     "display_name": "GST Registration",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Registered Bussiness - Regular\",\"Registered Bussiness - Special\",\"Registered Bussiness - Private\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Registration",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_GST",
+                     "display_name": "GST Registration",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Monthly\",\"Yearly\",\"Every 5 Years\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Registration",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_FIRST NAME",
+                     "display_name": "First Name",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_MSME REGISTERED",
+                     "display_name": "MSME Registered",
+                     "is_field_required": true,
+                     "field_type": "RADIO_GROUP",
+                     "field_values": "[\n  \"Yes\",\"No\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_MSME_CERTIFICATE",
+                     "display_name": "MSME Certificate",
+                     "is_field_required": true,
+                     "field_type": "FILE_UPLOADER",
+                     "field_values": "[\n  \"Yes\",\"No\"\n]",
+                     "allowed_formats_regex": "[\n  \".pdf\",\".jpg\",\".png\"\n]",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_MSME CERTIFICATE",
+                     "display_name": "MSME Certificate",
+                     "is_field_required": true,
+                     "field_type": "FILE_UPLOADER",
+                     "field_values": "[\n  \"Yes\",\"No\"\n]",
+                     "allowed_formats_regex": "[\n  \".pdf\",\".jpg\",\".png\"\n]",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_GST REGISTRATION",
+                     "display_name": "GST Registration",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"INR\",\"USD\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Registration",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_APPLICABLE TDS SECTIONS",
+                     "display_name": "Applicable TDS Sections",
+                     "is_field_required": true,
+                     "field_type": "LONG_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Building a new connectivity platform for the team",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_CURRENCY",
+                     "display_name": "Currency",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"INR\",\"USD\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Registration",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+            {
+               "gof_id": "FIN_BANK_DETAILS",
+               "gof_display_name": "Bank Details",
+               "max_columns": 2,
+               "order": 1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_BANK DETAILS PROOF",
+                     "display_name": "Bank Details Proof",
+                     "is_field_required": true,
+                     "field_type": "FILE_UPLOADER",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "[\n  \".pdf\",\".jpg\",\".png\"\n]",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Upload Proof",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_BENEFICIARY NAME",
+                     "display_name": "Beneficiary Name",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_BENIFICIARY BANK NAME",
+                     "display_name": "Benificiary Bank Name",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_ACCOUNT NUMBER",
+                     "display_name": "Account Number",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_IFSC CODE",
+                     "display_name": "IFSC Code",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex. Luke S",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+            {
+               "gof_id": "FIN_ADDRESS_DETAILS",
+               "gof_display_name": "Address Details for Communication",
+               "max_columns": 2,
+               "order": 1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_ADDRESS LINE 1",
+                     "display_name": "Address Line 1",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: Enter Address",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_ADDRESS LINE 2",
+                     "display_name": "Address Line 2",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: Enter Address",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_CITY",
+                     "display_name": "City",
+                     "is_field_required": true,
+                     "field_type": "SEARCHABLE",
+                     "field_values": "\"CITY\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: Kurnool",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_STATE",
+                     "display_name": "State",
+                     "is_field_required": true,
+                     "field_type": "SEARCHABLE",
+                     "field_values": "\"STATE\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: Andhra Pradesh",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_PINCODE",
+                     "display_name": "PinCode",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: 516000",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_MOBILE/PHONE",
+                     "display_name": "Mobile/Phone",
+                     "is_field_required": true,
+                     "field_type": "PHONE_NUMBER",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "\"\"",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Ex: 9876543210",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+            {
+               "gof_id": "FIN_REQUEST_DETAILS",
+               "gof_display_name": "Request Details",
+               "max_columns": 2,
+               "order": -1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_PAYMENT_REQUESTOR",
+                     "display_name": "Payment Requester",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "[\n  \"Option1\",\"Option2\",\"Option3\"\n]",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Enter Payment",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_PAYMENT_APPROVER",
+                     "display_name": "Payment Approver",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Option1\",\"Option2\",\"Option3\"\n]",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Option",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_PAYMENT_POC",
+                     "display_name": "Payment POC",
+                     "is_field_required": true,
+                     "field_type": "DROPDOWN",
+                     "field_values": "[\n  \"Option1\",\"Option2\",\"Option3\"\n]",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select Option",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_PAYMENT_REQUEST_DATE",
+                     "display_name": "Payment Request Date",
+                     "is_field_required": true,
+                     "field_type": "DATE",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "",
+                     "placeholder_text": "Select DATE",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+
+            {
+               "gof_id": "CUSTOMER_DETAILS",
+               "gof_display_name": "GST & TDSDetails",
+               "max_columns": 2,
+               "order": -1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_Payment Requester",
+                     "display_name": "Payment",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "string",
+                     "validation": "string",
+                     "error_msg": "Error",
+                     "tooltip": "string",
+                     "placeholder_text": "Enter Payment",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "FIN_MOBILE/PHONE",
+                     "display_name": "Languages Known",
+                     "is_field_required": true,
+                     "field_type": "CHECKBOX_GROUP",
+                     "field_values": "[\"English\",\"Telugu\",\"Urdu\"]",
+                     "allowed_formats_regex": "",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "number",
+                     "placeholder_text": "search",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "MULTI_SELECT_FIELD",
+                     "display_name": "Select address",
+                     "is_field_required": true,
+                     "field_type": "MULTI_SELECT_FIELD",
+                     "field_values": "[\n  \"Option1\",\"Option2\",\"Option3\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "Enter Pin Code",
+                     "placeholder_text": "Enter Pin Code",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            },
+            {
+               "gof_id": "FIN_GOF_VENDOR_TYPE",
+               "gof_display_name": "Vendor Type",
+               "max_columns": 2,
+               "order": 2,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_TYPE_OF_VENDOR",
+                     "display_name": "Type of Vendor",
+                     "is_field_required": true,
+                     "field_type": "GOF_SELECTOR",
+                     "field_values": "[\n   {\n      \"name\": \"Individual\",\n      \"gof_ids\": [\"FIN_REQUEST_DETAILS\"]\n   },\n   {\n      \"name\": \"Company\",\n      \"gof_ids\": [\"CUSTOMER_DETAILS\"]\n   }\n]",
+                     "allowed_formats_regex": "string",
+                     "validation": "none",
+                     "error_msg": "",
+                     "tooltip": "Please Select the Type of the Vendor to proceed with filling the other details of Payment Request",
+                     "placeholder_text": "Select Vendor Type",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "template_id": "FIN_PR",
+         "template_name": "Payment Request",
+         "actions": [
+            {
+               "action_id": "Submit for Approval",
+               "button_text": "Submit for Approval",
+               "button_color": "Blue"
+            }
+         ],
+         "group_of_fields": [
+            {
+               "gof_id": "FIN_DELIVERY_ADDRESS_DETAILS",
+               "gof_display_name": "Delivery Address Details",
+               "max_columns": 2,
+               "order": 1,
+               "enable_add_another": true,
+               "fields": [
+                  {
+                     "field_id": "FIN_PINCODE",
+                     "display_name": "PinCode",
+                     "is_field_required": true,
+                     "field_type": "PLAIN_TEXT",
+                     "field_values": "\"\"",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "Enter Pin Code",
+                     "placeholder_text": "Enter Pin Code",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  },
+                  {
+                     "field_id": "MULTI_SELECT_FIELD",
+                     "display_name": "Select address",
+                     "is_field_required": true,
+                     "field_type": "MULTI_SELECT_FIELD",
+                     "field_values": "[\n  \"Option1\",\"Option2\",\"Option3\"\n]",
+                     "allowed_formats_regex": "",
+                     "validation": "",
+                     "error_msg": "",
+                     "tooltip": "Enter Pin Code",
+                     "placeholder_text": "Enter Pin Code",
+                     "is_field_readable": true,
+                     "is_field_writable": true
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

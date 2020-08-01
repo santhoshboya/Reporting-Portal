@@ -1,0 +1,50 @@
+{
+   "errors": {
+      "noError": "No Error",
+      "required": "Required",
+      "invalidEmailAddress": "Invalid Email Address",
+      "pleaseEnterValidPassword": "Please enter valid password",
+      "passwordDoesntMatch": "Password doesn't match"
+   },
+   "login": {
+      "getStartedWithYourAccount": "Get started with your account",
+      "email": "EMAIL",
+      "emailInputPlaceHolder": "Enter email address",
+      "password": "PASSWORD",
+      "passwordInputPlaceHolder": "Enter Password",
+      "login": "Login",
+      "remaindMe": "Remaind me",
+      "forgotPassword": "Forgot Password ?",
+      "dontYouHaveAnAccount": "Don’t you have an account ?",
+      "signup": "Sign up",
+      "somethingWentWrong": "Something went wrong",
+      "focusOnBeingProductiveInsteadOfBusy": "\"Focus on being productive instead of busy\""
+   },
+   "forgotPassword": {
+      "welcomeText": "Forgot password",
+      "welcomeInfoText": "We’ll send you email with instructions to reset your password  ",
+      "email": "EMAIL",
+      "emailInputPlaceHolder": "tophbeifong@gmail.com",
+      "sendMail": "Send Mail",
+      "returnToLogin": "Return to login",
+      "mailSentSuccessfully": "Mail has been successfully sent.",
+      "mailParameterizedText": "Check your xxxxxxx{{ email }}"
+   },
+   "updatePassword": {
+      "welcomeText": "Update your password",
+      "password": "PASSWORD",
+      "passwordInputPlaceHolder": "Enter your password",
+      "confirmPassword": "CONFIRM PASSWORD",
+      "confirmPasswordInputPlaceHolder": "Re-enter your password",
+      "updatePassword": "Update Password",
+      "skip": "Skip",
+      "successMessage": "Your password updated successfully. Redirecting to Login page"
+   },
+   "linkHasExpired": {
+      "welcomeText": "The Link Has Expired !",
+      "goBackTo": "Go Back to",
+      "login": "Login",
+      "signup": "Sign up",
+      "forgotPassword": "Forgot password"
+   }
+}

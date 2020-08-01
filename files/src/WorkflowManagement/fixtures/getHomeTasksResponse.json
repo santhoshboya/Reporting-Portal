@@ -1,0 +1,1075 @@
+{
+   "tasks": [
+      {
+         "task_id": "iB-01",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "1",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "1",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               },
+               {
+                  "action_id": "2",
+                  "button_text": "reject",
+                  "button_color": "#cf1124"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-02",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "2",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "2",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-03",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "3",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "3",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-04",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "4",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "4",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-05",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "5",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "5",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-06",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "6",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "6",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-07",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "7",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "7",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-08",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "8",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "8",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-09",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "9",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "9",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-10",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "10",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "10",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-11",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "11",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "11",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-12",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "12",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "12",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-13",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "13",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "13",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-14",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "14",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "14",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-15",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "15",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "15",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-16",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "16",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "16",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-17",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "17",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "17",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-18",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "18",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "18",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-19",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "19",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "19",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-20",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "20",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "20",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-21",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "21",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "21",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-22",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "22",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "22",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-23",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "23",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "23",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-24",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "24",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "24",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-25",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "25",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "25",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-26",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "26",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "26",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-27",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "27",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "27",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-28",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "28",
+            "stage_display_name": "In Progress",
+            "actions": [
+               {
+                  "action_id": "28",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-29",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "29",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "29",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-30",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "30",
+            "stage_display_name": "Todo",
+            "actions": [
+               {
+                  "action_id": "30",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-31",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "31",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "31",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-32",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "32",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "32",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-33",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "33",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "33",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-34",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            },
+            {
+               "field_type": "MULTI_SELECT_FIELD",
+               "field_display_name": "multi select",
+               "field_response": "[\n  \"SURESH\",\"MAHENDRA\",\"RAJESH\"\n]"
+            },
+            {
+               "field_type": "DROPDOWN",
+               "field_display_name": "Dropdown",
+               "field_response": "Nagendra"
+            },
+            {
+               "field_type": "IMAGE_UPLOADER",
+               "field_display_name": "Suresh ",
+               "field_response": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/f3ece87b-3d4e-4080-8e27-381fb2c79380.svg"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "34",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "34",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-35",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "35",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "35",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-36",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "36",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "36",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-37",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "37",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "37",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-38",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "38",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "38",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-39",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "39",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "39",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      },
+      {
+         "task_id": "iB-40",
+         "task_overview_fields": [
+            {
+               "field_type": "TEXT_INPUT",
+               "field_display_name": "Text Input",
+               "field_response": "Sunny"
+            }
+         ],
+         "stage_with_actions": {
+            "stage_id": "40",
+            "stage_display_name": "Verification",
+            "actions": [
+               {
+                  "action_id": "40",
+                  "button_text": "submit",
+                  "button_color": "#de911d"
+               }
+            ]
+         }
+      }
+   ],
+   "total_tasks": 40
+}

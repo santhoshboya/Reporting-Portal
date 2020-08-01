@@ -1,0 +1,117 @@
+{
+   "total_teams_count": 4,
+   "teams": [
+      {
+         "team_id": "1",
+         "name": "Assert Management",
+         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+         "no_of_members": 12,
+         "members": [
+            {
+               "member_id": "1",
+               "name": "Bob",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/10cf57e7-64d9-4727-b8d3-da31af26905d.svg"
+            },
+            {
+               "member_id": "2",
+               "name": "prasad",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "3",
+               "name": "Anil Kumar",
+               "profile_pic_url": ""
+            }
+         ]
+      },
+      {
+         "team_id": "2",
+         "name": "Mayuka",
+         "description": "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+         "no_of_members": 25,
+         "members": [
+            {
+               "member_id": "4",
+               "name": "Bob",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/10cf57e7-64d9-4727-b8d3-da31af26905d.svg"
+            },
+            {
+               "member_id": "5",
+               "name": "prathibha",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "6",
+               "name": "Anil Kumar",
+               "profile_pic_url": ""
+            }
+         ]
+      },
+      {
+         "team_id": "3",
+         "name": "Cyber Eye",
+         "description": "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+         "no_of_members": 15,
+         "members": [
+            {
+               "member_id": "7",
+               "name": "Bob",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/10cf57e7-64d9-4727-b8d3-da31af26905d.svg"
+            },
+            {
+               "member_id": "8",
+               "name": "Hafeez",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "9",
+               "name": "Jack",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "878",
+               "name": "John",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "10",
+               "name": "James",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "11",
+               "name": "Anil Kumar",
+               "profile_pic_url": ""
+            },
+            {
+               "member_id": "1134",
+               "name": "Pavan Kumar",
+               "profile_pic_url": ""
+            }
+         ]
+      },
+      {
+         "team_id": "4",
+         "name": "Prayoga vikramasimha pvt limited",
+         "description": " labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+         "no_of_members": 12,
+         "members": [
+            {
+               "member_id": "12",
+               "name": "Bob",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/10cf57e7-64d9-4727-b8d3-da31af26905d.svg"
+            },
+            {
+               "member_id": "24",
+               "name": "praneetha",
+               "profile_pic_url": "https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://cdn.zeplin.io/5f0341c2b569f66c57cb6e8f/assets/b3e080d0-436c-4b07-9c4a-89290ff69feb.svg"
+            },
+            {
+               "member_id": "224",
+               "name": "Anil Kumar",
+               "profile_pic_url": ""
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,35 @@
+export const PLAIN_TEXT = 'PLAIN_TEXT'
+export const PHONE_NUMBER = 'PHONE_NUMBER'
+export const EMAIL = 'EMAIL'
+export const URL_TEXT = 'URL'
+export const PASSWORD = 'PASSWORD'
+export const NUMBER = 'NUMBER'
+export const FLOAT = 'FLOAT'
+export const LONG_TEXT = 'LONG_TEXT'
+export const RADIO_GROUP = 'RADIO_GROUP'
+export const CHECKBOX_GROUP = 'CHECKBOX_GROUP'
+export const DROPDOWN = 'DROPDOWN'
+export const MULTI_SELECT_FIELD = 'MULTI_SELECT_FIELD'
+export const DATE = 'DATE'
+export const IMAGE_UPLOADER = 'IMAGE_UPLOADER'
+export const FILE_UPLOADER = 'FILE_UPLOADER'
+export const SEARCHABLE = 'SEARCHABLE'
+export const GOF_SELECTOR = 'GOF_SELECTOR'
+export const MULTI_SELECTOR_FIELDS = [CHECKBOX_GROUP, MULTI_SELECT_FIELD]
+export const SINGLE_SELECTOR_FIELDS = [
+   PLAIN_TEXT,
+   PHONE_NUMBER,
+   EMAIL,
+   URL_TEXT,
+   PASSWORD,
+   NUMBER,
+   FLOAT,
+   LONG_TEXT,
+   RADIO_GROUP,
+   DROPDOWN,
+   DATE,
+   IMAGE_UPLOADER,
+   FILE_UPLOADER,
+   SEARCHABLE,
+   GOF_SELECTOR
+]

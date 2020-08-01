@@ -1,0 +1,87 @@
+{
+   "pagination": {
+      "of": "of",
+      "to": "to"
+   },
+   "apiSearchableDropDown": {
+      "errorMessages": {
+         "required": "required",
+         "shouldSelectFromDropDown": "should select from drop down"
+      },
+      "noResultsFound": "No Results Found"
+   },
+   "checkBox": {
+      "checkBox": "checkbox"
+   },
+   "BaseRadioButton": {
+      "radio": "radio",
+      "radioButton": "radioButton"
+   },
+   "BaseS3": {
+      "fileSizeMaximumLimitReached": "file size maximum limit reached"
+   },
+   "dropDown": {
+      "noOptionsToselect": "No options to select"
+   },
+   "errorMessage": {
+      "required": "*required"
+   },
+   "fileUploaderField": {
+      "uploadFromComputer": "UPLOAD FROM COMPUTER",
+      "retry": "retry",
+      "errorMessage": {
+         "thisFieldIsMandatory": "this field is mandatory"
+      }
+   },
+   "failureView": {
+      "retry": "Retry",
+      "somethingWentWrong": "Something went wrong"
+   },
+   "pageNotFound": {
+      "404": "404",
+      "pageNotFoundText": "Page Not Found",
+      "noManPlaceText": "Oops! You've wandered into no man's land.",
+      "goHome": "Go to Home",
+      "imageAlt": "No Room"
+   },
+   "common": {
+      "errorViewTitle": "Oops! Something Went Wrong",
+      "errorViewDescription": "We're having some trouble completing your request. Please try again.",
+      "connectionLost": "Connection lost",
+      "internetConnection": "Please check your internet connection"
+   },
+   "paginationNavigation": {
+      "to": "to",
+      "of": "of"
+   },
+   "progressBar": {
+      "uploading": "Uploading",
+      "percentage": "%"
+   },
+   "UserProfileDetailsHeader": {
+      "welcome": "Welcome!",
+      "logout": "Logout"
+   },
+   "card": {
+      "card": "card"
+   },
+   "loader": {
+      "oval": "Oval"
+   },
+   "popOverMenu": {
+      "bottomRight": "bottomRight",
+      "click": "click"
+   },
+   "textInput": {
+      "input": "input"
+   },
+   "toastMessages": {
+      "addSuccessToast": " added successfully!",
+      "updateSuccessToast": " updated successfully!",
+      "deleteSuccessToast": "Deleted successfully!"
+   },
+   "confirmationAlert": {
+      "yes": "Yes",
+      "no": "No"
+   }
+}

@@ -1,0 +1,1155 @@
+{
+   "columns": [
+      {
+         "column_id": "c1",
+         "name": "Drafts",
+         "total_tasks_count": 19,
+         "tasks": [
+            {
+               "task_id": "c1t1rm",
+               "fields": [
+                  {
+                     "field_type": "NAME",
+                     "key": "name",
+                     "value": "VedaVidh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1tfg2",
+               "fields": [
+                  {
+                     "field_type": "NAME",
+                     "key": "name",
+                     "value": "Sunny"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1hfgh",
+               "fields": [
+                  {
+                     "field_type": "NAME",
+                     "key": "name",
+                     "value": "Pavan"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1tryty",
+               "fields": [
+                  {
+                     "field_type": "NAME",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": " banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t6latest",
+               "fields": [
+                  {
+                     "field_type": "NAME",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124alert",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164done",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1tfdgyuty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124phq",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164qqr",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1t2346y",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124gfdwe",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164qrt",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1trytycc1c1c1",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1124c1c1c1",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164c1c1c1",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1tc1c1crty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c112c1c1c14",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c1164c1c1",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c1t1bersy",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners  banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c1auyucc1124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c11try5664",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "column_id": "c2",
+         "name": "Submitted",
+         "total_tasks_count": 3,
+         "tasks": [
+            {
+               "task_id": "c2t1trytycc2c2c2",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c2124c2c2c2",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c2164c2c2c2",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c2t1tc2c2crty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c212c2c2c24",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c2164c2c2",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c2t1bersy",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c2auyucc2124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c21try5664",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "column_id": "c3",
+         "name": "Approved",
+         "total_tasks_count": 23,
+         "tasks": [
+            {
+               "task_id": "c3t1rm",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "VedaVidh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "photo",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "iBHubs"
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3tfg2",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Sunny"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1hfgh",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Pavan"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1tryty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t6latest",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124alert",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164done",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1tfdgyuty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124phq",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164qqr",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1t2346y",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124gfdwe",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164qrt",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1trytycc3c3c3",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3124c3c3c3",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164c3c3c3",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1tc3c3crty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c312c3c3c34",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c3164c3c3",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c3t1bersy",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c3auyucc3124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c31try5664",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "column_id": "c4",
+         "name": "Released",
+         "total_tasks_count": 23,
+         "tasks": [
+            {
+               "task_id": "c4t1rm",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "VedaVidh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "photo",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "iBHubs"
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4tfg2",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Sunny"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1hfgh",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Pavan"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1tryty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t6latest",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124alert",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164done",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1tfdgyuty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124phq",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164qqr",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1t2346y",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124gfdwe",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164qrt",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1trytycc4c4c4",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4124c4c4c4",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164c4c4c4",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1tc4c4crty",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c412c4c4c44",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c4164c4c4",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            },
+            {
+               "task_id": "c4t1bersy",
+               "fields": [
+                  {
+                     "field_type": "TEXT",
+                     "key": "name",
+                     "value": "Rajesh"
+                  },
+                  {
+                     "field_type": "IMAGE",
+                     "key": "profile",
+                     "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+                  },
+                  {
+                     "field_type": "TEXT",
+                     "key": "company",
+                     "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+                  }
+               ],
+               "actions": [
+                  {
+                     "action_id": "c4auyucc4124",
+                     "name": "Confirm",
+                     "button_text": "Confirm",
+                     "button_color": "blue"
+                  },
+                  {
+                     "action_id": "c41try5664",
+                     "name": "Delete",
+                     "button_text": "Delete",
+                     "button_color": "red"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "total_columns_count": 4
+}

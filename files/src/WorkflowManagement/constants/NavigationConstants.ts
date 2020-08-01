@@ -1,0 +1,5 @@
+export const HOME_SCREEN_PATH = '/'
+export const BOARDS_ROUTE_PATH = '/boards'
+export const HOME_TASKS_PATH = '/home'
+export const CREATE_TASK_ROUTE_PATH = '/create-task'
+export const GET_TASK_ROUTE_PATH = '/task/:taskId'

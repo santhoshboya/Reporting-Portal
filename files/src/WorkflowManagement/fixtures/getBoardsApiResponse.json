@@ -1,0 +1,85 @@
+{
+   "total_boards_count": 20,
+   "boards_details": [
+      {
+         "board_id": "Board-1",
+         "name": "Board-1-Name"
+      },
+      {
+         "board_id": "Board-2",
+         "name": "Board-2-Name"
+      },
+      {
+         "board_id": "Board-3",
+         "name": "Board-3"
+      },
+      {
+         "board_id": "Board-4",
+         "name": "Board-4"
+      },
+      {
+         "board_id": "Board-5",
+         "name": "Board-5"
+      },
+      {
+         "board_id": "Board-6",
+         "name": "Board-6"
+      },
+      {
+         "board_id": "Board-7",
+         "name": "Board-7"
+      },
+      {
+         "board_id": "Board-8",
+         "name": "Board-8"
+      },
+      {
+         "board_id": "Board-9",
+         "name": "Board-9"
+      },
+      {
+         "board_id": "Board-10",
+         "name": "Board-10"
+      },
+      {
+         "board_id": "Board-11",
+         "name": "Board-11"
+      },
+      {
+         "board_id": "Board-12",
+         "name": "Board-12"
+      },
+      {
+         "board_id": "Board-13",
+         "name": "Board-13"
+      },
+      {
+         "board_id": "Board-14",
+         "name": "Board-14"
+      },
+      {
+         "board_id": "Board-15",
+         "name": "Board-15"
+      },
+      {
+         "board_id": "Board-16",
+         "name": "Board-16"
+      },
+      {
+         "board_id": "Board-17",
+         "name": "Board-17"
+      },
+      {
+         "board_id": "Board-18",
+         "name": "Board-18"
+      },
+      {
+         "board_id": "Board-19",
+         "name": "Board-19"
+      },
+      {
+         "board_id": "Board-20",
+         "name": "Board-20"
+      }
+   ]
+}

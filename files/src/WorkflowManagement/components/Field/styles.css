@@ -1,0 +1,31 @@
+.field-height-width {
+   width: 320px;
+   height: 40px;
+}
+
+.checkbox-group-container {
+   margin-top: 8px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.radio-button-group-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.field-width {
+   width: 320px;
+}
+.text-area-width {
+   width: 320px;
+   height: 108px;
+}
+
+.dateFieldStyles {
+   text-align: left !important;
+   padding-left: 50px !important;
+   width: 320px;
+}

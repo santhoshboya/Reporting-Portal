@@ -1,0 +1,13 @@
+{
+   "aws_access_key_id": "ASIAY2WMCL5CPGBDFJHL",
+   "aws_session_token": "IQoJb3JpZ2luX2VjEJ///////////wEaCmFwLXNvdXRoLTEiRzBFAiB8SHnK595g/DQWm+L/G7ZJha6rJajv+SauaIQKpkUyogIhAME6++/zzfLGTOZKrKLcnCej2lgjQKJ2/XWN6e9xmWZWKvADCFgQABoMNjA3MDkyMTA1MDI4Igyvo7lQ7pLO/irFIVQqzQMp/JVVPYYwpbEiZZ063AI4Ch244/YnOaBdTWvSpaoGQXUvCeO9ha+vhMbfzAuBKkgq1RRhYwfG8+oHWWn9GIIijhNykNAemPt1sAI/gmuBjcqIvqqhIGcEsDZg+CzF4f2M5hVmZtPhUCD1UcV3kmm9ispwmINWBhlGV4YdpZK0VwTrwe8wyqtnxwMMg3LRk2F4Nlo5K1PwIp2mLGWlJaeY+kUL8pl6R7+LhTXSOKgCFE/w9eX+jtC8qzKVe/HgOmuK4dPdJL7C5jbfKOrZWWlKTJz97PMJASGGM0f1CxzTx05atYv018DLLtgzDJJ8LCniCB+vyCOi+1/Xe015p59s9jYOhkKsZx9WbX8wLh7usbY6u3gVfTd0TAEXp0S4lHydJifOZHF7n+fqnzaR2w/xDlufEQ5roCoypE6hDV2xASn4CRIm401a3dhRCXeAWgtHLc8nLI1+7zF94+a/LQbU3u3oAJMu09JI8kvshCRFeZj8MhIH+oiF2F/51OclGn9k4qITrNj7GPKVsyypZN/iUSOezVHnjL2OU6jCqoEGYe6ipeaydHCl/NzaOTxYm5W5nM6Q/3OMbcjFhd8F4o2QqiacOrMpKKKyNgl8vTCYyN/4BTrLAoHjnh/CrrpUXTbmmKZ4P7Bt9XxtzWo6aVVJh70wmt8oCxexMHvmwIAXULADa5NbfmoExKtH5evv+76oW0B+HkzVmw8pyTiIdXUse5sfZ6YzF5fbQ0N5bRpqe3Q+5yxI3ItTVI5VTKRM11cMvavrRlKbkkq04gZY67wPPqVrNcAsHwBVKN/kFbh4MJmCTpkOQjMk+H5TpBiXwZ8cfYyEic4i1Sg3gki3oax45qYRgGLfRDe9hf00VA4EW3nt/GPXSBQIT3apc/C+iN6kz/7PKIMUT6xNWsv4d82spi9kg6g0Z2x1oQY2Yt85mzMIqvb7jZscTOhZE3PjFdf6uzvs4FQPnQNMTykkNaxY/afl5LH7XI0aTViVyYn0hLzRlQDZN/m4HqzmRo/jBzjNduPTVezwZy9TfSpdUQHlcBhsZWM0h4mRpwCOBe3fxWI=",
+   "bucket_name": "nkb-backend-media-static",
+   "cloudfront_domain": "d3hkbrbnjgavbv.cloudfront.net",
+   "expiration": "2020-07-22 13:30:40",
+   "folder_name": "beta/media/",
+   "region_name": "ap-south-1",
+   "secret_access_key": "CgjKzQU+Bho/jY8NNGwe5uvEYonTwfqj/CGBdHpT",
+   "protocol": "https",
+   "object_acl": "public-read",
+   "url_type": "cloudfront"
+}

@@ -1,0 +1,11 @@
+.text-input {
+   border: 2px solid green;
+   background-color: lightgreen;
+   width: 300px;
+   padding: 10px;
+}
+
+.text-area {
+   width: 500px;
+   height: 300px;
+}

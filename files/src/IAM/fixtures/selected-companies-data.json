@@ -1,0 +1,77 @@
+{
+   "iBC01": {
+      "company_id": "iBC01",
+      "name": "Prayoga vikramsimha private limited",
+      "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+      "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+      "employees": [
+         {
+            "employee_id": "iBU01",
+            "name": "Steve Jobs"
+         },
+         {
+            "employee_id": "iBU02",
+            "name": "Sundar Pichai"
+         }
+      ]
+   },
+   "iBC02": {
+      "company_id": "iBC02",
+      "name": "Mayuka",
+      "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+      "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+      "employees": [
+         {
+            "employee_id": "iBU03",
+            "name": "Sathya N"
+         },
+         {
+            "employee_id": "iBU04",
+            "name": "Anil"
+         }
+      ]
+   },
+   "iBC03": {
+      "company_id": "iBC03",
+      "name": "Cyber Eye",
+      "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+      "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+      "employees": [
+         {
+            "employee_id": "iBU01",
+            "name": "Steve Jobs"
+         },
+         {
+            "employee_id": "iBU02",
+            "name": "Sundar Pichai"
+         }
+      ]
+   },
+   "iBC04": {
+      "company_id": "iBC04",
+      "name": "iB Hubs",
+      "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+      "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+      "employees": [
+         {
+            "employee_id": "iBU05",
+            "name": "Mark"
+         },
+         {
+            "employee_id": "iBU06",
+            "name": "John"
+         },
+         {
+            "employee_id": "iBU04",
+            "name": "Anil"
+         }
+      ]
+   },
+   "iBC05": {
+      "company_id": "iBC05",
+      "name": "",
+      "description": "",
+      "logo_url": "",
+      "employees": []
+   }
+}
