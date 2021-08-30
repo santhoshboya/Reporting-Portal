@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Reporting-Portal/static/css/main.7feda122.chunk.css",
+    "main.js": "/Reporting-Portal/static/js/main.949014b0.chunk.js",
+    "main.js.map": "/Reporting-Portal/static/js/main.949014b0.chunk.js.map",
+    "runtime-main.js": "/Reporting-Portal/static/js/runtime-main.7f55f481.js",
+    "runtime-main.js.map": "/Reporting-Portal/static/js/runtime-main.7f55f481.js.map",
+    "static/css/2.d34346ea.chunk.css": "/Reporting-Portal/static/css/2.d34346ea.chunk.css",
+    "static/js/2.51229e18.chunk.js": "/Reporting-Portal/static/js/2.51229e18.chunk.js",
+    "static/js/2.51229e18.chunk.js.map": "/Reporting-Portal/static/js/2.51229e18.chunk.js.map",
+    "index.html": "/Reporting-Portal/index.html",
+    "precache-manifest.e74e796dc61193e8d38e86ceecbfc666.js": "/Reporting-Portal/precache-manifest.e74e796dc61193e8d38e86ceecbfc666.js",
+    "service-worker.js": "/Reporting-Portal/service-worker.js",
+    "static/css/2.d34346ea.chunk.css.map": "/Reporting-Portal/static/css/2.d34346ea.chunk.css.map",
+    "static/css/main.7feda122.chunk.css.map": "/Reporting-Portal/static/css/main.7feda122.chunk.css.map",
+    "static/js/2.51229e18.chunk.js.LICENSE.txt": "/Reporting-Portal/static/js/2.51229e18.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7f55f481.js",
+    "static/css/2.d34346ea.chunk.css",
+    "static/js/2.51229e18.chunk.js",
+    "static/css/main.7feda122.chunk.css",
+    "static/js/main.949014b0.chunk.js"
+  ]
+}
