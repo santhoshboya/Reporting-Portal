@@ -1,4 +1,5 @@
 {
+   "homepage": "http://santhoshboya.github.io/Reporting-Portal",
    "name": "react-app",
    "version": "0.1.0",
    "private": true,
@@ -49,7 +50,9 @@
       "storybook": "start-storybook -p 8080 -s public",
       "build-storybook": "build-storybook -s public",
       "pretty": "npx prettier --write \"src/**/*.js\"",
-      "coverage": "react-app-rewired test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false"
+      "coverage": "react-app-rewired test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
    },
    "husky": {
       "hooks": {
@@ -94,6 +97,7 @@
       "@testing-library/react": "10.0.3",
       "babel-eslint": "10.0.3",
       "customize-cra": "0.9.1",
+      "gh-pages": "3.2.3",
       "husky": "4.2.5",
       "jest-environment-jsdom-sixteen": "1.0.3",
       "lint-staged": "10.2.6",
