@@ -1,0 +1,1 @@
+export { TeamsModel } from './TeamsModel'

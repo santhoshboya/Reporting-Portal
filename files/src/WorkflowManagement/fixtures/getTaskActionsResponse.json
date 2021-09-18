@@ -1,0 +1,95 @@
+{
+   "task_id": "task2",
+   "current_board_details": {
+      "board_id": "board1",
+      "board_name": "board1",
+      "column_details": [
+         {
+            "column_id": "c1",
+            "column_name": "Drafts",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "14",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "16",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "column_id": "c2",
+            "column_name": "Submitted",
+            "actions": [
+               {
+                  "action_id": "action3",
+                  "name": "action3",
+                  "button_text": "action3",
+                  "button_color": "action3"
+               },
+               {
+                  "action_id": "action4",
+                  "name": "action4",
+                  "button_text": "action4",
+                  "button_color": "action4"
+               }
+            ],
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ]
+         }
+      ]
+   },
+   "other_board_details": [
+      {
+         "board_id": "1",
+         "board_name": "board2",
+         "column_details": [
+            {
+               "column_id": "20",
+               "column_name": "column3"
+            },
+            {
+               "column_id": "column4",
+               "column_name": "column4"
+            }
+         ]
+      }
+   ]
+}

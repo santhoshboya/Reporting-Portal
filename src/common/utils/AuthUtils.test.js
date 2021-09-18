@@ -37,26 +37,26 @@ describe('AuthUtils Test cases', () => {
    //    //console.log(promiseResponse)
    //    expect(promiseResponse).toStrictEqual(mockPromise)
    // })
-   it('should test networkCallWithApisauceWithoutAccessToken failue promise', async () => {
-      const mockFailurePromise = new Promise(function(resolve, reject) {
-         reject(new Error('error'))
-      }).catch(() => {})
-      let api = create({
-         baseURL: 'https://5ea1a14db9f5ca00166c1f27.mockapi.io'
-      })
-      let promiseResponse = networkCallWithApisauceWithoutAccessToken(
-         api,
-         'v1/signin',
-         {},
-         apiMethods.get
-      )
-      try {
-         await promiseResponse
-      } catch (error) {}
+   // it('should test networkCallWithApisauceWithoutAccessToken failue promise', async () => {
+   //    const mockFailurePromise = new Promise(function(resolve, reject) {
+   //       reject(new Error('error'))
+   //    }).catch(() => {})
+   //    let api = create({
+   //       baseURL: 'https://5ea1a14db9f5ca00166c1f27.mockapi.io'
+   //    })
+   //    let promiseResponse = networkCallWithApisauceWithoutAccessToken(
+   //       api,
+   //       'v1/signin',
+   //       {},
+   //       apiMethods.get
+   //    )
+   //    try {
+   //       await promiseResponse
+   //    } catch (error) {}
 
-      //console.log(mockFailurePromise,'promise', promiseResponse)
-      expect(promiseResponse).toStrictEqual(mockFailurePromise)
-   })
+   //    //console.log(mockFailurePromise,'promise', promiseResponse)
+   //    expect(promiseResponse).toStrictEqual(mockFailurePromise)
+   // })
 
    it('should test getUserDisplayableErrorMessage empty error', () => {
       //console.log(getUserDisplayableErrorMessage())

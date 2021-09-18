@@ -1,39 +1,39 @@
 import React, { Component } from 'react'
-import { BaseButtonWrapper } from './styledComponent'
+import { ButtonWrapper } from './styledComponent'
+
 class BaseButton extends Component {
-   static defultProps = {
-      className: '',
-      TextTypo: <span />
+   static defaultProps = {
+      className: ''
+      // TextTypo: span
    }
-   getIsDisabled = () => {
-      const { isDisabled } = this.props
-      return !isDisabled
-   }
-   isClickable = () => {
-      const { onClick } = this.props
-      let otherProps = {}
-      if (this.getIsDisabled()) otherProps.onClick = onClick
-      return otherProps
+   isEnabled = () => {
+      const { disabled } = this.props
+      return !disabled
    }
    render() {
       const {
+         className,
+         onClick,
+         disabled,
          text,
          textTypo: TextTypo,
-         buttonCss,
-         isDisabled,
-         className
+         buttonCss
       } = this.props
-
+      let otherProps = {}
+      if (this.isEnabled()) {
+         otherProps.onClick = onClick
+      }
       return (
-         <BaseButtonWrapper
+         <ButtonWrapper
             className={className}
-            {...this.isClickable()}
             css={buttonCss}
-            isDisabled={isDisabled}
+            {...otherProps}
+            disabled={disabled}
          >
             <TextTypo>{text}</TextTypo>
-         </BaseButtonWrapper>
+         </ButtonWrapper>
       )
    }
 }
+
 export { BaseButton }

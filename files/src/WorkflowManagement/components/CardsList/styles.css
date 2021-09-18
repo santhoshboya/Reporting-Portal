@@ -1,0 +1,6 @@
+.card-component {
+   width: 90% !important;
+   height: fit-content;
+   border: 1px solid black;
+   background-color: white;
+}

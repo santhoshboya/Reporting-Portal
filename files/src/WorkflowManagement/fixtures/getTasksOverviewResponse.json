@@ -1,0 +1,1891 @@
+{
+   "c1": {
+      "total_tasks_count": 19,
+      "tasks": [
+         {
+            "task_id": "c1t1dfp",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1124try",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c134164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t2ash",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1yu14",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c116ty",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t2980",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11ty24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11qad64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t4dfsgfdsf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c145s124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11lso64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1tsdfdsf5",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11240phj4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11azx64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t4sdf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c112znf4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c116mhd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t5dsfsdf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11ert24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c116iu4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t4dsfdsf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1alo124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c1fgg164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1dfsdft90h",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1128t4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11609h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t4dsfd",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11qgj24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c1jh64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t5dfdsf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11aqw24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11tresd64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t4hgfh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c112rt4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c116h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1t5kh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11kk24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c116dfd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119t1dfp",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1119124try",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c111934164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119t2ash",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c1119yu14",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c111916ty",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119t2980",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11191ty24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11191qad64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119t4dfsgfdsf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c111945s124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11191lso64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119tsdfdsf5",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c11191240phj4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c11191azx64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c1119t4sdf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c111912znf4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c111916mhd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         }
+      ]
+   },
+   "c2": {
+      "total_tasks_count": 3,
+      "tasks": []
+   },
+   "c3": {
+      "total_tasks_count": 23,
+      "tasks": [
+         {
+            "task_id": "c3t1rm",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "VedaVidh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "photo",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "iBHubs"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3tfg2",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Sunny"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1hfgh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Pavan"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1tryty",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t6latest",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124alert",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164done",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1tfdgyuty",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124phq",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164qqr",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1t2346y",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124gfdwe",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164qrt",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1trytycc3c3c3",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124c3c3c3",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164c3c3c3",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1tc3c3crty",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c312c3c3c34",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3164c3c3",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1bersy",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners for Google Ads Responsive Display banners..."
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3auyucc3124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31try5664",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t1dfp",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3124try",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c334164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t2ash",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3yu14",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c316ty",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t2980",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31ty24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31qad64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3tfghfgh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c345s124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31lso64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t5hgfhfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31240phj4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31azx64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3tfghgfh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c312znf4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c316mhd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t5fghfhfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31ert24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c316iu4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t4fghfgh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3alo124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3fgg164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t90h",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c3128t4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31609h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t4dgfhfghfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31qgj24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c3jh64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t5gfhfghgfh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31aqw24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c31tresd64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3tgfhfghfh4",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c312rt4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c316h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c3t5khfghfgh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c31kk24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c316dfd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         }
+      ]
+   },
+   "c4": {
+      "total_tasks_count": 13,
+      "tasks": [
+         {
+            "task_id": "c4t1dfp",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c4124try",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c434164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t2ash",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c4yu14",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c416ty",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t2980",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41ty24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c41qad64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4tfghgfh4",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c445s124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c41lso64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t5dsatgdfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41240phj4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c41azx64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t4fdgfdg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c412znf4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c416mhd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t5fdgdf",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41ert24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c416iu4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t4dfgfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c4alo124",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c4fgg164",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t90fgfdg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c4128t4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c41609h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t4dfgdfg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41qgj24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c4jh64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t5dfgg",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41aqw24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c41tresd64",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t4dfgfga",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c412rt4",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c416h4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         },
+         {
+            "task_id": "c4t5kawh",
+            "fields": [
+               {
+                  "field_type": "TEXT",
+                  "key": "name",
+                  "value": "Rajesh"
+               },
+               {
+                  "field_type": "IMAGE",
+                  "key": "profile",
+                  "value": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/b0327418-1a42-48db-bc5f-ffaccc840475@3x.png"
+               },
+               {
+                  "field_type": "TEXT",
+                  "key": "company",
+                  "value": "ProYuga"
+               }
+            ],
+            "actions": [
+               {
+                  "action_id": "c41kk24",
+                  "name": "Confirm",
+                  "button_text": "Confirm",
+                  "button_color": "blue"
+               },
+               {
+                  "action_id": "c416dfd4",
+                  "name": "Delete",
+                  "button_text": "Delete",
+                  "button_color": "red"
+               }
+            ]
+         }
+      ]
+   }
+}

@@ -1,0 +1,34 @@
+{
+   "boards": {},
+   "routes": {
+      "createTaskRoute": {
+         "labelText": "Select Task Template",
+         "placeholder": "Task Templates"
+      },
+      "getTaskRoute": {
+         "labelText": "Select Task Stage",
+         "placeholder": "Task stages"
+      }
+   },
+   "tasks": {
+      "createTask": "Create Task"
+   },
+   "modalButton": {
+      "proceed": "Proceed",
+      "cancel": "Cancel"
+   },
+   "targetBox": {
+      "placeholder": "Drop here to move into {{target}}"
+   },
+   "boardsList": {
+      "sidebar": {
+         "allBoards": "All Boards"
+      },
+      "header": {
+         "createNew": "Create New"
+      }
+   },
+   "summaryView": {
+      "summary": "Summary"
+   }
+}

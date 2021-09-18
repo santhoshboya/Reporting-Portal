@@ -1,0 +1,15 @@
+import React from 'react'
+
+const CheckBoxSelectedDisabledIcon = () => (
+   <svg width={20} height={20} fill='none' viewBox='0 0 20 20'>
+      <rect width={20} height={20} fill='#7B8794' fillOpacity={0.48} rx={3} />
+      <path
+         fill='#fff'
+         fillRule='evenodd'
+         d='M12.039 7.43a1.11 1.11 0 011.517-.228c.483.342.588.998.234 1.466L10.431 13.1a1 1 0 01-1.492.114l-2.622-2.538a1.024 1.024 0 01.002-1.483 1.113 1.113 0 011.535.002l1.641 1.59 2.544-3.357z'
+         clipRule='evenodd'
+      />
+   </svg>
+)
+
+export default CheckBoxSelectedDisabledIcon

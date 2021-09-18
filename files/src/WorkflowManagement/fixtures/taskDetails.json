@@ -1,0 +1,255 @@
+{
+   "task_id": "PR",
+   "template_id": "FIN_VENDOR",
+   "stages_with_actions": [
+      {
+         "stage_id": "PR_PAYMENT_REQUEST_DRAFTS",
+         "stage_display_name": "Payment Request Drafts",
+         "actions": [
+            {
+               "action_id": "Save Draft",
+               "button_text": "Save Draft",
+               "button_color": "#0000FF"
+            },
+            {
+               "action_id": "Submit for Approval",
+               "button_text": "Submit for Approval",
+               "button_color": "#0000FF"
+            },
+            {
+               "action_id": "Discard",
+               "button_text": "Discard",
+               "button_color": "#FF0000"
+            }
+         ]
+      },
+      {
+         "stage_id": "PR_PENDING RP APPROVAL",
+         "stage_display_name": "Pending Rp Approval",
+
+         "actions": [
+            {
+               "action_id": "Approve",
+               "button_text": "Approve",
+               "button_color": "#0000FF"
+            },
+            {
+               "action_id": "Reject",
+               "button_text": "Reject",
+               "button_color": "#FF0000"
+            },
+            {
+               "action_id": "Need Clarification",
+               "button_text": "Need Clarification",
+               "button_color": "#FF00DD"
+            }
+         ]
+      },
+      {
+         "stage_id": "PR_NEED CLARIFICATION",
+         "stage_display_name": "Need Clarification",
+
+         "actions": [
+            {
+               "action_id": "Submit for Approval",
+               "button_text": "Submit for Approval",
+               "button_color": "#0000FF"
+            },
+            {
+               "action_id": "Discard",
+               "button_text": "Discard",
+               "button_color": "#FF0000"
+            }
+         ]
+      }
+   ],
+   "gofs": [
+      {
+         "gof_id": "FIN_VENDOR_BASIC_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_TYPE_OF_VENDOR",
+               "field_response": "individual"
+            },
+            {
+               "field_id": "FIN_SALUATION",
+
+               "field_response": "Mr."
+            },
+            {
+               "field_id": "FIN_FIRST NAME",
+               "field_response": "Suresh"
+            },
+            {
+               "field_id": "FIN_LAST NAME",
+               "field_response": "Katari"
+            },
+            {
+               "field_id": "FIN_DISPLAY NAME",
+               "field_response": "Suresh Katari"
+            },
+            {
+               "field_id": "FIN_WEBSITE",
+               "field_response": "https://ibhubs.co/"
+            },
+            {
+               "field_id": "FIN_EMAIL",
+               "field_response": "suresh.katari@ibhubs.co"
+            },
+            {
+               "field_id": "FIN_PHONE",
+               "field_response": "9652581651"
+            }
+         ]
+      },
+      {
+         "gof_id": "FIN_GST&TDS_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_GST_REGISTRATION",
+               "field_response": "Registered Bussiness - Regular"
+            },
+            {
+               "field_id": "FIN_GST",
+               "field_response": "Monthly"
+            },
+            {
+               "field_id": "FIN_FIRST NAME",
+               "field_response": "Muneera"
+            },
+            {
+               "field_id": "FIN_MSME REGISTERED",
+               "field_response": "Yes"
+            },
+            {
+               "field_id": "FIN_MSME_CERTIFICATE",
+               "field_response": "FIN_MSME_CERTIFICATE"
+            },
+            {
+               "field_id": "FIN_MSME CERTIFICATE",
+               "field_response": "FIN_MSME_CERTIFICATE"
+            },
+            {
+               "field_id": "FIN_GST REGISTRATION",
+               "field_response": "INR"
+            },
+            {
+               "field_id": "FIN_APPLICABLE TDS SECTIONS",
+               "field_response": "As a user, I should be able to select task template type when creating a task so that I can create task in selected template task"
+            },
+            {
+               "field_id": "FIN_CURRENCY",
+               "field_response": "USD"
+            }
+         ]
+      },
+      {
+         "gof_id": "FIN_BANK_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_BANK DETAILS PROOF",
+               "field_response": "FIN_BANK DETAILS PROOF"
+            },
+            {
+               "field_id": "FIN_BENEFICIARY NAME",
+               "field_response": "Sunny"
+            },
+            {
+               "field_id": "FIN_BENIFICIARY BANK NAME",
+               "field_response": "SBI"
+            },
+            {
+               "field_id": "FIN_ACCOUNT NUMBER",
+               "field_response": "3287987979342"
+            },
+            {
+               "field_id": "FIN_IFSC CODE",
+               "field_response": "IFSC Code"
+            }
+         ]
+      },
+      {
+         "gof_id": "FIN_ADDRESS_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_ADDRESS LINE 1",
+               "field_response": "Kurnool,AP"
+            },
+            {
+               "field_id": "FIN_ADDRESS LINE 2",
+               "field_response": "HYD,TS"
+            },
+            {
+               "field_id": "FIN_CITY",
+               "field_response": "Kurnool"
+            },
+            {
+               "field_id": "FIN_STATE",
+               "field_response": "Andgra Pradesh"
+            },
+            {
+               "field_id": "FIN_PINCODE",
+               "field_response": "518001"
+            },
+            {
+               "field_id": "FIN_MOBILE/PHONE",
+               "field_response": "9876543210"
+            }
+         ]
+      },
+      {
+         "gof_id": "FIN_REQUEST_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_PAYMENT_REQUESTOR",
+               "field_response": "Rajesh"
+            },
+            {
+               "field_id": "FIN_PAYMENT_APPROVER",
+               "field_response": "Suresh"
+            },
+            {
+               "field_id": "FIN_PAYMENT_POC",
+               "field_response": "Sunny"
+            },
+            {
+               "field_id": "FIN_PAYMENT_REQUEST_DATE",
+               "field_response": "2000-02-20"
+            }
+         ]
+      },
+      {
+         "gof_id": "CUSTOMER_DETAILS",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_Payment Requester",
+               "field_response": "mahendra"
+            },
+            {
+               "field_id": "FIN_MOBILE/PHONE",
+               "field_response": "[\"English\"]"
+            },
+            {
+               "field_id": "MULTI_SELECT_FIELD",
+               "field_response": "[\"Option1\",\"Option2\"]"
+            }
+         ]
+      },
+      {
+         "gof_id": "FIN_GOF_VENDOR_TYPE",
+         "same_gof_order": 0,
+         "gof_fields": [
+            {
+               "field_id": "FIN_TYPE_OF_VENDOR",
+               "field_response": "Individual"
+            }
+         ]
+      }
+   ]
+}

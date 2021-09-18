@@ -1,0 +1,32 @@
+.tickmark {
+   background-color: white !important;
+   border-radius: 50%;
+}
+
+.toast-success {
+   background-color: #27ab83 !important;
+}
+
+.toast-dark {
+   background-color: #002159 !important;
+}
+
+.toast-primary {
+   background-color: #0967d2 !important;
+}
+
+.toast-info {
+   background-color: #1cd4d4 !important;
+}
+
+.toast-warning {
+   background-color: #f0b429 !important;
+}
+
+.toast-danger {
+   background-color: #e12d39 !important;
+}
+
+.toast {
+   width: 500px !important;
+}

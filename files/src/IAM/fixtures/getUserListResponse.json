@@ -1,0 +1,256 @@
+{
+   "users": [
+      {
+         "user_id": "1",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "2",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "3",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "4",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "5",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "6",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "7",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "8",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "9",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "10",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "11",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "12",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "13",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "14",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "15",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "16",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "17",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "18",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "19",
+         "name": "Ranadheer Varma",
+         "email": "email1ssc@gmail.com",
+         "teams": [{ "team_id": "1", "team_name": "Tech Team" }],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      },
+      {
+         "user_id": "20",
+         "name": "Varma",
+         "email": "email1ssc12@gmail.com",
+         "teams": [
+            { "team_id": "1", "team_name": "Tech Team" },
+            { "team_id": "2", "team_name": "Finance team" }
+         ],
+         "roles": [
+            { "role_id": "1", "role_name": "Payment Approver" },
+            { "role_id": "2", "role_name": "Payment POC" }
+         ],
+         "company": { "company_id": "fdwe2123", "company_name": "iB Build" }
+      }
+   ],
+
+   "total": 2
+}

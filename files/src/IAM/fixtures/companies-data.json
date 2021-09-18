@@ -1,0 +1,33 @@
+{
+   "total_companies_count": 4,
+   "companies": [
+      {
+         "company_id": "iBC01",
+         "name": "Prayoga vikramsimha private limited",
+         "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+         "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+         "no_of_employees": 12
+      },
+      {
+         "company_id": "iBC02",
+         "name": "Mayuka",
+         "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+         "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+         "no_of_employees": 10
+      },
+      {
+         "company_id": "iBC03",
+         "name": "Cyber Eye",
+         "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+         "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+         "no_of_employees": 15
+      },
+      {
+         "company_id": "iBC04",
+         "name": "iB Hubs",
+         "description": "Donec id elit non mi porta gravida at eget metu nullam id dolor id nibh ultricies vehicula ut id eutegdfer",
+         "logo_url": "https://cdn.zeplin.io/5efacaf3a9674a242eb8fb11/assets/2c6774ba-2131-4758-bbcd-9e2d43752335.svg",
+         "no_of_employees": 15
+      }
+   ]
+}

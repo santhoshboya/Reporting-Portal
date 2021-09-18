@@ -1,0 +1,17 @@
+{
+   "roles": [
+      { "role_id": "1", "role_name": "Payment Approver" },
+      { "role_id": "2", "role_name": "reviewer" },
+      { "role_id": "3", "role_name": "manageer" },
+      { "role_id": "4", "role_name": "Payment POC" }
+   ],
+   "teams": [
+      { "team_id": "1", "team_name": "Tech" },
+      { "team_id": "2", "team_name": "iBCricket" }
+   ],
+   "companies": [
+      { "company_id": "1", "company_name": "Proyuga" },
+      { "company_id": "2", "company_name": "cyber-eye" },
+      { "company_id": "3", "company_name": "iB Build" }
+   ]
+}

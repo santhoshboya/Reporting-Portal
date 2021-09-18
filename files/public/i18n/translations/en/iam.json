@@ -1,0 +1,107 @@
+{
+   "teams": {
+      "heading": "Teams",
+      "members": "{{count}} Member",
+      "members_plural": "{{count}} Members",
+      "approvers": "APPROVERS",
+      "addTeam": "Add New Team",
+      "dots": " ...",
+      "noTeams": "No Teams Available/Created",
+      "team": {
+         "edit": "Edit",
+         "delete": "Delete",
+         "alertMessage": "Are you sure to delete the team?"
+      },
+      "addOrEditTeam": {
+         "back": "Back",
+         "addTeam": "Add Team",
+         "editTeam": "Edit Team",
+         "details": "Team Details",
+         "addButton": "ADD",
+         "editButton": "SAVE",
+         "nameLabel": "TEAM NAME",
+         "namePlaceholder": "Enter Team name",
+         "emptyNameError": "Team name should not be empty",
+         "nameExistError": "name already exists!",
+         "descriptionLabel": "DESCRIPTION",
+         "descriptionPlaceholder": "Add Description here",
+         "addMembersPlaceholder": "Select Members",
+         "addMembersLabel": "ADD MEMBERS"
+      }
+   },
+
+   "users": {
+      "title": "List of Users",
+      "searchBarPlaceHolder": "Search User",
+      "addButtontext": "Add user",
+      "cancelButtonText": "Cancel",
+      "addUser": {
+         "title": "Add New User",
+         "cancelText": "Cancel",
+         "usernamePlaceHolder": "Ex : XYZ",
+         "usernameLable": "NAME OF THE USER",
+         "company": "COMPANY",
+         "roles": "ROLES",
+         "emailId": "EMAILID",
+         "teamsLable": "TEAM IN WHICH USER BELONG TO",
+         "emailPlaceHolder": "EX : XYZ@email.com",
+         "emailLable": "EMIAL",
+         "cancel": "Cancel",
+         "successMessage": "Successfully added User to the system"
+      },
+      "companyPlaceholder": "Select your company",
+      "teamPlaceholder": "Select your team",
+      "rolePlaceholder": "Select Roles",
+
+      "edituser": {
+         "save": "Save",
+         "title": "Edit User",
+         "successMessage": "Successfully Edit User details"
+      },
+      "deleteUser": {
+         "successMessage": "Successfully deleted User",
+         "confirmMessage": "Are you sure ?"
+      },
+      "pagination": {
+         "of": "of",
+         "to": "to"
+      },
+      "back": "Back",
+      "errors": {
+         "invalidUsername": "Please Enter Valid UserName",
+         "emptyUsername": "Please Enter UserName",
+         "shouldNotHaveNumbers": "Username Should not contain numerics",
+         "emptyEmail": "Please enter emailId",
+         "inValidEmail": "Please enter valid EmailId",
+         "selectUserOptions": "Please Select any Option"
+      }
+   },
+   "roles": {},
+   "companies": {
+      "heading": "Companies",
+      "employees": "{{count}} Employee",
+      "employees_plural": "{{count}} Employees",
+      "addCompanyLabel": "Add New Company",
+      "noCompanies": "No Companies Avaialable/Created",
+      "company": {
+         "edit": "Edit",
+         "delete": "Delete",
+         "alertMessage": "Are you sure to delete this company?"
+      },
+      "addOrEditCompany": {
+         "back": "Back",
+         "addCompany": "Add Company",
+         "editCompany": "Edit Company",
+         "details": "Company Details",
+         "button": "SAVE",
+         "nameLabel": "COMPANY NAME",
+         "namePlaceholder": "Enter Company name",
+         "emptyNameError": "Company name should not be empty",
+         "nameExistError": "name already exists!",
+         "descriptionLabel": "DESCRIPTION",
+         "descriptionPlaceholder": "Add Description here",
+         "employeesPlaceholder": "Select",
+         "employeesLabel": "ADD EMPLOYEES"
+      }
+   }
+}

@@ -1,0 +1,8 @@
+.gof-card {
+   padding: 48px;
+   display: inline-block;
+   width: 800px;
+   margin: 15px;
+   border: 1px solid #d7dfe9;
+   border-radius: 6px;
+}
