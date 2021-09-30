@@ -1,0 +1,151 @@
+.restaurant-image {
+  width: 445px;
+  height: 280px;
+
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.restaurant-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+.cuisine {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Light / base / white */
+
+  color: #ffffff;
+}
+
+.location {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Light / base / white */
+
+  color: #ffffff;
+}
+
+.icon {
+  width: 12px;
+  color: #ffffff;
+  margin: 0px;
+  margin-right: 5px;
+}
+
+.rating-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+}
+.rating-item-container {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.rating-text {
+  text-align: center;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+  margin: 0px;
+}
+
+.rating-desc {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Light / blue-gray / 200 */
+
+  color: #e2e8f0;
+  margin: 0px;
+}
+
+.price {
+  text-align: center;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+  margin: 0px;
+}
+
+.line {
+  background-color: #ffffff;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.food-items-cont {
+  background: #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.food-items-list-container {
+  width: 80%;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .products-loader-container {
+    width: 100%;
+  }
+}
