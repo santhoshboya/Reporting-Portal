@@ -9,8 +9,6 @@ const RestaurantItem = props => {
   const {id, name, cuisine, imageUrl, userRating} = details
   const {rating, ratingColor} = userRating
 
-  console.log(id)
-
   return (
     <Link to={`/restaurants-list/${id}`} className="link-styling">
       <li className="list-container" data-testid="restaurant-item">

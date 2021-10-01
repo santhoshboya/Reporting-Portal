@@ -90,8 +90,8 @@ export const WebsiteLogo = styled.img`
   width: 60px;
 
   @media screen and (min-width: 768px) {
-    width: ${props => props.width}px;
-    height: ${props => props.height}px;
+    width: 70px;
+    height: 50px;
     margin: 10px;
     background-color: transparent;
   }
@@ -198,4 +198,15 @@ export const HeaderList = styled.ul`
 
 export const LinkItem = styled(Link)`
   text-decoration: none;
+`
+
+export const HeaderHeading = styled.h1`
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  color: #f7931e;
 `

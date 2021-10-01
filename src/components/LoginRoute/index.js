@@ -16,6 +16,7 @@ import {
   FoodImage,
   LoginText,
   FormMainContainer,
+  LogoHeading,
 } from './styledComponents'
 
 class LoginForm extends Component {
@@ -123,13 +124,10 @@ class LoginForm extends Component {
         <FormMainContainer>
           <FormContainer onSubmit={this.submitForm}>
             <LoginWebsiteLogo
-              src="https://res.cloudinary.com/dqnh9af86/image/upload/v1632732098/Vector_nqrxvp.png"
+              src="https://res.cloudinary.com/dqnh9af86/image/upload/v1633077683/Frame_274_bxujyh.png"
               alt="website logo"
             />
-            <img
-              src="https://res.cloudinary.com/dqnh9af86/image/upload/v1632732315/Features_kmnx0g.png"
-              alt="website name"
-            />
+            <LogoHeading>Tasty Kitchens</LogoHeading>
             <LoginText>Login</LoginText>
             <InputContainer>{this.renderUsernameField()}</InputContainer>
             <InputContainer>{this.renderPasswordField()}</InputContainer>

@@ -6,16 +6,18 @@ import './index.css'
 const CartListView = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList} = value
+      const newCartList = localStorage.getItem('cartList')
+      const parsedString = JSON.parse(newCartList)
 
       return (
         <ul className="cart-list">
           <div className="headers-container">
             <p className="headers-text">Items</p>
-            <p className="headers-text">Quantity</p>
+            <p className="headers-text quantity-text">Quantity</p>
             <p className="headers-text">Price</p>
           </div>
-          {cartList.map(eachCartItem => (
+          <hr />
+          {parsedString.map(eachCartItem => (
             <CartItem key={eachCartItem.id} cartItemDetails={eachCartItem} />
           ))}
         </ul>

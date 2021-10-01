@@ -9,11 +9,14 @@
 
   border: 1px solid rgba(11, 105, 255, 0.1);
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .headers-container {
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .headers-text {
@@ -30,4 +33,9 @@
   /* Light / blue-gray / 600 */
 
   color: #475569;
+  margin-left: 20px;
+}
+
+.quantity-text {
+  margin-left: 60px;
 }

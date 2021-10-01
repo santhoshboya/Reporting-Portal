@@ -18,6 +18,7 @@ import {
   ContentListItem,
   WebsiteLogoContainer,
   LinkItem,
+  HeaderHeading,
 } from './styledComponents'
 
 const Header = props => {
@@ -32,17 +33,12 @@ const Header = props => {
       <LinkItem to="/">
         <WebsiteLogoContainer>
           <WebsiteLogo
-            src="https://res.cloudinary.com/dqnh9af86/image/upload/v1632732098/Vector_nqrxvp.png"
+            src="https://res.cloudinary.com/dqnh9af86/image/upload/v1633077683/Frame_274_bxujyh.png"
             alt="website logo"
             height="30"
             width="40"
           />
-          <WebsiteLogo
-            src="https://res.cloudinary.com/dqnh9af86/image/upload/v1632732315/Features_kmnx0g.png"
-            alt="website name"
-            height="30"
-            width="150"
-          />
+          <HeaderHeading>Tasty Kitchens</HeaderHeading>
         </WebsiteLogoContainer>
       </LinkItem>
       <ContentContainer>
@@ -57,7 +53,7 @@ const Header = props => {
           <Popup
             modal
             trigger={
-              <LogoutButton type="button" data-testid="iconButton">
+              <LogoutButton type="button" testid="iconButton">
                 Logout
               </LogoutButton>
             }
@@ -70,7 +66,7 @@ const Header = props => {
                   <AlignRow>
                     <CloseButton
                       type="button"
-                      data-testid="closeButton"
+                      testid="closeButton"
                       onClick={() => close()}
                     >
                       Cancel

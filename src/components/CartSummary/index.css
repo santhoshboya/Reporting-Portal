@@ -33,6 +33,9 @@
     /* Basic / 900 */
 
     color: #3e4c59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

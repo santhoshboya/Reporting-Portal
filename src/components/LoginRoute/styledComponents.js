@@ -39,7 +39,8 @@ export const FormContainer = styled.form`
 
 export const LoginWebsiteLogo = styled.img`
   width: 100px;
-  margin: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 `
 
 export const InputContainer = styled.div`
@@ -120,10 +121,22 @@ export const CheckboxInput = styled.input`
 
 export const FoodImage = styled.img`
   height: 100vh;
-  width: 45%;
+  width: 705px;
   margin-left: 100px;
+  left: 705px;
 `
 
 export const LoginText = styled.h1`
   font-family: bree serif;
+`
+
+export const LogoHeading = styled.h1`
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  color: #f7931e;
 `

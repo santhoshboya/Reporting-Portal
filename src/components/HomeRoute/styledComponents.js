@@ -15,6 +15,7 @@ export const CarouselContainer = styled.div`
   margin-left: 120px;
   display: flex;
   flex-direction: column;
+  flex-shrink: shrink;
 `
 
 export const PopularContainer = styled.div`
